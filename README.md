@@ -1,10 +1,34 @@
-# BETA Labs — GTM Intelligence
+# BETA Labs — GTM, skills et brand guide
 
-Base de travail interne pour GoodBytes Studio et BETA Labs. **Analyse du corpus au 13 octobre 2026**, sans nouvelle confirmation auprès des clients. Les deux agents de marque et leur prototype sont disponibles ; la [lecture du site actuel reste bloquée](brand/audit-2026-10-13.md) par l’accès réseau.
+Base de travail interne pour GoodBytes Studio et BETA Labs : intelligence GTM, skills designer et copywriter, mémoire de marque et brand guide v2. **Analyse du corpus au 13 octobre 2026**, sans nouvelle confirmation auprès des clients. La [lecture du site actuel reste bloquée](brand/audit-2026-10-13.md) par l’accès réseau.
 
 BETA Labs est décrit dans les sources récentes comme **la couche de ciblage pré-événement pour les événements B2B** : liste des participants obtenue sous entente, enrichissement selon l’ICP, liste courte avec signaux et brouillons d’ouverture. Le commanditaire envoie les messages et conserve la relation. Le positionnement reste **provisoire** dans le corpus.
 
-## Commencer ici
+## Brand guide et assets
+
+Le [brand guide v2](brand/guide/README.md) comprend **16 pages et 33 masters SVG avec leurs exports PNG** : logos, symbole B, clearspace, typographie, palette, imagerie, patterns, infographies, social et bannières.
+
+| Livrable | Accès |
+|---|---|
+| Guide PDF | [Consulter ou télécharger le PDF](brand/guide/exports/BETA-Labs-Brand-Guide-v2.pdf) |
+| Guide HTML | [Fichier HTML](brand/guide/index.html) — à ouvrir localement |
+| Masters SVG et polices | [Assets](brand/guide/assets/) |
+| Exports PNG | [33 fichiers PNG](brand/guide/exports/png/) |
+| Logo original fourni | [SVG original](brand/assets/logos/betalabs-original.svg) |
+| Inventaire et provenance | [Manifeste](brand/guide/manifest.json), [validation](brand/guide/validation.json) |
+
+Le logo original est préservé. Les déclinaisons et les nouvelles règles sont des propositions v2. Inter et Newsreader sont fournis avec leurs licences OFL ; l’imagerie générée conserve sa provenance.
+
+## Skills Codex
+
+| Skill | Usage | Instructions |
+|---|---|---|
+| `$betalabs-designer` | Direction artistique, supports visuels, prototypes et système de marque | [SKILL.md](.agents/skills/betalabs-designer/SKILL.md), [prompt designer](agents/designer.md) |
+| `$betalabs-copywriter` | Stratégie du message, offres, pages et rédaction FR/EN | [SKILL.md](.agents/skills/betalabs-copywriter/SKILL.md), [prompt copywriter](agents/copywriter.md) |
+
+Ouvrir le dépôt dans Codex et invoquer le skill avec un brief. Si le skill n’apparaît pas dans la session, demander de lire son `SKILL.md` directement. Les [exemples d’appel et instructions d’usage](agents/README.md) détaillent le travail coordonné. Les deux rôles partagent la [mémoire de marque](brand/README.md) et le registre de claims.
+
+## Intelligence GTM — commencer ici
 
 | Besoin | Document |
 |---|---|
