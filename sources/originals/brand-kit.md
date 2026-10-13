@@ -1,0 +1,335 @@
+# Brand Kit — BETA Labs
+# Tone of Voice + visual tokens. Sourced, not invented.
+# 2026-08-05 · Vocabulary lock inherited from outputs/positioning.md (immutable here)
+
+---
+
+## How to use this file
+
+Every piece of copy and every design decision reads this file first. If something you need is not here, it is either in `outputs/positioning.md` (framing, claims, statements) or it is a Gap — and a Gap gets an owner, not a guess.
+
+**This file extends the Figma brand guide** (`BETA Labs — Brand guide` section, eight panels, built 2026-08-05). The visual tokens there were sourced from the design file and are not re-derived here. What this file adds: the Tone of Voice half, the logo findings, computed contrast figures, and the Gaps table.
+
+Rows marked 🔒 are inherited from the positioning of record and may not be changed here. Changing one is a positioning decision.
+
+---
+
+## Primary Reader
+
+**A GM at a sixty-person B2B services firm in Montréal.** They signed a twelve-thousand-dollar booth three months ago, they have three weeks left, and they have just realised nobody on the team has looked at who is actually attending. They hold budget authority and answer to no committee. They will read this on their phone between two client calls, and they will decide today or forget it entirely.
+
+Everything follows from that. It is why the copy opens on money already spent, why nothing is technical, and why every piece carries exactly one ask.
+
+**Secondary reader — organizer pages only.** A VP Events at an association or event company whose sponsors renew or quietly do not, and who has never been shown that this is fixable. They are not the payer. Copy aimed at them inherits the same anchor and translates it; it does not get its own positioning.
+
+---
+
+## Tone Attributes
+
+| We are | But not | In practice |
+|---|---|---|
+| **Direct** | Blunt | Say the number, then say what it costs them. Never a number standing alone |
+| **Specific** | Technical | "24 of 9,840", never "advanced scoring algorithms". The reader is commercial, not an engineer |
+| **Confident** | Boastful | State what the product does and stop. No superlatives, no "leading", no "revolutionary" |
+| **Restrained** | Cold | One serif accent per headline carries the warmth so the prose does not have to strain for it |
+| **Honest about limits** | Apologetic | "If an event holds ten people who fit you, we tell you ten." A stated limit is proof of precision |
+
+The last row is not a stylistic preference. It falls directly out of per-match pricing: a company that charges for what exists has to be able to say what does not exist.
+
+---
+
+## Pattern Library
+
+Real sentences already in circulation. Reuse the shape, not the words.
+
+**1 · The sunk-cost open** — name what they already paid, then the gap.
+> "Your team invested in the booth, tickets, travel, hotels, and time away from work. But once the event starts, most teams are still guessing."
+
+Use to open any sponsor-facing piece. It earns the right to the rest.
+
+**2 · The narrowing sentence** — the big number, then the real one.
+> "A three-thousand-person event holds maybe two dozen people who can actually buy from you."
+
+Use wherever precision needs to become concrete. This is the single most portable pattern in the system.
+
+**3 · The serif turn** — a declarative line whose payoff clause is serif italic.
+> "Stop Leaving Your Event ROI to *Chance.*" · "Most Events Are *Noisy.*" · "A tiered list, not a *spreadsheet dump.*"
+
+Headlines only. Once per headline. The accent always lands on the word carrying the meaning, never on a connective.
+
+**4 · The exclusion pair** — say who it is for by saying who it is not for.
+> "Built for Teams Where One Good Meeting Changes *Everything*" opposite "We Are a Precision Layer, Not a Volume Machine"
+
+The strongest pattern already on the site. Use in qualification sections. Excluding people is what makes the inclusion credible.
+
+**5 · The mindset flip** — two quoted sentences, before and after.
+> "Let's see who we meet." → "These are the people we need to meet."
+
+Once per page maximum. It is a closing device, not a section header.
+
+**6 · The concession-then-turn** — grant the objection fully, then name its cost.
+> "Your team could do it. The question is whether they will, in the two weeks before the event, across three thousand records, against your real buying criteria rather than the forty logos they already recognise."
+
+All objection handling uses this shape. Never deny the objection — the core alternative is competent, and pretending otherwise loses the reader.
+
+**7 · The boundary statement** — say what you do not do, as a feature.
+> "You send it. You keep the relationship."
+
+Use wherever automation anxiety could surface. This pattern only became available on 2026-08-05; it is the cleanest separation from Vendelux.
+
+---
+
+## Structure Templates
+
+Section order and length. Content comes from `positioning.md` core blocks.
+
+**Cold email** — under 120 words.
+1. The event and their presence in it, one line, proving this is not a blast
+2. The narrowing sentence, with their event's real number
+3. What arrives and when
+4. One exit
+
+No pleasantries. No "hope this finds you well". No second ask.
+
+**LinkedIn message** — under 60 words. One specific fact about their event presence, one question. Never a pitch.
+
+**Landing page section** — eyebrow in uppercase letterspaced ink at 55% → headline with one serif accent → one or two sentences of body → the visual → a caption beneath the visual that states the number.
+
+**One-pager** — problem with a sourced statistic → mechanism in four steps → what you receive → who it is not for → the ask with a time bound.
+
+**Deck slide** — one claim per slide. The visual carries it. Body text under 25 words.
+
+---
+
+## Vocabulary
+
+### Inherited from the positioning of record 🔒
+
+| Use | Never use | Why |
+|---|---|---|
+| 🔒 match | meeting, lead | The unit is a match delivered. "Meeting" claims a booking BETA Labs does not perform |
+| 🔒 shortlist | list (alone) | A list is a commodity; the shortlist is the output of the cut |
+| 🔒 targeting, precision | matchmaking | Also implies BETA Labs brokers the encounter |
+| 🔒 opening draft | outreach campaign, we reach out, we contact | BETA Labs drafts; the sponsor sends |
+| 🔒 the organizer's attendee list, under agreement | our database, our data | There is no database. That is Vendelux's model |
+| 🔒 enriched and scored | AI-driven, AI-powered | Unresolved whether the pipeline is AI or AI-assisted manual |
+| 🔒 15–25 matches | 15 matches, 20–50 leads | Per-match pricing means the number varies by event |
+| 🔒 prospects | leads | Consistent with the precision layer |
+| 🔒 sponsor, exhibitor, partner | client (meaning the sponsor) | "Client" is ambiguous between organizer and sponsor |
+
+### Added at tone level
+
+| Rule | Detail |
+|---|---|
+| **Company name** | "BETA Labs" — two words, BETA in caps, Labs capitalised. Never Betalabs, Beta Labs, BetaLabs |
+| **Self-reference** | "we" in first-person copy; "BETA Labs" in third-person proof and quotes |
+| **French address** | "vous" always. Never "tu". The reader is a decision-maker in a commercial exchange |
+| **French typography** | Non-breaking space before `: ; ! ?` and inside `« »`. Accents on capitals — À, É, never A, E |
+| **English headlines** | Title Case, as the live site does. "Stop Leaving Your Event ROI to Chance." |
+| **French headlines** | Sentence case. French does not take Title Case, and applying it reads as a translation artifact |
+| **Buttons and micro labels** | ALL CAPS with letterspacing, both languages |
+| **Numbers** | Figures for data — "24 of 9,840". Words for rhetoric — "a few dozen". Never both in one sentence |
+| **Dashes** | Em dash with spaces, as the site does |
+| **Exclamation marks** | Never in body copy. The tone does not raise its voice |
+
+---
+
+## Do / Don't
+
+Every pair below is a real correction made to a live artifact. Abstract rules get ignored; a rewritten sentence does not.
+
+| Don't | Do |
+|---|---|
+| "walk in informed, with meetings already booked" | "walk in informed, with the opener already drafted" |
+| "your curated list of 20–50 high-value leads" | "your curated list of 15–25 high-fit prospects" |
+| "you pay only for confirmed meetings that happen" | "you pay per match delivered — if an event holds ten that fit you, you pay for ten" |
+| "Qualified Meetings That Make Your Exhibitors Come Back" | "Give Your Exhibitors a Reason to Come Back." |
+| "AI-driven pre-event meeting matchmaking" | "the pre-event targeting layer" |
+| "Only 30% of first-time attendees return." | "Thirty-eight of every hundred exhibitors do not come back." *(CEIR)* |
+| "the matchmaking experience they're expecting" | "the curated meeting experience they're already expecting in the age of AI" |
+| "Sarah Chen — VP Operations, Northvolt Systems" | "Sarah Chen — VP Operations, Biron Systems" *(Northvolt is a real company)* |
+| "18 attendees routed · 6 meetings booked" | "18 attendees routed · 6 openers drafted" |
+
+---
+
+## Colours
+
+Four values. There is no fifth.
+
+| Role | Value | Where it may be used | Source |
+|---|---|---|---|
+| **Canvas** | `#F8F6F2` | The only page background. Every band sits on it | Figma node `1:21` fill |
+| **Ink** | `#343434` | All type, all borders, all connectors. **Never pure black** — `#000` appears nowhere in the file | Figma, all text and stroke fills |
+| **Signal** | `#EDF993` | Two jobs only: the match, in content; the primary action, in chrome | Figma nodes `1:40`, `1:141`, `1:344` |
+| **Surface** | `#FFFFFF` | Card and panel surfaces only. Never a page background | Figma card fills |
+
+**Derived opacities** — ink at reduced alpha, never a new grey. See Accessibility Notes before using any of these on text.
+
+`0.55` micro labels · `0.42` field labels in cards · `0.30` crowd dots unresolved · `0.18` section rules · `0.12` row rules · `0.09` crowd dots resolved
+
+---
+
+## Typography
+
+**Inter** — Semi Bold, Medium, Regular, Light. Semi Bold is the heaviest weight in the system; there is no Bold.
+**Chiron Sung HK** — Light Italic only. Accent use, one per headline.
+
+| Role | Family & weight | Size / line | Tracking | Where |
+|---|---|---|---|---|
+| Hero | Inter Semi Bold | 68 / 78.2 | — | Page hero, once per page |
+| Section head | Inter Semi Bold | 48 / 55.2 | — | Band openers |
+| Statement | Inter Semi Bold | 28–34 | — | Captions under a visual |
+| Card title | Inter Semi Bold | 18–22 | — | Cards and stages |
+| Body | Inter Light | 16 / 24 | — | Paragraphs |
+| Data value | Inter Medium | 12.5–14 | — | Values inside cards |
+| Field label | Inter Regular | 12.5 | — | Labels inside cards |
+| Eyebrow | Inter Regular | 14 | 0.56 | Section labels, uppercase |
+| Button | Inter Medium | 16 | 0.32 | CTA pills, uppercase |
+| Tag | Inter Medium | 10–11 | 0.7 | Tier pills and badges, uppercase |
+| Accent | Chiron Sung HK Light Italic | matches host | — | One word or clause, never a full line |
+
+The scale carries emphasis; weight does not.
+
+---
+
+## Logo
+
+**One asset exists.** A raster image fill (hash `31f57a19`), rendered at 205.23 × 28 in both page navbars — nodes `1:11` and `1:374`. That is the entire logo system.
+
+**Construction.** "BETA" in heavy sans capitals, "Labs" in serif italic. The wordmark is the type pairing in miniature, which is why it belongs to this system and not to any other. Protect that relationship: it is the one piece of the identity that works at a glance.
+
+**Observed placement.** Left-aligned to the 118px page margin, vertically centred in a 68px nav with 20px above and below.
+
+**What does not exist**, and each of these is a Gap below: no vector version, no monochrome variant, no mark-only or icon version, no favicon, no defined clear space, no minimum size, no stated prohibitions.
+
+Until a vector exists, the wordmark cannot be used in print, at large format, on a dark ground, or below its native 205px width without visible degradation.
+
+---
+
+## Icons & Illustration
+
+**There is no icon library, and the system does not need one.** Nothing should be imported.
+
+The only glyphs in use are a check and an ×, drawn as 1.6px strokes inside a 24px badge. Everything else is geometric primitives:
+
+| Element | Spec |
+|---|---|
+| Crowd dot | 2.2r, ink at 30% (unresolved) or 9% (resolved) |
+| Buyer dot, hidden | 3.4r, lime, 0.9px ink stroke |
+| Buyer dot, surfaced | 9r, lime, 1px ink stroke |
+| Timeline marker | 7r, cream fill, 1px ink stroke |
+| Arrival marker | 11r, lime, 1.4px ink stroke |
+| Dot grid | 20px step |
+
+Illustration is built from these and nothing else. If a new visual needs a shape that is not here, that is a decision to make deliberately, not a component to fetch.
+
+---
+
+## Spacing & Layout
+
+| Property | Value |
+|---|---|
+| Page width | 1780 |
+| Page margin | 118 left and right → content width **1544** |
+| Section padding, top | 100 (hero, problem) · 120 (intelligence, how it works) |
+| Item spacing within a band | 40 (hero) · 32 (problem) |
+| Radius — container | 16 |
+| Radius — nested inside a container | 12 |
+| Radius — tag or action | 100 (pill) |
+| Stroke | 1px everywhere. 1.4px only on the arrival marker |
+
+Radius is not decorative. 100 means "this is a tag or an action", 16 means "this is a container", 12 means "this is inside one". Nothing else.
+
+---
+
+## Imagery Rules
+
+**No photography anywhere.** Not an omission — a property. Every visual in the system is geometric, and that is what makes a small company's material look deliberate rather than stock.
+
+**No shadows, no gradients, no blur.** Depth is the 1px border and nothing else.
+
+**Company names in any mock interface are invented.** Never a real company, never a name lifted from a past event export. Biron Systems, Kestrel Grid, Halden Manufacturing, Prewitt Freight, Fernwood Logistics are the approved set — reuse them rather than inventing more, so nobody has to re-check.
+
+**No attendee data in a public asset, even anonymised.** Mock rows stay mock permanently.
+
+---
+
+## Accessibility Notes
+
+Computed from the sourced hex values, 2026-08-05.
+
+| Pair | Ratio | Verdict |
+|---|---|---|
+| Ink `#343434` on canvas `#F8F6F2` | **11.5 : 1** | Passes AAA |
+| Ink `#343434` on signal `#EDF993` | **11.0 : 1** | Passes AAA — the pale lime with dark ink is an unusually strong pairing |
+| Signal `#EDF993` on canvas `#F8F6F2` | **1.05 : 1** | Effectively invisible |
+
+### 🔴 Finding — the opacity scale fails on text
+
+Ink at reduced alpha over canvas:
+
+| Opacity | Effective ratio | Verdict at body size |
+|---|---|---|
+| 0.42 | **2.28 : 1** | **Fails AA and AAA** |
+| 0.55 | **3.15 : 1** | Fails AA for body; passes for large text only |
+| 0.70 | **4.71 : 1** | Passes AA |
+
+The field labels at 12.5px and 42% and the micro labels at 14px and 55% both fail WCAG AA. This is a defect in the system as built, not an inherited one.
+
+**Corrected floors.** Text at 17px or below: minimum **0.70** ink. Text at 24px, or 19px and bold: minimum 0.55. Non-text — rules, dot fields, decorative texture: any value, since those carry no information.
+
+### Two rules that protect what already works
+
+**A lime element on canvas must always carry its 1px ink stroke.** Lime against cream is 1.05:1 — the stroke is what makes the shape visible at all. It is load-bearing, not decoration. Removing it makes a match marker disappear.
+
+**Tier rank is carried by fill, then outline, then faded outline.** Shape carries the information alongside colour, which means the hierarchy survives colour blindness and greyscale printing. This happened by accident and is worth keeping on purpose — never re-express rank as two colours.
+
+---
+
+## Gaps
+
+| Missing | Blocks | Owner | Where it would come from |
+|---|---|---|---|
+| Vector logo (SVG) | Print, large format, favicon, dark grounds, any size below 205px | Elizabeth | Original design file, or a redraw from the raster |
+| Logo clear space and minimum size | Partner co-branding, event signage, third-party use | Elizabeth | Nothing exists — needs deciding |
+| Monochrome and mark-only logo variants | Favicon, app icon, single-colour print, small sizes | Elizabeth | Needs creating |
+| Chiron Sung HK web licence status | Whether the accent font can legally ship on the site | Elizabeth | Font vendor terms |
+| Mobile behaviour of the dot fields and the prospect panel | Any mobile build. The illustration system currently works above roughly 1200px and breaks below | Bruno | Needs designing |
+| French copy specimens | The bilingual half of this document. `primary_language` is fr+en, yet every specimen here is English | Elizabeth | Existing FR site copy |
+| Dark variant | Nothing today. Decide whether its absence is a prohibition or an omission | Elizabeth | Decision |
+| Photography policy | Nothing today, since none is used. Decide whether that is permanent | Elizabeth | Decision |
+
+---
+
+## 🔴 Conflict — client-profile.md contradicts the positioning of record
+
+`client-profile.md` is the configuration file that feeds outreach generation. Six of its entries are built on a claim the positioning now prohibits. Left as they are, the next `/icp-target-plan` run produces prohibited copy at volume.
+
+| Line | Current content | Problem |
+|---|---|---|
+| 11 | "pre-book targeted 1:1 meetings" | Booking claim |
+| 62 | tone rule: "Anchor to performance-based pricing: 'you pay only for confirmed meetings that happen'" | The prohibited claim, as a standing instruction |
+| 63 | tone rule: "'pay only for results'" | Same framing |
+| 183 | `value_prop_one_liner`: "We pre-book 15 confirmed 1:1 meetings… you pay only for meetings that happen" | The entire value prop rests on it |
+| 192, 195 | `key_stats`: "$100/confirmed meeting", "15 confirmed pre-booked meetings" | Wrong unit and booking claim |
+| 198–200 | all three `sequence_cta_variants` | Every CTA promises booked meetings |
+
+This skill does not overwrite `client-profile.md` by design — it is a configuration file, filled once. **Owner: Bruno.** The corrected replacements are in the Do / Don't table above.
+
+Two smaller drifts in the same file, worth fixing while you are in there: `sender_dont_mention` lists Grip, Swapcard and Brella but omits Vendelux, the actual competitor. And lines 18–19 record a solo founder and pre-seed status, while master-context and memory both record two founders and a closed seed round.
+
+---
+
+## Sources
+
+| Token group | Source | Authority | Date checked |
+|---|---|---|---|
+| Colours | Figma `pr1BmQ2Kq0krxEL57dUMoV`, nodes `1:21` `1:28` `1:40` `1:98` `1:141` `1:344` | Design file — highest | 2026-08-05 |
+| Typography | Same file, `getStyledTextSegments` on `1:28` `1:31` `1:41` `1:50` `1:24` | Design file — highest | 2026-08-05 |
+| Logo | Same file, nodes `1:11` / `1:374` — raster image fill, hash `31f57a19` | Design file, but raster only | 2026-08-05 |
+| Spacing, radius, markers | Same file, frame geometry and auto-layout properties | Design file | 2026-08-05 |
+| Vocabulary lock 🔒 | `outputs/positioning.md` | Positioning of record | 2026-08-05 |
+| Tone attributes, patterns | Live site copy · `positioning.md` core blocks · call transcripts 2026-05-12 and 2026-05-26 | Derived from real copy | 2026-08-05 |
+| Primary reader | `client-profile.md` ICP parameters · `outputs/icp-analysis.md` sweet spot | Config and analysis | 2026-08-05 |
+| Contrast ratios | Computed from the sourced hex values | Calculated | 2026-08-05 |
+| Brand guidelines document | **None exists.** `inputs/` holds no charter, no PDF, no guidelines | — | 2026-08-05 |

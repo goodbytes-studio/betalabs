@@ -1,0 +1,462 @@
+# BETA Labs — Dual-Motion GTM Plan
+**Created:** 2026-03-17
+**Sources:** betalabs-master-context.md, icp-analysis.md, event-scoring-strategy.md, pvp-organizers.md
+
+---
+
+## The Two-Motion Architecture
+
+BETA Labs runs two distinct sales motions simultaneously. They operate on different timelines, target different buyers, and close for different reasons — but they feed each other.
+
+| | Motion 1 — Event Catalogue | Motion 2 — Sponsor Acquisition |
+|---|---|---|
+| **Target** | Event organizers | Companies sponsoring/exhibiting at events |
+| **Buyer title** | Director of Partnerships, CEO of event co., VC GP | GM, VP Marketing, CEO, BDM (20–200 employee co.) |
+| **What BETA Labs sells them** | A new revenue line + higher sponsor retention | 15 confirmed pre-event 1:1 meetings with their ICP |
+| **Do they pay BETA Labs?** | **No** — they earn ~15% revenue share | **Yes** — $100/meeting ($750–$4,000/package) |
+| **Close timeline** | Days to weeks (independent of event date) | 1–10 days (event urgency is the close mechanism) |
+| **Urgency driver** | Early partner agreement = included in launch packages | Specific event 2–8 weeks away |
+| **Output** | An event in the catalogue + access to sponsor list | A closed deal + pipeline for the sponsor |
+| **Rhythm** | Always-on (rolling outreach, no seasonality) | Event-triggered (activated per event, per window) |
+
+**Critical distinction:** Organizers do NOT generate direct revenue. They are the **distribution channel** that unlocks pre-warmed sponsor lists. The faster BETA Labs builds the Event Catalogue, the less it relies on cold outbound for Motion 2.
+
+---
+
+## The Flywheel
+
+```
+Motion 1: Sign event partner
+        ↓
+Organizer sends intro email to sponsor list
+        ↓
+Sponsors receive warm intro → book meeting with BETA Labs (Motion 2 triggered)
+        ↓
+Motion 2: Close sponsor → deliver 15 pre-qualified meetings
+        ↓
+Sponsor ROI is measurable → becomes case study
+        ↓
+Case study makes Motion 1 pitch easier → next event partner signs faster
+        ↓
+More events in catalogue → more sponsor opportunities → repeat
+```
+
+**The compounding dynamic:** Each signed event partner multiplies sponsor opportunities without multiplying outreach effort. 10 event partners = 10 sponsor lists = passive inbound pipeline. This is why Motion 1 is the strategic priority even though it generates $0 directly.
+
+**The parallel track:** BETA Labs can also run Motion 2 without a signed organizer partner — by finding exhibitor lists from public event websites and doing cold outbound directly. This is slower but possible. It should run in parallel to Motion 1, not instead of it.
+
+---
+
+## Motion 1 — Event Catalogue Building
+
+### ICP: The Ideal Event Partner
+
+| Signal | Tier 1 (Priority) | Tier 2 (Qualify) | Disqualify |
+|---|---|---|---|
+| **Attendee count** | 500–5,000 | 200–500 or 5,000–15,000 | <200 (too small) or >15,000 (organizer procurement too slow) |
+| **Vertical** | B2B SaaS, MarTech, Tech services | FinTech, Construction Tech, Retail | Consumer, Gaming, Academic-only |
+| **Sponsor program** | Sponsors pay $5K–$50K/tier, 10–50 sponsors | Smaller tiers or fewer sponsors | No sponsor program |
+| **Organizer type** | Independent event co., VC-run, industry association | Non-profit (longer decisions) | Vendor-run (Salesforce, AWS, Shopify) |
+| **Format** | Annual, in-person, B2B-focused | Hybrid, biannual | One-off, consumer |
+| **Geography** | Quebec, Ontario | Other Canadian provinces | International (future) |
+| **Decision-maker access** | CEO, Director of Partnerships — reachable on LinkedIn | Multi-layer org | Government procurement office |
+
+### Where to Find Target Events
+
+**Tier 1 Sources (highest signal density):**
+- `allinevent.ai`, `elevatefestival.ca`, `saasnorth.com`, `revstarsummit.com` — already identified in event-scoring-strategy.md
+- **Eventbrite Canada** — filter: Business & Professional, 500+ attendees, Ontario/Quebec, 2026
+- **LinkedIn Events** — search "B2B SaaS conference Canada 2026", "tech summit Quebec Ontario"
+- **Tech Montreal + Scale AI community** — newsletter, event calendar, partner events
+- **C2 Montréal, RDV Numérique, HOP! organizer networks** — existing BETA Labs partners → ask for referrals
+- **ITAC (Information Technology Association of Canada)** — member event calendar
+- **DigiMarCon series** — runs 20+ annual events in Canadian cities; one contact unlocks multiple markets
+- **VC firm event pages** — Inovia, Real Ventures, Panache, Diagram — all run or co-sponsor recurring events
+
+**Tier 2 Sources (lower signal, worth monitoring):**
+- Meetup.com — mostly small, but some hybrid/summit formats worth tracking
+- Bizzabo / Cvent public event directories
+- Industry association calendars: CPA Canada Tech, CIBC Innovation Banking event series
+
+### Qualifying Signals (before outreach)
+
+Check these on the event website before sending the first message:
+
+| Signal | What to check | Green | Yellow | Red |
+|---|---|---|---|---|
+| Sponsor page exists | Website → "Sponsors" or "Exhibitors" tab | Tiered packages with prices visible | Logos only, no pricing | None |
+| Sponsor profile | What do sponsors look like? | B2B SaaS companies, 20–200 employees | Mixed (some enterprise, some SMB) | Consumer brands, government |
+| Event app | Is Grip/Swapcard/EventMobi listed? | Yes — BETA Labs complements, doesn't replace | Not listed | N/A |
+| Date confirmed | Specific date on website | Yes | "TBA" with month | Year only |
+| Previous edition | Past year's page exists | Yes, with visible past sponsors | First edition | — |
+| Organizer LinkedIn | Founder/CEO findable on LinkedIn | Yes, <500 connections (accessible) | Yes but 10K+ connections (harder to reach) | No LinkedIn presence |
+
+### Scoring Rubric (Organizer)
+
+Use the 7-criteria scoring from `event-scoring-strategy.md`. Shorthand:
+
+- **≥10/13** → outreach this week
+- **8–9/13** → outreach next month
+- **6–7/13** → qualify further or use as sponsor source only
+- **<6/13** → skip
+
+### Contact Identification Strategy
+
+**Who to find:**
+1. Primary: Director of Partnerships, Sponsorship Manager, VP Partnerships
+2. If not found: CEO or Founder of the event company
+3. For VC-organized events: General Partner or Chief of Staff
+
+**How to find:**
+- LinkedIn: "[Event name]" + "partnerships" or "sponsorship" + current role
+- Event website: "Team" or "About" page
+- LinkedIn company page for the event organization
+
+**Contact data to collect per prospect:**
+- First name, last name, title
+- LinkedIn URL
+- Direct email (use Hunter.io or Apollo)
+- Event name, date, attendee count
+- Estimated number of sponsors
+- Current event app (if any)
+- Existing relationship (BETA Labs contact / cold)
+
+### Outreach Sequence (Motion 1)
+
+> Use PVPs from `pvp-organizers.md` as templates. Adapt the opening to each event.
+
+**Day 0 — First email**
+Use the relevant PVP angle:
+- Existing relationship (ALL IN): Renewal + sponsor retention angle
+- VC organizer (RevStar): Portfolio ROI angle
+- Large established event (Elevate, SaaS North): Sponsor retention + new revenue line
+- Generic cold: Competitive market shift angle
+
+**Day 5 — Email bump**
+1 line: *"Wanted to make sure this didn't get buried — happy to show you what we did for ALL IN 2025 in 20 minutes."*
+
+**Day 8 — LinkedIn**
+Connection request + 1-line note: *"Sent you an email last week about adding a qualified meetings program to [Event]'s sponsor packages. Worth a quick call?"*
+
+**Day 12 — Final email**
+Subject: `Last one`
+Body: *"I'll stop after this. Before you finalize your [Year] sponsor packages, worth knowing: [similar event] added this in 2025 and their Platinum sponsors now have 15+ pre-qualified meetings on their calendar before the doors open. Happy to share the model in 20 minutes if timing is right."*
+
+**After Day 12:** Move to follow-up queue. Re-engage when the next edition's planning cycle begins (~6 months before next event).
+
+### Partnership Conversion Process
+
+Once the organizer says "yes":
+
+1. **Define the model** — revenue share (~15%) vs. fixed fee vs. bundled tier
+2. **Sign NDA** — covers attendee list sharing
+3. **Choose activation format:**
+   - Option A: Organizer email to sponsor list (recommended — fastest activation, ~1 day to first sponsor response)
+   - Option B: BETA Labs listed on event website as "Official Meeting Partner"
+   - Option C: Bundled into a sponsor tier (e.g., "Platinum includes 15 pre-qualified meetings")
+4. **Timing:** Organizer email goes out 6–8 weeks before the event
+5. **Onboard with Partnership Guide ("Canal 3")** — give organizer a simple playbook to handle sponsor objections and sell BETA Labs independently
+
+**Revenue share math to show organizers:**
+*"If 10 of your sponsors buy a $1,500 package, that's $2,250 to you with zero effort on your side. If 20 buy it, $4,500. Your sponsors are happier, they renew next year, and you earn more per sponsor without adding headcount."*
+
+### Motion 1 KPIs
+
+| Metric | Target (Year 1) | Source |
+|---|---|---|
+| Events in active catalogue | 8–12 | Internal tracker |
+| New events signed per month | 1–2 | CRM |
+| Average time: first outreach → signed partner | <30 days | CRM |
+| Organizer-introduced sponsor packages sold | Track % of total Motion 2 revenue | CRM |
+| Organizer partner renewal rate (year 2) | >80% | CRM |
+
+---
+
+## Motion 2 — Sponsor Acquisition
+
+### ICP: The Ideal Sponsor
+
+| Signal | Tier 1 | Tier 2 | Disqualify |
+|---|---|---|---|
+| **Company type** | B2B SaaS, MarTech, Marketing services, Tech services | FinTech, Construction Tech, Retail | Government, Consumer, Enterprise 400+ |
+| **Headcount** | 20–150 | 150–400 | <15 (budget risk) or 400+ (procurement kills urgency) |
+| **Buyer title** | GM, VP Marketing, CEO, BDM/Partner | Director of Marketing, Marketing Manager + economic buyer accessible | "Event" title only, no budget authority |
+| **Event confirmation** | Confirmed sponsor/exhibitor at upcoming event in 2–8 weeks | Sponsor at event 8–12 weeks out | No upcoming event confirmed |
+| **Vertical** | Marketing, MarTech, Sales Tech, B2B Software | Dev agency, IT services, Construction Tech | Consumer, Gaming, Government |
+| **Past event ROI** | Has attended events before, no pre-meeting strategy | First event sponsorship | Has a robust internal SDR pre-event process (already solved) |
+| **Geography** | Quebec (Montreal, QC City) | Ontario (Toronto, Ottawa) | Outside Canada |
+
+**The #1 qualifier:** A specific upcoming event within 2–8 weeks. Without it, the prospect is Tier 2 at best.
+
+### The Two Sub-Motions Within Motion 2
+
+**Sub-motion A: Organizer-introduced (highest priority)**
+- Organizer sends email to sponsor list → sponsor replies → BETA Labs closes directly
+- Time to deposit: 1–2 days (best case)
+- No prospecting effort required on BETA Labs' side — just be ready to convert
+
+**Sub-motion B: Direct outbound with event hook**
+- BETA Labs finds the exhibitor list for an upcoming event
+- Identifies Tier 1 sponsors from the list
+- Sends a cold email with an event-specific hook
+- Time to deposit: 3–10 days (more friction than organizer-introduced, but viable)
+- This is the proactive track that runs between organizer activations
+
+### Where to Find Target Sponsors
+
+**Source 1 — Event exhibitor pages (primary)**
+Every event BETA Labs has in the catalogue should have its exhibitor/sponsor list mapped. For events not yet in the catalogue, public sponsor pages are often available on event websites.
+
+Steps:
+1. Go to the event website → Sponsors or Exhibitors page
+2. Screenshot or copy all sponsor logos/names
+3. For each sponsor: find headcount on LinkedIn, identify buyer title, flag if Tier 1/2
+
+**Source 2 — LinkedIn Company Search**
+Filter: Industry (Computer Software / Marketing / Tech), Size (11–200), Location (Montreal / Toronto / Ottawa), then cross-reference against upcoming event attendance.
+
+**Source 3 — Past event sponsor lists**
+Events BETA Labs has already run (ALL IN 2025, HOP 2025, Grand Batimatech 2025, Social Next Ottawa 2026, RDV Numérique 2026) have a sponsor list. These companies have already paid to exhibit at B2B events → proven event-investing behavior → warm for outreach about upcoming events.
+
+**Source 4 — LinkedIn people search**
+Search: "VP Marketing" or "GM" or "BDM" + company size filter + industry filter + location. Use the person's profile to infer which upcoming events their company might attend (check their "Activity" for event check-ins, shares, posts about upcoming conferences).
+
+**Source 5 — Inbound (future state)**
+BETA Labs' planned public Event Catalogue page will list all upcoming partner events. Sponsors browsing upcoming events will land on it → highest-intent inbound.
+
+### Qualifying Signals (before outreach)
+
+| Signal | Check | Action |
+|---|---|---|
+| Confirmed sponsor | Event website shows their logo | Tier 1 if within 2–8 weeks |
+| Headcount 20–200 | LinkedIn company page | ✅ |
+| B2B industry | LinkedIn "About" / website | ✅ |
+| Direct buyer accessible | LinkedIn: GM/CEO/VP Marketing findable | ✅ |
+| Past event participation | LinkedIn posts, event page history | Positive signal — no pre-meeting strategy likely |
+| Enterprise flag | 400+ employees | Deprioritize |
+| Government flag | Any public sector indicator | Skip (direct outbound) |
+
+### Scoring Rubric (Sponsor)
+
+| Signal | Points |
+|---|---|
+| Tier 1 industry (MarTech, B2B SaaS, Marketing services) | +2 |
+| Headcount 20–200 | +2 |
+| Confirmed sponsor at partner event (organizer-introduced) | +3 |
+| Confirmed sponsor at non-partner event (direct outbound) | +2 |
+| Event within 2–8 weeks | +2 |
+| Buyer is GM/CEO/VP Marketing (direct authority) | +2 |
+| Repeat event sponsor (attended events before) | +1 |
+| Marketing vertical specifically | +1 |
+| Enterprise (400+) | −2 |
+| No confirmed upcoming event | −3 |
+| "Event" title only, no economic buyer identified | −1 |
+
+**Tier 1: ≥8 points | Tier 2: 5–7 | Tier 3: <5**
+
+### Contact Identification Strategy
+
+**Primary contact (Economic Buyer):**
+- Title: GM, CEO, VP Marketing, BDM
+- How to find: LinkedIn company page → People → filter by title
+- In companies under 50 employees: the GM/CEO IS the champion + buyer → single email
+
+**Secondary contact (Champion, if primary is >50 employee company):**
+- Title: Director of Growth, SDR Manager, VP Customer Success, Marketing Director
+- Engage to qualify → ask to loop in the GM for next call
+
+**Data to collect per prospect:**
+- Company name, headcount, industry
+- Event name, event date, days to event
+- Buyer name, title, LinkedIn
+- Direct email (Hunter.io, Apollo, Snov.io)
+- Has economic buyer confirmed? Y/N
+- Source (organizer-introduced / direct outbound / walk the floor)
+
+### Outreach Sequence (Motion 2)
+
+**Timing rule:** Start outreach exactly 6–8 weeks before the event. Earlier = no urgency. Later = not enough time to deliver 15 meetings.
+
+**Day 0 — Organizer-introduced track**
+Organizer sends their email to sponsor list. BETA Labs is ready to respond within the hour when a sponsor books a meeting or replies. Speed of response is a differentiator — slow follow-up kills the urgency created by the organizer's email.
+
+**Day 0 — Direct outbound track**
+Use a PVP with an event-specific hook.
+
+> **Preview:** *"[Company] is exhibiting at [Event] on [Date]. We mapped 15 attendees there who match your ICP exactly."*
+>
+> **Engage:** Your team is going to spend 2 days working the floor at [Event]. The best companies show up with a full calendar of pre-confirmed meetings — not business cards to sort through afterward. We booked 15 confirmed 1:1 meetings for [similar company] at [similar event]. Same thing could happen for you before [Event] opens.
+>
+> **Ask:** I mapped the attendee list and flagged 15 companies that match [Company]'s profile. Want me to share them?
+
+**Day 3 — Bump**
+*"Wanted to follow up on the [Event] note. Still 6 weeks out — enough time to deliver. Worth 20 minutes this week?"*
+
+**Day 7 — LinkedIn**
+Connect → short note: *"Sent you an email about [Event] last week — we pre-book qualified meetings for sponsors. Worth a quick chat?"*
+
+**Day 10 — Final**
+*"Last one before [Event]. If you're going and want meetings on the calendar before you arrive, I can share the 15 prospects we found in 20 minutes. After [date], we won't have time to deliver."*
+
+**Hard deadline:** Stop outreach 3 weeks before the event. Less than 3 weeks = not enough time to deliver 15 confirmed meetings.
+
+### Sales Process (Motion 2 — from first reply to deposit)
+
+```
+1. Reply received or meeting booked (Day 0)
+   → Respond within 2 hours (urgency is live)
+
+2. ICP alignment call (Day 1–3)
+   → 20 minutes: who is your ICP? What's the ideal meeting profile?
+   → At end of call: "I'll send the proposal now — can we close this today?"
+
+3. Proposal sent (same day as call, within 1 hour)
+   → One-page: what we do, your ICP criteria, number of meetings, price ($1,500 / 15 meetings), timeline
+   → Include: "Pay only for confirmed meetings that actually happen"
+
+4. YES decision (same day or next day)
+   → For <50 employee companies: often verbal YES on the call itself
+   → For 50–200 employee companies: may need 24–48 hours for internal sign-off
+
+5. Contract + 50% deposit invoice sent (same hour as YES)
+   → Never wait. Send immediately. Every hour of delay = more chances for doubt.
+
+6. ICP finalization (Days 1–5 after deposit)
+   → Short email/form: confirm the exact criteria we're matching against
+
+7. Delivery: confirmed meetings booked (Days 5–12 before event)
+
+8. Final payment: on or after event day
+```
+
+**Critical: Speed is the product.** The fastest deals (Mirego, Cyberimpact, Digital Revamp) all closed within 1 day because BETA Labs matched the sponsor's urgency. Never let a proposal sit overnight without a follow-up ping.
+
+### Urgency Anchors by Stage
+
+| If the prospect says... | Response |
+|---|---|
+| "We need to think about it" | "The event is in [X] weeks. We need 10 business days to deliver 15 meetings — so if you want to move forward, the window closes [specific date]. Happy to hold a slot until then." |
+| "Can we wait until next event?" | "Absolutely — which event are you next signed up for? I'll reach out 6 weeks before and we can plan from there." (flag for next-event follow-up) |
+| "This is too expensive" | "The package is $1,500 for 15 confirmed meetings — $100/meeting. A single qualified deal from those meetings is worth [10x–67x] that. And if the meetings don't happen, you don't pay for them." |
+| "The organizer's app already does this" | "Their app matches on attendee tags — basically Excel lookups. We enrich the list with external data to find actual purchase intent, then personally confirm each meeting. The output is different: a confirmed meeting on your calendar, not a suggestion in an app." |
+
+### Motion 2 KPIs
+
+| Metric | Target | Source |
+|---|---|---|
+| Organizer-introduced sponsors contacted per event | All sponsors on organizer email list | CRM |
+| Conversion rate: intro email → sponsor package | 5–15% per event | CRM |
+| Average days: first contact → deposit | <5 (organizer-introduced), <10 (direct outbound) | CRM |
+| Direct outbound sponsors contacted per month | 20–40 (outside organizer activation windows) | CRM |
+| Average deal value | ≥$1,500 | CRM |
+| Repeat sponsor rate (same company, different event) | Track per company | CRM — Cyberimpact is the first data point |
+| Monthly revenue from sponsor packages | Track against Event Catalogue size | Finance |
+
+---
+
+## The Integrated Execution Calendar
+
+### Always Running (Motion 1)
+| Activity | Frequency |
+|---|---|
+| Identify 3–5 new event prospects | Weekly |
+| Qualify event prospects (website check + scoring) | Weekly |
+| Send Motion 1 outreach to scored prospects | 2–3x per week |
+| Follow up on pending organizer conversations | Weekly |
+| Onboard newly signed organizer partners | As needed |
+
+### Event-Triggered (Motion 2)
+
+The Motion 2 calendar is driven by the Event Catalogue. For each signed event partner:
+
+| Timing | Action |
+|---|---|
+| T-10 weeks | Confirm event date + sponsor list access with organizer |
+| T-8 weeks | Request sponsor list from organizer OR map public exhibitor page |
+| T-8 weeks | Score sponsor list → identify Tier 1/2 targets |
+| T-7 weeks | Begin direct outbound to Tier 1 prospects (parallel to organizer track) |
+| T-6 weeks | Organizer sends intro email to full sponsor list |
+| T-6 weeks | BETA Labs ready to respond within 2 hours of any inbound |
+| T-5 to T-4 weeks | ICP alignment calls, close Tier 1 sponsors |
+| T-4 to T-3 weeks | Final follow-ups, close Tier 2 sponsors |
+| T-3 weeks | **Hard cutoff** — no new sponsor onboarding after this point |
+| T-2 to T-1 weeks | Deliver confirmed meetings to all active packages |
+| Event day | Support sponsors, track meeting outcomes |
+| T+1 week | Collect sponsor feedback, build case study, invoice final payment |
+| T+2 weeks | Re-engage sponsor for next event in catalogue |
+
+### Current Event Windows (March 2026)
+
+| Event | Date | T-8 weeks | T-6 weeks | Outreach window |
+|---|---|---|---|---|
+| DigiMarCon Ontario | Apr 15–16 | **MISSED** | **MISSED** | Too late for organizer partnership. Use exhibitor list for cold outbound on upcoming events. |
+| RevStar Summit | June 3 | Apr 8 | Apr 22 | **Motion 1 outreach NOW** (partner sign-up) → Motion 2 begins ~Apr 8 |
+| ALL IN 2026 | Sept 16–17 | July 22 | Aug 5 | Motion 1 renewal NOW → Motion 2 begins July 22 |
+| Elevate Festival | Sept 22–24 | July 28 | Aug 11 | Motion 1 outreach now → Motion 2 begins July 28 |
+| SaaS North | Nov 2026 | Sept 2026 | — | Motion 1 outreach Q2 → Motion 2 begins Sept |
+
+---
+
+## Clay Pipeline Design
+
+### Table 1 — Event Prospects (Motion 1)
+
+**Purpose:** Track all candidate events for organizer partnership outreach.
+
+| Column | Source | Notes |
+|---|---|---|
+| event_name | Manual / Eventbrite | |
+| event_date | Event website | |
+| city, province | Event website | |
+| attendee_count | Website / press | |
+| vertical | Manual | B2B SaaS / MarTech / Tech / Mixed |
+| sponsor_program_exists | Website check | Y/N |
+| estimated_sponsor_count | Website / manual count | |
+| organizer_company | Website | |
+| organizer_type | Manual | Indie / VC / Non-profit / Vendor |
+| contact_name | LinkedIn search | |
+| contact_title | LinkedIn | |
+| contact_linkedin | LinkedIn | |
+| contact_email | Hunter.io / Apollo | |
+| existing_event_app | Website / App store | Grip / Swapcard / EventMobi / None |
+| existing_relationship | Manual | BETA Labs contact / Cold |
+| fit_score | Scoring rubric | /13 |
+| outreach_status | CRM | Not contacted / Contacted / In conversation / Signed / Declined |
+
+### Table 2 — Sponsor Prospects (Motion 2)
+
+**Purpose:** Track all companies exhibiting at upcoming events — both organizer-introduced and direct outbound.
+
+| Column | Source | Notes |
+|---|---|---|
+| company_name | Event website / LinkedIn | |
+| headcount | LinkedIn | |
+| industry | LinkedIn | B2B SaaS / MarTech / Marketing services / etc. |
+| event_name | Event prospect table | |
+| event_date | Event prospect table | |
+| days_to_event | Calculated | Auto-flag if <14 days (too late) |
+| sponsor_tier | Event website | Platinum / Gold / Silver |
+| buyer_name | LinkedIn search | |
+| buyer_title | LinkedIn | GM / CEO / VP Marketing / BDM |
+| buyer_linkedin | LinkedIn | |
+| buyer_email | Hunter.io / Apollo | |
+| source | Manual | Organizer-introduced / Direct outbound / Walk the Floor |
+| past_events_sponsored | LinkedIn / manual | Signal for repeat behavior |
+| tier_score | Scoring rubric | /13 |
+| outreach_status | CRM | Not contacted / Contacted / Proposal sent / Closed / Lost |
+| deal_value | CRM | $750 / $1,500 / $4,000 |
+| close_date | CRM | |
+
+---
+
+## Prioritized Actions (Next 30 Days)
+
+| Priority | Action | Motion | Owner | Deadline |
+|---|---|---|---|---|
+| 🔴 1 | Send ALL IN 2026 renewal email (Candidate 1 PVP) | Motion 1 | Elizabeth | Mar 18 |
+| 🔴 2 | Find RevStar contact (Vasco/Boreal GP) → send Candidate 2 PVP | Motion 1 | Elizabeth | Mar 19 |
+| 🔴 3 | Get DigiMarCon Ontario exhibitor list → score Tier 1 sponsors → outbound | Motion 2 | Elizabeth | Mar 20 (too late for event partnership, but viable for direct sponsor outbound pointing at future events) |
+| 🟠 4 | Find Elevate Festival partnerships contact → send Motion 1 outreach | Motion 1 | Elizabeth | Mar 25 |
+| 🟠 5 | Build Clay Table 1 for 10 additional event prospects | Motion 1 | Elizabeth | Mar 31 |
+| 🟡 6 | Find SaaS North founder (Mark MacLeod) → send Motion 1 outreach | Motion 1 | Elizabeth | Apr 7 |
+| 🟡 7 | Map RevStar 2026 exhibitor list (once published) → score sponsors | Motion 2 | Elizabeth | Apr 8 (T-8 weeks) |

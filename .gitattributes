@@ -1,0 +1,3 @@
+# Preserve imported bytes and formatting, including original CRLF and spaces.
+sources/originals/** -text -whitespace
+sources/text/** -whitespace

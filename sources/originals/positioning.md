@@ -1,0 +1,193 @@
+# Positioning — BETA Labs
+# SOURCE OF TRUTH. Downstream skills and artifacts cite this file. Do not re-invent framing elsewhere.
+# Decided by: Bruno Marchand · 2026-08-05 · Status: **Provisional**
+# Supersedes: the implicit positioning in outputs/betalabs-master-context.md (Mar 2026), which describes a product that books meetings. It does not.
+# To reach Locked: Elizabeth signs off on the anchor, and the "AI-driven" claim is resolved (see Open Decisions).
+
+---
+
+## The Anchor
+
+**The pre-event targeting layer for B2B events.**
+
+This frame was chosen because it is the only one the paying customer already understands, and because the live site is already written in it — "We Are a Precision Layer, Not a Volume Machine." Nothing needs educating.
+
+The two rejected anchors failed for opposite reasons. *Sponsor ROI infrastructure* moves the anchor onto the organizer, who does not pay, on proof that is currently one renewal and one quote, and requires teaching organizers that sponsor ROI is their problem — which the field record says many of them do not accept. *Your buyer list for this event* is instantly legible but commoditises the one asset that is genuinely hard to copy: a list is worth less than the intelligence applied to it, and "it's just a list" is an objection with no good answer.
+
+---
+
+## Core Alternative
+
+**The sponsor's own team, doing it themselves or not at all.**
+
+Not Vendelux. Vendelux appears in no lost deal on record. It is the threat to the future; this is the loss of today.
+
+**What it's good at.** Free, fully controlled, and the rep owns the relationship end to end. Sometimes the sponsor can even obtain the raw attendee list directly — Cyberimpact did exactly that.
+
+**Where it breaks.** The raw list is a name, a company, a title. Enriching three thousand records against a precise ICP in the fortnight before an event is not work a 20–200 person company has spare capacity for. So it does not happen, or it happens on the forty names someone already recognises — which is the same forty they would have found on the floor anyway.
+
+**What the buyer says.** *"It's good, but I'm not sure what this does that my team couldn't have done."* — Cyberimpact, post-event debrief, May 2026. This sentence is the positioning problem in one line, and every core block below is built to answer it.
+
+---
+
+## Logic Chain
+
+Own team / event-app industry tags / Vendelux's predictive database
+→ **the organizer's actual list under agreement · four-dimension enrichment applied to it · priced per match delivered · the relationship stays with the sponsor**
+→ the sponsor walks in knowing exactly who to open and why, and pays only for the matches that actually exist
+→ high-ACV B2B services and SaaS, 20–200 employees, where one closed deal pays for the event; GM, VP Marketing, BDM or CEO with direct budget authority
+→ **the pre-event targeting layer**
+
+---
+
+## Differentiators (ranked)
+
+| # | Differentiator | Value it creates | Who cares | Evidence |
+|---|---|---|---|---|
+| 1 | The list is the real one, obtained under an organizer agreement — not predictive, not scraped | The shortlist describes people who are actually registered, so nothing is wasted on a guess | Sponsors at cross-industry events where the buyer is genuinely hard to find; anyone who has received a thin list from an organizer | 🟢 11 clients across 6 events · CQCD, Groupe Contex, ALL IN agreements |
+| 2 | Four-dimension enrichment applied to that list — firmographic, role, tech stack, buying signal | Turns three thousand names into two dozen, with a reason attached to each | High-ACV services and SaaS, 20–200 employees, where one deal pays for the event | 🟢 Delivered on every engagement · EY debrief on alignment (see register before publishing) |
+| 3 | Priced per match delivered — never a quota to fill | You are never sold fifteen matches at an event that only holds ten | Sponsors burned by a package that under-delivered; first-time sponsors who cannot justify a fixed spend | 🟢 Confirmed 2026-08-05 · EY pro-rate is the model working, not failing |
+| 4 | The relationship stays with the sponsor — a curated opening draft, sent by them | No third party inside the conversation with your prospect | Founder-led and relationship-driven sellers, services companies especially; anyone suspicious of automated outreach | 🟢 Confirmed 2026-08-05 · Axeptio asked for booking and was declined |
+
+Differentiator 4 was unavailable until 2026-08-05. The booking claim concealed it, and it is the cleanest separation from Vendelux, which does automate outreach and calendar booking.
+
+---
+
+## Positioning Statements
+
+**One-liner:**
+BETA Labs turns an event's attendee list into the short list of buyers worth your time.
+
+**Short (≤40 words):**
+Your event's attendee list holds a few dozen real buyers. BETA Labs gets that list under agreement with the organizer, scores every record against your ICP on four dimensions, and hands you the shortlist with an opening draft for each.
+
+**Long (≤90 words):**
+A three-thousand-person event holds maybe two dozen people who can actually buy from you. Finding them means enriching the whole list against a precise profile, and no sales team has that fortnight free. BETA Labs works from the organizer's real attendee list under agreement, scores every record on firmographics, role, tech stack and buying signal, and delivers the shortlist a week out — each name carrying the signal that qualified it and a curated opening draft. You send it. You keep the relationship. You pay per match delivered, so you are never sold a quota.
+
+---
+
+## Core Blocks
+
+Copy these verbatim rather than rewriting.
+
+**Problem block:**
+Your team paid for the booth, the tickets, the travel and the days away from the office. Then the doors open and nobody knows who to look for. A three-thousand-person event holds a few dozen people who can actually buy from you, and the odds of finding them by walking the floor are close to nil.
+
+**Mechanism block:**
+We work from the organizer's real attendee list, under agreement. Every record is enriched and scored on four dimensions — firmographics, role, tech stack, and buying signal — and each dimension cuts the pool. What comes out is a shortlist of matches, each carrying the signal that qualified it and a curated opening draft. It arrives a week before the doors open.
+
+**Proof block:**
+Eleven paying clients across six events, including HOP! Le Sommet du commerce de détail, ALL IN, Grand Batimatech and Social Next. One client has already returned for a second event. The organizer of HOP! The Retail Summit put it on the record: the smart targeting transformed the exhibitor experience, generating engagement before the event and strategic connections during it.
+
+**Objection block — "you're a small company":**
+We are, and that is why the deliverable is narrow and the price is per unit. There is no platform to integrate, no procurement, no annual commitment. You share nothing but an ICP, and you pay for the matches we actually find. If an event only holds ten people who fit you, we tell you it holds ten and charge for ten.
+
+**Objection block — "what does this do that my team couldn't?" (top objection):**
+Your team could do it. The question is whether they will, in the two weeks before the event, across three thousand records, against your real buying criteria rather than the forty logos they already recognise. That is the work, and it is the half that never gets done. We are not replacing your rep — we are handing them the twenty-four names and the reason each one is on the list. They still send the note and they still own the relationship.
+
+---
+
+## Website Hero (canonical)
+
+### Sponsor page
+
+**Eyebrow:** PRECISION INTELLIGENCE FOR YOUR NEXT B2B EVENT
+**H1:** Stop Leaving Your Event ROI to Chance.
+**Subhead:** Your team invested in the booth, tickets, travel and time away from work. But once the event starts, most teams are still guessing. BETA Labs gives you a clear target list before the event begins.
+
+Currently live and compliant. No booking claim, no unverified figure.
+
+### Organizer page
+
+**Eyebrow:** TARGETED CONNECTIONS FOR B2B EVENTS
+**H1:** Give Your Exhibitors a Reason to Come Back.
+**Subhead:** BETA Labs turns your attendee list into a shortlist of real buyers for each partner — under contract, and at no cost to your organization.
+
+**This replaces the live H1** "Qualified Meetings That Make Your Exhibitors Come Back", which claims a booking the product does not perform. The retention argument survives intact because it is true and it is the organizer's actual driver; only the verb changes.
+
+**Rule:** any hero variant must trace back to one of these two. Log approved variants below.
+
+| Approved variant | Where | Date |
+|---|---|---|
+| *(none yet)* | | |
+
+---
+
+## Vocabulary Lock
+
+| Use | Never use | Why |
+|---|---|---|
+| match | meeting, lead | The unit is a match delivered. "Meeting" claims a booking BETA Labs does not perform; "lead" contradicts "not a volume machine" |
+| shortlist | list (alone) | A list is a commodity; the shortlist is the output of the cut |
+| targeting, precision | matchmaking | Decided by Bruno. "Matchmaking" also implies BETA Labs brokers the encounter |
+| opening draft | outreach campaign, we reach out, we contact | BETA Labs drafts; the sponsor sends |
+| the organizer's attendee list, under agreement | our database, our data | There is no database. That is Vendelux's model and claiming it invites the comparison you win by avoiding |
+| enriched and scored | AI-driven, AI-powered | Unresolved whether the pipeline is AI or AI-assisted manual. See Open Decisions |
+| 15–25 matches | 15 matches, 20–50 leads | Per-match pricing means the number varies by event. A fixed figure recreates the quota problem |
+| prospects | leads | Consistent with the precision layer |
+| sponsor, exhibitor, partner | client (when meaning the sponsor) | "Client" is ambiguous between organizer and sponsor |
+
+---
+
+## Claims Register
+
+| Claim | Status | Owner | Needed for | Cleared on |
+|---|---|---|---|---|
+| 62% exhibitor retention across trade shows, i.e. 38% churn | 🟢 Cleared, cite CEIR | — | Organizer problem framing | 2026-08-05 |
+| Eleven paying clients across six events | 🟢 Cleared | — | Proof block | 2026-08-05 (CRM) |
+| One repeat client | 🟢 Cleared | — | Proof block | 2026-08-05 (Cyberimpact → Social Next Toronto) |
+| HOP! organizer quote | 🟢 Cleared | — | Proof block | Already published on the live site by the client |
+| "30% of first-time attendees return" | 🔴 **Rejected** | — | — | Never. Traced to a competitor's marketing; no primary source found 2026-08-05 |
+| Any booking or scheduling of meetings | 🔴 **Prohibited** | — | — | Contradicted by the product. Confirmed by Bruno 2026-08-05 |
+| "No results = no charge · zero financial risk" | 🔴 **Prohibited** | — | — | Not deliverable under per-match pricing |
+| "AI-driven" / "AI-powered" | 🟡 Claimed | Elizabeth | Any use of "AI" in published copy | Pending — master-context lists "true AI platform vs AI-assisted manual" as an open question |
+| MeePayGo: 45% of contacts reached booked a meeting | 🟡 Claimed | Elizabeth | Case study | Pending — single client, and "reached" does not say by whom |
+| MeePayGo: 80% represent a concrete opportunity | 🟡 Claimed | Elizabeth | Case study | Pending — single client, self-reported |
+| 35–45% of recommended matches convert to conversations | 🟡 Claimed | Elizabeth | Proof block | Pending — Elizabeth questioned its solidity herself, May 2026 |
+| 100% ICP alignment | 🟡 Claimed | Elizabeth | Proof block | Pending — qualified by "among those surveyed" |
+| EY verbatim on alignment | 🟡 Claimed | Elizabeth | Proof block | Pending — needs EY's permission to publish attributed, or use unattributed |
+
+---
+
+## Open Decisions
+
+| Question | Owner | Blocks what | Due |
+|---|---|---|---|
+| Is the enrichment pipeline genuinely AI, or AI-assisted manual? | Elizabeth | Every use of "AI" in published copy, and the defensibility argument against Vendelux | Before the next site edit |
+| Does the fixed 15-match package stay, or does pricing become explicitly per-match? | Elizabeth | Pricing page, every proposal, the "never a quota" differentiator | — |
+| Sign-off on this anchor | Elizabeth | Moving this file from Provisional to Locked | — |
+| Can the EY quote be published with attribution? | Elizabeth | Proof block | — |
+| New product name — Sherpa abandoned 2026-05-26 | Elizabeth | Domain purchase, brand kit, any logo work | — |
+| Does the opening draft stay a BETA Labs deliverable long term? | Elizabeth | Differentiator 4, and the final stage of the How It Works panel | It consumed 80% of operational resources per the May 2026 review |
+
+---
+
+## Artifacts to Reconcile
+
+Named, not edited. Sequence this work yourself.
+
+| Artifact | What contradicts this file |
+|---|---|
+| `outputs/betalabs-master-context.md` | Lines 25, 48, 49 describe booking meetings. Line 57 says "$100/qualified meeting" and "pay only for confirmed meetings held" while line 61 says matches. Line 312 says "pre-book 15 confirmed meetings". Lines 327–328 promise "no results = no charge" and "personally confirmed with each attendee". The competitive landscape omits Vendelux entirely. |
+| Live site — Home, "Conversation Ready" card | "walk in informed, with meetings already booked" |
+| Live site — Home, How It Works step 3 | "20–50 high-value leads" — wrong figure and wrong noun. Corrected in the Figma v2 page, not yet live |
+| Live site — Organizer page, hero H1 | "Qualified Meetings That Make Your Exhibitors Come Back" — replace with the canonical H1 above |
+| Live site — Organizer page, How It Works step 3 | "so they arrive with meetings booked" |
+| Figma — ORG 01 booth card | "18 attendees routed · 6 meetings booked" |
+| `outputs/betalabs-one-pager-event-organizer-v2.docx` | Carries the rejected 30% figure and booking language throughout |
+| Figma — brand guide, panel 07 Claims discipline | Drafted before this register existed; reconcile to match |
+| `client-profile.md` | Verify the competitors list includes Vendelux |
+
+---
+
+## Sources
+
+| Input | Read | Note |
+|---|---|---|
+| `outputs/betalabs-master-context.md` | 2026-08-05 | Prior source of truth. Internally contradictory on the billing unit |
+| `memory/betalabs.md` | 2026-08-05 | Booking description corrected in place the same day |
+| Live site, both pages | 2026-08-05 | Read in full via browser |
+| Call transcript, 2026-05-12 | In session | Vendelux deep dive, competitive positioning |
+| Call transcript, 2026-05-26 | In session | Precision as the pillar, outreach cost, Sherpa abandoned, "on outreach pas on their behalf" |
+| CEIR exhibitor retention benchmark | 2026-08-05 | Web research. 62% retention, industry-wide |
+| Bruno Marchand, direct | 2026-08-05 | No booking; $100 per match delivered; outreach is a curated draft |

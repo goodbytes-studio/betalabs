@@ -1,0 +1,186 @@
+# BETA Labs — Event Scoring & Organizer Pitch Strategy
+**Created:** 2026-03-17
+**Source data:** `inputs/events_client_final.csv` (16 events), `betalabs-master-context.md`
+
+---
+
+## Scoring Framework
+
+Each event scored on 7 criteria (13 points max):
+
+| Criterion | Max | What earns full score |
+|---|---|---|
+| **Sponsor ecosystem** | 3 | Sponsors are B2B SaaS/MarTech companies, pay to exhibit, motivated by pipeline |
+| **Attendee volume** | 2 | 5,000+ = 2pts; 1,000–4,999 = 1pt |
+| **Vertical alignment** | 2 | B2B SaaS/MarTech/Tech = 2pts; mixed = 1pt |
+| **Timeline** | 2 | 6–16 weeks to event = 2pts (prime window); <6 weeks = 0pts; >4 months = 1pt |
+| **Organizer type** | 2 | Indie/VC/association (nimble, fast decisions) = 2pts; structured org = 1pt; vendor-run = 0pts |
+| **Existing relationship** | 1 | Proven partnership = 1pt; cold = 0pts |
+| **Geography** | 1 | Quebec or Ontario = 1pt |
+
+> **Note on timeline:** Prime organizer outreach window is 6–16 weeks before the event — enough time to sign, activate the attendee list, and deliver. Earlier than 6 months is pipeline (low urgency), tighter than 6 weeks is too late to activate.
+
+---
+
+## Scores — All Evaluated Events
+
+| # | Event | Date | Sponsor ecosystem | Attendee vol. | Vertical | Timeline | Org. type | Relationship | Geography | **Total /13** | **Tier** |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 4 | **ALL IN 2026** | Sept 16–17 | 3 | 2 | 2 | 1 | 1 | **1** | 1 | **11** | 🔴 Priority 1 |
+| 15 | **RevStar Summit** | June 3 | 3 | 1 | 2 | **2** | **2** | 0 | 1 | **11** | 🔴 Priority 1 |
+| 3 | **Elevate Festival** | Sept 22–24 | 2 | **2** | 2 | 1 | 1 | 0 | 1 | **9** | 🟠 Priority 2 |
+| 11 | **SaaS North** | Nov 2026 | **3** | 1 | **2** | 1 | **2** | 0 | 1 | **10** | 🟠 Priority 2 |
+| 5 | C2 Montréal | May 2026 TBA | 1 | 2 | 1 | 2 | 1 | 0 | 1 | **8** | 🟡 Qualify |
+| 1 | Collision | May 11–13 | 1 | 2 | 2 | 0 | 1 | 0 | 1 | **7** | 🟡 Sponsor targets only |
+| 14 | DigiMarCon Ontario | Apr 15–16 | 2 | 1 | 2 | 0 | 1 | 0 | 1 | **7** | 🟡 Sponsor targets only |
+| 6 | Salesforce World Tour | 2026 TBA | 0 | 2 | 2 | — | 0 | 0 | 1 | **5** | ⚫ No fit (vendor-run) |
+| 7 | AWS Summit | 2026 TBA | 0 | 2 | 2 | — | 0 | 0 | 1 | **5** | ⚫ No fit (vendor-run) |
+| 10 | Shopify dotdev | July 21–22 | 0 | 1 | 1 | 1 | 0 | 0 | 1 | **4** | ⚫ No fit (vendor-run) |
+| 9 | MIGS | Nov 2026 | 1 | 1 | 1 | 1 | 1 | 0 | 1 | **6** | ⚫ Wrong vertical |
+| 2 | Toronto Tech Week | June 2026 | 1 | 2 | 2 | 1 | 0 | 0 | 1 | **7** | ⚫ No single organizer |
+| 16 | FounderFuel Demo Day | July 7 | 0 | 1 | 2 | 1 | 1 | 0 | 1 | **6** | ⚫ Wrong format |
+| 8 | Dx3 Canada | Feb 23–24 | — | — | — | — | — | — | — | **PAST** | Skip |
+| 13 | Mesh Conference | Apr 29–30, 2025 | — | — | — | — | — | — | — | **PAST** | Skip |
+| 12 | DigiMarCon Montréal | Apr 15–16, 2027 | 2 | 1 | 2 | 0 | 1 | 0 | 1 | **7** | 🟡 Future pipeline (2027) |
+
+---
+
+## Priority 1 — Outreach This Week
+
+### 1. ALL IN 2026 ★ (Score: 11/13)
+**Sept 16–17 · Montréal · 7,500 attendees · Organized by Mila + Scale AI**
+
+**Why it's #1:** BETA Labs already ran this event in 2025 (Nexus was a client). This is not a cold call — it's a renewal conversation with proof.
+
+**Decision-maker:** Whoever managed the 2025 partnership at Mila / Scale AI. Find the Partnerships or Sponsorship Director. LinkedIn: search "Mila" + "partenariats" or "sponsorship" or "événements."
+
+**Opening angle — renewal + expansion:**
+> *"Nous avons travaillé ensemble pour ALL IN 2025 — [Nexus] a obtenu [X] rencontres qualifiées avant l'événement. Pour 2026, on aimerait vous proposer une structure plus formelle : on intègre l'offre de rencontres qualifiées directement dans vos packages Platinum, avec une mise de fonds zéro de votre côté. Ça augmente la valeur perçue de votre sponsoring et améliore la rétention de vos commanditaires."*
+
+**Key pitch assets:**
+- Proof: existing 2025 partnership → real result with Nexus
+- Zero-risk framing: no integration, no budget, ~15% revenue share
+- Retention argument: sponsors who get ROI renew; sponsors who don't, churn
+
+**Structuring the deal:**
+- Preferred: bundle into 1 or 2 sponsorship tiers (Platinum/Gold)
+- Alternative: email blast from organizer to sponsor list (validated model from HOP + Social Next)
+- Revenue share: ~15% on each $1,500 package sold
+- Negotiation note: Mila/Scale AI are research orgs — they may prefer a fixed fee vs. rev share. Offer both options.
+
+**Risks:**
+- Decision process at a non-profit may be slower than a commercial organizer
+- 2025 partnership may have been informal/pilot — formalize it properly this time
+- Scale AI is a federal-funded org — check if there are procurement constraints
+
+---
+
+### 2. RevStar Summit 2026 ★ (Score: 11/13)
+**June 3 · Toronto · 1,000 attendees · Organized by Vasco + Boreal Ventures (VCs)**
+
+**Why it's tied for #1:** 78 days out = the prime activation window. Pure B2B SaaS vertical. VC organizers understand ROI math, move fast, and don't have procurement departments.
+
+**The structural insight:** Vasco + Boreal Ventures run the summit AND have portfolio companies. Those portfolio companies are the natural sponsors. BETA Labs can pitch BOTH the event partnership AND a "portfolio benefit" — where the VC firms recommend BETA Labs to all portfolio companies that attend events, not just RevStar.
+
+**Decision-maker:** A Managing Partner or Operations Lead at Vasco or Boreal Ventures. These are small VC firms — the decision-maker is a GP or a Chief of Staff. LinkedIn search: Vasco Ventures + Boreal Ventures.
+
+**Opening angle — portfolio ROI + rev share:**
+> *"Your summit sponsors are early-stage B2B SaaS companies. They're paying $5K–$15K for a sponsorship package and measuring ROI by meetings generated. We pre-book 15 confirmed 1:1 meetings between each sponsor and their exact ICP — before the event starts. You add a '$1,500 Qualified Meetings' option to your Platinum tier. Zero setup, zero cost — we do the work, you earn ~15% of every package sold.*
+> *Beyond RevStar, if you'd like, we could also make this available to your broader portfolio for any event they attend this year."*
+
+**Key pitch assets:**
+- June 3 urgency = natural close date in 3 weeks from a "yes"
+- VC audience: lead with ROI math, not emotional benefits
+- Portfolio benefit angle: turns one partnership into recurring pipeline across all their investees
+
+**Structuring the deal:**
+- Preferred: bundle into top sponsor tier + email blast to sponsor list
+- Portfolio program: separate conversation post-RevStar, but plant the seed now
+- Flag: at 1,000 attendees, the attendee list is smaller → set expectation that matching pool may yield 10–12 matches per sponsor instead of 15
+
+---
+
+## Priority 2 — Begin Conversations Now (4–8 Month Horizon)
+
+### 3. Elevate Festival (Score: 9/13)
+**Sept 22–24 · Toronto · 10,000 attendees · Organized by Elevate Toronto (non-profit)**
+
+**Why it matters:** Largest independent Canadian tech conference. A signed partnership here gives BETA Labs a flagship name in the catalogue. Sponsor pool is large but mixed — some brand-visibility sponsors (agencies, enterprise) and some pipeline-focused sponsors (B2B SaaS, MarTech). Need to qualify which tier sponsors are most receptive.
+
+**Decision-maker:** Director of Partnerships or VP Sponsorship at Elevate Toronto. LinkedIn: search "Elevate" + "partnerships" or "sponsorship."
+
+**Opening angle — sponsor retention argument:**
+> *"Elevate's sponsors are investing $15K–$50K for visibility. The problem: they can't attribute pipeline to the event. By the time they do their post-event review, the ROI is unclear — and some don't renew. We solve that by delivering 15 pre-qualified, confirmed meetings per sponsor before the event. You add it as a premium service in your Platinum tier. Your sponsors leave with pipeline they can track, they renew next year, and you earn ~15% of every package sold."*
+
+**Key considerations:**
+- Elevate is a non-profit (registered charity). Decision process may be slower + committee-driven.
+- Pitch this as a revenue-positive, zero-risk add-on — no budget needed from their side.
+- Proof to bring: ALL IN 2025 case (similar scale AI/tech conference)
+- If Elevate has a 2025 post-event sponsor survey showing dissatisfaction with pipeline, that's the opening.
+
+---
+
+### 4. SaaS North (Score: 10/13)
+**November 2026 · Ottawa · 2,000 attendees · Organized by SaaS North (independent event company)**
+
+**Why it matters:** Canada's purest B2B SaaS conference. Sponsor ecosystem is 100% pipeline-motivated — these are SaaS companies buying access to SaaS buyers and operators. No mismatch on intent.
+
+**Decision-maker:** Founder/CEO of SaaS North (Mark MacLeod founded the event — search LinkedIn). Small team = direct access.
+
+**Opening angle — "we are SaaS, you are SaaS":**
+> *"Your sponsors are SaaS leaders who think in pipeline, CAC, and LTV. They're not doing SaaS North for brand visibility — they're doing it for meetings and deals. We deliver exactly that: 15 pre-qualified 1:1 meetings per sponsor, confirmed before the conference starts. Add it as the signature benefit of your top sponsor tier. We take the execution, you earn a revenue share."*
+
+**Key considerations:**
+- 8 months out = start the conversation, but don't expect urgency. The goal is to get a commitment in Q2 so they can build it into their 2026 sponsorship packages.
+- Ottawa geography is secondary for BETA Labs — pitch it as an Ontario expansion and a proof point for a national catalogue.
+- Ask for a referral to other events in their network if not closing immediately.
+
+---
+
+## Qualify Further
+
+### C2 Montréal (Score: 8/13)
+**May 2026 TBA · Montréal · 6,500 attendees · Organized by C2 International**
+
+**Issue:** C2 is not a pure B2B tech conference — it's a creative/business/innovation hybrid. Sponsors include luxury brands, agencies, and corporate innovation labs. The pipeline-motivation among sponsors is less certain.
+
+**Qualifying question before pitching:** What % of C2 sponsors are B2B SaaS or tech services companies with explicit pipeline goals? If >30%, pitch is viable. If sponsors are primarily brand/visibility buyers, BETA Labs' model won't resonate.
+
+**If qualifying:** Lead with the ROI/sponsor retention angle. Frame as "for your tech and B2B sponsors specifically — the ones who need to justify their investment in commercial pipeline, not brand metrics."
+
+---
+
+## Sponsor Targets Only (Not Organizer Partners)
+
+These events are either vendor-run (no organizer to partner with) or the timing is too late for organizer activation. Use their **exhibitor lists** as a source of sponsor prospects to pitch on other catalogue events.
+
+| Event | Date | Action |
+|---|---|---|
+| **DigiMarCon Ontario** | Apr 15–16 (29 days) | Find exhibitor/sponsor list → identify B2B SaaS/MarTech companies (20–200 employees) → pitch them for ALL IN, Elevate, or Social Next as upcoming events in the BETA Labs catalogue |
+| **Collision Conference** | May 11–13 | Same — find sponsor list → filter for 20–200 employee B2B SaaS → pitch on upcoming catalogue events |
+| Salesforce World Tour | TBA | Exhibitor list → SaaS companies → pitch on upcoming events |
+| AWS Summit | TBA | Exhibitor list → SaaS companies → pitch on upcoming events |
+
+---
+
+## Action Calendar
+
+| When | Action |
+|---|---|
+| **This week (Mar 17–21)** | Find ALL IN 2026 contact at Mila/Scale AI. Find RevStar contact at Vasco/Boreal. Send opening messages. |
+| **Mar 21–28** | Follow up ALL IN + RevStar. Find Elevate Partnerships contact. Begin Elevate outreach. |
+| **Apr 1–15** | Download DigiMarCon Ontario + Collision exhibitor lists → build sponsor prospect pipeline. Find SaaS North contact — queue for Q2. |
+| **Apr 15–30** | DigiMarCon Ontario exhibitor list becomes live source — begin sponsor outreach for upcoming catalogue events. |
+| **Q2 (May–June)** | SaaS North organizer outreach. C2 qualifier call if RevStar confirms. |
+
+---
+
+## Notes for PVP Builder
+
+When running `/pvp-builder` for organizer outreach, key proof points to include:
+- ALL IN 2025 precedent (existing partnership — use as social proof for other events)
+- Social Next (Ottawa + Toronto) — two-city model, repeat client (Cyberimpact)
+- Performance-based pricing = zero financial risk for the organizer
+- ~15% revenue share = new revenue line with zero budget required
+
+The strongest opener for any cold organizer pitch: **"We already do this with [similar event]."** Name-drop ALL IN for tech/AI events; Social Next for marketing events; Grand Batimatech for sector-specific summits.

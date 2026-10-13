@@ -1,0 +1,204 @@
+--------------------------------------------------------------------------------
+BETA Labs : Rapport d'Intelligence Go-To-Market
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+1. Synthèse Opérationnelle
+--------------------------------------------------------------------------------
+BETA Labs est une startup montréalaise en phase d'amorçage, soutenue par le Centech, qui développe un outil de réseautage et de planification de réunions événementielles basé sur l'IA. Leur positionnement unique cible directement les entreprises participantes et les sponsors, plutôt que les organisateurs d'événements. L'objectif du produit est de permettre à ces entreprises de planifier des réunions qualifiées en amont des conférences, optimisant ainsi le retour sur investissement de leur participation. La fondatrice identifiée est Elizabeth Tremblay. L'entreprise est actuellement en phase de pré-revenus ou de revenus très précoces.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+2. Analyse du Marché et Signaux Clés
+--------------------------------------------------------------------------------
+La stratégie de BETA Labs se différencie fondamentalement de celle des acteurs établis comme Grip, Swapcard ou Brella, qui vendent leurs solutions aux organisateurs. En s'adressant directement aux entreprises participantes, BETA Labs adopte une approche Go-To-Market (GTM) structurellement différente, axée sur la douleur et le ROI des sponsors.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Le moment est particulièrement opportun. Les budgets marketing ont diminué, passant de 9,1 % à 7,7 % des revenus des entreprises, ce qui impose une justification stricte de chaque dollar dépensé en événementiel. De plus, le marché du matchmaking événementiel par IA connaît une croissance de 15 % par an, indiquant une recherche active de solutions par les acheteurs. L'insatisfaction à l'égard des outils existants, comme en témoignent la note de 2,6/5 de Grip sur l'App Store et les critiques des utilisateurs de Swapcard, crée une opportunité claire pour un nouvel entrant.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Segments de Clientèle Cibles
+--------------------------------------------------------------------------------
+Les segments de marché suivants représentent des cibles prioritaires en raison de leurs points de douleur manifestes :
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Segment
+--------------------------------------------------------------------------------
+Caractéristiques Clés
+--------------------------------------------------------------------------------
+SaaS B2B
+--------------------------------------------------------------------------------
+Dépenses de 50k$ à 500k$ par an en sponsoring d'événements, sans pipeline de réunions pré-événement structuré.
+--------------------------------------------------------------------------------
+Scale-ups Canadiennes
+--------------------------------------------------------------------------------
+Entreprises en Série A à C participant à 8-15 conférences par an, utilisant des tableurs pour le suivi du pipeline.
+--------------------------------------------------------------------------------
+Services Professionnels
+--------------------------------------------------------------------------------
+Cabinets (juridiques, conseil, comptabilité) envoyant 3-10 employés à des conférences sans système de pré-qualification.
+--------------------------------------------------------------------------------
+Acteurs de l'Écosystème Startup
+--------------------------------------------------------------------------------
+VCs et accélérateurs participant à des événements denses où le ratio signal/bruit est faible (ex: Startupfest, ALL IN).
+--------------------------------------------------------------------------------
+Sponsors d'Événements
+--------------------------------------------------------------------------------
+Entreprises payant de 25k$ à 200k$+ pour un stand et mesurant le succès principalement par le nombre de badges scannés.
+--------------------------------------------------------------------------------
+Indicateurs de Performance pour les Acheteurs
+--------------------------------------------------------------------------------
+Le produit de BETA Labs doit répondre directement aux indicateurs de performance suivants, qui sont cruciaux pour leurs clients cibles :
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Indicateur
+--------------------------------------------------------------------------------
+Description
+--------------------------------------------------------------------------------
+Pipeline par Événement
+--------------------------------------------------------------------------------
+Valeur monétaire des opportunités qualifiées générées par événement.
+--------------------------------------------------------------------------------
+Coût par Réunion Qualifiée
+--------------------------------------------------------------------------------
+Dépense totale de l'événement divisée par le nombre de réunions pré-qualifiées tenues.
+--------------------------------------------------------------------------------
+Taux de Conversion Réunion-Opportunité
+--------------------------------------------------------------------------------
+Pourcentage de réunions pré-planifiées qui se transforment en pipeline actif dans les 90 jours.
+--------------------------------------------------------------------------------
+3. Renseignements sur l'Entreprise
+--------------------------------------------------------------------------------
+Les informations publiques sur BETA Labs sont limitées, ce qui est typique d'une entreprise en phase d'amorçage.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Signal
+--------------------------------------------------------------------------------
+Constat
+--------------------------------------------------------------------------------
+Stade
+--------------------------------------------------------------------------------
+Pré-revenus ou revenus très précoces ; fait partie de la cohorte du Centech, pas de financement public.
+--------------------------------------------------------------------------------
+Site Web
+--------------------------------------------------------------------------------
+Hébergé sur Wix, avec une localisation fr-ca et une version anglaise, indiquant une approche GTM axée sur le Québec.
+--------------------------------------------------------------------------------
+Équipe
+--------------------------------------------------------------------------------
+Seul nom confirmé : Elizabeth Tremblay ; probablement moins de 10 employés.
+--------------------------------------------------------------------------------
+Activité de la Fondatrice
+--------------------------------------------------------------------------------
+A pris la parole à Fuckup Nights Montréal (mars 2026) ; a participé à E-AI 2026 au Palais des congrès.
+--------------------------------------------------------------------------------
+Couverture Presse
+--------------------------------------------------------------------------------
+Aucune trouvée, ce qui confirme une phase de revenus de 0 à 1.
+--------------------------------------------------------------------------------
+Études de Cas
+--------------------------------------------------------------------------------
+Aucune, ce qui indique un besoin urgent de premiers clients de référence.
+--------------------------------------------------------------------------------
+Concurrents
+--------------------------------------------------------------------------------
+Grip (noté 2.6★), Swapcard, Brella, EventMobi  --  tous orientés vers les organisateurs.
+--------------------------------------------------------------------------------
+Inconnue Critique
+--------------------------------------------------------------------------------
+Le produit nécessite-t-il une intégration avec l'organisateur ou fonctionne-t-il de manière autonome ? (Question d'architecture fondamentale).
+--------------------------------------------------------------------------------
+4. Angles de Proposition de Valeur (PVP)
+--------------------------------------------------------------------------------
+Les angles suivants peuvent être utilisés pour commercialiser la solution de BETA Labs ou pour engager une conversation commerciale avec eux.
+--------------------------------------------------------------------------------
+
+  1 --------------------------------------------------------------------------------
+   L'Audit du Temps de Réseautage Perdu : Un calculateur d'auto-évaluation qui expose le coût réel par conversation non qualifiée lors d'événements. Cet outil rend visible le gaspillage implicite pour les directeurs marketing en se basant sur les dépenses totales, le personnel présent et le nombre de réunions tenues.
+  2 --------------------------------------------------------------------------------
+   L'Angle Mort des Applications d'Organisateurs : Une analyse démontrant pourquoi se fier uniquement aux applications fournies par les organisateurs (comme Grip ou Swapcard) désavantage systématiquement les sponsors. Ces applications sont optimisées pour les métriques des organisateurs, et non pour le pipeline des sponsors.
+  3 --------------------------------------------------------------------------------
+   Le Brief d'Intelligence sur le Calendrier Événementiel Québécois (Angle le plus fort à court terme) : Un guide présentant les 8 à 12 principaux événements B2B au Québec en 2026 (ALL IN, Startupfest, C2 Montréal, etc.), en identifiant les profils d'entreprises qui y obtiennent le meilleur retour sur investissement. Cet angle apporte une valeur immédiate avant même toute discussion commerciale.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+5. Séquence de Prospection Suggérée (pour vendre à BETA Labs)
+--------------------------------------------------------------------------------
+Jour
+--------------------------------------------------------------------------------
+Action
+--------------------------------------------------------------------------------
+1
+--------------------------------------------------------------------------------
+Connexion LinkedIn avec Elizabeth Tremblay en mentionnant sa participation à Fuckup Nights ou E-AI 2026.
+--------------------------------------------------------------------------------
+4
+--------------------------------------------------------------------------------
+Interagir sur un de ses posts pertinents (ROI événementiel, réseautage B2B) sans argumentaire de vente.
+--------------------------------------------------------------------------------
+7
+--------------------------------------------------------------------------------
+Envoyer le PVP 3 (Calendrier Événementiel Québécois) comme ressource gratuite, en demandant son avis, pas une réunion.
+--------------------------------------------------------------------------------
+12
+--------------------------------------------------------------------------------
+Partager le PVP 2 (L'Angle Mort des Applications d'Organisateurs) et poser une question sur leur stratégie GTM.
+--------------------------------------------------------------------------------
+18
+--------------------------------------------------------------------------------
+Envoyer le PVP 1 (Audit du Temps de Réseautage Perdu) en proposant un appel de diagnostic de 20 minutes.
+--------------------------------------------------------------------------------
+25
+--------------------------------------------------------------------------------
+Dernier message privé sur LinkedIn en partageant un guide sur le pipeline pré-événement, sans engagement.
+--------------------------------------------------------------------------------
+35+
+--------------------------------------------------------------------------------
+Maintenir une cadence trimestrielle liée aux jalons des événements ALL IN / Startupfest.
+--------------------------------------------------------------------------------
+6. Comité d'Achat et Gestion des Objections
+--------------------------------------------------------------------------------
+Profils du Comité d'Achat Cible
+--------------------------------------------------------------------------------
+Rôle
+--------------------------------------------------------------------------------
+Qui ?
+--------------------------------------------------------------------------------
+Acheteur Économique
+--------------------------------------------------------------------------------
+CMO / VP Marketing (ou Fondateur/CEO dans les entreprises de moins de 200 personnes).
+--------------------------------------------------------------------------------
+Champion
+--------------------------------------------------------------------------------
+Responsable du marketing terrain / Gestionnaire d'événements (celui qui ressent la douleur au quotidien).
+--------------------------------------------------------------------------------
+Gardien Technique
+--------------------------------------------------------------------------------
+RevOps / Sales Ops (responsable de l'intégration CRM et de la conformité à la Loi 25 du Québec).
+--------------------------------------------------------------------------------
+Objections Principales à Anticiper
+  oo --------------------------------------------------------------------------------
+   "L'organisateur nous fournit déjà une application de réseautage."
+     oo --------------------------------------------------------------------------------
+      Réponse : Recadrer avec l'angle mort des applications d'organisateurs (PVP 2), qui sont optimisées pour leurs propres métriques et non pour votre pipeline.
+  oo --------------------------------------------------------------------------------
+   "Nous n'avons pas la bande passante pour cela."
+     oo --------------------------------------------------------------------------------
+      Réponse : Positionner la solution comme un moyen de réduire l'effort pré-événementiel en automatisant la qualification, et non comme une tâche supplémentaire.
+  oo --------------------------------------------------------------------------------
+   "Qu'en est-il de la conformité à la Loi 25 du Québec ?"
+     oo --------------------------------------------------------------------------------
+      Réponse : Confirmer que la plateforme dispose d'une politique de confidentialité et de traitement des données écrite et conforme, ce qui est une exigence active au Québec.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+7. Évaluation et Prochaines Étapes
+--------------------------------------------------------------------------------
+Le niveau de confiance pour cette analyse est faible à moyen en raison du peu de données publiques disponibles. Les inconnues majeures incluent le modèle de tarification, la structure de l'équipe fondatrice, l'existence de clients payants et, surtout, si le produit est autonome ou nécessite une intégration avec les organisateurs. Il est recommandé de lancer une campagne d'enrichissement de données pour combler ces lacunes et affiner la stratégie GTM.

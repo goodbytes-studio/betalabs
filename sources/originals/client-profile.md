@@ -1,0 +1,215 @@
+# Client Profile: BETA Labs
+# Configuration file — filled in once, never overwritten by skill outputs.
+# Read by: clay-guide, icp-score, icp-target-plan, gtm-strategist
+# Last updated: 2026-04-01
+
+---
+
+## Business Context
+
+**What BETA Labs does:**
+BETA Labs is an AI-powered event matchmaking platform for B2B business events. It helps companies attending conferences and trade shows pre-book targeted 1:1 meetings with qualified prospects before the event starts — eliminating the "100 random conversations" problem of working a floor unplanned.
+
+**In their own words (FR/EN):**
+> "BETA Labs aide les entreprises qui participent aux événements d'affaires à cibler et rencontrer les bonnes personnes, afin d'atteindre leurs objectifs d'affaires et rentabiliser leur présence. 3 jours de conférence pour 100 conversations avec 100 leads non qualifiés? Plus jamais."
+> "BETA Labs helps companies attending business events to target and meet the right attendees, to attain their objectives and maximize their presence. 3-day conference for 100 conversations with 100 unqualified leads/partners? Not on our watch."
+
+**Company stage:**
+- Solo founder (1 employee), launched October 2024
+- Pre-seed / pre-funding — no external capital detected
+- Early traction: deposits from Mirego, Cyberimpact, Digital Revamp within 1-2 days of first contact
+- Website on Wix (non-technical founder, product is likely algorithm + human-assisted delivery — not self-serve SaaS yet)
+- NAICS 519 — classified as "Other Information Services" (data/matchmaking, not pure software)
+
+**Founder: Elizabeth Tremblay**
+- Présidente & Fondatrice, Montréal, QC
+- LinkedIn: https://www.linkedin.com/in/elizabeth-tremblay-3b9ab8240
+- Company LinkedIn: https://www.linkedin.com/company/beta-labs-ca
+- Background: GM + Director of Business Development at WowMoms World (Jun 2021–Jun 2023) — ran operations and commercial at a startup, not a technical background
+- Community: JCCM (Jeune Chambre de commerce de Montréal) — Chargée de Projet Comité Événementiel (Sep 2024–present); One Young World Ambassador (Sep 2024–present)
+- First GTM context: met at SocialNext event (confirmed event-industry network insertion)
+- Psychographic cluster: Visionary Startup Founder — entrepreneurial, decisive, moves fast (confirmed by 1-day deposit pattern with early clients)
+
+**Key insight for GTM work:**
+Elizabeth's roots are in operations and BD (not engineering), her network is Quebec B2B events (JCCM), and her first clients came through event organizer introductions — not outbound. The product works because she knows how to run a room. The GTM challenge is systematizing that warm-intro motion into a repeatable outbound and organizer-channel play.
+
+---
+
+## Identity
+
+company_name: BETA Labs
+website: https://www.betalabs.ca/
+primary_language: fr+en   # fr | en | fr+en
+
+---
+
+## Sender (for outreach copy generation)
+
+sender_name: Elizabeth Tremblay
+sender_title: Co-founder, BETA Labs
+sender_company: BETA Labs
+sender_linkedin: "https://www.linkedin.com/in/elizabeth-tremblay-3b9ab8240"
+sender_dont_mention:
+  - "Grip, Swapcard, Brella — do not name competitors in cold outreach"
+
+---
+
+## Tone Rules (for icp-target-plan)
+
+tone: conversational
+tone_rules:
+  - "Lead with ROI and pipeline numbers — not event experience or engagement metrics"
+  - "Anchor to performance-based pricing: 'you pay only for confirmed meetings that happen'"
+  - "Never discount below $750 minimum — use the pilot framing instead ('pay only for results')"
+  - "For companies over 100 employees: mention Loi 25 compliance proactively (data handled under NDA, deleted post-event)"
+  - "Use urgency of the specific upcoming event — no event context = no urgency = no close"
+  - "In French for Quebec prospects; English for Ontario and Toronto"
+
+---
+
+## ICP Parameters (for clay-guide + icp-score)
+# Note: BETA Labs has two distinct motions. Parameters below are for Motion 2 (sponsor acquisition).
+# Motion 1 (organizer acquisition) is handled separately — see clay_company_sources notes.
+
+target_geographies:
+  tier1: "Quebec (Montreal, Quebec City) — organizer-introduced motion"
+  tier2: "Ontario (Toronto, Ottawa) — direct outbound + organizer-introduced"
+  exclude: "US (not yet — future expansion only)"
+
+target_headcount:
+  sweet_spot_min: 20
+  sweet_spot_max: 200
+  acceptable_min: 20
+  acceptable_max: 400
+  notes: "Under 50 employees = GM is both champion and buyer = single-threaded, fastest close. 150-400 = need to multi-thread (champion + economic buyer separate)."
+
+target_industries:
+  include:
+    - B2B SaaS
+    - MarTech / Marketing software
+    - Marketing services / digital agencies
+    - Sales Tech
+    - Tech services / dev agencies
+    - Construction Tech (secondary — Grand Batimatech proven)
+  exclude:
+    - Government (direct outbound only — organizer-introduced acceptable)
+    - Consumer brands
+    - Retail
+    - Enterprise (400+ employees) without a direct buyer confirmed
+
+disqualifiers:
+  # --- Sponsor disqualifiers (Motion 2) ---
+  - "No confirmed upcoming event within 2-8 weeks (removes urgency anchor — 3-5x longer cycle)"
+  - "Enterprise procurement process active (EY pattern — 162 days, no deposit)"
+  - "Buyer is 'Event' title only with no economic buyer access"
+  - "Company not sponsoring/exhibiting at any upcoming event in portfolio"
+  # --- Organizer disqualifiers (Motion 1) ---
+  - "Hotel venue (ballroom, hotel meeting rooms) — hard disqualifier for organizer acquisition; convention center required"
+  - "Under 1,000 registered attendees — pipeline too thin for matchmaking density"
+  - "One-off or inaugural event only (no recurring format) — no repeat revenue potential (ex: C2 Montréal)"
+  - "Homogeneous attendee base (all same industry) — reduces cross-sell matchmaking value"
+  - "Supplier/vendor-focused event (ex: AWS Summit Canada) — attendees are buyers of a single vendor's ecosystem, not cross-industry B2B buyers; too promotional for matchmaking"
+
+---
+
+## Clay Pipeline Configuration (for clay-guide)
+# BETA Labs Clay motion: start from partner event sponsor/exhibitor lists, enrich with firmographics.
+
+clay_company_sources:
+  - "Event organizer partner lists — exhibitor/sponsor lists from all active BETA Labs partner events"
+  - "LinkedIn Company Search — companies attending upcoming tech/B2B events in Quebec + Ontario"
+  - "Event websites — public sponsor/exhibitor directory pages (Social Next, ALL IN, HOP, RDV Numérique, etc.)"
+  - "Manual: past event sponsor lists where BETA Labs was not yet present (prospective event catalogue expansion)"
+  # --- Organizer prospecting filters (Motion 1) ---
+  # When sourcing new events to add to the catalogue, apply these filters:
+  # ✅ Venue: convention center only (Palais des congrès, trade show halls, convention halls)
+  # ✅ Attendees: 1,000+ registered
+  # ✅ Industry mix: heterogeneous preferred (tech vendors + retail/manufacturing/construction buyers)
+  # ✅ Format: recurring/annual
+  # ❌ Exclude: hotel ballroom events, under-1,000 events, inaugural one-off events
+
+clay_primary_persona:
+  title_keywords: "GM, General Manager, VP Marketing, CEO, BDM, Business Development Manager, VP Growth"
+  notes: "Direct buyer. In companies under 50 employees, this person is both champion and economic buyer — fastest close. Target first."
+
+clay_secondary_persona:
+  title_keywords: "Director of Growth, SDR Manager, VP Customer Success, Marketing Director, Head of Partnerships"
+  notes: "Champion in mid-market (150-400 employees). Needs to escalate to economic buyer — multi-thread required. Engage to qualify."
+
+---
+
+## Scoring Overrides (for icp-score)
+# Note: Standard EDP scoring model doesn't apply to BETA Labs.
+# Primary scoring signal is EVENT URGENCY, not company maturity/funding.
+
+geography_tier1: "Quebec (Montreal + Quebec City)"
+geography_tier1_points: 2
+geography_tier2: "Ontario (Toronto, Ottawa)"
+geography_tier2_points: 1
+
+headcount_sweet_spot_min: 20
+headcount_sweet_spot_max: 200
+headcount_sweet_spot_points: 2
+headcount_acceptable_min: 200
+headcount_acceptable_max: 400
+headcount_acceptable_points: 1
+
+primary_trigger: "Confirmed sponsor/exhibitor at a BETA Labs partner event within 2-8 weeks"
+primary_trigger_signal: "event_name IN [active_partner_events] AND weeks_to_event BETWEEN 2 AND 8"
+primary_trigger_points: 3
+
+secondary_trigger: "Company has attended multiple events without a pre-meeting strategy (repeat event sponsor)"
+secondary_trigger_signal: "events_attended_without_matchmaking >= 2"
+secondary_trigger_points: 1
+
+tech_gap_signal: "Industry is MarTech or B2B SaaS (highest density of proven clients)"
+tech_gap_points: 1
+
+tech_equipped_penalty: "Enterprise 400+ employees with procurement process required"
+tech_equipped_points: -2
+
+tier1_threshold: 7
+tier2_threshold: 4
+
+additional_signals:
+  - "Buyer is GM/CEO/VP Marketing (direct decision authority, single-threaded): +1"
+  - "Company is in Marketing vertical (Cyberimpact/Axeptio/Digital Revamp pattern — highest density): +1"
+  - "Organizer-introduced (vs cold outbound): not a scoring signal — but flag for routing (organizer-intro = fastest path)"
+
+---
+
+## Messaging Assets (for icp-target-plan)
+
+value_prop_one_liner: "We pre-book 15 confirmed 1:1 meetings with your exact ICP before the event starts — $100/meeting, you pay only for meetings that happen."
+
+social_proof_logos:
+  - "Mirego — deposit within 1 day of first contact (VP Marketing, 150 employees)"
+  - "Cyberimpact — 1 day to deposit, repeat client (Social Next Ottawa → Social Next Toronto)"
+  - "Digital Revamp — 1 day to deposit (GM, 58 employees)"
+  - "CDWare — $4,000 standalone (Walk the Floor motion, no event required)"
+
+key_stats:
+  - "$100/confirmed meeting vs. $200-$400 average cost per B2B lead (no meeting guarantee)"
+  - "One closed deal from a qualified meeting pays for the entire $1,500 package 10x over"
+  - "1-2 business days from first contact to deposit (Mirego, Cyberimpact, Digital Revamp)"
+  - "15 confirmed pre-booked meetings = your team shows up with a full calendar before the event opens"
+
+sequence_cta_variants:
+  organizer_introduced: "Happy to run a quick ICP alignment call — 20 minutes, and we can have your first confirmed meetings on the calendar before [event name] opens."
+  direct_outbound: "I mapped 15 companies attending [event name] that match [company]'s ICP exactly. We can have confirmed meetings booked before you arrive. Worth a quick call this week?"
+  repeat_event: "[Company] attended [past event] — this time, instead of working the floor, you'd show up with 15 pre-qualified meetings already on your calendar. Same investment, completely different result."
+
+---
+
+## Phase Status
+# Reference only — update manually. Skills do not write to this section.
+
+phases_completed:
+  set_client:        ✅
+  company_research:  ✅  # company-context.md
+  icp_analyzer:      ✅  # icp-analysis.md + betalabs-master-context.md
+  icp_deepdive:      ⏳  # not yet run (11 clients — borderline for deepdive threshold)
+  clay_guide:        ⏳  # next step
+  icp_score:         ⏳
+  icp_target_plan:   ⏳
+  gtm_strategist:    ⏳

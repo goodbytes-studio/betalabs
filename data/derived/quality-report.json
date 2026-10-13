@@ -1,0 +1,150 @@
+{
+  "as_of": "2026-10-13",
+  "source_count": 39,
+  "format_counts": {
+    "md": 19,
+    "docx": 12,
+    "csv": 5,
+    "txt": 2,
+    "js": 1
+  },
+  "csv_rows": {
+    "S07": 172,
+    "S10": 49,
+    "S20": 9,
+    "S23": 15,
+    "S39": 16
+  },
+  "derived_counts": {
+    "prospects": 221,
+    "accounts": 230,
+    "crm": 15,
+    "organizer_contacts": 9,
+    "events": 17
+  },
+  "prospect_tiers": {
+    "S07": {
+      "A": 13,
+      "B": 2,
+      "Organisateur": 1,
+      "B - a qualifier": 52,
+      "C": 62,
+      "Exclu": 42
+    },
+    "S10": {
+      "A": 11,
+      "A-etroit": 2,
+      "B": 8,
+      "B-": 4,
+      "C": 1,
+      "Exclu": 7,
+      "Inconnu": 1,
+      "Lead": 14,
+      "Cas special": 1
+    }
+  },
+  "participation_counts": {
+    "reported_confirmed": 205,
+    "organizer": 1,
+    "unconfirmed_lead": 14,
+    "former_partner_absent": 1
+  },
+  "prospect_empty_fields": {
+    "S07": {
+      "rang": 0,
+      "evenement": 0,
+      "entreprise": 0,
+      "statut_liste": 0,
+      "palier_commandite": 0,
+      "historique": 0,
+      "tier_betalabs": 0,
+      "action": 0,
+      "ce_quils_vendent": 104,
+      "categorie": 0,
+      "leur_acheteur_a_allin": 104,
+      "largeur_icp": 42,
+      "forfait_recommande": 42,
+      "test_acv": 42,
+      "rationnel_acv": 42,
+      "effectif_estime": 94,
+      "localisation": 104,
+      "capacite_gtm_interne": 42,
+      "acces_acheteur": 42,
+      "chemin_chaud": 42,
+      "nb_contacts_chauds": 42,
+      "contact_chaud_principal": 156,
+      "titre_contact": 156,
+      "linkedin_contact": 156,
+      "connecte_le": 156,
+      "autres_contacts_chauds": 162,
+      "disqualifiant": 65,
+      "question_a_resoudre": 0,
+      "angle_approche": 42,
+      "langue": 0,
+      "confiance_donnees": 0,
+      "source": 0
+    },
+    "S10": {
+      "rang": 0,
+      "entreprise": 0,
+      "statut_liste": 0,
+      "palier_commandite": 0,
+      "partenaire_ET_exposant": 0,
+      "historique_hop": 0,
+      "tier_betalabs": 0,
+      "action": 0,
+      "ce_quils_vendent": 7,
+      "categorie": 0,
+      "leur_acheteur_a_hop": 8,
+      "largeur_icp": 8,
+      "forfait_recommande": 8,
+      "test_acv": 8,
+      "rationnel_acv": 8,
+      "effectif_estime": 22,
+      "localisation": 8,
+      "capacite_gtm_interne": 22,
+      "acces_acheteur": 22,
+      "chemin_chaud": 8,
+      "nb_contacts_chauds": 8,
+      "contact_chaud_principal": 29,
+      "titre_contact": 29,
+      "linkedin_contact": 29,
+      "connecte_le": 29,
+      "autres_contacts_chauds": 40,
+      "disqualifiant": 32,
+      "question_a_resoudre": 7,
+      "angle_approche": 8,
+      "langue": 0,
+      "confiance_donnees": 0,
+      "source": 0
+    }
+  },
+  "exact_duplicate_csv_rows": {
+    "S07": 0,
+    "S10": 0,
+    "S20": 0,
+    "S23": 0,
+    "S39": 0
+  },
+  "crm": {
+    "status_counts": {
+      "Client": 11,
+      "Prospect": 4
+    },
+    "named_event_count": 5,
+    "named_events": [
+      "ALL IN 25",
+      "Grand Batimatech 25",
+      "HOP 25",
+      "RDV Numérique 26",
+      "Social Next Ottawa 26"
+    ],
+    "standalone_client_count": 1,
+    "client_rows_with_deposit_delay": 6,
+    "listed_package_total": 17500,
+    "listed_package_mean": 1590.91,
+    "listed_package_median": 1500,
+    "currency": "unspecified",
+    "note": "Montants de forfaits déclarés, pas des encaissements. Les délais de dépôt ne sont pas des pièces de paiement."
+  }
+}

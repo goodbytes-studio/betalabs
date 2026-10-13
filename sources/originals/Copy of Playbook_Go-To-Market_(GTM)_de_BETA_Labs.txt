@@ -1,0 +1,138 @@
+--------------------------------------------------------------------------------
+Playbook Go-To-Market (GTM) de BETA Labs
+--------------------------------------------------------------------------------
+Modèle Commercial : Vente de Packages de Leads Qualifiés via les Organisateurs d'ÉvénementsDate : 3 mars 2026Statut : Document Stratégique Interne
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+1. Notre Vision et Mission Redéfinies
+--------------------------------------------------------------------------------
+Notre mission est de transformer le sponsoring d'événements en un canal de revenus prévisible et à fort retour sur investissement. Nous y parvenons en nous associant avec les organisateurs d'événements pour leur fournir un package de génération de leads premium, qu'ils peuvent offrir à leurs sponsors et exposants les plus importants.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Nous ne vendons pas un logiciel ; nous vendons un résultat : des réunions qualifiées avec des profils à haute intention (ICPs).
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+2. Notre Modèle Go-To-Market : Un Partenariat Stratégique avec les Événements
+--------------------------------------------------------------------------------
+Notre stratégie GTM est un modèle de vente indirecte (channel sales) où les organisateurs d'événements sont nos clients et partenaires de distribution. Nous ne sommes pas un concurrent des applications événementielles comme Grip ou Swapcard. Nous sommes une couche de service à valeur ajoutée qui s'intègre à leur offre existante pour créer une nouvelle source de revenus et augmenter drastiquement la satisfaction des sponsors.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Notre Proposition de Valeur pour les Organisateurs d'Événements
+--------------------------------------------------------------------------------
+Nous aidons les organisateurs à résoudre deux de leurs plus grands défis : la rétention des sponsors et la croissance des revenus.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Levier de Valeur
+--------------------------------------------------------------------------------
+Description pour l'Organisateur
+--------------------------------------------------------------------------------
+Création d'un Nouveau Flux de Revenus
+--------------------------------------------------------------------------------
+Offrez un package "Premium Qualified Leads" à vos sponsors. Vous facturez vos sponsors pour ce service, et nous partageons les revenus. C'est une marge pure, sans coût de développement pour vous.
+--------------------------------------------------------------------------------
+Augmentation de la Rétention des Sponsors
+--------------------------------------------------------------------------------
+En garantissant un ROI tangible (des réunions qualifiées, pas seulement des scans de badges), vous transformez vos sponsors en partenaires récurrents, assurant ainsi vos revenus pour les années à venir.
+--------------------------------------------------------------------------------
+Différenciation Concurrentielle
+--------------------------------------------------------------------------------
+Démarquez-vous des autres événements en étant le seul à proposer un service de génération de pipeline garanti. Vous n'offrez plus seulement de la visibilité, mais des opportunités commerciales concrètes.
+--------------------------------------------------------------------------------
+3. Notre Offre : Le Package "Connexion ICP Premium"
+--------------------------------------------------------------------------------
+Mécanisme de l'Offre
+  1 --------------------------------------------------------------------------------
+   Partenariat : Nous signons un accord de partage de revenus avec l'organisateur de l'événement.
+  2 --------------------------------------------------------------------------------
+   Commercialisation : L'organisateur propose le package "Connexion ICP Premium" à ses sponsors (ex: inclus dans le sponsoring "Platinum" ou en tant qu'add-on).
+  3 --------------------------------------------------------------------------------
+   Ciblage : Le sponsor définit son Profil de Client Idéal (ICP) avec nous.
+  4 --------------------------------------------------------------------------------
+   Matchmaking IA : Notre plateforme analyse la liste des participants de l'événement pour identifier les ICPs à haute intention.
+  5 --------------------------------------------------------------------------------
+   Planification : Nous contactons, qualifions et planifions des réunions confirmées entre le sponsor et ces ICPs avant l'événement.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Modèle de Tarification
+  oo --------------------------------------------------------------------------------
+   Prix pour le Sponsor : L'organisateur facture au sponsor 100 $ par lead/ICP qualifié et réunion confirmée.
+  oo --------------------------------------------------------------------------------
+   Partage de Revenus : BETA Labs et l'organisateur partagent les revenus générés (par exemple, 50/50, 60/40, à négocier selon le volume et l'exclusivité).
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Ce modèle est extrêmement attractif car il est basé sur la performance. Le sponsor ne paie que pour des résultats concrets.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+4. Notre Playbook d'Acquisition (Vente aux Organisateurs d'Événements)
+--------------------------------------------------------------------------------
+Notre ICP : L'Organisateur d'Événement B2B
+  oo --------------------------------------------------------------------------------
+   Titres : Directeur de l'Événement, Responsable des Partenariats/Sponsorings, CEO/Fondateur de l'entreprise événementielle.
+  oo --------------------------------------------------------------------------------
+   Type d'événements : Conférences B2B, salons professionnels, événements de l'industrie avec un volet sponsoring/exposition important (ex: Startupfest, ALL IN, C2 Montréal).
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Nos Angles d'Attaque Commerciaux (PVP)
+  6 --------------------------------------------------------------------------------
+   PVP 1 : "Le Multiplicateur de Revenus de Sponsoring". Une simulation montrant à l'organisateur combien de revenus supplémentaires il peut générer en offrant notre package à seulement 20% de ses sponsors existants.
+  7 --------------------------------------------------------------------------------
+   PVP 2 : "L'Assurance Rétention de Sponsors". Une analyse basée sur des données de l'industrie montrant que les sponsors qui mesurent un ROI clair sont 3x plus susceptibles de renouveler leur sponsoring l'année suivante.
+  8 --------------------------------------------------------------------------------
+   PVP 3 : "L'Étude de Cas du Sponsor Insatisfait". Utiliser les mauvaises critiques des applications concurrentes (Grip, Swapcard) pour montrer que les sponsors sont frustrés par le manque de résultats tangibles et qu'ils recherchent activement des solutions comme la nôtre.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Séquence de Prospection Cible
+--------------------------------------------------------------------------------
+Jour
+--------------------------------------------------------------------------------
+Action de Prospection (Cible : Organisateur d'Événement)
+--------------------------------------------------------------------------------
+1
+--------------------------------------------------------------------------------
+Connexion LinkedIn avec le Responsable des Partenariats, en le félicitant pour le succès de son dernier événement.
+--------------------------------------------------------------------------------
+7
+--------------------------------------------------------------------------------
+Envoyer un email court avec le PVP 2 (Assurance Rétention), en posant la question : "Quel est votre plus grand défi pour assurer le renouvellement de vos sponsors principaux ?"
+--------------------------------------------------------------------------------
+14
+--------------------------------------------------------------------------------
+Partager le PVP 1 (Multiplicateur de Revenus) sous forme d'une infographie simple, en proposant un appel de 15 minutes pour modéliser le potentiel de revenus pour leur événement spécifique.
+--------------------------------------------------------------------------------
+21
+--------------------------------------------------------------------------------
+Partager une étude de cas anonymisée (ou un témoignage si disponible) d'un sponsor ayant obtenu un ROI de 10x grâce à des réunions pré-planifiées.
+--------------------------------------------------------------------------------
+30
+--------------------------------------------------------------------------------
+Proposer une offre pilote pour leur prochain événement : "Essayons avec seulement 2 de vos sponsors 'Platinum'. Si nous ne livrons pas au moins 5 réunions qualifiées pour chacun, il n'y a aucun coût pour vous."
+--------------------------------------------------------------------------------
+5. Gestion des Ventes et des Objections
+--------------------------------------------------------------------------------
+Objections Courantes des Organisateurs et Nos Réponses
+  oo --------------------------------------------------------------------------------
+   Objection : "Je ne veux pas cannibaliser mes packages de sponsoring existants."
+     oo --------------------------------------------------------------------------------
+      Notre Réponse : "C'est une excellente remarque. Notre offre est conçue pour être un add-on premium ou pour enrichir votre plus haut niveau de sponsoring. Elle ne remplace rien, elle ajoute une couche de valeur qui justifie un prix plus élevé et rend votre offre 'Platinum' irrésistible."
+  oo --------------------------------------------------------------------------------
+   Objection : "Mes sponsors ne paieront jamais 100 $ de plus par lead."
+     oo --------------------------------------------------------------------------------
+      Notre Réponse : "Le coût moyen d'un lead qualifié en B2B est souvent bien supérieur à 200-300$. Nous offrons non seulement un lead, mais une réunion confirmée dans l'agenda de leur commercial avec un ICP à haute intention. À 100$, le ROI est énorme. Laissez-nous le prouver avec une offre pilote."
+  oo --------------------------------------------------------------------------------
+   Objection : "Comment garantissez-vous la qualité des leads ?"
+     oo --------------------------------------------------------------------------------
+      Notre Réponse : "La qualité est définie par votre sponsor. Nous travaillons avec eux pour définir précisément leur ICP. Une réunion n'est facturée que si le contact correspond à ces critères et que la réunion est acceptée et confirmée. C'est un modèle sans risque pour le sponsor."
+  oo --------------------------------------------------------------------------------
+   Objection : "Cela semble compliqué à intégrer avec nos systèmes."
+     oo --------------------------------------------------------------------------------
+      Notre Réponse : "Il n'y a aucune intégration technique requise de votre part. Nous fonctionnons comme un service de conciergerie. Vous nous fournissez la liste des participants (sous NDA), et nous nous occupons de tout le reste. Pour vous, c'est une simple transaction commerciale."

@@ -1,0 +1,781 @@
+const fs = require("fs");
+const {
+  Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell,
+  Header, Footer, AlignmentType, HeadingLevel, BorderStyle, WidthType,
+  ShadingType, PageNumber, PageBreak, LevelFormat, TabStopType, TabStopPosition
+} = require("docx");
+
+// ─── CONSTANTS ───
+const PAGE_W = 12240;
+const MARGIN = 1440;
+const CONTENT_W = PAGE_W - 2 * MARGIN; // 9360
+const BLUE = "1B4F72";
+const BLUE_LIGHT = "D6EAF8";
+const BLUE_MED = "2E86C1";
+const GRAY = "F2F3F4";
+const GRAY_DARK = "5D6D7E";
+const WHITE = "FFFFFF";
+const BLACK = "000000";
+const GREEN = "27AE60";
+const ORANGE = "E67E22";
+const RED = "E74C3C";
+const YELLOW_LIGHT = "FEF9E7";
+
+const thinBorder = { style: BorderStyle.SINGLE, size: 1, color: "BDC3C7" };
+const borders = { top: thinBorder, bottom: thinBorder, left: thinBorder, right: thinBorder };
+const noBorder = { style: BorderStyle.NONE, size: 0, color: WHITE };
+const noBorders = { top: noBorder, bottom: noBorder, left: noBorder, right: noBorder };
+const cellMargins = { top: 60, bottom: 60, left: 100, right: 100 };
+
+// ─── HELPERS ───
+function p(text, opts = {}) {
+  const runs = [];
+  if (typeof text === "string") {
+    runs.push(new TextRun({ text, bold: opts.bold, italics: opts.italics, font: "Arial", size: opts.size || 22, color: opts.color || BLACK }));
+  } else if (Array.isArray(text)) {
+    text.forEach(t => {
+      if (typeof t === "string") runs.push(new TextRun({ text: t, font: "Arial", size: opts.size || 22 }));
+      else runs.push(new TextRun({ font: "Arial", size: opts.size || 22, ...t }));
+    });
+  }
+  return new Paragraph({
+    spacing: { after: opts.after !== undefined ? opts.after : 120, before: opts.before || 0, line: opts.line || 276 },
+    alignment: opts.align || AlignmentType.LEFT,
+    heading: opts.heading,
+    children: runs,
+    pageBreakBefore: opts.pageBreak,
+  });
+}
+
+function h1(text, pageBreak) {
+  return new Paragraph({
+    heading: HeadingLevel.HEADING_1,
+    spacing: { before: pageBreak ? 0 : 360, after: 200 },
+    pageBreakBefore: pageBreak,
+    children: [new TextRun({ text, font: "Arial", size: 36, bold: true, color: BLUE })],
+  });
+}
+function h2(text, pageBreak) {
+  return new Paragraph({
+    heading: HeadingLevel.HEADING_2,
+    spacing: { before: 280, after: 160 },
+    pageBreakBefore: pageBreak,
+    children: [new TextRun({ text, font: "Arial", size: 30, bold: true, color: BLUE_MED })],
+  });
+}
+function h3(text) {
+  return new Paragraph({
+    heading: HeadingLevel.HEADING_3,
+    spacing: { before: 200, after: 120 },
+    children: [new TextRun({ text, font: "Arial", size: 26, bold: true, color: GRAY_DARK })],
+  });
+}
+
+function bullet(text, opts = {}) {
+  const runs = [];
+  if (typeof text === "string") {
+    runs.push(new TextRun({ text, font: "Arial", size: 22, bold: opts.bold }));
+  } else if (Array.isArray(text)) {
+    text.forEach(t => {
+      if (typeof t === "string") runs.push(new TextRun({ text: t, font: "Arial", size: 22 }));
+      else runs.push(new TextRun({ font: "Arial", size: 22, ...t }));
+    });
+  }
+  return new Paragraph({
+    numbering: { reference: "bullets", level: opts.level || 0 },
+    spacing: { after: 60 },
+    children: runs,
+  });
+}
+
+function makeCell(text, opts = {}) {
+  const runs = [];
+  if (typeof text === "string") {
+    runs.push(new TextRun({ text, font: "Arial", size: opts.size || 20, bold: opts.bold, color: opts.fontColor || BLACK }));
+  } else if (Array.isArray(text)) {
+    text.forEach(t => {
+      if (typeof t === "string") runs.push(new TextRun({ text: t, font: "Arial", size: opts.size || 20 }));
+      else runs.push(new TextRun({ font: "Arial", size: opts.size || 20, ...t }));
+    });
+  }
+  return new TableCell({
+    borders,
+    width: { size: opts.width || 1000, type: WidthType.DXA },
+    shading: opts.shading ? { fill: opts.shading, type: ShadingType.CLEAR } : undefined,
+    margins: cellMargins,
+    verticalAlign: "center",
+    children: [new Paragraph({ children: runs, spacing: { after: 0 }, alignment: opts.align || AlignmentType.LEFT })],
+  });
+}
+
+function makeTable(headers, rows, colWidths) {
+  const totalW = colWidths.reduce((a, b) => a + b, 0);
+  const headerRow = new TableRow({
+    children: headers.map((h, i) => makeCell(h, { width: colWidths[i], bold: true, shading: BLUE, fontColor: WHITE, size: 20 })),
+  });
+  const dataRows = rows.map(row =>
+    new TableRow({
+      children: row.map((cell, i) => makeCell(cell, { width: colWidths[i], size: 20 })),
+    })
+  );
+  return new Table({
+    width: { size: totalW, type: WidthType.DXA },
+    columnWidths: colWidths,
+    rows: [headerRow, ...dataRows],
+  });
+}
+
+function makeSwotTable(s, w, o, t) {
+  const halfW = Math.floor(CONTENT_W / 2);
+  function swotCell(title, items, color) {
+    const children = [
+      new Paragraph({ spacing: { after: 60 }, children: [new TextRun({ text: title, font: "Arial", size: 22, bold: true, color: WHITE })] }),
+    ];
+    items.forEach(item => {
+      children.push(new Paragraph({
+        numbering: { reference: "bullets", level: 0 },
+        spacing: { after: 40 },
+        children: [new TextRun({ text: item, font: "Arial", size: 20 })],
+      }));
+    });
+    return new TableCell({
+      borders,
+      width: { size: halfW, type: WidthType.DXA },
+      shading: { fill: color, type: ShadingType.CLEAR },
+      margins: { top: 80, bottom: 80, left: 120, right: 120 },
+      children,
+    });
+  }
+  return new Table({
+    width: { size: CONTENT_W, type: WidthType.DXA },
+    columnWidths: [halfW, halfW],
+    rows: [
+      new TableRow({ children: [swotCell("STRENGTHS", s, "27AE60"), swotCell("WEAKNESSES", w, "E74C3C")] }),
+      new TableRow({ children: [swotCell("OPPORTUNITIES", o, "2E86C1"), swotCell("THREATS", t, "E67E22")] }),
+    ],
+  });
+}
+
+function spacer(h) { return p("", { after: h || 100 }); }
+
+function verdictBox(verdict, color, text) {
+  return new Table({
+    width: { size: CONTENT_W, type: WidthType.DXA },
+    columnWidths: [1800, CONTENT_W - 1800],
+    rows: [new TableRow({
+      children: [
+        new TableCell({
+          borders, width: { size: 1800, type: WidthType.DXA },
+          shading: { fill: color, type: ShadingType.CLEAR },
+          margins: cellMargins, verticalAlign: "center",
+          children: [new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 0 }, children: [new TextRun({ text: verdict, font: "Arial", size: 24, bold: true, color: WHITE })] })],
+        }),
+        new TableCell({
+          borders, width: { size: CONTENT_W - 1800, type: WidthType.DXA },
+          margins: { top: 80, bottom: 80, left: 160, right: 120 },
+          children: [new Paragraph({ spacing: { after: 0 }, children: [new TextRun({ text, font: "Arial", size: 22 })] })],
+        }),
+      ],
+    })],
+  });
+}
+
+// ─── BUILD DOCUMENT ───
+const doc = new Document({
+  styles: {
+    default: { document: { run: { font: "Arial", size: 22 } } },
+    paragraphStyles: [
+      { id: "Heading1", name: "Heading 1", basedOn: "Normal", next: "Normal", quickFormat: true, run: { size: 36, bold: true, font: "Arial", color: BLUE }, paragraph: { spacing: { before: 360, after: 200 }, outlineLevel: 0 } },
+      { id: "Heading2", name: "Heading 2", basedOn: "Normal", next: "Normal", quickFormat: true, run: { size: 30, bold: true, font: "Arial", color: BLUE_MED }, paragraph: { spacing: { before: 280, after: 160 }, outlineLevel: 1 } },
+      { id: "Heading3", name: "Heading 3", basedOn: "Normal", next: "Normal", quickFormat: true, run: { size: 26, bold: true, font: "Arial", color: GRAY_DARK }, paragraph: { spacing: { before: 200, after: 120 }, outlineLevel: 2 } },
+    ],
+  },
+  numbering: {
+    config: [
+      { reference: "bullets", levels: [{ level: 0, format: LevelFormat.BULLET, text: "•", alignment: AlignmentType.LEFT, style: { paragraph: { indent: { left: 720, hanging: 360 } } } },
+        { level: 1, format: LevelFormat.BULLET, text: "–", alignment: AlignmentType.LEFT, style: { paragraph: { indent: { left: 1440, hanging: 360 } } } }] },
+      { reference: "numbers", levels: [{ level: 0, format: LevelFormat.DECIMAL, text: "%1.", alignment: AlignmentType.LEFT, style: { paragraph: { indent: { left: 720, hanging: 360 } } } }] },
+    ],
+  },
+  sections: [
+    // ══════════ COVER PAGE ══════════
+    {
+      properties: {
+        page: { size: { width: PAGE_W, height: 15840 }, margin: { top: MARGIN, right: MARGIN, bottom: MARGIN, left: MARGIN } },
+      },
+      children: [
+        spacer(2400),
+        new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 0 }, children: [new TextRun({ text: "BETA LABS", font: "Arial", size: 56, bold: true, color: BLUE })] }),
+        spacer(200),
+        new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 0 }, children: [new TextRun({ text: "International Expansion", font: "Arial", size: 44, color: BLUE_MED })] }),
+        new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 0 }, children: [new TextRun({ text: "Opportunity & Threat Analysis", font: "Arial", size: 44, color: BLUE_MED })] }),
+        spacer(600),
+        new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 80 }, children: [new TextRun({ text: "8 Cities | 2 Sectors | Full Competitive Landscape", font: "Arial", size: 24, color: GRAY_DARK })] }),
+        spacer(200),
+        new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 0 }, children: [new TextRun({ text: "May 2026", font: "Arial", size: 28, color: GRAY_DARK })] }),
+        spacer(1200),
+        new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 80 }, children: [new TextRun({ text: "Prepared by GoodBytes Studio", font: "Arial", size: 22, color: GRAY_DARK })] }),
+        new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 80 }, children: [new TextRun({ text: "GTM Intelligence System", font: "Arial", size: 22, color: GRAY_DARK })] }),
+        new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 0 }, children: [new TextRun({ text: "CONFIDENTIAL", font: "Arial", size: 20, bold: true, color: RED })] }),
+      ],
+    },
+
+    // ══════════ MAIN CONTENT ══════════
+    {
+      properties: {
+        page: { size: { width: PAGE_W, height: 15840 }, margin: { top: MARGIN, right: MARGIN, bottom: MARGIN, left: MARGIN } },
+      },
+      headers: {
+        default: new Header({
+          children: [new Paragraph({
+            border: { bottom: { style: BorderStyle.SINGLE, size: 6, color: BLUE, space: 1 } },
+            spacing: { after: 0 },
+            tabStops: [{ type: TabStopType.RIGHT, position: TabStopPosition.MAX }],
+            children: [
+              new TextRun({ text: "BETA Labs — International Expansion", font: "Arial", size: 18, color: BLUE, italics: true }),
+              new TextRun({ text: "\tConfidential", font: "Arial", size: 18, color: GRAY_DARK, italics: true }),
+            ],
+          })],
+        }),
+      },
+      footers: {
+        default: new Footer({
+          children: [new Paragraph({
+            border: { top: { style: BorderStyle.SINGLE, size: 4, color: "BDC3C7", space: 1 } },
+            spacing: { before: 0, after: 0 },
+            tabStops: [{ type: TabStopType.RIGHT, position: TabStopPosition.MAX }],
+            children: [
+              new TextRun({ text: "Prepared by GoodBytes Studio | May 2026", font: "Arial", size: 16, color: GRAY_DARK }),
+              new TextRun({ text: "\tPage ", font: "Arial", size: 16, color: GRAY_DARK }),
+              new TextRun({ children: [PageNumber.CURRENT], font: "Arial", size: 16, color: GRAY_DARK }),
+            ],
+          })],
+        }),
+      },
+      children: [
+
+        // ══════════ 1. EXECUTIVE SUMMARY ══════════
+        h1("1. Executive Summary"),
+        p([
+          { text: "BETA Labs has hit the ceiling of the Quebec market. ", bold: true },
+          { text: "With 11 paying clients across 6 events, a seed round completed, and a new office secured, the company is operationally ready for the next chapter. But the May 2026 strategy call between Elizabeth Tremblay and Bruno Marchand made one thing undeniable: Quebec cannot sustain this business." },
+        ]),
+        p("The Quebec B2B event ecosystem is too small, too familiar, and too community-driven for matchmaking to deliver outsized value. Events under 1,000 attendees are confirmed misfits. Summer 2026 revenue is projected at near-zero. The direct-to-sponsor sales channel is being killed in favor of event-organizer-as-distributor. The fixed 15-match package is a pricing trap that creates misalignment between promise and delivery."),
+        p([
+          { text: "The path forward is international expansion into markets where the pain is exponentially larger. ", bold: true },
+          { text: "A sponsor paying $100K for a booth at CES will pay $4K–$8K for guaranteed meetings without blinking. The same sponsor paying $5K at Rendez-vous Numérique won’t pay $1,500 because the pain isn’t acute enough." },
+        ]),
+        h3("Top 2 Priority Markets"),
+        bullet([{ text: "Las Vegas (Tech): ", bold: true }, { text: "8+ qualifying events/year, deal sizes $50K–$900K per event, extreme sponsor pain at 10K–142K attendee events. Entry event: Channel Partners Conference (2027)." }]),
+        bullet([{ text: "Detroit (Industrial/Automotive): ", bold: true }, { text: "Closest market (~8hr drive), strong tech-to-industrial cross-over, lower competitive entrenchment. Entry event: The Battery Show (Oct 2027)." }]),
+        h3("Key Competitive Threat"),
+        p([
+          { text: "Vendelux ", bold: true },
+          { text: "(vendelux.com) is the most direct competitor globally. They sell to sponsors (not organizers), use event intelligence databases to identify and book pre-event meetings. US-based, growing. BETA Labs must study their model, pricing, and differentiation before entering the US market. The key differentiator: BETA Labs enriches the actual attendee list with external data; Vendelux uses its own event intelligence database. Different data sources = different outputs." },
+        ]),
+        h3("Recommended Timeline"),
+        bullet("Phase 1 (2027): North American beachhead — Las Vegas + Detroit pilots"),
+        bullet("Phase 2 (2027–2028): European entry — Barcelona (IoT Solutions World Congress or Advanced Factories)"),
+        bullet("Phase 3 (2028+): Scale — Singapore, Hanover, Frankfurt"),
+        bullet("Not recommended short-term: San Francisco (too competitive), Shanghai (too many barriers)"),
+
+        // ══════════ 2. COMPANY CONTEXT ══════════
+        h1("2. Company Context & Current Position", true),
+        p("BETA Labs books confirmed pre-event 1:1 meetings between event sponsors and their ideal customer profiles — enriching raw attendee lists with external data, then proactively qualifying and scheduling meetings before the conference starts. It is a managed concierge service (not SaaS), performance-based, and event-linked. The company has 11 paying clients across 6 events, an average deal value of ~$1,400, and is based in Montreal."),
+
+        h2("Pricing Model & Its Limitations"),
+        p("The standard package is $1,500 for 15 matches. 8 of 11 clients paid this rate. Premium standalone (CDWare) reached $4,000. Minimum floor: $750 (10 matches)."),
+        p([{ text: "The fixed 15-match package is a trap. ", bold: true }, { text: "Confirmed in the May 2026 call: if there aren’t 15 good matches at an event, BETA Labs must either deliver bad matches to fill the quota, or disclose the gap (which damages the event relationship or makes BETA Labs look like it undersold). EY was sold 15, only had 10 good matches — had to pro-rate, but perception damage was done." }]),
+        p("Elizabeth is exploring dynamic pricing: charge based on how many quality matches actually exist. If 25, upsell. If 10, charge accordingly. This is critical for international expansion where event sizes vary from 5,000 to 150,000."),
+
+        h2("ICP Refinements (May 2026)"),
+        p([{ text: "Three new disqualifiers emerged from the RDV Numérique post-mortem:", bold: true }]),
+        bullet([{ text: "Low-ACV product companies are misfits. ", bold: true }, { text: "Cyberimpact/Axeptio need 5+ closes from 15 matches to break even. Statistically impossible. Best fit = services companies or high-ACV SaaS where ONE close pays for the package (Mirego, Gestion Vigie)." }]),
+        bullet([{ text: "Companies with strong internal GTM/SDR = low perceived value. ", bold: true }, { text: 'Cyberimpact feedback: "What does this do that my team couldn’t?" They had a Director of Growth who could sort attendees independently.' }]),
+        bullet([{ text: "<1,000 attendees = hard floor. ", bold: true }, { text: "RDV Numérique (actually 450 people) was painful — system struggled, heavy manual intervention required." }]),
+
+        h2("Distribution Model Shift"),
+        p([{ text: "Killing direct-to-sponsor sales. ", bold: true }, { text: "Moving to event-organizer-as-distributor: partner with events, incentivize and enable them to sell BETA Labs to their sponsors. Best pitch so far: Salon Connexion (May 2026), where Elizabeth pitched Groupe Contex’s Head of Sales on integrating BETA Labs as a sponsorship package line item." }]),
+        p([{ text: "Key sales cycle insight: ", bold: true }, { text: "The optimal time to pitch an event organizer is ~2 weeks AFTER their event (while pain is fresh), not 6–9 months before (when packages are locked)." }]),
+
+        h2("Current Revenue Reality"),
+        makeTable(
+          ["Pipeline Item", "Timeline", "Deal Size", "Status"],
+          [
+            ["Solution Climatique", "June 2026", "~$4,000", "In discussion"],
+            ["Salon Connexion 2026 trial", "May 27, 2026", "~$3,000", "Awaiting response"],
+            ["Sommet du Commerce de Détail", "Oct 27, 2026", "TBD (re-signed)", "Confirmed — first distributor test"],
+            ["Summer 2026 (Jun–Aug)", "—", "Near $0", "No events in pipeline"],
+          ],
+          [3000, 1800, 1800, 2760]
+        ),
+        spacer(),
+
+        // ══════════ 3. MARKET-BY-MARKET ══════════
+        h1("3. Market-by-Market Deep Analysis", true),
+        p("Each city is analyzed on: opportunity profile, threat assessment, SWOT, and entry strategy verdict."),
+
+        // ─── LAS VEGAS ───
+        h2("3.1 Las Vegas — Technology / Digital", true),
+        h3("Opportunity Profile"),
+        bullet([{ text: "Qualifying events: ", bold: true }, { text: "8+ per year (CES, AWS re:Invent, NAB, HIMSS, Black Hat, Money20/20, ShopTalk, Channel Partners)" }]),
+        bullet([{ text: "Total exhibitor pool: ", bold: true }, { text: "~8,500+ across qualifying events" }]),
+        bullet([{ text: "Revenue ceiling: ", bold: true }, { text: "$50K–$900K per event; $500K–$2M+ annually if 3–4 events activated" }]),
+        bullet([{ text: "Sponsor pain intensity: 5/5. ", bold: true }, { text: "70% of exhibitors historically can’t quantify ROI. At 10K–142K attendees, finding 15 right people is a needle-in-a-haystack. Quebec companies going to Vegas are “lost” — this generalizes to all mid-market sponsors." }]),
+        spacer(60),
+        makeTable(
+          ["Event", "Attendees", "Exhibitors", "Frequency", "Focus"],
+          [
+            ["CES", "142,000", "4,500", "Annual (Jan)", "Consumer electronics, AI, health"],
+            ["AWS re:Invent", "65,000", "Hundreds", "Annual (Nov)", "Cloud, enterprise IT"],
+            ["NAB Show", "54,000", "1,050", "Annual (Apr)", "Broadcast, media tech"],
+            ["HIMSS", "25,000–28,000", "950+", "Annual (Mar)", "Health IT, digital health"],
+            ["Black Hat USA", "20,000", "450+", "Annual (Aug)", "Cybersecurity"],
+            ["Money20/20", "13,000", "380+", "Annual (Oct)", "Fintech, payments"],
+            ["ShopTalk", "10,000", "900+", "Annual (Mar)", "Retail tech, e-commerce"],
+            ["Channel Partners", "7,800", "350+", "Annual (spring)", "Telecom, MSP, channel"],
+          ],
+          [2200, 1600, 1200, 1560, 2800]
+        ),
+        spacer(),
+        h3("Threat Assessment"),
+        makeTable(
+          ["Competitor", "Model", "Threat Level"],
+          [
+            ["Vendelux", "Event intelligence + meeting booking for sponsors", "HIGH — most direct competitor"],
+            ["Swapcard", "AI matchmaking platform sold to organizers", "HIGH — embedded at many events"],
+            ["Grip", 'AI matchmaking ("MustMeet" scheduler)', "Medium — growing"],
+            ["Cvent/Jifflenow", "Enterprise meeting scheduling", "Medium — enterprise segment"],
+            ['ShopTalk "Meetup"', "Organizer-run hosted buyer program", "HIGH at ShopTalk specifically"],
+          ],
+          [2200, 4400, 2760]
+        ),
+        spacer(),
+        bullet([{ text: "Organizer gatekeeping: ", bold: true }, { text: "Medium. Major events (CES, HIMSS) are run by sophisticated operators (CTA, Informa). Mid-tier events (Channel Partners) are more accessible." }]),
+        bullet([{ text: "Regulatory barriers: ", bold: true }, { text: "Minimal. No licensing required. Standard US business registration." }]),
+        bullet([{ text: "Cultural barriers: ", bold: true }, { text: "Low. Americans expect ROI quantification and case studies. “15 confirmed meetings” is a strong, measurable pitch." }]),
+        bullet([{ text: "Price sensitivity: ", bold: true }, { text: "LOW. Sponsors paying $40K–$100K+ for booths will accept $4K–$8K for guaranteed meetings." }]),
+        spacer(),
+        h3("SWOT Analysis"),
+        makeSwotTable(
+          ["External data enrichment (no competitor does this on attendee lists)", "Done-for-you confirmed meetings vs. self-service apps", "Performance-based pricing = zero risk for sponsors", "Cross-industry matchmaking expertise proven in Quebec"],
+          ["No US track record or case studies", "Small team — can’t serve multiple mega-events simultaneously", "Brand unknown in US market", "Tech platform may not scale to 100K+ attendee events"],
+          ["70% of exhibitors can’t quantify event ROI — massive unmet need", "Mid-tier events (Channel Partners) are accessible entry points", "Vendelux focuses on intelligence, not enrichment — differentiation exists", "Vegas sponsors desperate for any solution that proves ROI"],
+          ["Vendelux is the direct competitor with US presence and funding", "Swapcard/Grip embedded at major events as official platforms", "Mega-event organizers may refuse to share attendee lists", "ShopTalk-style in-house programs may spread to other events"]
+        ),
+        spacer(),
+        h3("Verdict & Entry Strategy"),
+        verdictBox("GO", GREEN, "Pilot in 2027. Target: Channel Partners Conference (~7,800 attendees). Direct flights from Montreal (~5hrs). Start organizer conversations Q4 2026. Prepare English case study from Sommet du Commerce (Oct 2026). Estimated pilot investment: $15K–$25K (travel, event attendance, sales effort)."),
+        spacer(),
+
+        // ─── DETROIT ───
+        h2("3.2 Detroit — Industry / Automotive", true),
+        h3("Opportunity Profile"),
+        bullet([{ text: "Qualifying events: ", bold: true }, { text: "6 per year (NAIAS, Automate, Battery Show, Fabtech, SAE WCX, Powder Metallurgy)" }]),
+        bullet([{ text: "Total exhibitor pool: ", bold: true }, { text: "~4,000+ across qualifying events" }]),
+        bullet([{ text: "Revenue ceiling: ", bold: true }, { text: "$50K–$225K per event; $200K–$500K annually" }]),
+        bullet([{ text: "Sponsor pain intensity: 4/5. ", bold: true }, { text: "Auto industry in massive EV/software disruption. New tech vendors entering don’t have existing relationships with OEMs/Tier 1s. They need introductions. Industrial shows are noisy (30K+ attendees at Fabtech)." }]),
+        spacer(60),
+        makeTable(
+          ["Event", "Attendees", "Exhibitors", "Frequency", "Focus"],
+          [
+            ["NAIAS / Detroit Auto Show", "30,000+", "500+", "Annual (Jan)", "Automotive, EV, mobility tech"],
+            ["Automate", "30,000+", "700+", "Biennial (May)", "Robotics, automation, vision"],
+            ["Battery Show NA", "18,000+", "800+", "Annual (Oct)", "Battery tech, EV components"],
+            ["Fabtech", "30,000+", "1,500+", "Annual (Nov)", "Metal forming, fabricating"],
+            ["SAE WCX", "8,000+", "400+", "Annual (Apr)", "Automotive engineering"],
+          ],
+          [2400, 1400, 1200, 1560, 2800]
+        ),
+        spacer(),
+        h3("Threat Assessment"),
+        bullet([{ text: "Competition is LOW. ", bold: true }, { text: "US industrial shows generally do NOT have embedded matchmaking platforms. Vendelux focuses on tech events. Swapcard/Grip less dominant in industrial. Basic hosted buyer programs exist at Fabtech but are low-tech and relationship-based." }]),
+        bullet([{ text: "Organizer gatekeeping: ", bold: true }, { text: "Medium-Low. Informa Markets runs Battery Show — large but accessible for mid-tier shows. SME (Society of Manufacturing Engineers) runs Fabtech — industry association, approachable." }]),
+        bullet([{ text: "Regulatory barriers: ", bold: true }, { text: "Minimal. Same as Las Vegas." }]),
+        bullet([{ text: "Cultural barriers: ", bold: true }, { text: "Medium. Industrial sales culture is relationship-heavy. “We’ve always done it this way.” But EV disruption is breaking old patterns." }]),
+        bullet([{ text: "Price sensitivity: ", bold: true }, { text: "Medium. Sponsors paying $30K+ for booths. $3K–$5K for meetings is acceptable, especially for first-timers with no existing contacts." }]),
+        spacer(),
+        h3("SWOT Analysis"),
+        makeSwotTable(
+          ["Closest market to Montreal (~8hr drive, same timezone)", "Cross-industry matchmaking proven at Batimatech (construction) and HOP! (retail) — same dynamic", "Low competitive entrenchment vs. European industrial hubs", "EV disruption = new vendors without relationships = high demand"],
+          ["No industrial/automotive track record", "Industrial sales cycles are 6–18 months — harder to prove immediate ROI", "Brand unknown outside Quebec tech community", "Relationship-based culture may resist “algorithmic” matchmaking"],
+          ["EV transition creating wave of new exhibitors at auto events who need introductions", "Fabtech/Battery Show organizers don’t have sophisticated matchmaking — greenfield", "Proximity allows attending events with minimal investment", "Canadian company = neutral/positive perception in US industrial"],
+          ["Industrial sponsors may view $3K–$5K as expensive for “just introductions”", "Organizers may not see the value (low pain awareness)", "Established badge-scan lead retrieval is “good enough” for some", "Biennial events (Automate) reduce recurring revenue predictability"]
+        ),
+        spacer(),
+        h3("Verdict & Entry Strategy"),
+        verdictBox("GO", GREEN, "Pilot in 2027. Target: The Battery Show (Oct 2027, ~18K attendees, 800 exhibitors, Huntington Place). Drive from Montreal. Start organizer conversations Q1 2027. Position as “helping new EV/battery tech vendors meet the right OEM and Tier 1 procurement contacts.” Estimated pilot investment: $8K–$15K."),
+        spacer(),
+
+        // ─── BARCELONA ───
+        h2("3.3 Barcelona — Technology / Digital", true),
+        h3("Opportunity Profile"),
+        bullet([{ text: "Qualifying events: ", bold: true }, { text: "7+ per year (MWC, ISE, ICE, Advanced Factories, Smart City Expo, IoT Solutions, Shoptalk Europe)" }]),
+        bullet([{ text: "Total exhibitor pool: ", bold: true }, { text: "~8,000+ across qualifying events" }]),
+        bullet([{ text: "Revenue ceiling: ", bold: true }, { text: "€50K–€500K per event" }]),
+        bullet([{ text: "Sponsor pain intensity: 5/5. ", bold: true }, { text: "MWC has 2,900 exhibitors and 105K attendees. 56% of Smart City Expo attendees are senior management. Extreme noise." }]),
+        spacer(60),
+        makeTable(
+          ["Event", "Attendees", "Exhibitors", "Frequency", "Focus"],
+          [
+            ["MWC Barcelona", "105K–109K", "2,900+", "Annual (Feb-Mar)", "Mobile, 5G, AI, IoT"],
+            ["ISE", "85,000", "1,600", "Annual (Feb)", "AV, digital signage"],
+            ["ICE Barcelona", "63,000", "1,000+", "Annual (Jan)", "iGaming, regulated entertainment"],
+            ["Advanced Factories", "33,000", "700", "Annual (May)", "Industry 4.0, robotics"],
+            ["Smart City Expo", "25,000", "1,100", "Annual (Nov)", "Smart infrastructure, govtech"],
+            ["IoT Solutions WC", "11,000", "200+", "Annual (May)", "IoT, edge computing"],
+          ],
+          [2400, 1400, 1200, 1560, 2800]
+        ),
+        spacer(),
+        h3("Threat Assessment"),
+        bullet([{ text: "Competition is HIGH. ", bold: true }, { text: "Swapcard already powers Smart City Expo. Grip deployed at finance/tech events. b2match powers IoT Solutions WC brokerage. All self-service SaaS (not done-for-you), but organizers conflate them." }]),
+        bullet([{ text: "Organizer gatekeeping: HIGH. ", bold: true }, { text: "GSMA (MWC), Fira de Barcelona — institutional operators. Long sales cycles (6–12 months)." }]),
+        bullet([{ text: "GDPR: NON-NEGOTIABLE. ", bold: true }, { text: "External data enrichment requires explicit consent flows, Data Processing Agreements, and legitimate interest basis. Must have this before operating." }]),
+        bullet([{ text: "Cultural barriers: ", bold: true }, { text: "Medium. Events are English-first (international). But relationship-driven sales culture — cold outreach alone won’t work." }]),
+        bullet([{ text: "Price sensitivity: ", bold: true }, { text: "LOW for global sponsors. €2,500–€5,000 is trivial vs. €50K+ booth costs." }]),
+        spacer(),
+        h3("SWOT Analysis"),
+        makeSwotTable(
+          ["Done-for-you model is genuinely different from Swapcard/Grip self-service", "External data enrichment = richer matches than platform tools", "Montreal startup = European-friendly positioning (vs. US competitor)", "French-speaking team helpful for some organizer relationships"],
+          ["No European track record", "GDPR compliance architecture not yet built", "No EU legal entity for invoicing", "Team cannot attend 7 events/year across an ocean"],
+          ["IoT Solutions WC and Advanced Factories are accessible mid-tier entry points", "European sponsors are conservative — first-mover premium for whoever proves ROI", "Barcelona’s event density means one case study unlocks 6+ more events", "21% C-suite at MWC = extremely high match value if reached"],
+          ["Swapcard is Paris-based with deep European relationships", "GDPR enforcement is strictest in Europe — any misstep = reputational damage", "Institutional organizers (GSMA) may never open to an unknown startup", "b2match already does brokerage at IoT Solutions — direct conflict"]
+        ),
+        spacer(),
+        h3("Verdict & Entry Strategy"),
+        verdictBox("EXPLORE", ORANGE, "Target 2027–2028. Pilot with IoT Solutions World Congress or Advanced Factories. Prerequisites: GDPR compliance setup, EU invoicing entity, warm intro to organizer. Estimated investment: $20K–$35K (legal, travel, compliance, sales effort)."),
+        spacer(),
+
+        // ─── SINGAPORE ───
+        h2("3.4 Singapore — Technology / Digital", true),
+        h3("Opportunity Profile"),
+        bullet([{ text: "Qualifying events: ", bold: true }, { text: "8+ per year (FinTech Festival, Tech Week, SWITCH, CommunicAsia, ITAP, GovWare, SuperAI, ITB Asia)" }]),
+        bullet([{ text: "Revenue ceiling: ", bold: true }, { text: "$75K–$250K per event" }]),
+        bullet([{ text: "Sponsor pain intensity: 4/5. ", bold: true }, { text: "FinTech Festival = 60K+ attendees. Strong cross-industry dynamics (tech → finance, manufacturing, government)." }]),
+        spacer(),
+        h3("Threat Assessment"),
+        bullet([{ text: "Competition: ", bold: true }, { text: "Swapcard, Grip, ExpoPlatform present. All platform tools — BETA Labs’ done-for-you model is differentiated." }]),
+        bullet([{ text: "PDPA: ", bold: true }, { text: "Singapore’s Personal Data Protection Act is strict. Enriching lists with external data requires careful consent." }]),
+        bullet([{ text: "Cultural: ", bold: true }, { text: "English-first business environment. But APAC buyers expect relationship-building and longer warm-up." }]),
+        bullet([{ text: "Logistical: ", bold: true }, { text: "Montreal → Singapore = 20+ hrs travel, 12–13hr timezone gap. Needs local presence." }]),
+        spacer(),
+        h3("SWOT Analysis"),
+        makeSwotTable(
+          ["English-first market mirrors Western business norms", "Done-for-you model has no direct equivalent in APAC", "Strong event density — 8+ qualifying events annually", "Cross-industry dynamics ideal for matchmaking"],
+          ["20+ hrs travel from Montreal", "12–13hr timezone gap makes remote ops impossible", "No APAC relationships or track record", "Would need local hire for sales and event-day ops"],
+          ["APAC has no equivalent of Vendelux — first-mover advantage", "Singapore government actively promotes MICE industry — supportive ecosystem", "GovWare (13K) and SuperAI (7K–10K) are accessible pilot sizes", "One Singapore case study opens all APAC markets"],
+          ["Swapcard/Grip growing in APAC", "PDPA compliance required for data enrichment", "Price sensitivity outside top-tier global sponsors", "Organizers guard attendee lists more tightly in APAC"]
+        ),
+        spacer(),
+        h3("Verdict & Entry Strategy"),
+        verdictBox("WAIT", BLUE_MED, "Target 2028+. Pilot with GovWare or SuperAI if a local partnership or hire accelerates entry. Prerequisites: local APAC representative, PDPA compliance, warm intro to organizer. Estimated investment: $30K–$50K (hire, travel, compliance)."),
+        spacer(),
+
+        // ─── SAN FRANCISCO ───
+        h2("3.5 San Francisco — Technology / Digital", true),
+        h3("Opportunity Profile"),
+        bullet([{ text: "Qualifying events: ", bold: true }, { text: "6 per year (RSA, Dreamforce, GTC, Google Cloud Next, TechCrunch Disrupt, Interop)" }]),
+        bullet([{ text: "Revenue ceiling: ", bold: true }, { text: "$100K–$300K per event, but hard to win" }]),
+        bullet([{ text: "Sponsor pain intensity: 3/5. ", bold: true }, { text: "Tech-savvy audience. Many sponsors already use Sales Nav, Clay, or Vendelux internally. RSA is the best fit (cybersecurity vendors selling to CISOs across all industries)." }]),
+        spacer(),
+        h3("Threat Assessment"),
+        bullet([{ text: "HIGHEST competition density of any city studied. ", bold: true }, { text: "Vendelux is HQ’d nearby. Grip, Brella, Swapcard all strong on US west coast." }]),
+        bullet([{ text: "Cultural barrier: ", bold: true }, { text: "Silicon Valley credibility barrier. “Who? We work with established vendors.”" }]),
+        bullet([{ text: "Audience sophistication: ", bold: true }, { text: "SF sponsors are more likely to DIY pre-event prep. Lower perceived value of matchmaking." }]),
+        spacer(),
+        h3("SWOT Analysis"),
+        makeSwotTable(
+          ["External data enrichment is differentiated", "RSA Conference has strong cross-industry dynamics", "Done-for-you model may appeal to smaller sponsors without SDR teams"],
+          ["No US track record", "Brand unknown in Silicon Valley", "Competing on Vendelux’s home turf", "Most SF events are tech-to-tech (lower cross-industry value)"],
+          ["RSA (45K+) is a massive event with genuine sponsor pain", "Smaller sponsors at SF events may lack internal resources to prep"],
+          ["Vendelux is the direct competitor with home advantage", "Sophisticated sponsors DIY with existing tools", "Organizers already use Swapcard/Grip", "Price is not an objection, but trust in unknown vendors is"]
+        ),
+        spacer(),
+        h3("Verdict & Entry Strategy"),
+        verdictBox("SKIP", RED, "Not recommended as entry market. Too competitive, too sophisticated. Better to enter Vegas first, build US case studies, then approach SF events in 2028+. If pursuing, RSA Conference is the only strong fit."),
+        spacer(),
+
+        // ─── HANOVER ───
+        h2("3.6 Hanover — Industry / Manufacturing", true),
+        h3("Opportunity Profile"),
+        bullet([{ text: "Qualifying events: ", bold: true }, { text: "6 (Hannover Messe, IAA Transportation, EMO, LIGNA, EuroBLECH, Agritechnica) — most biennial" }]),
+        bullet([{ text: "Revenue ceiling: ", bold: true }, { text: "$100K–$480K per event" }]),
+        bullet([{ text: "Sponsor pain intensity: 5/5. ", bold: true }, { text: "Hannover Messe = 4,000 exhibitors, 130K visitors. The “lost in a city” dynamic is extreme. Agritechnica draws 450K+." }]),
+        spacer(),
+        h3("Threat Assessment"),
+        bullet([{ text: "Deutsche Messe is a fortress. ", bold: true }, { text: "They control the ecosystem with proprietary matchmaking and networking tools. Getting a partnership requires significant credibility." }]),
+        bullet([{ text: "GDPR: ", bold: true }, { text: "Germany is the strictest enforcer in Europe. Non-negotiable." }]),
+        bullet([{ text: "Cultural: ", bold: true }, { text: "German industrial culture values self-reliance. “We only work with German/European vendors.” Language barrier for organizer sales." }]),
+        spacer(),
+        h3("SWOT Analysis"),
+        makeSwotTable(
+          ["Scale is extraordinary — pain is extreme at 130K–450K events", "Cross-industry dynamics are perfect (tech/automation → manufacturers)", "Done-for-you model may bypass organizer platform limitations"],
+          ["Deutsche Messe proprietary tools are the primary obstacle", "No European track record or German-language sales capability", "GDPR + EU entity required", "Team cannot serve 130K+ attendee events with current tech"],
+          ["If Deutsche Messe platform is mediocre, sponsors will pay for better", "Smaller co-located events at Deutsche Messe may be accessible", "JPDL contact (André) could provide warm intro", "German sponsors pay premium for quality — high willingness to pay if proven"],
+          ["Deutsche Messe will view BETA Labs as competitive to their own tools", "German event agencies already offer exhibitor meeting services", "Biennial format of most events reduces recurring revenue", "b2match embedded at some German fairs"]
+        ),
+        spacer(),
+        h3("Verdict & Entry Strategy"),
+        verdictBox("WAIT", BLUE_MED, "Target 2028+. Do NOT start with Hannover Messe. Approach a smaller co-located event or non-Deutsche-Messe industrial event in Germany. Prerequisites: GDPR + EU entity, German-speaking sales contact, warm intro. Estimated investment: $25K–$40K."),
+        spacer(),
+
+        // ─── FRANKFURT ───
+        h2("3.7 Frankfurt — Industry / Automotive", true),
+        h3("Opportunity Profile"),
+        bullet([{ text: "Qualifying events: ", bold: true }, { text: "6 (Automechanika, Achema, Light+Building, Texprocess, Formnext, IAA Mobility — NOTE: IAA moved to Munich)" }]),
+        bullet([{ text: "Revenue ceiling: ", bold: true }, { text: "€75K–€432K per event — but most are biennial" }]),
+        bullet([{ text: "Sponsor pain intensity: 4/5. ", bold: true }, { text: "Automechanika = 4,800 exhibitors, 78K visitors. Formnext = growing fast (additive manufacturing)." }]),
+        spacer(),
+        h3("Threat Assessment"),
+        bullet([{ text: "Messe Frankfurt has proprietary tools ", bold: true }, { text: "similar to Deutsche Messe. Same fortress dynamic." }]),
+        bullet([{ text: "Biennial format ", bold: true }, { text: "of most events reduces recurring revenue potential. Automechanika only happens every 2 years." }]),
+        bullet([{ text: "Same GDPR/German vendor preference barriers as Hanover." }]),
+        spacer(),
+        h3("Verdict & Entry Strategy"),
+        verdictBox("WAIT", BLUE_MED, "Secondary to Hanover for Germany entry. Best entry point: Formnext (annual, growing, tech-to-industrial cross-over). Same prerequisites as Hanover. If Hanover is cracked, Frankfurt follows the same playbook."),
+        spacer(),
+
+        // ─── SHANGHAI ───
+        h2("3.8 Shanghai — Industry / Automotive", true),
+        h3("Opportunity Profile"),
+        bullet([{ text: "Qualifying events: ", bold: true }, { text: "6 (Auto Shanghai, CIIF, Bauma China, SEMICON China, CeMAT Asia, Productronica China)" }]),
+        bullet([{ text: "Revenue ceiling: ", bold: true }, { text: "Theoretical: $200K–$500K+ per event. Realistic: near $0 without local partner." }]),
+        bullet([{ text: "Sponsor pain intensity: 5/5 for scale, 2/5 for accessibility. ", bold: true }, { text: "Auto Shanghai draws 1M+ visitors. But barriers are extreme." }]),
+        spacer(),
+        h3("Threat Assessment"),
+        bullet([{ text: "Data sovereignty is a dealbreaker. ", bold: true }, { text: "PIPL + Data Security Law make external data enrichment extremely complex. Processing Chinese attendee data outside China is likely illegal." }]),
+        bullet([{ text: "Language: ", bold: true }, { text: "Mandarin-first events. Matchmaking requires Mandarin-speaking team." }]),
+        bullet([{ text: "Local entity required. ", bold: true }, { text: "Cannot operate remotely. Need registered Chinese business entity + local partner." }]),
+        bullet([{ text: "Chinese event platforms dominate ", bold: true }, { text: "(WeChat-integrated, Mandarin-first). Government involvement in major fairs adds complexity." }]),
+        spacer(),
+        h3("Verdict & Entry Strategy"),
+        verdictBox("SKIP", RED, "Not recommended for 2027 or 2028. Extreme barriers: data sovereignty, language, local entity, cultural norms. Only viable as a 3–5 year strategic play via Chinese partner or JV. Consider targeting international exhibitors (German/US/Japanese companies) at Shanghai events as an indirect entry."),
+        spacer(),
+
+        // ══════════ 4. COMPETITIVE DEEP DIVE ══════════
+        h1("4. Competitive Deep Dive", true),
+
+        h2("4.1 Vendelux — The Primary Threat"),
+        p([{ text: "Vendelux is the only competitor globally that operates the same model as BETA Labs: ", bold: true }, { text: "selling to sponsors/exhibitors (not organizers), using intelligence to identify and book pre-event meetings." }]),
+        makeTable(
+          ["Dimension", "Vendelux", "BETA Labs"],
+          [
+            ["Target customer", "Sponsors/exhibitors", "Sponsors (via organizer distribution)"],
+            ["Data source", "Proprietary event intelligence database (250K+ events)", "Actual attendee list (enriched with external data)"],
+            ["Meeting delivery", "Human-led outreach to book meetings", "AI-enriched matching + human-confirmed meetings"],
+            ["Pricing", "Enterprise SaaS pricing (est. $10K–$50K/year)", "$1,500–$4,000 per event (performance-based)"],
+            ["Geography", "US-focused, growing", "Quebec/Ontario, expanding"],
+            ["Funding", "VC-backed (est. Series A)", "Seed (Centech Propulsion)"],
+            ["Key strength", "Event database coverage + US market presence", "Attendee-list enrichment + confirmed meetings"],
+          ],
+          [2000, 3680, 3680]
+        ),
+        spacer(),
+        p([{ text: "Where BETA Labs can win: ", bold: true }, { text: "Vendelux uses its own database to identify who MIGHT be at an event. BETA Labs enriches the ACTUAL attendee list — the confirmed registered participants. This produces higher-quality matches because the data is real, not inferred. The done-for-you, performance-based model is also lower risk for sponsors vs. Vendelux’s annual SaaS subscription." }]),
+        p([{ text: "Where Vendelux wins: ", bold: true }, { text: "US market presence, VC funding, event intelligence database that works without attendee list access. Vendelux doesn’t need the organizer’s cooperation to operate." }]),
+
+        h2("4.2 Platform Competitors (Swapcard, Grip, Brella)"),
+        p("These are fundamentally different businesses. They sell to event organizers as self-service SaaS platforms. Attendees opt in, algorithms suggest matches, and users book meetings themselves. None provide the done-for-you, externally-enriched, confirmed-meeting output that BETA Labs delivers."),
+        p([{ text: "Key risk: ", bold: true }, { text: "Organizers who use Swapcard/Grip conflate “networking features” with “matchmaking.” They may say “we already have this” when they don’t. BETA Labs must position as a sponsor ROI layer, not a networking tool replacement." }]),
+        makeTable(
+          ["Platform", "Sells to", "Model", "Entrenchment", "Threat to BETA Labs"],
+          [
+            ["Swapcard", "Organizers", "AI matchmaking + hosted buyer", "HIGH (Europe, growing US/APAC)", "Medium — different model"],
+            ["Grip", "Organizers", "AI matchmaking (\"MustMeet\")", "Growing globally", "Medium"],
+            ["Brella", "Organizers", "Intent-driven matching app", "Mid-tier events", "Low-Medium"],
+            ["b2match", "Organizers", "Brokerage event platform", "European industrial fairs", "Low — niche"],
+            ["Cvent/Jifflenow", "Enterprise sponsors", "Meeting scheduling", "US enterprise events", "Medium (enterprise only)"],
+          ],
+          [1600, 1400, 2200, 2200, 1960]
+        ),
+        spacer(),
+
+        h2("4.3 German Messe Proprietary Tools"),
+        p("Deutsche Messe (Hanover) and Messe Frankfurt operate their own matchmaking and networking platforms as part of the event infrastructure. These are NOT third-party apps — they are built by the organizer for the organizer. They represent the highest barrier to entry in the German industrial market."),
+        p([{ text: "Mitigation: ", bold: true }, { text: "If these tools are mediocre (which anecdotal evidence suggests), sponsors will pay for better. The play is to approach non-Messe events in Germany first, or target international exhibitors at Messe events who are frustrated with the default tools." }]),
+
+        h2("4.4 Hosted Buyer Programs"),
+        p("Hosted buyer programs are organizer-run initiatives where pre-qualified buyers are invited (often with travel/hotel covered) and matched with exhibitors for structured meetings. They exist at ShopTalk (\"Meetup\"), IBTM World, some large food/travel trade shows."),
+        p([{ text: "Are they competition? Partially. ", bold: true }, { text: "They target a different segment (buyer-side, not sponsor-side) and are run by organizers, not third parties. BETA Labs can position as complementary: hosted buyer programs serve the top 5% of sponsors. BETA Labs serves the other 95% who don’t qualify for hosted programs but still need meetings." }]),
+
+        h2("4.5 Competitive Positioning Matrix"),
+        p([{ text: "What BETA Labs does that NO ONE else does:", bold: true }]),
+        makeTable(
+          ["Capability", "BETA Labs", "Vendelux", "Swapcard/Grip", "Hosted Buyer"],
+          [
+            ["Enriches actual attendee list with external data", "YES", "No (own database)", "No", "No"],
+            ["Delivers confirmed, pre-booked meetings", "YES", "Partial", "No (self-service)", "Yes (for buyers)"],
+            ["Performance-based pricing (pay per meeting)", "YES", "No (SaaS)", "No (SaaS)", "N/A"],
+            ["Works for any sponsor, not just top-tier", "YES", "YES", "Self-service", "No (invited buyers)"],
+            ["No tech integration required", "YES", "YES", "No (platform install)", "N/A"],
+            ["Sells via organizer distribution channel", "YES", "No (direct)", "YES", "N/A"],
+          ],
+          [2600, 1400, 1400, 1960, 2000]
+        ),
+        spacer(),
+
+        // ══════════ 5. PRICING STRATEGY ══════════
+        h1("5. Pricing Strategy for International Markets", true),
+
+        h2("Why $1,500 Doesn’t Work Outside Quebec"),
+        p("At Quebec events (3K–5K booth costs), $1,500 for 15 matches represents 30–50% of the sponsor’s total event investment. This creates scrutiny. At international events ($40K–$100K+ booth costs), $1,500 is a rounding error — too cheap to take seriously. Organizers won’t bother reselling it. The price needs to scale with the event and the sponsor’s investment."),
+
+        h2("Proposed Pricing Tiers"),
+        makeTable(
+          ["Event Size", "Sponsor Booth Cost", "BETA Labs Price", "Matches", "Price/Match"],
+          [
+            ["Small (1K–5K attendees)", "$5K–$15K", "$1,500–$2,500", "10–15", "$100–$167"],
+            ["Medium (5K–20K attendees)", "$15K–$50K", "$3,000–$5,000", "15–25", "$150–$200"],
+            ["Large (20K–50K attendees)", "$50K–$100K", "$5,000–$8,000", "20–35", "$200–$250"],
+            ["Mega (50K+ attendees)", "$100K+", "$8,000–$15,000", "30–50", "$250–$300"],
+          ],
+          [2000, 2000, 2000, 1560, 1800]
+        ),
+        spacer(),
+
+        h2("Value Anchoring"),
+        p("The key ratio: BETA Labs’ fee should always be 5–10% of the sponsor’s total event investment. At this level, it’s a no-brainer add-on. ONE closed deal from a qualified meeting pays for the entire package many times over."),
+        bullet([{ text: "Quebec: ", bold: true }, { text: "$5K booth × 10% = $500–$1,500 (current pricing is at the ceiling)" }]),
+        bullet([{ text: "Vegas: ", bold: true }, { text: "$50K booth × 10% = $5,000 (comfortable mid-range)" }]),
+        bullet([{ text: "CES: ", bold: true }, { text: "$100K+ booth × 5–10% = $5K–$10K (premium tier)" }]),
+
+        h2("Dynamic Pricing Model"),
+        p("Move away from fixed 15-match packages. Instead:"),
+        bullet([{ text: "Base fee: ", bold: true }, { text: "Covers ICP intake, attendee list enrichment, and analysis. Non-refundable. ($1,000–$2,000)" }]),
+        bullet([{ text: "Per-match fee: ", bold: true }, { text: "Charged per confirmed, quality match delivered. ($150–$300 per match depending on event tier)" }]),
+        bullet([{ text: "Upsell mechanism: ", bold: true }, { text: "If there are 25+ matches, offer the extended list at a bulk rate. If there are only 8, charge for 8 — no bad matches to fill a quota." }]),
+        p("This eliminates the “15-match trap” and aligns BETA Labs’ incentives with quality, not volume."),
+
+        // ══════════ 6. RISK MATRIX ══════════
+        h1("6. Consolidated Risk Matrix", true),
+        makeTable(
+          ["Risk", "Likelihood", "Impact", "Markets Affected", "Mitigation"],
+          [
+            ["Vendelux expands to capture BETA Labs’ niche", "HIGH", "HIGH", "Vegas, SF, Detroit", "Differentiate on attendee-list enrichment vs. database intelligence. Move fast."],
+            ["Event organizers refuse to share attendee lists", "MEDIUM", "HIGH", "All markets", "Position via organizer partnership. Offer NDA + data deletion. Sell trust."],
+            ["GDPR/PDPA non-compliance penalty", "LOW", "VERY HIGH", "Barcelona, Frankfurt, Hanover, Singapore", "Invest in compliance BEFORE entering. Legal counsel. DPA templates."],
+            ["Tech platform can’t scale to mega-events (50K+)", "HIGH", "HIGH", "Vegas (CES), Hanover, Barcelona (MWC)", "R&D investment. Start with mid-tier events. Scale tech before scaling events."],
+            ["Organizer rejects partnership (“we already have matchmaking”)", "HIGH", "MEDIUM", "Barcelona, Hanover, Frankfurt", "Position as complementary (sponsor ROI), not replacement. Enter via mid-tier events."],
+            ["Cultural misfit (relationship-based industries)", "MEDIUM", "MEDIUM", "Detroit, Hanover, Shanghai", "Warm intros via industry contacts. Position as “finding NEW relationships.”"],
+            ["Price too low for organizers to care about distributing", "MEDIUM", "MEDIUM", "Vegas, Barcelona", "Scale pricing to event size. Minimum $3K–$5K for international events."],
+            ["Data sovereignty blocks enrichment model", "HIGH", "VERY HIGH", "Shanghai, China", "Do not enter China without local JV partner. Skip short-term."],
+            ["Small team spread too thin across markets", "HIGH", "HIGH", "All", "Phase entry. Max 2 markets in 2027. Hire before expanding to Phase 2."],
+            ["Quebec case studies don’t impress international organizers", "MEDIUM", "MEDIUM", "Vegas, Barcelona, Singapore", "Build Sommet du Commerce + Connexion case studies with metrics. Position as “proven model, new market.”"],
+          ],
+          [2000, 1100, 1100, 2200, 2960]
+        ),
+        spacer(),
+
+        // ══════════ 7. ROADMAP ══════════
+        h1("7. Recommended Expansion Roadmap", true),
+
+        h2("Phase 1 — 2027: North American Beachhead"),
+        makeTable(
+          ["Element", "Las Vegas", "Detroit"],
+          [
+            ["Target event", "Channel Partners Conference", "The Battery Show"],
+            ["Event size", "~7,800 attendees, 350+ exhibitors", "~18,000 attendees, 800+ exhibitors"],
+            ["Revenue target", "$30K–$50K (first event)", "$20K–$40K (first event)"],
+            ["Pricing", "$3,000–$5,000 per sponsor", "$3,000–$4,000 per sponsor"],
+            ["Travel", "Direct flight ~5hrs, 3hr TZ", "Drive ~8hrs or fly 1.5hrs, same TZ"],
+            ["Sales start", "Q4 2026", "Q1 2027"],
+            ["Investment", "$15K–$25K", "$8K–$15K"],
+          ],
+          [2200, 3580, 3580]
+        ),
+        spacer(),
+        p([{ text: "Phase 1 prerequisites:", bold: true }]),
+        bullet("English-language case study from Sommet du Commerce de Détail (Oct 2026)"),
+        bullet("Vendelux competitive analysis completed"),
+        bullet("Dynamic pricing model finalized"),
+        bullet("US business registration (if invoicing US clients)"),
+        bullet("MeePayGo stats packaged as proof points (45% meeting book rate, 80% concrete opportunity)"),
+
+        h2("Phase 2 — 2027–2028: European Entry"),
+        makeTable(
+          ["Element", "Barcelona"],
+          [
+            ["Target event", "IoT Solutions World Congress or Advanced Factories"],
+            ["Event size", "11K–33K attendees, 200–700 exhibitors"],
+            ["Revenue target", "€30K–€80K (first event)"],
+            ["Pricing", "€3,000–€5,000 per sponsor"],
+            ["Investment", "€20K–€35K (legal, compliance, travel, sales)"],
+          ],
+          [2800, 6560]
+        ),
+        spacer(),
+        p([{ text: "Phase 2 prerequisites:", bold: true }]),
+        bullet("GDPR compliance architecture built and audited"),
+        bullet("EU legal entity for invoicing"),
+        bullet("At least one US case study from Phase 1"),
+        bullet("Warm intro to target event organizer"),
+
+        h2("Phase 3 — 2028+: Scale"),
+        bullet([{ text: "Singapore: ", bold: true }, { text: "GovWare or SuperAI pilot. Requires local hire. Budget: $30K–$50K." }]),
+        bullet([{ text: "Hanover: ", bold: true }, { text: "Smaller Deutsche Messe co-located event. Requires German-speaking contact. Budget: $25K–$40K." }]),
+        bullet([{ text: "Frankfurt: ", bold: true }, { text: "Formnext (additive manufacturing). Same prerequisites as Hanover." }]),
+
+        h2("Decision Gates"),
+        makeTable(
+          ["Gate", "Trigger", "Decision"],
+          [
+            ["Gate 1 (Q1 2027)", "Sommet du Commerce case study ready", "Confirm Vegas + Detroit pilots"],
+            ["Gate 2 (Q3 2027)", "First US pilot completed", "Evaluate ROI. Go/no-go on second US event"],
+            ["Gate 3 (Q4 2027)", "US case studies available", "Initiate Barcelona organizer conversations"],
+            ["Gate 4 (Q2 2028)", "Barcelona pilot completed", "Evaluate EU ROI. Go/no-go on Singapore/Hanover"],
+          ],
+          [1800, 3780, 3780]
+        ),
+        spacer(),
+
+        // ══════════ 8. ACTION ITEMS ══════════
+        h1("8. Immediate Action Items", true),
+
+        h2("This Week (May 5–12, 2026)"),
+        bullet([{ text: "Stay22 call (May 7): ", bold: true }, { text: "Ask Andrew Lockhead about C2 Montréal → US events transition. Key learnings, pitfalls, first-market selection. Request intros to US event organizers." }]),
+        bullet([{ text: "Vendelux research: ", bold: true }, { text: "Visit vendelux.com. Sign up for demo if possible. Understand their pricing, client list, and positioning. This is BETA Labs’ primary competitive threat." }]),
+        bullet([{ text: "Initiate JPDL contact: ", bold: true }, { text: "Bruno to reach out to André for event industry intelligence on Canadian/US cities." }]),
+
+        h2("This Month (May 2026)"),
+        bullet([{ text: "Salon Connexion follow-up: ", bold: true }, { text: "Get response on 2026 trial offer. This is a critical proof point for the distributor model." }]),
+        bullet([{ text: "Begin Channel Partners research: ", bold: true }, { text: "Identify organizer contacts. Understand their sponsor landscape. Prepare intro materials." }]),
+        bullet([{ text: "Begin Battery Show research: ", bold: true }, { text: "Same as above for Detroit. Informa Markets is the organizer." }]),
+        bullet([{ text: "Draft dynamic pricing framework: ", bold: true }, { text: "Base fee + per-match model. Test positioning with Elizabeth before Q4 events." }]),
+
+        h2("By Q4 2026"),
+        bullet([{ text: "Sommet du Commerce de Détail (Oct 27): ", bold: true }, { text: "Execute flawlessly. This event’s case study is the entry ticket to US markets." }]),
+        bullet([{ text: "English case study ready: ", bold: true }, { text: "Metrics-driven (meeting book rate, ICP alignment %, opportunity conversion). Package MeePayGo stats." }]),
+        bullet([{ text: "Channel Partners organizer conversation started: ", bold: true }, { text: "Initial pitch sent. Goal: partnership agreement by Q1 2027." }]),
+        bullet([{ text: "Battery Show organizer conversation started: ", bold: true }, { text: "Same timeline." }]),
+        bullet([{ text: "GDPR compliance scoping: ", bold: true }, { text: "If Barcelona is on the 2027–2028 roadmap, start legal review now." }]),
+
+        h2("Prerequisites for 2027 Pilots"),
+        makeTable(
+          ["Prerequisite", "Status", "Owner", "Deadline"],
+          [
+            ["English case study with metrics", "Not started", "Elizabeth + Bruno", "Nov 2026"],
+            ["Vendelux competitive analysis", "Not started", "Bruno", "Jun 2026"],
+            ["Dynamic pricing model", "Concept only", "Elizabeth + Bruno", "Sep 2026"],
+            ["US business registration (if needed)", "Not started", "Elizabeth", "Q1 2027"],
+            ["Channel Partners organizer intro", "Not started", "Bruno", "Q4 2026"],
+            ["Battery Show organizer intro", "Not started", "Bruno", "Q1 2027"],
+            ["JPDL / André intelligence call", "Not started", "Bruno", "May 2026"],
+            ["Stay22 / Andrew Lockhead insights", "Scheduled May 7", "Elizabeth", "May 2026"],
+          ],
+          [3000, 1800, 2200, 2360]
+        ),
+        spacer(200),
+        new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 0 }, children: [new TextRun({ text: "— End of Report —", font: "Arial", size: 22, color: GRAY_DARK, italics: true })] }),
+      ],
+    },
+  ],
+});
+
+// ─── GENERATE ───
+const outPath = "G:\\Mon disque\\Clients\\GTM-Intelligence\\clients\\betalabs\\outputs\\betalabs-international-opportunity-analysis.docx";
+Packer.toBuffer(doc).then(buffer => {
+  fs.writeFileSync(outPath, buffer);
+  console.log("Report generated: " + outPath);
+  console.log("Size: " + (buffer.length / 1024).toFixed(0) + " KB");
+}).catch(err => { console.error("Error:", err); process.exit(1); });

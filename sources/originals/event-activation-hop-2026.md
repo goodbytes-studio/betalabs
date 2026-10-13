@@ -1,0 +1,168 @@
+# Event Activation — HOP! Le Sommet du commerce de détail 2026
+
+**Generated:** 2026-08-06 · **Revised:** 2026-08-06 with the published partner & exhibitor list · **Skill:** `/betalabs-event-activation`
+**Sources:** [CQCD event page](https://www.cqcd.org/mega-evenements/hop-le-sommet-du-commerce-de-detail-2026/) · [**CQCD partners & exhibitors**](https://www.cqcd.org/en/mega-events/hop-the-retail-summit-2026/partenaires-et-exposants/) · `Connections.csv` (Elizabeth Tremblay, 1,968 1st-degree connections, exported 2026-08-06) · `betalabs-master-context.md` · `client-profile.md`
+
+---
+
+## 1. Event facts
+
+| Field | Value | Check |
+|---|---|---|
+| Event | HOP! Le Sommet du commerce de détail 2026 — 32nd edition | Recurring annual ✅ |
+| Organizer | CQCD | **Already a BETA Labs partner — HOP 25 delivered** |
+| Date | **27 October 2026** | — |
+| Venue | Grand Quai du Port de Montréal | Dedicated event venue, not a hotel ✅ |
+| Attendees | **1,200+** | Above the 1,000 floor ✅ — modest ⚠️ |
+| Exhibitors | **50 advertised · ~33 organizations published so far** | **The list is still filling — see §6** |
+| Audience | « détaillants, entrepreneurs, fournisseurs de solutions » | Retail buy side ✅ |
+| Language | French | All copy in FR |
+
+**`weeks_to_event` = 11.7** (82 days). T-10 = 18 Aug · T-8 = 1 Sep · **T-4 = 29 Sep (close-by)** · delivery 6–20 Oct.
+
+**Density ⚠️** — 1,200 attendees clears the floor but is not deep. At HOP 25, Mirego took $1,500/15 and **Expedibox took $750/10**. Package by ICP width: broad-ICP → 15, narrow-ICP → 10 sold as the floor package from the start. Never sell 15 and pro-rate (the EY failure).
+
+---
+
+## 2. The published list — and what it changes
+
+**Partners:** *Gold* — Ascendis, Orama Marketing, Ville de Montréal · *Silver* — Atelier La Presse, Les Produits du Québec, **Mirego X**, Moneris, Renaissance Québec, **Thirdbridge**, **URSA Marketing** · *Bronze* — Détail Québec, Tink Profitabilité Numérique · *Food & Cocktail* — Corbeil Électroménagers · *Other* — Maillon Vert, Mobico, Services Connectalk
+
+**Exhibitors:** Ad-Hoc Recherche · **Agendrix** · Axper · Azius · Boa Concept Canada · Conseil du Patronat du Québec · DataCandy · Détail Québec · Dialog Insight · **Groupe Morneau** · L'Effet Futé · Les Produits du Québec · LIDD · Logistique 3DM · Lussier · **Mirego** · Mobico · Novo · Revenu Québec · Services Connectalk · Sezzle · Solution Santé Sécurité · Tink · **URSA Marketing** · Version Image Plus
+
+### Three corrections to the previous draft
+
+**a. The addressable market is ~22 companies, not 50.** Of ~33 published organizations, roughly 9 are institutional and cannot buy a sponsor package: Revenu Québec, Ville de Montréal, Détail Québec, Conseil du Patronat, Les Produits du Québec, Renaissance Québec, Maillon Vert, and the sector bodies. Government is a hard disqualifier for direct outbound in the client profile.
+
+**b. Most of the previous Lane A is not exhibiting.** Intelligence Node, Klever, Glowtify, Trame, App&Flow, Fidget/Leav, Moov AI, Nmédia, Spektrum, Osedea, Dialekta, Parkour3 — none appear on the list. They fail the primary trigger (*confirmed sponsor/exhibitor at a specific upcoming event*, +3 points, the single most important qualifier). **They are not HOP sponsor prospects.** They become something more useful in §6.
+
+**c. Two companies I had under-ranked are confirmed, and one I missed entirely.** URSA Marketing and Groupe Morneau were Lane B — both are confirmed. **Thirdbridge** was not flagged at all and is a Silver partner with three warm contacts including the CEO.
+
+### The targeting insight
+
+**Three of the five warm matches are Silver partners, not plain exhibitors.** A Silver partner has spent well beyond a booth fee. Higher spend means higher ROI pressure — which is precisely the pain BETA Labs sells against. **Rank by sponsorship tier, because tier is a proxy for how much ROI anxiety exists in the building.**
+
+---
+
+## 3. LANE A — confirmed exhibitors with a warm path ⭐
+
+Five companies. Every one is a confirmed HOP 2026 partner or exhibitor **and** a 1st-degree connection of Elizabeth's.
+
+| # | Company | Tier | Warm contacts | ACV test | Read |
+|---|---|---|---|---|---|
+| **1** | **Mirego** | **Silver (Mirego X) + Exhibitor** | Jonathan Lemay, Dir. Marketing & Comms *(1 Apr 2026)* · Mark Murphy, Prés. Premier Tech Digital / co-prés. Mirego | ✅ Strong — digital product agency, project ACV in six figures | 🟢 **HOP 25 client at $1,500/15. Returning, upgraded to Silver, warm contact.** Highest-probability close on the list. Use `repeat_event` CTA |
+| **2** | **Thirdbridge** | **Silver** | **Nicolas St-Aubin, CEO** *(11 Sep 2025)* · Alexandre St-Aubin, Partenaire · Émilie St-Aubin, Dir. finance | ✅ Strong — mobile/dev shop, project ACV high | 🟢 CEO is 1st degree, family-run so single-threaded. Silver spend with no pre-booked meetings = the exact ROI gap. **Biggest new find** |
+| **3** | **URSA Marketing** | **Silver + Exhibitor** | **Benoit Domingue, Président** *(16 Sep 2025)* · Michel Domingue, VP dév. affaires *(23 Apr 2026)* | ✅ Strong — agency retainers | 🟢 Président is 1st degree and the economic buyer. Paying twice (partner + booth) → most exposed to a weak-ROI outcome |
+| **4** | **Agendrix** | Exhibitor | **Adam Tétreault, Chef des revenus (CRO)** *(20 Nov 2025)* · Nicolas Auclair, BD · Mikael Prud'homme, Dir. comptes · Mark Borham, Dir. Product | ⚠️ **Verify** — SMB workforce SaaS. A 200-store retailer is a large deal; a 5-store boutique is not | 🟡 CRO is the economic buyer and is 1st degree. Retail-native. **Ask what a won retail account is worth before quoting 15 matches** — this is where the Cyberimpact profile could repeat |
+| **5** | **Groupe Morneau** | Exhibitor | Karim Diepenbroek, Dir. Dév. Affaires *(23 May 2024)* | ✅ Very strong — transport contracts | 🟡 ACV passes easily, but the contact is a champion, not the economic buyer, and the connection is 2 years old. **Multi-thread required** |
+
+**Suggested order:** Mirego → Thirdbridge → URSA → Agendrix → Groupe Morneau.
+
+---
+
+## 4. LANE C — confirmed exhibitors, no warm path (organizer-introduced)
+
+The commercial exhibitors Elizabeth has no connection to. These are reached through CQCD's own email to its exhibitor list, not by cold outreach — they are the organizer's customers first.
+
+**Retail tech / data:** Axper (in-store traffic analytics) · DataCandy (gift cards & loyalty) · Dialog Insight (marketing automation) · Sezzle (BNPL) · Moneris (payments) · Azius · Novo · Version Image Plus
+**Digital & marketing services:** Tink Profitabilité Numérique · Orama Marketing · Ascendis · L'Effet Futé · Atelier La Presse · Ad-Hoc Recherche (market research)
+**Supply chain & logistics:** LIDD · Logistique 3DM · Boa Concept Canada
+**Other services:** Lussier (insurance) · Solution Santé Sécurité · Mobico · Services Connectalk · Corbeil Électroménagers
+
+Highest-fit among them: **Axper, DataCandy, Dialog Insight, Tink** — all sell software to retailers with an ACV that clears the package easily. If CQCD's email lands, these are the most likely inbound replies.
+
+## 5. LANE D — do not pitch
+
+| | Why |
+|---|---|
+| Revenu Québec · Ville de Montréal · Détail Québec · Conseil du Patronat · Les Produits du Québec · **Renaissance Québec** (Eric St-Arnaud, DG — warm) · Maillon Vert | Institutional, government or non-profit. Not commercial sponsor prospects, regardless of the warm path |
+| **Cyberimpact** (3 warm contacts incl. GM) | Not exhibiting — and fails the ACV + internal-capability test documented May 2026 |
+| Workleap, Stay22, Vasco, Amilia, Progi | Not exhibiting; wrong buyer audience for a retail summit |
+| Retailers in the network — Structube, Mode Choc, Altitude Sports, Groupe Dynamite, Reitmans, Cozey, Metro, Couche-Tard, BRP, RICARDO, Éconofitness, Club Piscine, Groupe Marcelle | **Buy side = match supply.** See §7. Never a sponsor pitch |
+
+---
+
+## 6. 🎯 The play the exhibitor list unlocks
+
+**The list is not full.** CQCD advertises 50 exhibitors; ~33 organizations are published, and ~9 of those are institutional. **CQCD is still selling booths, right now, in the same window BETA Labs needs to sell sponsors.**
+
+Elizabeth is 1st degree with a dozen qualified Québec retail-tech companies that are *not yet on the list* and plausibly should be:
+
+**Intelligence Node** (Lou Mainguy, CEO — retail price & assortment intelligence) · **Klever** (Marc Poirier, CEO — ecommerce search & merchandising) · **Glowtify** (Marc Allard CEO + JP Arcand CRO — AI marketing for retail brands) · **Fidget/Leav** (Olivier Roy, Founder — in-store mobile checkout) · **Trame** (Christophe Roy, CEO — supplier catalog automation) · **App&Flow** (Simon Plessis — Shopify Plus) · **Nmédia** · **Spektrum Media** · **Parkour3** · **Dialekta** · **IMAGI Affichage** · **Netpak**
+
+**Hand this list to CQCD as exhibitor leads.** It costs nothing, it is immediately valuable to the person whose job is filling the floor, and every one that signs becomes a BETA Labs sponsor prospect with a warm path already in place. It is the cleanest possible demonstration of the partnership thesis — BETA Labs makes the organizer's sponsors succeed *and* helps the organizer sell — which is the argument that decides the HOP 27 renewal.
+
+**This reframes the ask to CQCD from "please email your exhibitors about us" to "here are twelve companies for your floor, and here is how we protect their ROI once they're on it."**
+
+---
+
+## 7. The other two assets in the network
+
+**a. CQCD is already 1st degree — and appears unused.**
+
+| Contact | Role | Connected |
+|---|---|---|
+| **Vanessa Lamétrie** | **Conseillère aux événements, CQCD** | 24 Oct 2025 |
+| Emilia Diamadopoulou | Conseillère, relations avec les membres | 19 Nov 2025 |
+
+The events advisor is the likely owner of exhibitor relationships and the `plan de commandite` — and now the right person to receive the §6 lead list.
+
+**b. The retail-side connections are match supply, not customers.** Elizabeth is 1st degree with marketing and ecommerce leadership at Structube, Mode Choc, Altitude Sports, Groupe Dynamite, Reitmans, Cozey, Metro and BRP. Two legitimate uses: answering "who will actually be there?" for a sponsor without breaching the attendee NDA, and helping CQCD deepen the buy side — which directly improves the pool BETA Labs matches against.
+
+**c. The organizer cluster (~25 companies) remains the largest opportunity in the file** and is unrelated to HOP: Groupe Contex (Duc H. Nguyen) · Palais des congrès (Emmanuelle Legault, PDG) · ALL IN (Isabelle Turcotte, CEO) · Startupfest (Philippe Telio) · C2 (Anick Beaulieu, CEO) · MUTEK · JPdL · MCI Group · Centrexpo · Hubvention · noria · Braindate · INCYBER · CDM Summit · TOKEN2049 · Québec Tech — plus **Chet Silverman, Director of Sponsorship at Worldwide Business Research** (eTail and the large US retail events, connected 12 May 2026). Work these at E+2 weeks, when HOP proof is fresh.
+
+---
+
+## 8. Capacity and revenue
+
+Addressable commercial exhibitors: **~22 published, growing.** Warm paths: **5.** Cap: **6 sponsors** (two people, manual delivery, shared 1,200-attendee pool).
+
+| Scenario | Mix | Gross | CQCD 15% | **Net** |
+|---|---|---|---|---|
+| Conservative — Lane A only, 3 of 5 | 2 × $1,500 + 1 × $750 | $3,750 | $563 | **$3,187** |
+| **Target — 4 Lane A + 2 Lane C via CQCD email** | 5 × $1,500 + 1 × $750 | $8,250 | $1,238 | **$7,012** |
+| Ceiling | 6 × $1,500 | $9,000 | $1,350 | **$7,650** |
+
+Four of five Lane A closing is realistic: all are 1st-degree, one is a returning client, three are Silver partners with real ROI exposure. **Reaching target requires the CQCD email to fire** — Lane C cannot be reached any other way.
+
+---
+
+## 9. Countdown
+
+| When | Date | Action | Status |
+|---|---|---|---|
+| **This week** | **6–15 Aug** | **Message Vanessa Lamétrie (CQCD)** — lead with the §6 exhibitor lead list, then ask for: the sponsor comms calendar, whether the `plan de commandite` is still open, and who emails the exhibitor list and when | 🔴 **Do first** |
+| T-10 | 18 Aug | Verify Agendrix ACV before quoting. Confirm Groupe Morneau's economic buyer. Re-check the exhibitor page for new names | ⬜ |
+| T-9 | 25 Aug | **Mirego** — warm, returning, Silver, `repeat_event` framing | ⬜ |
+| T-9 | 25 Aug | **Thirdbridge** (Nicolas St-Aubin, CEO) and **URSA** (Benoit Domingue, Président) — Silver-tier ROI angle | ⬜ |
+| T-8 | 1 Sep | Announcement post live; ask CQCD to reshare | ⬜ |
+| T-8→T-4 | 1–29 Sep | Urgency window. Agendrix + Groupe Morneau. CQCD email fires. Handle Lane C inbound | ⬜ |
+| **T-4** | **29 Sep** | **Close-by date** | ⬜ |
+| T-3→T-1 | 6–20 Oct | Delivery: attendee list under NDA, enrichment, ICP calls, meetings confirmed | ⬜ |
+| Event | 27 Oct | — | ⬜ |
+| E+3d | 30 Oct | Collect outcome data while fresh — case-study window | ⬜ |
+| E+2w | 10 Nov | CQCD renewal for HOP 27 · pitch the organizer cluster (§7c) | ⬜ |
+
+---
+
+## 10. Open questions
+
+1. ~~What are the 50 exhibitors?~~ **Resolved** — published list retrieved 2026-08-06. Re-check periodically; it is still filling.
+2. **Is the `plan de commandite` still open?** Decides bundling vs add-on. Only CQCD can answer.
+3. **Agendrix ACV** — what is a won retail account worth to them? Gates whether they get 15 matches or 10, and whether they should be pitched at all.
+4. **Groupe Morneau's economic buyer** — Karim Diepenbroek is a champion; who signs?
+5. **HOP 25 delivered match counts** — Expedibox took 10, not 15. Supply constraint or budget choice? Decides 2026 package pricing.
+6. **Do retail category buyers attend?** Was gating a CPG segment test — deprioritized, since no CPG brand in the network is exhibiting. Revisit for HOP 27.
+
+---
+
+## Post-Event Review
+*(Complete after 27 Oct 2026 — re-run `/betalabs-event-activation HOP 2026`)*
+
+- [ ] Sponsors closed vs 6 targeted · revenue vs $7,012
+- [ ] Matches delivered per sponsor — did 15 hold at 1,200 attendees?
+- [ ] Which lane produced the closes: CQCD channel, warm network, or cold?
+- [ ] **Did the exhibitor-lead list convert?** How many of the 12 signed with CQCD, and did any become BETA Labs sponsors?
+- [ ] Did sponsorship tier predict close rate, as §2 assumes?
+- [ ] Sponsor verbatims — watch for the "my team could have done this" signal
+- [ ] CQCD renewal for HOP 27
