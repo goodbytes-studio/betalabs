@@ -1,0 +1,274 @@
+{
+  "version": "2.0-proposal",
+  "as_of": "2026-10-13",
+  "svg_assets": 33,
+  "exports": [
+    {
+      "path": "brand/guide/exports/png/logos--primary-original.png",
+      "width": 1053,
+      "height": 141,
+      "sha256": "c95ac86eab711d4ba34e362df70172f9eccc5896822d24c972590632e27f3447"
+    },
+    {
+      "path": "brand/guide/exports/png/logos--primary-charcoal.png",
+      "width": 1053,
+      "height": 141,
+      "sha256": "28c94a662e90cef9cfdd19949cab4caf69a887af1c615935496f7f4043da1db5"
+    },
+    {
+      "path": "brand/guide/exports/png/logos--logomark-charcoal.png",
+      "width": 160,
+      "height": 160,
+      "sha256": "870217dbee2e8bba531f170e5525336f666167ce2a90084aaf8cc8c57ca72d66"
+    },
+    {
+      "path": "brand/guide/exports/png/logos--primary-cream.png",
+      "width": 1053,
+      "height": 141,
+      "sha256": "c95ac86eab711d4ba34e362df70172f9eccc5896822d24c972590632e27f3447"
+    },
+    {
+      "path": "brand/guide/exports/png/logos--logomark-cream.png",
+      "width": 160,
+      "height": 160,
+      "sha256": "14bae809d64f70fc342d010b7dcbb552643046a8b0c7554fb6ba4462fe0552a8"
+    },
+    {
+      "path": "brand/guide/exports/png/logos--primary-white.png",
+      "width": 1053,
+      "height": 141,
+      "sha256": "83734a21f186aeb2d71a3ec2a504656bb67a6e4c940ad0103c6a6d96bbf2b808"
+    },
+    {
+      "path": "brand/guide/exports/png/logos--logomark-white.png",
+      "width": 160,
+      "height": 160,
+      "sha256": "6728cb0d4495eff930ae0c078e71d37500aa03e022fc33323838dc028698a1e3"
+    },
+    {
+      "path": "brand/guide/exports/png/logos--primary-black.png",
+      "width": 1053,
+      "height": 141,
+      "sha256": "d19e1d2973ce697a7792c11b543a9cc4c5c09f7dcf243baf9d60189585763866"
+    },
+    {
+      "path": "brand/guide/exports/png/logos--logomark-black.png",
+      "width": 160,
+      "height": 160,
+      "sha256": "7170664e4e3f6cb5f1dce0eafac2d779cafefcc219f56fc5f9d75e4d4dad8517"
+    },
+    {
+      "path": "brand/guide/exports/png/logos--avatar-lime.png",
+      "width": 400,
+      "height": 400,
+      "sha256": "629e6e62ccff48ce4ccce4c824cbd21f89c4ef51936015259dadf5b824b3fd9a"
+    },
+    {
+      "path": "brand/guide/exports/png/logos--avatar-charcoal.png",
+      "width": 400,
+      "height": 400,
+      "sha256": "0828c4dca78e7d36593cb5e561fa004850ec2a401819b78ba7e70bdd411f0eb3"
+    },
+    {
+      "path": "brand/guide/exports/png/logos--avatar-cream.png",
+      "width": 400,
+      "height": 400,
+      "sha256": "c33598040c37b091ff37ea2476ee79697711a21ff1c3275781fbf6d8d17ca198"
+    },
+    {
+      "path": "brand/guide/exports/png/logos--stacked-lockup.png",
+      "width": 600,
+      "height": 380,
+      "sha256": "b4e9eadb448e507cc3a70fd16821a2b707549b33d4e66f32f8aaa6cd92be8635"
+    },
+    {
+      "path": "brand/guide/exports/png/rules--logo-clearspace.png",
+      "width": 900,
+      "height": 460,
+      "sha256": "18e3b3022fd0bcc7f712cf67a8f86cddd52803a244970b5f149f51112597e948"
+    },
+    {
+      "path": "brand/guide/exports/png/rules--mark-clearspace.png",
+      "width": 600,
+      "height": 460,
+      "sha256": "3e23414340d4e8d19673b0abcc64f3ca7f054b562324d82b9908e6c5cd7fe0b4"
+    },
+    {
+      "path": "brand/guide/exports/png/patterns--signal-field.png",
+      "width": 1400,
+      "height": 850,
+      "sha256": "3e6e8e3dceb93be2ba5b4211d62116500c6f263060d7269785f5c7fd00d2323a"
+    },
+    {
+      "path": "brand/guide/exports/png/patterns--signal-network.png",
+      "width": 1400,
+      "height": 850,
+      "sha256": "c92b4ff948540a77d6d032b7a8246aa9aab6a754e0fdce23515791f1157f248a"
+    },
+    {
+      "path": "brand/guide/exports/png/patterns--precision-frame.png",
+      "width": 1400,
+      "height": 850,
+      "sha256": "6571aec6741f1302e2d3478921e92e94deba5cac807a53a74817dee9b36e7e89"
+    },
+    {
+      "path": "brand/guide/exports/png/diagrams--process-infographic.png",
+      "width": 1440,
+      "height": 700,
+      "sha256": "3cd2aca32d64eebd9b102223c7a284be6fbc8ae9726b778df501e09c88f2e2e0"
+    },
+    {
+      "path": "brand/guide/exports/png/diagrams--signal-infographic.png",
+      "width": 1440,
+      "height": 700,
+      "sha256": "62dd0f8fa664318dfc3e2ce1ed348588dfdb980430bd6877d0de1a026c032f44"
+    },
+    {
+      "path": "brand/guide/exports/png/diagrams--dual-motion-schema.png",
+      "width": 1440,
+      "height": 740,
+      "sha256": "807a9b759492cd7de976395960c91ebc59e076d4d7a03d59ed8a62469def9406"
+    },
+    {
+      "path": "brand/guide/exports/png/social--statement-portrait.png",
+      "width": 1080,
+      "height": 1350,
+      "sha256": "71915ca69d1bacd86a365920a52c64a090acbe40e33a876da0895809264e186f"
+    },
+    {
+      "path": "brand/guide/exports/png/social--signal-square.png",
+      "width": 1080,
+      "height": 1080,
+      "sha256": "5b59079acddc8e28d0492388d5a2b875627952ad372720100fb6afda6ad0c247"
+    },
+    {
+      "path": "brand/guide/exports/png/social--preparation-story.png",
+      "width": 1080,
+      "height": 1920,
+      "sha256": "9bcfd4bfaf418f7530bfdfe01c75217f008b683cb5b4cc9a889d68839e0fee37"
+    },
+    {
+      "path": "brand/guide/exports/png/social--carousel-01.png",
+      "width": 1080,
+      "height": 1350,
+      "sha256": "d1870b0d0d61491f18539d786160166ab801df0674ac39b27271ff137f12fc97"
+    },
+    {
+      "path": "brand/guide/exports/png/social--carousel-02.png",
+      "width": 1080,
+      "height": 1350,
+      "sha256": "91f51962650db9eb43a1ff4b1f5750e847dcf0b63185dea9dcdf840acd8e6be0"
+    },
+    {
+      "path": "brand/guide/exports/png/social--carousel-03.png",
+      "width": 1080,
+      "height": 1350,
+      "sha256": "4b133f2cd8dc8a952b7b64271cc2f78e5d7d3c7385489a527db0795b82cbb543"
+    },
+    {
+      "path": "brand/guide/exports/png/social--carousel-04.png",
+      "width": 1080,
+      "height": 1350,
+      "sha256": "0cc38b2ec772be4893057e7f2c08ba37932a6a59d802ae49c0f426bd81de254c"
+    },
+    {
+      "path": "brand/guide/exports/png/banners--linkedin-company.png",
+      "width": 1128,
+      "height": 191,
+      "sha256": "42296f59bb3ae9fcdda2f2df0a5cc62dec91ba6da96dadfb4cd1783855cc89ad"
+    },
+    {
+      "path": "brand/guide/exports/png/banners--linkedin-profile.png",
+      "width": 1584,
+      "height": 396,
+      "sha256": "74f9c30e9c7aaa7015d418384386765d2040290dd4743482cbc0e5948a88101c"
+    },
+    {
+      "path": "brand/guide/exports/png/banners--facebook-page.png",
+      "width": 1640,
+      "height": 624,
+      "sha256": "f11fc96753f6f56a72f2985d4b4d8e83c866b154d778ac6e2e937429a26277a7"
+    },
+    {
+      "path": "brand/guide/exports/png/banners--x-profile.png",
+      "width": 1500,
+      "height": 500,
+      "sha256": "0bf322bf55271b22cece77dc0bc8a177af51838fe4b4e1124694da0e113ee59a"
+    },
+    {
+      "path": "brand/guide/exports/png/banners--youtube-channel.png",
+      "width": 2560,
+      "height": 1440,
+      "sha256": "81e0a7fd2de347138cc9d0d40b3a5c59c3caa51d8ff751e21adf0937981ebf84"
+    }
+  ],
+  "guide_pages": 16,
+  "observed_website": false,
+  "status": "pass",
+  "page_overflows": [
+    {
+      "page": 1,
+      "overflow": false
+    },
+    {
+      "page": 2,
+      "overflow": false
+    },
+    {
+      "page": 3,
+      "overflow": false
+    },
+    {
+      "page": 4,
+      "overflow": false
+    },
+    {
+      "page": 5,
+      "overflow": false
+    },
+    {
+      "page": 6,
+      "overflow": false
+    },
+    {
+      "page": 7,
+      "overflow": false
+    },
+    {
+      "page": 8,
+      "overflow": false
+    },
+    {
+      "page": 9,
+      "overflow": false
+    },
+    {
+      "page": 10,
+      "overflow": false
+    },
+    {
+      "page": 11,
+      "overflow": false
+    },
+    {
+      "page": 12,
+      "overflow": false
+    },
+    {
+      "page": 13,
+      "overflow": false
+    },
+    {
+      "page": 14,
+      "overflow": false
+    },
+    {
+      "page": 15,
+      "overflow": false
+    },
+    {
+      "page": 16,
+      "overflow": false
+    }
+  ]
+}

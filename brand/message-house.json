@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "status": "strategic_proposals_grounded_in_documentary_sources",
+  "source_ids": ["S05", "S03", "S11", "S12", "S15"],
+  "master_belief": "La valeur de BETA Labs est le travail de préparation qui rend chaque priorité explicable avant l’événement.",
+  "brand_territory": {"fr": "Le signal avant la foule.", "en": "Find the signal before the crowd.", "status": "proposed_brand_territory_not_approved_tagline"},
+  "sponsor": {
+    "situation": "Kiosque, déplacement et temps d’équipe engagés ; préparation des prospects insuffisante.",
+    "belief_shift": "Passer de la recherche improvisée sur place à des priorités expliquées en amont.",
+    "hero_fr": "Sachez qui chercher avant d’arriver.",
+    "hero_en": "Know who matters before you arrive.",
+    "subhead_fr": "À partir de la liste de l’organisateur, BETA Labs prépare votre liste courte selon votre ICP. Chaque profil vient avec son signal et un brouillon d’ouverture. Vous envoyez le message. Vous gardez la relation.",
+    "cta_fr": "Parlons de votre prochain événement",
+    "proof_to_show": "Exemple fictif d’un profil avec critère et signal ; puis résultat client documenté quand disponible.",
+    "avoid": "Liste présentée comme commodité ; faux calendrier rempli ; chiffres de pipeline non documentés."
+  },
+  "organizer": {
+    "situation": "Commanditaires cherchent la valeur de leur investissement ; organisateur prépare offre et renouvellements.",
+    "belief_shift": "Passer d’une présence vendue à une préparation utile proposée aux commanditaires.",
+    "hero_fr": "Donnez à vos exposants des conversations à préparer.",
+    "hero_en": "Give your exhibitors conversations to prepare for.",
+    "subhead_fr": "Votre événement réunit les participants. BETA Labs aide chaque commanditaire à identifier ses priorités, sous entente et selon son ICP, avec les signaux et les brouillons pour ouvrir ses propres conversations.",
+    "cta_fr": "Construisons l’offre pour votre prochaine édition",
+    "proof_to_show": "Parcours partenaire, livrable et responsabilités ; données de renouvellement seulement si mesurées.",
+    "avoid": "Présenter une hausse de rétention ou un revenu comme résultat acquis."
+  },
+  "pillars": [
+    {"id": "real_registration", "claim": "La liste des inscrits, sous entente.", "evidence": "documented_coherent", "source_ids": ["S05", "S11"]},
+    {"id": "reasoned_priority", "claim": "Une raison pour chaque priorité.", "evidence": "documented_coherent", "source_ids": ["S03", "S11"]},
+    {"id": "relationship", "claim": "Le premier message reste le vôtre.", "evidence": "documented_coherent", "source_ids": ["S03", "S05"]}
+  ],
+  "awareness_routes": {
+    "problem_aware": "Faire reconnaître le coût de la préparation qui ne se fait pas, puis montrer le livrable.",
+    "solution_aware": "Expliquer la différence entre obtenir une liste et qualifier chaque priorité selon l’ICP.",
+    "product_aware": "Répondre à mon équipe pourrait le faire, au délai réel et au périmètre.",
+    "post_delivery": "Mesurer l’usage, retirer les irritants et préparer l’événement suivant."
+  },
+  "test_design": {
+    "primary_metric": "Briefs ICP qualifiés ou conversations commerciales qualifiées par visiteur exposé, selon le canal.",
+    "guardrail_metric": "Compréhension du livrable et absence d’attente de réservation.",
+    "no_outcome_claim": "Aucun uplift, sample size ou résultat de test inventé."
+  }
+}

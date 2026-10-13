@@ -53,3 +53,5 @@ Adapter au bilan réellement obtenu ; l’absence d’un logo d’exposant sur u
 | L’événement est trop proche | Vérifier d’abord si une livraison utile est encore possible ; sinon préparer l’édition suivante. |
 
 Les citations clients, le benchmark CEIR et les pourcentages de conversion sont gérés dans le [registre de preuves](09-preuves-decisions.md). La bibliothèque d’origine contient davantage de variantes, avec leurs statuts documentaires ; elle ne doit pas devenir un catalogue de promesses nouvelles.
+
+La [maison de messages](../brand/message-house.json) structure les arguments par public et niveau de conscience. Le [copywriter stratégique](../agents/copywriter.md) l’utilise pour produire des pièces et des hypothèses de test. Le [pack de copy d’exploration](../brand/prototypes/brand-direction-v1/copy-pack.md) propose de nouvelles formulations FR/EN, sans nouvelle publication ni validation de résultats.

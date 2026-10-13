@@ -1,0 +1,308 @@
+{
+  "version": "2.0-proposal",
+  "as_of": "2026-10-13",
+  "supplied_logo": {
+    "path": "brand/assets/logos/betalabs-original.svg",
+    "sha256": "ca396bcfa11b576d56690536c8889ede5ca461c20e7bb0252134a781b61a4538",
+    "source": "user upload betalabs.svg",
+    "geometry": "1053 x 141; eight paths; original cream fill"
+  },
+  "fonts": [
+    {
+      "path": "brand/guide/assets/fonts/Inter.ttf",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/inter/Inter%5Bopsz%2Cwght%5D.ttf",
+      "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+      "license": "SIL Open Font License 1.1"
+    },
+    {
+      "path": "brand/guide/assets/fonts/Inter-OFL.txt",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/inter/OFL.txt",
+      "sha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57",
+      "license": "SIL Open Font License 1.1"
+    },
+    {
+      "path": "brand/guide/assets/fonts/Newsreader-Italic.ttf",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/newsreader/Newsreader-Italic%5Bopsz%2Cwght%5D.ttf",
+      "sha256": "796668611f80b64d5adf182fde3b6f29ed83b4e7cbec7b96937e84ac01364792",
+      "license": "SIL Open Font License 1.1"
+    },
+    {
+      "path": "brand/guide/assets/fonts/Newsreader-OFL.txt",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/newsreader/OFL.txt",
+      "sha256": "fdfad38143ec470553cae82a1e45320bdd1b9ec70415d37bd0171051d8a4ded8",
+      "license": "SIL Open Font License 1.1"
+    }
+  ],
+  "assets": [
+    {
+      "path": "brand/guide/assets/logos/primary-original.svg",
+      "width": 1053,
+      "height": 141,
+      "kind": "provided_original",
+      "sha256": "ca396bcfa11b576d56690536c8889ede5ca461c20e7bb0252134a781b61a4538",
+      "title": "Unmodified wordmark supplied by user"
+    },
+    {
+      "path": "brand/guide/assets/logos/primary-charcoal.svg",
+      "width": 1053,
+      "height": 141,
+      "kind": "wordmark_variant",
+      "title": "BETA Labs primary wordmark, geometry preserved",
+      "sha256": "87a1b45dd671becd9e389122491c58c657abd20ada47a6378cd6031c4828d940"
+    },
+    {
+      "path": "brand/guide/assets/logos/logomark-charcoal.svg",
+      "width": 160,
+      "height": 160,
+      "kind": "derived_logomark",
+      "title": "B monogram extracted from supplied wordmark",
+      "sha256": "59a098ff64f8412358a390d38583095dae8efe6e5c63cb3c1d1786943224f1fc"
+    },
+    {
+      "path": "brand/guide/assets/logos/primary-cream.svg",
+      "width": 1053,
+      "height": 141,
+      "kind": "wordmark_variant",
+      "title": "BETA Labs primary wordmark, geometry preserved",
+      "sha256": "a62659b9ca962254157a4d7a7dc99325054dcd42c06bd9a685031de07cfb321c"
+    },
+    {
+      "path": "brand/guide/assets/logos/logomark-cream.svg",
+      "width": 160,
+      "height": 160,
+      "kind": "derived_logomark",
+      "title": "B monogram extracted from supplied wordmark",
+      "sha256": "789f807de18cc12273f1f77a6c18097aa1e63ba1e7bf25fc0bbf12f2c5e4c0e4"
+    },
+    {
+      "path": "brand/guide/assets/logos/primary-white.svg",
+      "width": 1053,
+      "height": 141,
+      "kind": "wordmark_variant",
+      "title": "BETA Labs primary wordmark, geometry preserved",
+      "sha256": "1053a26729a0a2e04b30ac4dcf93a92c514b73aba9402ea29d99ba6f61797b18"
+    },
+    {
+      "path": "brand/guide/assets/logos/logomark-white.svg",
+      "width": 160,
+      "height": 160,
+      "kind": "derived_logomark",
+      "title": "B monogram extracted from supplied wordmark",
+      "sha256": "dde4daa322a5ff887b28963f60583c8140c7e68524a533861b3e169b6a04ff32"
+    },
+    {
+      "path": "brand/guide/assets/logos/primary-black.svg",
+      "width": 1053,
+      "height": 141,
+      "kind": "wordmark_variant",
+      "title": "BETA Labs primary wordmark, geometry preserved",
+      "sha256": "e5a4dd7a04ed3effee27c7832b4a4e373eb9e4a0e56d4ca08a772f19c2e810b2"
+    },
+    {
+      "path": "brand/guide/assets/logos/logomark-black.svg",
+      "width": 160,
+      "height": 160,
+      "kind": "derived_logomark",
+      "title": "B monogram extracted from supplied wordmark",
+      "sha256": "d7c3976e43faf2969730aaec69c93f671f40955414057bcb8af8879854092b8c"
+    },
+    {
+      "path": "brand/guide/assets/logos/avatar-lime.svg",
+      "width": 400,
+      "height": 400,
+      "kind": "avatar",
+      "title": "BETA Labs monogram avatar",
+      "sha256": "b8605b6027643729fb013f2d569e37b18bcddc96981a7b632bad8de58bce2f2a"
+    },
+    {
+      "path": "brand/guide/assets/logos/avatar-charcoal.svg",
+      "width": 400,
+      "height": 400,
+      "kind": "avatar",
+      "title": "BETA Labs monogram avatar",
+      "sha256": "df7acbe869964838595d5307480aa1d1f91448577940d525c9d040fe0c554bba"
+    },
+    {
+      "path": "brand/guide/assets/logos/avatar-cream.svg",
+      "width": 400,
+      "height": 400,
+      "kind": "avatar",
+      "title": "BETA Labs monogram avatar",
+      "sha256": "32a8b214cd283ab1b2816dbb02bca7fd3804780d3337d4c85c1e5b8bd313bd11"
+    },
+    {
+      "path": "brand/guide/assets/logos/stacked-lockup.svg",
+      "width": 600,
+      "height": 380,
+      "kind": "lockup",
+      "title": "Proposed stacked lockup",
+      "sha256": "51b37c979d838c9516b05c01c9f5b8d6821f250cd69fbcbe7459fd9643f65fab"
+    },
+    {
+      "path": "brand/guide/assets/rules/logo-clearspace.svg",
+      "width": 900,
+      "height": 460,
+      "kind": "clearspace",
+      "title": "Wordmark clearspace specification",
+      "sha256": "f1a8af45c4d94cbbe4c61cffafd52e8d1212e466eabc03d3abcd3c1585c3a066"
+    },
+    {
+      "path": "brand/guide/assets/rules/mark-clearspace.svg",
+      "width": 600,
+      "height": 460,
+      "kind": "clearspace",
+      "title": "Proposed symbol clearspace",
+      "sha256": "36853f8f567dcb67492f7721ae26742a6717481c441e890bd8c5fdddb79d30b5"
+    },
+    {
+      "path": "brand/guide/assets/patterns/signal-field.svg",
+      "width": 1400,
+      "height": 850,
+      "kind": "pattern",
+      "title": "Signal field pattern",
+      "sha256": "6a0e62e2b313e435482437b594c2aaad306fe843c039168062dbc2a6a59ded5f"
+    },
+    {
+      "path": "brand/guide/assets/patterns/signal-network.svg",
+      "width": 1400,
+      "height": 850,
+      "kind": "pattern",
+      "title": "Signal network illustration, conceptual",
+      "sha256": "92a92a07ab6cf78039aafb58da40cf37fd47f591245358b811deb94541b10098"
+    },
+    {
+      "path": "brand/guide/assets/patterns/precision-frame.svg",
+      "width": 1400,
+      "height": 850,
+      "kind": "pattern",
+      "title": "Precision framing pattern",
+      "sha256": "8d7e252caf427a2aca1fce91ee06a901693687ec1732be8892a72d1869447ffb"
+    },
+    {
+      "path": "brand/guide/assets/diagrams/process-infographic.svg",
+      "width": 1440,
+      "height": 700,
+      "kind": "infographic",
+      "title": "BETA Labs four-stage process",
+      "sha256": "2c51033afa0494fdbbd8d0e87e7f2dab454837f62b76d15bf3d85f15480b7c50"
+    },
+    {
+      "path": "brand/guide/assets/diagrams/signal-infographic.svg",
+      "width": 1440,
+      "height": 700,
+      "kind": "infographic",
+      "title": "Illustrative selection and qualifying signal",
+      "sha256": "3bdc5457d6c99c8fdf725d05fc9e8bd425ba3a15dfcc207b9fe1a17487b2e056"
+    },
+    {
+      "path": "brand/guide/assets/diagrams/dual-motion-schema.svg",
+      "width": 1440,
+      "height": 740,
+      "kind": "schema",
+      "title": "Organizer and sponsor responsibilities",
+      "sha256": "4657a7f4f962f1180f29c400c0ad100befcf161299ff03f57691f62fb2cb5143"
+    },
+    {
+      "path": "brand/guide/assets/social/statement-portrait.svg",
+      "width": 1080,
+      "height": 1350,
+      "kind": "social_creative",
+      "title": "statement portrait",
+      "sha256": "0a20206e8b4b3aeff9f38f65b2c73d1dc5aa3252fd62c4b6b0db60858ebd1f42"
+    },
+    {
+      "path": "brand/guide/assets/social/signal-square.svg",
+      "width": 1080,
+      "height": 1080,
+      "kind": "social_creative",
+      "title": "signal square",
+      "sha256": "cb7f90f9a066835911264c1a899bf697ab72d113e3039aac45240f1160dcaa23"
+    },
+    {
+      "path": "brand/guide/assets/social/preparation-story.svg",
+      "width": 1080,
+      "height": 1920,
+      "kind": "social_creative",
+      "title": "preparation story",
+      "sha256": "75ebdb22291ad3dfbb39047a839d8343eaebefba0f174c03a6c64695ed4dc30f"
+    },
+    {
+      "path": "brand/guide/assets/social/carousel-01.svg",
+      "width": 1080,
+      "height": 1350,
+      "kind": "carousel",
+      "title": "Preparation carousel 01",
+      "sha256": "c820ca595f75d1943f9d693c9e40d5ba4467970b4ec6cd4865719658a8c04672"
+    },
+    {
+      "path": "brand/guide/assets/social/carousel-02.svg",
+      "width": 1080,
+      "height": 1350,
+      "kind": "carousel",
+      "title": "Preparation carousel 02",
+      "sha256": "adf2a1bbc46e2030f9beb60a72fbe38e9cac6f7f5de4692bca6bb1fbb330ec7a"
+    },
+    {
+      "path": "brand/guide/assets/social/carousel-03.svg",
+      "width": 1080,
+      "height": 1350,
+      "kind": "carousel",
+      "title": "Preparation carousel 03",
+      "sha256": "8c8c9571ce3532ee0f445a0322c6039f956973dcf25072680f388ba66c91bf71"
+    },
+    {
+      "path": "brand/guide/assets/social/carousel-04.svg",
+      "width": 1080,
+      "height": 1350,
+      "kind": "carousel",
+      "title": "Preparation carousel 04",
+      "sha256": "ac409f033928ec564bc8f8e7c9ed45eacb73ad1308169376ee5b548ba448d33b"
+    },
+    {
+      "path": "brand/guide/assets/banners/linkedin-company.svg",
+      "width": 1128,
+      "height": 191,
+      "kind": "page_banner",
+      "title": "linkedin company export target",
+      "sha256": "2a6eb364c01a090324fffae625ad7c51eb665b59e660adb6077b58e38ef3e20f"
+    },
+    {
+      "path": "brand/guide/assets/banners/linkedin-profile.svg",
+      "width": 1584,
+      "height": 396,
+      "kind": "page_banner",
+      "title": "linkedin profile export target",
+      "sha256": "8e3cdbb4a1775209b9654fedc695327256a5449d0d3761436f0c6436d1a4c70f"
+    },
+    {
+      "path": "brand/guide/assets/banners/facebook-page.svg",
+      "width": 1640,
+      "height": 624,
+      "kind": "page_banner",
+      "title": "facebook page export target",
+      "sha256": "2eb5caffbb222a52446faa26acccaf913375a8d1d8164c79f8b2bd824a089580"
+    },
+    {
+      "path": "brand/guide/assets/banners/x-profile.svg",
+      "width": 1500,
+      "height": 500,
+      "kind": "page_banner",
+      "title": "x profile export target",
+      "sha256": "7b72b685b73a6a6acd1c3ec31022e2b78a758f18d908eaff18eed5012577bf2a"
+    },
+    {
+      "path": "brand/guide/assets/banners/youtube-channel.svg",
+      "width": 2560,
+      "height": 1440,
+      "kind": "page_banner",
+      "title": "youtube channel export target",
+      "sha256": "c8815bed01dece3f1a3708d5c46b762dc3cf85cf5f6754cb781567ddfaca3875"
+    }
+  ],
+  "notes": [
+    "Wordmark geometry comes from the supplied original.",
+    "B symbol, clearspace, Newsreader accent and application rules are proposed extensions.",
+    "Black/white logo variants are monochrome production exceptions.",
+    "Banner dimensions are chosen export targets, not live-verified platform requirements."
+  ]
+}

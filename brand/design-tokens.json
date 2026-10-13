@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "source_ids": [
+    "S12"
+  ],
+  "baseline_status": "historical_documentary",
+  "current_site_observed_tokens": {},
+  "baseline": {
+    "colors": {
+      "canvas": "#F8F6F2",
+      "ink": "#343434",
+      "signal": "#EDF993",
+      "surface": "#FFFFFF"
+    },
+    "typography": {
+      "sans": "Inter",
+      "sans_weights": [
+        300,
+        400,
+        500,
+        600
+      ],
+      "accent": "Chiron Sung HK Light Italic",
+      "accent_license_status": "unknown_in_corpus",
+      "hero_px": 68,
+      "section_px": 48,
+      "body_px": 16,
+      "body_line_px": 24,
+      "accent_rule": "Une expression par titre ; pas une ligne entière."
+    },
+    "radius_px": {
+      "container": 16,
+      "nested": 12,
+      "pill": 100
+    },
+    "border_px": 1,
+    "illustration": "points et profils classés ; lime pour la sélection",
+    "effects": {
+      "shadow": false,
+      "gradient": false,
+      "blur": false
+    }
+  },
+  "proposed_extension": {
+    "status": "exploration",
+    "body_weight": 400,
+    "body_size_px": 18,
+    "body_line_height": 1.6,
+    "heading_scale": {
+      "hero": "clamp(2.625rem, 5.5vw, 5rem)",
+      "section": "clamp(2rem, 3vw, 3rem)"
+    },
+    "spacing_px": [
+      4,
+      8,
+      12,
+      16,
+      24,
+      32,
+      48,
+      64,
+      96
+    ],
+    "max_content_px": 1240,
+    "mobile_padding_px": 20,
+    "text_ink_alpha_min": 0.72,
+    "interactive_min_height_px": 44,
+    "focus": "outline charbon de 2 px, offset 4 px",
+    "accent_fallback": "Georgia Italic dans le prototype, sans revendication de police officielle",
+    "motion": "Déplacements légers de sélection ; aucun mouvement requis pour comprendre ; respecter reduced-motion.",
+    "why": "Rendre le système lisible sur mobile, plus démonstratif et plus facile à déployer sans perdre sa retenue."
+  },
+  "guide_v2": {
+    "status": "proposal",
+    "primary_typeface": "Inter",
+    "accent_typeface": "Newsreader Italic",
+    "fonts": "brand/guide/assets/fonts",
+    "logo": "brand/assets/logos/betalabs-original.svg",
+    "clearspace": "x = H/2 around wordmark",
+    "wordmark_min_width_px": 180,
+    "logomark_min_px": 16,
+    "guide": "brand/guide/manifest.json"
+  }
+}

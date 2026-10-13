@@ -1,6 +1,6 @@
 # BETA Labs — GTM Intelligence
 
-Base de travail interne pour GoodBytes Studio et BETA Labs. **Analyse du corpus au 13 octobre 2026**, sans nouvelle vérification web ni confirmation auprès des clients.
+Base de travail interne pour GoodBytes Studio et BETA Labs. **Analyse du corpus au 13 octobre 2026**, sans nouvelle confirmation auprès des clients. Les deux agents de marque et leur prototype sont disponibles ; la [lecture du site actuel reste bloquée](brand/audit-2026-10-13.md) par l’accès réseau.
 
 BETA Labs est décrit dans les sources récentes comme **la couche de ciblage pré-événement pour les événements B2B** : liste des participants obtenue sous entente, enrichissement selon l’ICP, liste courte avec signaux et brouillons d’ouverture. Le commanditaire envoie les messages et conserve la relation. Le positionnement reste **provisoire** dans le corpus.
 
@@ -18,6 +18,9 @@ BETA Labs est décrit dans les sources récentes comme **la couche de ciblage pr
 | Retrouver une pièce originale | [Catalogue des 39 sources](sources/README.md) |
 | Exploiter les CSV et les mettre à jour | [Données](data/README.md), [méthode](docs/methode.md) |
 | Piloter les prochaines étapes | [Plan de travail](operations/plan-de-travail.md), [pipeline et mesure](operations/pipeline-et-mesure.md) |
+| Faire travailler le designer ou le copywriter | [Agents BETA Labs](agents/README.md), [mémoire de marque](brand/README.md) |
+| Voir une évolution concrète de la marque | [Prototype interactif](brand/prototypes/brand-direction-v1/index.html), [stratégie et copy](brand/prototypes/brand-direction-v1/copy-pack.md) |
+| Utiliser le brand guide et ses assets | [Brand guide v2](brand/guide/README.md), [PDF](brand/guide/exports/BETA-Labs-Brand-Guide-v2.pdf) |
 
 ## Structure
 
@@ -33,6 +36,9 @@ data/config/           alias explicites et dates des campagnes
 data/registers/        claims, décisions et conflits éditoriaux
 data/derived/          tables reconstruites avec provenance par ligne
 scripts/               reconstruction et validation, Python standard
+brand/                 mémoire, tokens, propositions et prototype de marque
+agents/                rôles designer/copywriter et contrat de relais
+.agents/skills/        skills locaux Codex pour les deux agents
 ```
 
 ## Données préparées
@@ -56,3 +62,13 @@ Choisir une nouvelle date d’analyse explicitement lors d’un rafraîchissemen
 Les originaux restent lisibles même lorsqu’ils se contredisent. Les identifiants S01–S39 permettent de remonter de chaque synthèse à sa source. La présence d’une affirmation dans un document, même marquée « validée » par son auteur, ne constitue pas une nouvelle vérification indépendante.
 
 Le générateur JavaScript reçu est conservé comme archive. Il n’entre pas dans la reconstruction de cette base. Les contrôles effectués sont décrits dans le [rapport de validation](docs/validation.md).
+
+## Designer et copywriter
+
+Utiliser `$betalabs-designer` pour direction artistique, systèmes et supports visuels, ou `$betalabs-copywriter` pour stratégie du message et rédaction. Les [instructions d’usage](agents/README.md) expliquent leur découverte locale et le chargement manuel si nécessaire. Ces rôles partagent les mêmes sources et claims ; aucune activation globale ou déploiement autonome n’est annoncé.
+
+Le prototype est une exploration FR/EN commanditaire/organisateur, fondée sur les documents, avec profils fictifs. Sa vérification optionnelle utilise Playwright et Chromium, disponibles dans cette instance : `python3 scripts/verify_brand_prototype.py`. Elle ne fait pas partie des dépendances nécessaires à la lecture et à la reconstruction du corpus.
+
+Le designer v2 utilise sept [bundles Open Design](agents/learning/open-design/README.md) et dix références de craft. [BYQ](agents/learning/BYQ.md) reste non ingéré, son accès étant bloqué. Le [DESIGN.md](brand/DESIGN.md) et le [contrat](brand/design-contract.md) relient ces méthodes à BETA Labs.
+
+Le logo SVG fourni est conservé dans `brand/assets/logos/betalabs-original.svg`. Le guide de 16 pages et ses 33 masters SVG/PNG couvrent logo, B dérivé, clearspace, typographie, palette, imagery, patterns, infographies, schémas, social et bannières. Fonts OFL et imagerie générée ont leur provenance ; les règles nouvelles sont des propositions v2.

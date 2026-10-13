@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "runtime": "Codex repository skills or portable prompts; no autonomous service deployed",
+  "shared_memory": [
+    "brand/brand-memory.json",
+    "brand/message-house.json",
+    "brand/design-tokens.json",
+    "data/registers/claims.csv"
+  ],
+  "agents": [
+    {
+      "id": "betalabs-designer",
+      "name": "BETA Labs Designer",
+      "prompt": "agents/designer.md",
+      "skill": ".agents/skills/betalabs-designer/SKILL.md",
+      "owns": [
+        "creative direction",
+        "design system",
+        "visual artifacts",
+        "responsive design",
+        "brand evolution"
+      ],
+      "version": 2,
+      "learning_manifest": "agents/learning/open-design/manifest.json",
+      "design_contract": "brand/DESIGN.md"
+    },
+    {
+      "id": "betalabs-copywriter",
+      "name": "BETA Labs Strategic Copywriter",
+      "prompt": "agents/copywriter.md",
+      "skill": ".agents/skills/betalabs-copywriter/SKILL.md",
+      "owns": [
+        "message strategy",
+        "copy",
+        "belief shifts",
+        "offer articulation",
+        "conversion hypotheses"
+      ]
+    }
+  ],
+  "handoff": "agents/handoff-template.md",
+  "default_workflow": [
+    "brief",
+    "copy strategy",
+    "design concept",
+    "cross-review",
+    "artifact",
+    "verification",
+    "memory update"
+  ]
+}

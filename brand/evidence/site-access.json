@@ -1,0 +1,14 @@
+{
+  "as_of": "2026-10-13",
+  "requested_url": "https://www.betalabs.ca/",
+  "attempt_method": "HTTPS GET via environment egress proxy with TLS verification preserved",
+  "result": "blocked",
+  "http_status_from_origin": null,
+  "proxy_status": 403,
+  "diagnostic": "CONNECT tunnel failed, response 403",
+  "pages_ingested": [],
+  "screenshots_captured": [],
+  "required_domains": ["betalabs.ca", "www.betalabs.ca"],
+  "configuration_change": "Domains saved to draft; not evidence of runtime activation",
+  "current_website_claims_verified": false
+}

@@ -1,0 +1,185 @@
+{
+  "provider": "Open Design",
+  "repository": "https://github.com/nexu-io/open-design",
+  "commit": "1343f374c63d7866f4f3ff5d48ef038eba647f1b",
+  "imported_at": "2026-10-13",
+  "operational_skill_bundles": [
+    "frontend-design",
+    "reference-design-contract",
+    "impeccable-design-polish",
+    "redesign-skill",
+    "taste-skill",
+    "brand-extract",
+    "design-brief"
+  ],
+  "craft_references": [
+    "typography",
+    "typography-hierarchy",
+    "typography-hierarchy-editorial",
+    "color",
+    "anti-ai-slop",
+    "animation-discipline",
+    "accessibility-baseline",
+    "state-coverage",
+    "form-validation",
+    "laws-of-ux"
+  ],
+  "files": [
+    {
+      "path": "agents/learning/open-design/skills/frontend-design/LICENSE.txt",
+      "upstream_path": "skills/frontend-design/LICENSE.txt",
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+      "bytes": 10174
+    },
+    {
+      "path": "agents/learning/open-design/skills/frontend-design/SKILL.md",
+      "upstream_path": "skills/frontend-design/SKILL.md",
+      "sha256": "6963d8b4ae3d285b021342db2d797ec7aeaabbfd82ffefe9c90607e8a416b116",
+      "bytes": 5240
+    },
+    {
+      "path": "agents/learning/open-design/skills/reference-design-contract/SKILL.md",
+      "upstream_path": "skills/reference-design-contract/SKILL.md",
+      "sha256": "56d5e0c077263cd30f586ffa763fec5caebdee2821fa9653e86c3376b937e222",
+      "bytes": 5366
+    },
+    {
+      "path": "agents/learning/open-design/skills/reference-design-contract/example.html",
+      "upstream_path": "skills/reference-design-contract/example.html",
+      "sha256": "f0dd9db227e079d9f435d8c8e83c07980ff5756153f184ecb4ff5b4a2993b26b",
+      "bytes": 5848
+    },
+    {
+      "path": "agents/learning/open-design/skills/reference-design-contract/references/checklist.md",
+      "upstream_path": "skills/reference-design-contract/references/checklist.md",
+      "sha256": "45b0fb2dc33a82c192f37e2454f049f08729e5abe04cf7c3bc978acc6048b599",
+      "bytes": 1134
+    },
+    {
+      "path": "agents/learning/open-design/skills/impeccable-design-polish/SKILL.md",
+      "upstream_path": "skills/impeccable-design-polish/SKILL.md",
+      "sha256": "e3ff45f1d4ed285ccc440ef94082a169fda4251da002f869119a23946ba18e79",
+      "bytes": 2941
+    },
+    {
+      "path": "agents/learning/open-design/skills/redesign-skill/LICENSE",
+      "upstream_path": "skills/redesign-skill/LICENSE",
+      "sha256": "4575a543ab88dad12ccea7d97e563d0bce5b448b06072e65d3264497dad326df",
+      "bytes": 1065
+    },
+    {
+      "path": "agents/learning/open-design/skills/redesign-skill/SKILL.md",
+      "upstream_path": "skills/redesign-skill/SKILL.md",
+      "sha256": "32e1120e93201150be7aa52243954e5dc6fa5f6c3ddc4ac0f75491178ef2f0fc",
+      "bytes": 15651
+    },
+    {
+      "path": "agents/learning/open-design/skills/taste-skill/LICENSE",
+      "upstream_path": "skills/taste-skill/LICENSE",
+      "sha256": "4575a543ab88dad12ccea7d97e563d0bce5b448b06072e65d3264497dad326df",
+      "bytes": 1065
+    },
+    {
+      "path": "agents/learning/open-design/skills/taste-skill/SKILL.md",
+      "upstream_path": "skills/taste-skill/SKILL.md",
+      "sha256": "10bfcad7c488585c9dbe332c082f0ef7896e0516ae8768b6ec2194f70e97a656",
+      "bytes": 87915
+    },
+    {
+      "path": "agents/learning/open-design/skills/brand-extract/SKILL.md",
+      "upstream_path": "skills/brand-extract/SKILL.md",
+      "sha256": "8763d9941856b578302cc32990d0eee0b0b8f9a2afbe4b4bf0ec6307c38ebe85",
+      "bytes": 12523
+    },
+    {
+      "path": "agents/learning/open-design/skills/brand-extract/templates/brand-kit.html",
+      "upstream_path": "skills/brand-extract/templates/brand-kit.html",
+      "sha256": "8de5fc435d4f63e886a3d1570f9e91f55094b22a8c39ea5955a6e029c217a8ca",
+      "bytes": 56656
+    },
+    {
+      "path": "agents/learning/open-design/skills/design-brief/SKILL.md",
+      "upstream_path": "skills/design-brief/SKILL.md",
+      "sha256": "de27756b79d8f91349a6c0e9d7f8808993c2bcd7fa9c133c91dd18e0a04d6294",
+      "bytes": 13805
+    },
+    {
+      "path": "agents/learning/open-design/craft/typography.md",
+      "upstream_path": "craft/typography.md",
+      "sha256": "5f8e634b35c6b27a5e86f748825da17efe6a0d2e96f68dc35f57f406420049a6",
+      "bytes": 4781
+    },
+    {
+      "path": "agents/learning/open-design/craft/typography-hierarchy.md",
+      "upstream_path": "craft/typography-hierarchy.md",
+      "sha256": "e247ca0358dcbdc3921f2148cc44c6ddcc325429b8082f6ad033792b79e39e06",
+      "bytes": 7414
+    },
+    {
+      "path": "agents/learning/open-design/craft/typography-hierarchy-editorial.md",
+      "upstream_path": "craft/typography-hierarchy-editorial.md",
+      "sha256": "df5beddb8cd3c2b8f15e74f57ada607f7a89ce9112aaa8f8fad22d89e452bea4",
+      "bytes": 8748
+    },
+    {
+      "path": "agents/learning/open-design/craft/color.md",
+      "upstream_path": "craft/color.md",
+      "sha256": "fb45b59fa3055f13d6549f45ae52e88cd09d3facd0e5aaab63600e7fb024db6d",
+      "bytes": 3117
+    },
+    {
+      "path": "agents/learning/open-design/craft/anti-ai-slop.md",
+      "upstream_path": "craft/anti-ai-slop.md",
+      "sha256": "d0f57d3064451663f9dca81af170fc754acc4b1e77280fd5cfb3a04afeef9a5c",
+      "bytes": 3918
+    },
+    {
+      "path": "agents/learning/open-design/craft/animation-discipline.md",
+      "upstream_path": "craft/animation-discipline.md",
+      "sha256": "075273e8404f7931adfe196d508461efdd303b54e0d9a9ef3f642a682c12a760",
+      "bytes": 9114
+    },
+    {
+      "path": "agents/learning/open-design/craft/accessibility-baseline.md",
+      "upstream_path": "craft/accessibility-baseline.md",
+      "sha256": "ef6c5f670d114ceb4c347681bcf3be8637e5d1186165a9c79ca265f316c72d11",
+      "bytes": 12894
+    },
+    {
+      "path": "agents/learning/open-design/craft/state-coverage.md",
+      "upstream_path": "craft/state-coverage.md",
+      "sha256": "79bda732b55b0f0e4a366ba934f4a01518d3576091422047690e269222f2b682",
+      "bytes": 7084
+    },
+    {
+      "path": "agents/learning/open-design/craft/form-validation.md",
+      "upstream_path": "craft/form-validation.md",
+      "sha256": "a31410ce6ba8b7a762c2975386f2e93ae97b59a8bc85169aa58457927b0a88e6",
+      "bytes": 17186
+    },
+    {
+      "path": "agents/learning/open-design/craft/laws-of-ux.md",
+      "upstream_path": "craft/laws-of-ux.md",
+      "sha256": "9a4db0fe294a240920921111d43a6af5ea0c4df1bf979f6e780610a36a9c6d1c",
+      "bytes": 17339
+    },
+    {
+      "path": "agents/learning/open-design/LICENSE",
+      "upstream_path": "LICENSE",
+      "sha256": "9d95806a26532623360eb84bb17d298f394b55ef73fb4c0796d99b4319b2b0da",
+      "bytes": 11296
+    },
+    {
+      "path": "agents/learning/open-design/skills/README.md",
+      "upstream_path": "skills/README.md",
+      "sha256": "7532cf9d5f52f2dbd0534853fb352162c8b416b5ac5625b0f5eb1939e9a666d5",
+      "bytes": 1358
+    },
+    {
+      "path": "agents/learning/open-design/docs/skills-protocol.md",
+      "upstream_path": "docs/skills-protocol.md",
+      "sha256": "eb697721fc3f2d85eba95ba13fb131bebfad1112b19408095efe1312ff0663fe",
+      "bytes": 17501
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "as_of": "2026-10-13",
+  "artifact": "local_brand_exploration_not_live_website",
+  "status": "pass",
+  "rendered_variants": [
+    {
+      "width": 1440,
+      "language": "fr",
+      "audience": "sponsor",
+      "overflow": false,
+      "page_errors": 0
+    },
+    {
+      "width": 1440,
+      "language": "fr",
+      "audience": "organizer",
+      "overflow": false,
+      "page_errors": 0
+    },
+    {
+      "width": 1440,
+      "language": "en",
+      "audience": "sponsor",
+      "overflow": false,
+      "page_errors": 0
+    },
+    {
+      "width": 1440,
+      "language": "en",
+      "audience": "organizer",
+      "overflow": false,
+      "page_errors": 0
+    },
+    {
+      "width": 390,
+      "language": "fr",
+      "audience": "sponsor",
+      "overflow": false,
+      "page_errors": 0
+    },
+    {
+      "width": 390,
+      "language": "fr",
+      "audience": "organizer",
+      "overflow": false,
+      "page_errors": 0
+    },
+    {
+      "width": 390,
+      "language": "en",
+      "audience": "sponsor",
+      "overflow": false,
+      "page_errors": 0
+    },
+    {
+      "width": 390,
+      "language": "en",
+      "audience": "organizer",
+      "overflow": false,
+      "page_errors": 0
+    },
+    {
+      "width": 320,
+      "language": "fr",
+      "audience": "sponsor",
+      "overflow": false,
+      "page_errors": 0
+    },
+    {
+      "width": 320,
+      "language": "fr",
+      "audience": "organizer",
+      "overflow": false,
+      "page_errors": 0
+    },
+    {
+      "width": 320,
+      "language": "en",
+      "audience": "sponsor",
+      "overflow": false,
+      "page_errors": 0
+    },
+    {
+      "width": 320,
+      "language": "en",
+      "audience": "organizer",
+      "overflow": false,
+      "page_errors": 0
+    }
+  ],
+  "interaction_checks": [
+    "language_switch",
+    "audience_switch",
+    "brief_output",
+    "user_input_as_text",
+    "result_reset_on_switch",
+    "keyboard_navigation"
+  ],
+  "contrast_ratios": {
+    "ink_on_canvas": 11.53,
+    "ink_on_signal": 11.01,
+    "muted_ink_on_canvas": 5.6,
+    "ink_72_percent_on_canvas": 4.98
+  },
+  "font_assets_integrity": "pass",
+  "website_audit_status": "blocked_by_egress_policy",
+  "limitations": [
+    "Contrast checks cover specified token pairs, not a full WCAG audit.",
+    "No live-site screenshot or business conversion test."
+  ]
+}

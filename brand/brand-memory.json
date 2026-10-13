@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-13",
+  "brand": "BETA Labs",
+  "website": "https://www.betalabs.ca/",
+  "knowledge_state": {
+    "historical_corpus": "ingested",
+    "live_website": "blocked_by_egress_policy",
+    "live_pages_read": 0,
+    "positioning": "provisional_in_sources",
+    "new_creative_work": "proposed_not_published"
+  },
+  "source_priority": [
+    {
+      "source_id": "S05",
+      "role": "French team synthesis",
+      "date": "2026-09-15"
+    },
+    {
+      "source_id": "S03",
+      "role": "Messaging and objections",
+      "date": "2026-09-15"
+    },
+    {
+      "source_id": "S11",
+      "role": "Positioning and product scope",
+      "date": "2026-08-05"
+    },
+    {
+      "source_id": "S12",
+      "role": "Brand system from prior Figma inspection",
+      "date": "2026-08-05"
+    },
+    {
+      "source_id": "S23",
+      "role": "CRM data, not proof of all payments",
+      "date": null
+    }
+  ],
+  "category": {
+    "fr": "La couche de ciblage pré-événement pour les événements B2B.",
+    "en": "The pre-event targeting layer for B2B events.",
+    "evidence": "documented_provisional",
+    "source_ids": [
+      "S05",
+      "S11"
+    ]
+  },
+  "mechanism": [
+    "Liste des participants obtenue sous entente avec l’organisateur",
+    "Brief ICP et enrichissement sur entreprise, rôle, technologie et signal d’achat",
+    "Liste courte classée avec raison de qualification et angles de conversation",
+    "Brouillon d’ouverture envoyé par le commanditaire lui-même"
+  ],
+  "audiences": {
+    "sponsor": {
+      "role": "paying_buyer",
+      "priority": "primary",
+      "profile": "Entreprise B2B de services ou SaaS à forte valeur de contrat ; souvent 20–200 employés ; décideur direct ; événement confirmé.",
+      "job": "Préparer les conversations utiles à un investissement événementiel déjà engagé.",
+      "objection": "Qu’apportez-vous que mon équipe ne ferait pas elle-même ?",
+      "default_language": "fr-CA",
+      "source_ids": [
+        "S05",
+        "S03",
+        "S38"
+      ]
+    },
+    "organizer": {
+      "role": "data_and_distribution_partner",
+      "priority": "secondary_in_copy_not_secondary_in_gtm",
+      "job": "Rendre l’offre de commandite plus utile et préparer les discussions de renouvellement.",
+      "objection": "Comment utiliser ma liste et ajouter de la valeur sans complexifier l’événement ?",
+      "source_ids": [
+        "S05",
+        "S03",
+        "S33"
+      ]
+    }
+  },
+  "voice": {
+    "traits": [
+      "direct",
+      "specific",
+      "commercial",
+      "composed",
+      "respectful_of_salespeople"
+    ],
+    "fr_address": "vous",
+    "style": "Une idée concrète, un mécanisme compréhensible, une prochaine étape.",
+    "avoid": [
+      "jargon IA",
+      "superlatifs",
+      "urgence inventée",
+      "promesses de réservation",
+      "taux sans dénominateur"
+    ],
+    "source_ids": [
+      "S03",
+      "S12",
+      "S15"
+    ]
+  },
+  "core_visual_codes": {
+    "evidence": "historical_documentation_not_current_site_observation",
+    "source_ids": [
+      "S12"
+    ],
+    "codes": [
+      "fond crème",
+      "texte charbon",
+      "signal lime",
+      "sans-serif et accent serif italique",
+      "formes géométriques",
+      "traits fins",
+      "foule vers signal",
+      "peu d’effets"
+    ]
+  },
+  "claims_policy": {
+    "registry": "data/registers/claims.csv",
+    "no_booking": true,
+    "no_guaranteed_outcomes": true,
+    "ai_status": "needs_evidence",
+    "pricing_status": "conflicted_100_per_match_vs_750_for_10",
+    "mock_data": "fictional_only",
+    "observing_copy_is_not_verifying_claim": true
+  },
+  "creative_permission": {
+    "scope": "Proposer et prototyper des évolutions du ton, de l’identité et des supports.",
+    "keep": [
+      "vérité du périmètre produit",
+      "raison de chaque choix",
+      "lisibilité",
+      "distinction payeur/canal"
+    ],
+    "can_explore": [
+      "hiérarchie",
+      "rythme",
+      "composition",
+      "motion",
+      "illustration",
+      "territoires éditoriaux",
+      "variants FR/EN"
+    ],
+    "approval_status": "user_requested_exploration_no_site_publication_requested"
+  },
+  "provided_assets": [
+    {
+      "path": "brand/assets/logos/betalabs-original.svg",
+      "input_name": "betalabs.svg",
+      "provided_at": "2026-10-13",
+      "sha256": "ca396bcfa11b576d56690536c8889ede5ca461c20e7bb0252134a781b61a4538",
+      "status": "provided_by_user",
+      "geometry_authority": true
+    }
+  ],
+  "designer_learning": {
+    "provider": "Open Design",
+    "commit": "1343f374c63d7866f4f3ff5d48ef038eba647f1b",
+    "operational_bundles": 7,
+    "craft_references": 10,
+    "library": "agents/learning/open-design/manifest.json",
+    "byq": "blocked_not_ingested"
+  },
+  "current_design_proposal": {
+    "version": "2.0",
+    "design_contract": "brand/DESIGN.md",
+    "brand_guide": "brand/guide/README.md",
+    "logo_geometry": "supplied SVG",
+    "logomark": "B extracted from supplied wordmark",
+    "primary_typeface": "Inter",
+    "accent_typeface": "Newsreader Italic, proposed OFL extension",
+    "adoption": "proposed_user_requested_not_claimed_site_deployment"
+  }
+}

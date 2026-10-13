@@ -106,6 +106,42 @@ def main():
         if row["date_precision"] == "partial_or_unknown":
             check(row["date_start"] == row["date_end"] == row["days_to_event"] == "", "Day invented for partial date")
     allowed_claims = {"documented_coherent", "computed_from_csv", "source_cleared_unverified_here", "needs_evidence", "conflicted", "rejected_in_latest_sources", "historical_or_hypothesis"}
+    registry_path = ROOT / "agents/registry.json"
+    if registry_path.exists():
+        registry = json.loads(registry_path.read_text())
+        check(len(registry["agents"]) == len({a["id"] for a in registry["agents"]}), "Duplicate creative agent IDs")
+        for agent in registry["agents"]:
+            for field in ("prompt", "skill"):
+                check((ROOT / agent[field]).is_file(), f"Agent {field} missing: {agent['id']}")
+            skill = (ROOT / agent["skill"]).read_text()
+            check(bool(re.search(r"^name: " + re.escape(agent["id"]) + r"$", skill, re.M)), "Skill name and agent ID differ")
+            check(bool(re.search(r"^description: .+", skill, re.M)), "Missing skill description")
+        for path in registry["shared_memory"]:
+            check((ROOT / path).is_file(), f"Shared brand memory missing: {path}")
+        for path in (ROOT / "brand").glob("*.json"):
+            doc = json.loads(path.read_text())
+            def check_sources(item):
+                if isinstance(item,dict):
+                    for key,value in item.items():
+                        if key == "source_id":
+                            check(value in sources, f"Unknown brand source: {value}")
+                        elif key == "source_ids":
+                            check(all(sid in sources for sid in value), f"Unknown brand sources: {path}")
+                        else:
+                            check_sources(value)
+                elif isinstance(item,list):
+                    for value in item:
+                        check_sources(value)
+            check_sources(doc)
+        asset_manifest = json.loads((ROOT / "brand/assets/manifest.json").read_text())
+        for asset in asset_manifest["assets"]:
+            check(hashlib.sha256((ROOT/asset["path"]).read_bytes()).hexdigest() == asset["sha256"], "Brand asset changed")
+        access = json.loads((ROOT / "brand/evidence/site-access.json").read_text())
+        if access["result"] == "blocked":
+            check(not access["pages_ingested"] and not access["screenshots_captured"], "Blocked live site marked as captured")
+        prototype = json.loads((ROOT / "brand/prototypes/brand-direction-v1/validation.json").read_text())
+        check(prototype["artifact"] == "local_brand_exploration_not_live_website", "Prototype confused with live site")
+        check(prototype["status"] == "pass", "Prototype validation did not pass")
     for path in (ROOT / "data/registers").glob("*.csv"):
         records = rows(path)
         id_field = next(iter(records[0]))
@@ -114,7 +150,22 @@ def main():
             check(all(sid in sources for sid in row["source_ids"].split(";")), f"Registry source missing: {path}")
             if path.name == "claims.csv":
                 check(row["status"] in allowed_claims, "Unknown claim status")
-    docs = [path for path in ROOT.rglob("*.md") if not path.is_relative_to(ROOT / "sources") and ".git" not in path.parts]
+    vendor_manifest = ROOT / "agents/learning/open-design/manifest.json"
+    vendor_files = set()
+    if vendor_manifest.exists():
+        imported = json.loads(vendor_manifest.read_text())
+        for item in imported["files"]:
+            path = ROOT / item["path"]
+            vendor_files.add(path)
+            check(hashlib.sha256(path.read_bytes()).hexdigest() == item["sha256"], "Imported Open Design reference changed")
+    guide_manifest = ROOT / "brand/guide/manifest.json"
+    if guide_manifest.exists():
+        guide = json.loads(guide_manifest.read_text())
+        logo = guide["supplied_logo"]
+        check(hashlib.sha256((ROOT/logo["path"]).read_bytes()).hexdigest() == logo["sha256"], "Supplied logo changed")
+        for item in guide["assets"] + guide["fonts"]:
+            check(hashlib.sha256((ROOT/item["path"]).read_bytes()).hexdigest() == item["sha256"], "Brand guide master changed")
+    docs = [path for path in ROOT.rglob("*.md") if not path.is_relative_to(ROOT / "sources") and ".git" not in path.parts and path not in vendor_files]
     links = 0
     for path in docs + [ROOT / "sources/README.md"]:
         for target in re.findall(r"\[[^\]]*\]\(([^\s)]+)\)", path.read_text()):

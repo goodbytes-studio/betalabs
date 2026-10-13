@@ -11,3 +11,6 @@ Ce dépôt contient de l’intelligence GTM, pas une application produit. Utilis
 - Recalculer les fenêtres avec une date explicite en tenant compte du fuseau utilisateur America/Toronto ; ne pas recycler « cette semaine » d’un document ancien.
 - Après modification des sources, alias ou dates : `python3 scripts/build_intelligence.py --as-of YYYY-MM-DD`, puis `python3 scripts/validate_repo.py`. Les sorties générées sont listées dans `data/derived/build-manifest.json` ; ne pas les éditer à la main.
 - Actualiser aussi les synthèses datées et les registres lorsqu’une décision ou une donnée change. Le script ne les approuve pas automatiquement.
+- Pour une tâche de design BETA Labs, charger `.agents/skills/betalabs-designer/SKILL.md` et `agents/designer.md`. Pour stratégie de message et rédaction, charger `.agents/skills/betalabs-copywriter/SKILL.md` et `agents/copywriter.md`. Les deux rôles utilisent `brand/` et le même registre de claims.
+- Une définition locale d’agent ne requiert pas de lancer automatiquement des sous-agents. La coordonner dans la session, ou déléguer seulement quand la demande ou les instructions applicables le prévoient.
+- Vérifier `brand/evidence/site-access.json` avant tout constat sur le site actuel. Les captures dans `brand/prototypes/` montrent des explorations créées ici, pas `betalabs.ca`.
