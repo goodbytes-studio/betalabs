@@ -10,7 +10,7 @@ from unittest.mock import patch
 from event_machine.clay import connection_status, identity, pin_current, read_config, set_webhook
 from event_machine.agents import ingest_company_signals
 from event_machine.cli import run_pipeline
-from event_machine.core import match_person, parse_people, role_features, verified_revenue
+from event_machine.core import match_person, parse_accounts, parse_people, role_features, verified_revenue
 from event_machine.feedback import connect, exact_review, import_feedback, ranking_bias
 
 
@@ -45,6 +45,14 @@ class EventMachineTests(unittest.TestCase):
         self.assertEqual(result["machine_status"], "à confirmer")
         self.assertIn("CA annuel CAD non vérifié", result["fit_reasons"])
         self.assertEqual(role_features("VP marketing")[1], "vp_clevel")
+
+    def test_optional_account_source_columns_are_read(self):
+        accounts, _, _ = parse_accounts([{"name": "Commerce test", "domain": "commerce.example", "sector": "beauty",
+                                          "sector_source_url": "https://commerce.example/a-propos",
+                                          "business_model": "b2c",
+                                          "business_model_source_url": "https://commerce.example/a-propos"}])
+        self.assertEqual(accounts[0]["business_model"], "b2c")
+        self.assertEqual(accounts[0]["sector_source_url"], "https://commerce.example/a-propos")
 
     def test_feedback_requires_proof_and_only_changes_ranking(self):
         with tempfile.TemporaryDirectory() as tmp:

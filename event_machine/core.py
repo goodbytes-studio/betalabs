@@ -111,7 +111,7 @@ def parse_accounts(rows: list[dict]) -> tuple[list[dict], dict, dict]:
             "business_model_source_url": ("business_model_source_url", "business_model_evidence_url"),
         }.items():
             value = first(row, *aliases)
-            if value and not account[field]:
+            if value and not account.get(field):
                 account[field] = value
         if name:
             by_name[norm(name)].add(key)
