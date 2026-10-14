@@ -54,10 +54,11 @@ $("result").textContent=`${data.manifest.counts.participants} participants · ${
 $("downloads").innerHTML=data.files.map(f=>`<p><a href="/runs/${currentRun}/${f}" download>${f}</a></p>`).join("");}catch(e){$("result").textContent=e.message}finally{btn.disabled=false}};
 $("feedback").onclick=async()=>{try{if(!currentRun)throw Error("Lancez une analyse ici avant la revue.");const reviews=await fileText("reviews");if(!reviews)throw Error("Choisissez le CSV de revue.");const data=await request("/api/feedback",{run_id:currentRun,reviews});$("feedback-result").textContent=JSON.stringify(data,null,2)}catch(e){$("feedback-result").textContent=e.message}};
 async function clayStatus(){try{const res=await fetch("/api/clay/status");const data=await res.json();$("clay-status").textContent=JSON.stringify(data,null,2);const list=data.active.signed_in_workspaces||[];$("clay-workspaces").replaceChildren(...list.map(w=>{const el=document.createElement("option");el.value=w.id;el.textContent=`${w.name||w.id} (${w.id})${w.active?" · actif":""}`;if(w.active)el.selected=true;return el}));}catch(e){$("clay-status").textContent=e.message}}
+async function loadLatest(){try{const res=await fetch("/api/runs/latest");if(!res.ok)return;const data=await res.json();currentRun=data.run_id;$("result").textContent=`Dernière analyse · ${data.manifest.counts.participants} participants · ${data.manifest.counts.accounts} entreprises · ${data.manifest.counts.matches} matchs`;$("downloads").innerHTML=data.files.map(f=>`<p><a href="/runs/${currentRun}/${f}" download>${f}</a></p>`).join("")}catch(e){}}
 $("clay-refresh").onclick=clayStatus;
 for(const [id,action,data] of [["clay-login","login",()=>({})],["clay-switch","switch",()=>({workspace_id:$("clay-workspaces").value})],["clay-pin","pin",()=>({})],["clay-save-webhook","webhook",()=>({table:$("clay-table").value,url:$("clay-webhook").value})],["clay-preview","push",()=>({table:$("clay-table").value,run_id:currentRun,apply:false})],["clay-apply","push",()=>({table:$("clay-table").value,run_id:currentRun,apply:true})]]){
 $(id).onclick=async()=>{try{if(action==="push"&&!currentRun)throw Error("Lancez une analyse dans cette session avant l’envoi.");const result=await request("/api/clay",{action,...data()});$("clay-result").textContent=JSON.stringify(result,null,2);await clayStatus()}catch(e){$("clay-result").textContent=e.message}}}
-clayStatus();
+clayStatus();loadLatest();
 </script></html>"""
 
 
@@ -94,6 +95,15 @@ def serve(port: int, data_dir: Path) -> None:
                                           "completed" if login_process and login_process.returncode == 0 else
                                           "failed" if login_process else "not_started")
                 return self.send_json(200, result)
+            if path == "/api/runs/latest":
+                candidates = sorted((root / "runs").glob("*/outputs/run-manifest.json"),
+                                    key=lambda file: file.stat().st_mtime, reverse=True)
+                if not candidates:
+                    return self.send_json(404, {"error": "No prior run"})
+                manifest_file = candidates[0]
+                return self.send_json(200, {"run_id": manifest_file.parent.parent.name,
+                                            "manifest": json.loads(manifest_file.read_text(encoding="utf-8")),
+                                            "files": sorted(OUTPUT_FILES)})
             match = re.fullmatch(r"/runs/([0-9a-f]{32})/([a-z-]+\.(?:csv|json|md))", path)
             if not match or match[2] not in OUTPUT_FILES:
                 return self.send_json(404, {"error": "Not found"})
