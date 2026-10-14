@@ -1,6 +1,6 @@
 # Machine événements BETA Labs
 
-Application locale en Python 3.10+ pour partir d'une liste d'inscrits et de profils ICP, rechercher le contexte d'un événement, rapprocher les entreprises, qualifier chaque participant pour chaque client, puis intégrer les corrections des analystes. Aucune dépendance Python externe.
+Application privée en Python 3.10+ pour partir d'une liste d'inscrits et de profils ICP, rechercher le contexte d'un événement, rapprocher les entreprises, qualifier chaque participant pour chaque client, puis intégrer les corrections des analystes. Aucune dépendance Python externe.
 
 L'interface React utilise des composants shadcn/ui adaptés localement (Radix, Tailwind et CVA). Les fichiers compilés sont inclus dans le dépôt : Node.js n'est nécessaire que pour **modifier** l'interface, pas pour la lancer. La palette crème/charbon/lime, le logo original et Inter viennent du guide BETA Labs ; l'accent Newsreader est une proposition v2 sous licence OFL. Cette interface ne prétend pas reproduire le site actuel.
 
@@ -12,7 +12,7 @@ Depuis la racine du dépôt :
 python3 -m event_machine serve
 ```
 
-Ouvrir `http://127.0.0.1:8765`. Les CSV et les résultats restent dans `.event-machine/` sur l'ordinateur qui lance le serveur. Le serveur n'écoute que l'interface locale.
+Ouvrir `http://127.0.0.1:8765`. Les CSV et les résultats restent dans `.event-machine/` de l'environnement qui lance le serveur. Le serveur n'écoute que l'interface locale de cet environnement.
 
 Parcours recommandé : **Vue d'ensemble → Nouvelle analyse → Résultats & revue → Connexion Clay**. L'événement se saisit dans des champs guidés, les CSV sont chargés séparément, et les ICP restent un JSON explicite que l'équipe peut importer ou coller. La vue des résultats permet de filtrer par client et statut, d'ouvrir les raisons d'une ligne, de télécharger le dossier et d'importer des corrections. Le bouton **Charger l'exemple HOP** préremplit l'événement et les trois ICP ; il ne fournit pas les CSV de personnes.
 
@@ -25,6 +25,8 @@ npm run build
 ```
 
 Le build est écrit dans `event_machine/frontend/dist/` et servi par la même application Python. Les licences des polices sont dans `event_machine/frontend/public/brand/`.
+
+Pour lancer la machine dans une tâche Codex Cloud et faire travailler les agents spécialisés, suivre le [guide cloud](CLOUD.md). Le serveur reste en aperçu privé. Chaque run contient désormais `agent-handoff.md`; l'onglet **Agents & preuves** accepte les propositions JSON du rôle Signaux entreprises et produit un CSV de candidats à vérifier.
 
 Pour une analyse reproductible en ligne de commande :
 

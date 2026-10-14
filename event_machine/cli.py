@@ -13,6 +13,7 @@ from .core import (feedback_template, infer_org_type, infer_sector, match_person
                    review_queue, role_features, run_manifest, stable_id, validate_profiles, write_csv)
 from .feedback import connect, exact_review, feedback_metrics, import_feedback, ranking_bias
 from .research import research_event, scan_account_website, summarize_event
+from .agents import ingest_company_signals, write_handoff
 
 
 def load_json(path: Path) -> dict:
@@ -84,7 +85,7 @@ def run_pipeline(*, event_path: Path, participants_path: Path, icps_path: Path, 
     finally:
         connection.close()
     manifest = run_manifest(event, pages, research_errors, people, accounts, matches)
-    manifest["inputs"] = {key: {"path": str(path), "sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
+    manifest["inputs"] = {key: {"path": str(path.resolve()), "sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
                           for key, path in {"event": event_path, "participants": participants_path, "icps": icps_path,
                                             "accounts": accounts_path, "relations": relations_path, "evidence": evidence_path}.items() if path}
     manifest["client_counts"] = {profile["id"]: dict(Counter(r["machine_status"] for r in matches if r["client_id"] == profile["id"])) for profile in profiles}
@@ -101,6 +102,7 @@ def run_pipeline(*, event_path: Path, participants_path: Path, icps_path: Path, 
     write_csv(out / "evidence.csv", raw_evidence, None if raw_evidence else
               ["domain_join_key", "field", "value", "source_url", "checked_at", "confidence", "caveat"])
     (out / "run-manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
+    write_handoff(out, manifest)
     return manifest
 
 
@@ -125,6 +127,9 @@ def build_parser() -> argparse.ArgumentParser:
     feedback.add_argument("--reviews", type=Path, required=True)
     stats = sub.add_parser("stats", help="Show reviewed outcomes")
     stats.add_argument("--db", type=Path, required=True)
+    agent_ingest = sub.add_parser("agent-ingest", help="Validate agent signal proposals for human review")
+    agent_ingest.add_argument("--out", type=Path, required=True, help="Output directory of an existing run")
+    agent_ingest.add_argument("--artifact", type=Path, required=True, help="JSON from the company-signals agent")
     serve = sub.add_parser("serve", help="Launch the local team interface")
     serve.add_argument("--port", type=int, default=8765)
     serve.add_argument("--data-dir", type=Path, default=Path(".event-machine"))
@@ -150,6 +155,8 @@ def main(argv: list[str] | None = None) -> None:
         result = import_feedback(args.db, args.reviews, args.matches)
     elif args.command == "stats":
         result = feedback_metrics(args.db)
+    elif args.command == "agent-ingest":
+        result = ingest_company_signals(args.out, args.artifact)
     elif args.command == "clay":
         from .clay import push
         result = push(run_dir=args.run_dir, table=args.table, workspace_id=args.workspace_id,

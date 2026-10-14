@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BETA Labs company signal proposals",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "role", "event_id", "icps_sha256", "accounts_sha256", "observations"],
+  "properties": {
+    "version": {"const": 1},
+    "role": {"const": "company-signals"},
+    "event_id": {"type": "string"},
+    "icps_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "accounts_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "observations": {
+      "type": "array",
+      "maxItems": 100,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["domain_join_key", "field", "value", "source_url", "source_quote", "checked_at", "confidence"],
+        "properties": {
+          "domain_join_key": {"type": "string"},
+          "field": {"type": "string"},
+          "value": {"type": "string"},
+          "source_url": {"type": "string", "format": "uri"},
+          "source_quote": {"type": "string", "minLength": 12, "maxLength": 500},
+          "checked_at": {"type": "string", "format": "date"},
+          "confidence": {"enum": ["low", "medium", "high"]}
+        }
+      }
+    }
+  }
+}

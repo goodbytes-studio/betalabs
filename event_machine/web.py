@@ -1,4 +1,4 @@
-"""Local, dependency-free team interface. Files remain on the operator's machine."""
+"""Private, dependency-free team interface. Files stay in the configured data directory."""
 
 from __future__ import annotations
 
@@ -12,13 +12,14 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import urlsplit
 
+from .agents import ingest_company_signals
 from .cli import run_pipeline
 from .feedback import feedback_metrics, import_feedback
 
 MAX_POST = 20_000_000
 INPUT_FILES = {"participants": "participants.csv", "accounts": "accounts.csv",
                "relations": "relations.csv", "evidence": "evidence.csv"}
-OUTPUT_FILES = {"event-brief.md", "event-pages.json", "research-errors.json", "participants.csv",
+OUTPUT_FILES = {"event-brief.md", "agent-handoff.md", "event-pages.json", "research-errors.json", "participants.csv",
                 "accounts.csv", "matches.csv", "review-queue.csv", "feedback-template.csv",
                 "evidence.csv", "run-manifest.json"}
 
@@ -94,8 +95,15 @@ def serve(port: int, data_dir: Path) -> None:
                 manifest_file = candidates[0]
                 return self.send_json(200, {"run_id": manifest_file.parent.parent.name,
                                             "manifest": json.loads(manifest_file.read_text(encoding="utf-8")),
-                                            "files": sorted(OUTPUT_FILES)})
+                                            "files": sorted(file.name for file in manifest_file.parent.iterdir()
+                                                            if file.is_file() and file.name in OUTPUT_FILES)})
             match = re.fullmatch(r"/runs/([0-9a-f]{32})/([a-z-]+\.(?:csv|json|md))", path)
+            candidate = re.fullmatch(r"/runs/([0-9a-f]{32})/agent-work/evidence-candidates-([0-9a-f]{12})\.csv", path)
+            if candidate:
+                file = root / "runs" / candidate[1] / "outputs" / "agent-work" / f"evidence-candidates-{candidate[2]}.csv"
+                if not file.is_file():
+                    return self.send_json(404, {"error": "Not found"})
+                return self.send_data(200, file.read_bytes(), "text/csv; charset=utf-8")
             if not match or match[2] not in OUTPUT_FILES:
                 return self.send_json(404, {"error": "Not found"})
             file = root / "runs" / match[1] / "outputs" / match[2]
@@ -105,7 +113,7 @@ def serve(port: int, data_dir: Path) -> None:
             return self.send_data(200, file.read_bytes(), mime + "; charset=utf-8")
 
         def do_POST(self) -> None:
-            if self.path not in {"/api/run", "/api/feedback", "/api/clay"}:
+            if self.path not in {"/api/run", "/api/feedback", "/api/clay", "/api/agents/evidence"}:
                 return self.send_json(404, {"error": "Not found"})
             if self.headers.get("Content-Type", "").split(";", 1)[0].lower() != "application/json":
                 return self.send_json(415, {"error": "Expected application/json"})
@@ -117,6 +125,27 @@ def serve(port: int, data_dir: Path) -> None:
                 if not 0 < length <= MAX_POST:
                     raise ValueError("Invalid or oversized request")
                 payload = json.loads(self.rfile.read(length))
+                if self.path == "/api/agents/evidence":
+                    run_id = str(payload.get("run_id", ""))
+                    if not re.fullmatch(r"[0-9a-f]{32}", run_id):
+                        raise ValueError("Invalid run_id")
+                    out = root / "runs" / run_id / "outputs"
+                    if not (out / "run-manifest.json").is_file():
+                        raise ValueError("Run not found")
+                    artifact = payload.get("artifact")
+                    if not isinstance(artifact, dict):
+                        raise ValueError("Expected a company-signals JSON object")
+                    work = out / "agent-work"
+                    work.mkdir(mode=0o700, exist_ok=True)
+                    incoming = work / ("incoming-" + uuid.uuid4().hex + ".json")
+                    try:
+                        incoming.write_text(json.dumps(artifact, ensure_ascii=False), encoding="utf-8")
+                        receipt = ingest_company_signals(out, incoming)
+                    finally:
+                        incoming.unlink(missing_ok=True)
+                    receipt["candidate_url"] = f"/runs/{run_id}/agent-work/evidence-candidates-{receipt['artifact_sha256'][:12]}.csv"
+                    receipt.pop("csv_path", None)
+                    return self.send_json(200, receipt)
                 if self.path == "/api/clay":
                     from .clay import (connection_status, pin_current, push, read_config,
                                        set_webhook, switch_workspace)

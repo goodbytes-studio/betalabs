@@ -1,11 +1,14 @@
 import csv
+import hashlib
 import json
 import tempfile
 import unittest
+from datetime import date
 from pathlib import Path
 from unittest.mock import patch
 
 from event_machine.clay import connection_status, identity, pin_current, read_config, set_webhook
+from event_machine.agents import ingest_company_signals
 from event_machine.cli import run_pipeline
 from event_machine.core import match_person, parse_people, role_features, verified_revenue
 from event_machine.feedback import connect, exact_review, import_feedback, ranking_bias
@@ -89,6 +92,37 @@ class EventMachineTests(unittest.TestCase):
             self.assertEqual(row["machine_status"], "fort")
             self.assertEqual(row["attendance_status"], "marker_confirmed")
             self.assertIn("https://example.com/forum", (root / "out" / "event-brief.md").read_text())
+            self.assertIn("Recherche événement", (root / "out" / "agent-handoff.md").read_text())
+
+    def test_agent_signal_proposals_require_review_and_matching_icp(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "event.json").write_text(json.dumps({"id": "e", "name": "Événement"}))
+            (root / "icps.json").write_text(json.dumps({"clients": [{"id": "c", "target": {"company_types": ["retailer"]},
+                                                         "signals": [{"field": "online_store", "required": True}]}]}))
+            (root / "people.csv").write_text("full_name,company_name,email\nAlice Test,Boutique Test,alice@boutique.test\n")
+            (root / "accounts.csv").write_text("name,domain,org_type\nBoutique Test,boutique.test,retailer\n")
+            run_pipeline(event_path=root / "event.json", participants_path=root / "people.csv",
+                         accounts_path=root / "accounts.csv", icps_path=root / "icps.json", out=root / "out", offline=True)
+            manifest = json.loads((root / "out" / "run-manifest.json").read_text())
+            bindings = {"event_id": "e", "icps_sha256": manifest["inputs"]["icps"]["sha256"],
+                        "accounts_sha256": hashlib.sha256((root / "out" / "accounts.csv").read_bytes()).hexdigest()}
+            artifact = root / "agent-evidence.json"
+            artifact.write_text(json.dumps({"version": 1, "role": "company-signals", **bindings, "observations": [
+                {"domain_join_key": "boutique.test", "field": "online_store", "value": "yes",
+                 "source_url": "https://boutique.test/magasin", "source_quote": "Achetez maintenant dans notre boutique en ligne.",
+                 "checked_at": date.today().isoformat(), "confidence": "high"}]}))
+            receipt = ingest_company_signals(root / "out", artifact)
+            with Path(receipt["csv_path"]).open(encoding="utf-8-sig") as stream:
+                candidate = next(csv.DictReader(stream))
+            self.assertEqual(candidate["confidence"], "low")
+            self.assertEqual(receipt["status"], "review_required")
+            artifact.write_text(json.dumps({"version": 1, "role": "company-signals", **bindings, "observations": [
+                {"domain_join_key": "boutique.test", "field": "made_up_field", "value": "yes",
+                 "source_url": "https://boutique.test/magasin", "source_quote": "Achetez maintenant dans notre boutique en ligne.",
+                 "checked_at": date.today().isoformat(), "confidence": "high"}]}))
+            with self.assertRaises(ValueError):
+                ingest_company_signals(root / "out", artifact)
 
 
 if __name__ == "__main__":
