@@ -19,7 +19,8 @@ from .feedback import feedback_metrics, import_feedback
 MAX_POST = 20_000_000
 INPUT_FILES = {"participants": "participants.csv", "accounts": "accounts.csv",
                "relations": "relations.csv", "evidence": "evidence.csv"}
-OUTPUT_FILES = {"event-brief.md", "agent-handoff.md", "event-pages.json", "research-errors.json", "participants.csv",
+OUTPUT_FILES = {"event-brief.md", "agent-handoff.md", "clay-import-all.csv", "clay-import-priority.csv",
+                "event-pages.json", "research-errors.json", "participants.csv",
                 "accounts.csv", "matches.csv", "review-queue.csv", "feedback-template.csv",
                 "evidence.csv", "run-manifest.json"}
 

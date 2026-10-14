@@ -6,7 +6,7 @@ BETA Labs est décrit dans les sources récentes comme **la couche de ciblage pr
 
 ## Commencer ici
 
-La [machine événements BETA Labs](event_machine/README.md) traite une liste d'inscrits et les profils ICP des clients, avec entreprises, relations et preuves optionnelles. Elle produit un dossier de décision sourcé, une revue humaine et un connecteur Clay contrôlé.
+La [machine événements BETA Labs](event_machine/README.md) traite une liste d'inscrits et les profils ICP des clients, avec entreprises, relations et preuves optionnelles. Elle produit un dossier de décision sourcé, une revue humaine et des CSV prêts à importer dans Clay.
 
 | Besoin | Document |
 |---|---|

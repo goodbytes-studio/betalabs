@@ -95,6 +95,27 @@ def run_pipeline(*, event_path: Path, participants_path: Path, icps_path: Path, 
     write_csv(out / "participants.csv", people)
     write_csv(out / "accounts.csv", accounts)
     write_csv(out / "matches.csv", matches)
+    people_by_id = {person["person_id"]: person for person in people}
+    accounts_by_id = {account["account_id"]: account for account in accounts}
+    clay_columns = ["match_key", "event_id", "event_name", "run_as_of", "client_id", "client_name",
+                    "person_id", "person_name", "email", "profile_url", "company_name", "account_id",
+                    "company_domain", "job_title", "typology", "role_influence", "why_attend",
+                    "business_objective", "fit_status", "machine_status", "priority_score", "attendance_status",
+                    "company_link_status", "fit_reasons", "exclusion_reasons", "evidence_urls",
+                    "opportunity_hypothesis", "next_question", "relationship", "relationship_owner",
+                    "reviewed_by", "review_note"]
+    clay_rows = []
+    for match in sorted(matches, key=lambda item: (-int(item["priority_score"]), item["match_key"])):
+        person = people_by_id[match["person_id"]]
+        account = accounts_by_id.get(match["account_id"], {})
+        row = {key: match.get(key, "") for key in clay_columns}
+        row.update({"event_name": event["name"], "run_as_of": manifest["as_of"],
+                    "email": person.get("email", ""), "profile_url": person.get("profile_url", ""),
+                    "company_domain": account.get("domain", "")})
+        clay_rows.append(row)
+    write_csv(out / "clay-import-all.csv", clay_rows, clay_columns)
+    write_csv(out / "clay-import-priority.csv", [row for row in clay_rows
+              if row["machine_status"] in {"fort", "possible"}], clay_columns)
     write_csv(out / "review-queue.csv", review_queue(matches),
               ["match_key", "client_id", "person_name", "company_name", "fit_status", "priority_score", "primary_gap", "next_question"])
     write_csv(out / "feedback-template.csv", feedback_template(matches),

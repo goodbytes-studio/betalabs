@@ -23,7 +23,7 @@ ROLES = (
     ("account-identity", "Résolution des comptes", "Doublons, domaines et rattachements ambigus; aucun lien forcé."),
     ("company-signals", "Signaux entreprises", "Signaux ICP par compte, avec citation exacte et page source."),
     ("evidence-qa", "Contrôle des preuves", "Contradictions, fraîcheur, champs manquants et hypothèses à confirmer."),
-    ("clay-publisher", "Publication Clay", "Identité d’Elizabeth, workspace, aperçu et envoi autorisé."),
+    ("clay-export", "Préparation Clay", "CSV d’import, clé match_key et contrôle du workspace par Elizabeth."),
 )
 
 
@@ -46,7 +46,7 @@ def write_handoff(out: Path, manifest: dict) -> None:
               "3. Signaux entreprises : lire `accounts.csv`, le JSON ICP et `review-queue.csv`. Produire un JSON conforme à `event_machine/agents/company-signals.schema.json`.",
               "4. Contrôle des preuves : ouvrir chaque source, vérifier la citation, la date, le domaine et l’identité de la société. Conserver `[Déduit]` pour toute intention supposée.",
               "5. Transformer le JSON en candidats CSV avec `python3 -m event_machine agent-ingest --out <dossier-sorties> --artifact <json>`. Le fichier obtenu garde une confiance `low` jusqu’à la revue humaine. Importer le CSV revu comme entrée `Preuves et signaux`, puis relancer l’analyse.",
-              "6. Clay : vérifier l’utilisateur et le workspace actifs, prévisualiser la destination et les lignes; envoyer seulement depuis un contexte autorisé. Le connecteur vérifie l’identité avant chaque envoi.", "",
+              "6. Clay : télécharger `clay-import-priority.csv` ou `clay-import-all.csv`; Elizabeth importe le CSV dans le bon workspace et vérifie les colonnes et le nombre de lignes. Aucun webhook n’est requis.", "",
               "Les rôles détaillés sont dans `event_machine/AGENTS.md`. Les agents n’ont pas d’autorité sur une connexion Clay ou un budget par la seule lecture du dépôt.", ""]
     (out / "agent-handoff.md").write_text("\n".join(lines), encoding="utf-8")
 

@@ -1,11 +1,10 @@
-import { lazy, Suspense, useCallback, useEffect, useMemo, useState } from "react"
+import { lazy, Suspense, useEffect, useMemo, useState } from "react"
 import Papa from "papaparse"
 import { toast } from "sonner"
 import {
-  ArrowDownToLine, ArrowLeft, ArrowRight, ArrowUpRight, Check, CheckCircle2, ChevronRight,
+  ArrowDownToLine, ArrowLeft, ArrowRight, ArrowUpRight, Check, ChevronRight,
   CircleHelp, CloudUpload, Database, FileCheck2, FileSpreadsheet,
-  Filter, Link2, LoaderCircle, LockKeyhole, LogIn, Search, ShieldCheck, Sparkles, Upload,
-  XCircle,
+  Filter, Link2, LoaderCircle, LockKeyhole, Search, ShieldCheck, Sparkles, Upload,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -25,9 +24,6 @@ type Counts = { participants: number; accounts: number; matches: number; match_s
 type Manifest = { event_id: string; event_name?: string; event_date?: string; as_of: string; counts: Counts; client_counts: Record<string, Record<string, number>>; inputs?: Record<string, { path: string; sha256: string }> }
 type Run = { run_id: string; manifest: Manifest; files: string[] }
 type Match = Record<string, string> & { match_key: string; person_name: string; company_name: string; client_id: string; client_name: string; fit_status: string; machine_status: string; priority_score: string }
-type Workspace = { id: string; name?: string; active?: boolean }
-type ClayStatus = { active: { user_id?: string; user_email?: string; workspace_id?: string; workspace_name?: string; signed_in_workspaces?: Workspace[]; error?: string }; pinned: { user_id?: string; user_email?: string; workspace_id?: string; workspace_name?: string }; configured_tables: string[]; login_state: string; verification_url?: string; user_code?: string; login_error?: string }
-type ClayPreview = { runId: string; table: string; pending: number; already_sent: number; source_rows: number; destination_fingerprint: string }
 type AgentReceipt = { artifact_sha256: string; candidates: number; candidate_url: string; status: string }
 type EventForm = { id: string; name: string; edition: string; date: string; url: string; registration_marker: string }
 type InputKey = "participants" | "accounts" | "relations" | "evidence"
@@ -37,6 +33,7 @@ const OUTPUT_NAMES: Record<string, string> = {
   "matches.csv": "Matchs ICP", "review-queue.csv": "File de revue", "participants.csv": "Participants qualifiés",
   "accounts.csv": "Entreprises rapprochées", "event-brief.md": "Contexte de l’événement",
   "agent-handoff.md": "Mission des agents Codex",
+  "clay-import-all.csv": "Import Clay · tous les matchs", "clay-import-priority.csv": "Import Clay · pistes prioritaires",
   "feedback-template.csv": "Modèle de corrections", "evidence.csv": "Preuves et signaux",
   "event-pages.json": "Pages consultées", "research-errors.json": "Erreurs de recherche",
   "run-manifest.json": "Manifeste du calcul",
@@ -107,31 +104,9 @@ function App() {
   const [agentArtifactFile, setAgentArtifactFile] = useState<File | null>(null)
   const [agentReceipt, setAgentReceipt] = useState<AgentReceipt | null>(null)
   const [agentBusy, setAgentBusy] = useState(false)
-  const [clay, setClay] = useState<ClayStatus | null>(null)
-  const [clayBusy, setClayBusy] = useState(false)
-  const [workspaceChoice, setWorkspaceChoice] = useState("")
-  const [clayTable, setClayTable] = useState("matches")
-  const [webhook, setWebhook] = useState("")
-  const [clayPreview, setClayPreview] = useState<ClayPreview | null>(null)
-  const [clayMessage, setClayMessage] = useState("")
-
-  const refreshClay = useCallback(async () => {
-    try {
-      const status = await getJSON<ClayStatus>("/api/clay/status")
-      setClay(status)
-      setWorkspaceChoice(previous => previous || status.active.workspace_id || "")
-    } catch (error) { toast.error(niceError(error)) }
-  }, [])
-
   useEffect(() => {
     getJSON<Run>("/api/runs/latest").then(setRun).catch(() => {}).finally(() => setLoadingLatest(false))
-    refreshClay()
-  }, [refreshClay])
-  useEffect(() => {
-    if (clay?.login_state !== "running") return
-    const timer = window.setInterval(refreshClay, 3500)
-    return () => window.clearInterval(timer)
-  }, [clay?.login_state, refreshClay])
+  }, [])
   useEffect(() => {
     if (!run) { setMatches([]); setBrief(""); return }
     let cancelled = false
@@ -209,7 +184,6 @@ function App() {
       const result = await postJSON<Run>("/api/run", { event, icps: JSON.parse(icpJson), inputs, offline })
       setRun(result)
       setClientFilter("all"); setStatusFilter("priority"); setSearch("")
-      setClayPreview(null)
       setAgentReceipt(null)
       setView("results")
       toast.success(`Analyse terminée : ${formatNumber(result.manifest.counts.matches)} évaluations`)
@@ -237,34 +211,15 @@ function App() {
   async function copyAgentMission() {
     if (!run) return
     try {
-      await navigator.clipboard.writeText(`Dans le dépôt BETA Labs, lis event_machine/AGENTS.md et le fichier agent-handoff.md du run ${run.run_id} dans le répertoire de données de la machine. Délègue la recherche événement, la résolution des comptes, les signaux entreprises et le contrôle des preuves aux agents Codex. Conserve leurs propositions séparées des preuves validées; n'envoie rien vers Clay sans vérifier l'identité et la destination.`)
+      await navigator.clipboard.writeText(`Dans le dépôt BETA Labs, lis event_machine/AGENTS.md et le fichier agent-handoff.md du run ${run.run_id} dans le répertoire de données de la machine. Délègue la recherche événement, la résolution des comptes, les signaux entreprises et le contrôle des preuves aux agents Codex. Conserve leurs propositions séparées des preuves validées; prépare les CSV d'import; Elizabeth vérifiera le workspace, les colonnes et le nombre de lignes dans Clay.`)
       toast.success("Demande pour Codex copiée")
     } catch { toast.error("Copie indisponible dans ce navigateur") }
   }
-  async function clayAction(action: string, details: Record<string, unknown> = {}) {
-    setClayBusy(true)
-    try {
-      const result = await postJSON<Record<string, unknown>>("/api/clay", { action, ...details })
-      if (action === "login") toast.info("Le code de connexion Clay va s’afficher ci-dessous")
-      if (action === "switch") { setWorkspaceChoice(String((result.workspace as Workspace)?.id || "")); toast.success("Workspace actif mis à jour") }
-      if (action === "pin") toast.success("Compte et workspace confirmés")
-      if (action === "webhook") { setWebhook(""); setClayPreview(null); toast.success("Destination Clay enregistrée") }
-      if (action === "push") {
-        if (details.apply) { setClayPreview(null); toast.success(`${result.sent || 0} lignes envoyées vers Clay`); setClayMessage(`Envoi terminé · ${result.sent || 0} lignes transmises.`) }
-        else {
-          setClayPreview({ runId: run!.run_id, table: clayTable, pending: Number(result.pending || 0), already_sent: Number(result.already_sent || 0), source_rows: Number(result.source_rows || 0), destination_fingerprint: String(result.destination_fingerprint || "") })
-          setClayMessage("Prévisualisation prête. Vérifiez le nombre de lignes et la destination avant l’envoi.")
-        }
-      }
-      await refreshClay()
-    } catch (error) { toast.error(niceError(error)) } finally { setClayBusy(false) }
-  }
-
   const nav = [
     { key: "overview" as const, label: "Vue d’ensemble", icon: Sparkles, index: "01" },
     { key: "prepare" as const, label: "Nouvelle analyse", icon: FileSpreadsheet, index: "02" },
     { key: "results" as const, label: "Résultats & revue", icon: Filter, index: "03" },
-    { key: "clay" as const, label: "Connexion Clay", icon: Link2, index: "04" },
+    { key: "clay" as const, label: "Export Clay", icon: Link2, index: "04" },
   ]
   return <div className="app-shell">
     <aside className="sidebar" aria-label="Navigation principale">
@@ -301,7 +256,7 @@ function App() {
             <div className="steps-grid">
               <Card className="step-card"><span className="step-no">1</span><h3>Examiner les priorités</h3><p>Filtrer les personnes par client, statut et score. Chaque ligne garde sa raison et sa source.</p></Card>
               <Card className="step-card"><span className="step-no">2</span><h3>Corriger les hypothèses</h3><p>Importer une revue humaine pour améliorer le rang des analyses futures.</p></Card>
-              <Card className="step-card"><span className="step-no">3</span><h3>Préparer Clay</h3><p>Vérifier l’identité d’Elizabeth, la table cible et les lignes en attente avant l’envoi.</p></Card>
+              <Card className="step-card"><span className="step-no">3</span><h3>Exporter vers Clay</h3><p>Télécharger le CSV prioritaire, vérifier les lignes et l’importer dans le workspace choisi par Elizabeth.</p></Card>
             </div>
           </>}
         </>}
@@ -342,17 +297,14 @@ function App() {
         </>}
 
         {view === "clay" && <>
-          <div className="hero"><div><span className="eyebrow"><span className="signal-dot" /> Connexion Clay</span><h1>Livrer avec <span className="font-accent">contrôle.</span></h1><p>Elizabeth autorise son compte. La machine vérifie l’identité, le workspace et la destination avant chaque envoi.</p></div>{run && <Badge variant="signal">Analyse {run.manifest.event_id} prête</Badge>}</div>
-          <div className="grid gap-5 max-w-[1050px]">
-            <Card><CardHeader><div className="flex flex-wrap items-center justify-between gap-3"><div><CardTitle>État de la connexion</CardTitle><CardDescription className="mt-1">L’accès au dépôt Git ne connecte pas automatiquement Clay.</CardDescription></div>{clay?.active.user_id ? <Badge variant="signal"><CheckCircle2 size={12} className="mr-1" /> Authentifié</Badge> : <Badge variant="outline"><XCircle size={12} className="mr-1" /> Non connecté</Badge>}</div></CardHeader><CardContent><div className="grid gap-3 sm:grid-cols-2"><div className="detail-block"><dt>Compte actif</dt><dd>{clay?.active.user_email || (clay?.active.error ? "Aucune session Clay active" : "Vérification en cours")}</dd></div><div className="detail-block"><dt>Workspace actif</dt><dd>{clay?.active.workspace_name || clay?.active.workspace_id || "À connecter"}</dd></div></div>{clay?.pinned.user_id && <div className="mt-3 flex items-center gap-2 text-xs text-[#64645c]"><ShieldCheck size={15} /> Compte épinglé : {clay.pinned.user_email || clay.pinned.user_id} · {clay.pinned.workspace_name || clay.pinned.workspace_id}</div>}</CardContent></Card>
-            <div className="clay-steps">
-              <div className="clay-step"><span className="step-no">1</span><div><h3>Autoriser le compte Clay</h3><p>Obtenez un code de connexion, ouvrez le lien Clay et autorisez l’accès avec le compte d’Elizabeth.</p><div className="flex flex-wrap gap-2 mt-4"><Button disabled={clayBusy || clay?.login_state === "running"} onClick={() => clayAction("login")}>{clay?.login_state === "running" ? <LoaderCircle className="animate-spin" /> : <LogIn />} {clay?.login_state === "running" ? "Connexion en cours…" : "Obtenir un code Clay"}</Button><Button variant="outline" disabled={clayBusy} onClick={refreshClay}>Vérifier la connexion</Button></div>{clay?.verification_url && <div className="mt-4 rounded-lg border border-[#d4de91] bg-[#fbfde9] p-4 text-sm"><a className="font-semibold underline break-all" href={clay.verification_url} target="_blank" rel="noreferrer">Ouvrir la page d’autorisation Clay <ArrowUpRight className="inline-block ml-1" size={14} /></a>{clay.user_code && <p className="mt-3 mb-0">Code : <strong className="mono text-lg tracking-widest">{clay.user_code}</strong></p>}</div>}{clay?.login_state === "failed" && <p className="field-error mt-3">La connexion a échoué{clay.login_error ? ` : ${clay.login_error}` : " dans cet environnement"}. Lancez <code className="mono">clay login</code> sur l’ordinateur qui héberge la machine, puis revérifiez.</p>}<p className="field-note mt-3">Les autorisations et jetons sont gérés par le CLI Clay, jamais par cette page.</p></div></div>
-              <div className="clay-step"><span className="step-no">2</span><div><h3>Choisir et confirmer le workspace</h3><p>Vérifiez le compte affiché, puis fixez le workspace utilisé pour tous les envois.</p><div className="flex flex-wrap items-center gap-2 mt-4"><Select value={workspaceChoice || undefined} onValueChange={setWorkspaceChoice}><SelectTrigger className="w-full max-w-[280px]" aria-label="Choisir le workspace Clay"><SelectValue placeholder="Choisir un workspace" /></SelectTrigger><SelectContent>{(clay?.active.signed_in_workspaces?.length ? clay.active.signed_in_workspaces : clay?.active.workspace_id ? [{ id: clay.active.workspace_id, name: clay.active.workspace_name, active: true }] : []).map(workspace => <SelectItem key={workspace.id} value={String(workspace.id)}>{workspace.name || workspace.id}</SelectItem>)}</SelectContent></Select><Button variant="outline" disabled={!workspaceChoice || clayBusy} onClick={() => clayAction("switch", { workspace_id: workspaceChoice })}>Utiliser</Button><Button variant="signal" disabled={!clay?.active.user_id || clayBusy} onClick={() => clayAction("pin")}>Confirmer ce compte <Check /></Button></div></div></div>
-              <div className="clay-step"><span className="step-no">3</span><div><h3>Définir la table de destination</h3><p>Créez une source Webhook d’entrée dans la table Clay, puis collez son URL ici. Elle reste sur cette machine.</p><div className="flex flex-wrap gap-2 mt-4"><Select value={clayTable} onValueChange={value => { setClayTable(value); setClayPreview(null) }}><SelectTrigger className="w-[190px]" aria-label="Table Clay cible"><SelectValue /></SelectTrigger><SelectContent><SelectItem value="matches">Matchs ICP</SelectItem><SelectItem value="participants">Participants</SelectItem><SelectItem value="accounts">Entreprises</SelectItem><SelectItem value="evidence">Preuves</SelectItem></SelectContent></Select><Input type="password" className="min-w-[250px] flex-1" aria-label="URL du webhook Clay" placeholder="https://…clay.com/…" autoComplete="off" value={webhook} onChange={event => setWebhook(event.target.value)} /><Button variant="outline" disabled={!webhook || !clay?.pinned.user_id || clayBusy} onClick={() => clayAction("webhook", { table: clayTable, url: webhook })}>Enregistrer</Button></div><p className="field-note mt-3">Tables configurées : {clay?.configured_tables.length ? clay.configured_tables.join(", ") : "aucune"}.</p></div></div>
-            </div>
-            <Card className="border-[#d7dcad]"><CardHeader><CardTitle>Prévisualiser, puis envoyer</CardTitle><CardDescription>Transport Clay par webhook : ajoute des lignes; ne remplace pas une table existante.</CardDescription></CardHeader><CardContent><div className="flex flex-wrap items-center gap-3"><Button variant="outline" disabled={!run || !clay?.configured_tables.includes(clayTable) || clayBusy} onClick={() => clayAction("push", { run_id: run?.run_id, table: clayTable, apply: false })}>Prévisualiser l’envoi</Button><Button variant="signal" disabled={!clayPreview || clayPreview.runId !== run?.run_id || clayPreview.table !== clayTable || clayPreview.pending === 0 || clayBusy} onClick={() => clayAction("push", { run_id: run?.run_id, table: clayTable, apply: true })}>Envoyer {clayPreview?.pending || 0} lignes <ArrowRight /></Button></div>{clayPreview && <div className="mt-5 grid gap-3 sm:grid-cols-3"><div className="detail-block"><dt>Lignes à envoyer</dt><dd className="text-lg font-semibold">{formatNumber(clayPreview.pending)}</dd></div><div className="detail-block"><dt>Déjà envoyées</dt><dd className="text-lg font-semibold">{formatNumber(clayPreview.already_sent)}</dd></div><div className="detail-block"><dt>Destination</dt><dd className="mono text-xs">…{clayPreview.destination_fingerprint}</dd></div></div>}{clayMessage && <p className="field-note mt-4">{clayMessage}</p>}{!run && <p className="field-note mt-3">Lancez d’abord une analyse pour préparer les fichiers à envoyer.</p>}</CardContent></Card>
-          </div>
+          <div className="hero"><div><span className="eyebrow"><span className="signal-dot" /> Export vers Clay</span><h1>Livrer sans <span className="font-accent">webhook.</span></h1><p>Téléchargez un CSV prêt pour Clay, puis importez-le dans le workspace choisi par Elizabeth. Aucun endpoint ni abonnement webhook requis pour ce parcours.</p></div>{run && <Badge variant="signal">Analyse {run.manifest.event_id} prête</Badge>}</div>
+          {!run ? <Card><div className="empty-state"><Database size={25} /><h3>Aucune analyse à exporter</h3><p>Lancez d’abord une analyse pour créer les fichiers Clay.</p><Button onClick={() => setView("prepare")}>Préparer une analyse <ArrowRight /></Button></div></Card> : <div className="grid gap-5 max-w-[1050px]">
+            <Card className="border-[#d7dcad]"><CardHeader><CardTitle>1. Choisir le lot à importer</CardTitle><CardDescription>Une ligne par participant et par client, avec une clé stable et les raisons du match.</CardDescription></CardHeader><CardContent><div className="grid gap-3 sm:grid-cols-2"><div className="rounded-xl border border-[#d7dcad] bg-[#f8fbea] p-5"><Badge variant="signal">{formatNumber((run.manifest.counts.match_statuses.fort || 0) + (run.manifest.counts.match_statuses.possible || 0))} pistes</Badge><h3 className="mt-3 mb-1 text-base font-semibold">Liste prioritaire</h3><p className="mb-4 text-xs leading-5 text-[#686861]">Statuts fort et possible. Bon point de départ pour la prospection après vérification des preuves.</p>{run.files.includes("clay-import-priority.csv") ? <Button variant="signal" asChild><a href={download(run.run_id, "clay-import-priority.csv")} download>Télécharger le CSV <ArrowDownToLine /></a></Button> : <span className="field-note">Relancez l’analyse pour créer ce fichier.</span>}</div><div className="rounded-xl border border-[#e5e3dd] bg-white p-5"><Badge variant="outline">{formatNumber(run.manifest.counts.matches)} évaluations</Badge><h3 className="mt-3 mb-1 text-base font-semibold">Tous les matchs</h3><p className="mb-4 text-xs leading-5 text-[#686861]">Inclut les cas à confirmer et exclus, pour une table de suivi complète.</p><Button variant="outline" asChild><a href={download(run.run_id, run.files.includes("clay-import-all.csv") ? "clay-import-all.csv" : "matches.csv")} download>Télécharger le CSV <ArrowDownToLine /></a></Button></div></div><p className="field-note mt-4">Les colonnes comprennent <code className="mono">match_key</code>, l’événement, le client, la personne, l’entreprise, le statut, la priorité et les sources.</p></CardContent></Card>
+            <Card><CardHeader><CardTitle>2. Importer dans Clay</CardTitle><CardDescription>Elizabeth utilise son compte Clay directement; cette application n’a pas besoin de son jeton.</CardDescription></CardHeader><CardContent><ol className="list-decimal pl-5 space-y-3 text-sm leading-6 text-[#62625c]"><li>Ouvrir le bon workspace dans <a href="https://app.clay.com" target="_blank" rel="noreferrer" className="underline font-semibold">Clay <ArrowUpRight className="inline-block" size={13} /></a> et choisir l’import d’un fichier CSV.</li><li>Déposer le fichier téléchargé et vérifier l’aperçu des colonnes ainsi que le nombre de lignes avant de confirmer l’import.</li><li>Conserver <code className="mono">match_key</code> comme identifiant de rapprochement pour repérer les doublons lors d’un prochain import.</li></ol><p className="field-note mt-5">L’import est effectué dans Clay par Elizabeth. La machine ne peut pas confirmer à elle seule que les lignes ont été ajoutées.</p></CardContent></Card>
+            <Card><CardHeader><CardTitle>Autres données disponibles</CardTitle><CardDescription>Importer séparément si l’équipe veut des tables de référence.</CardDescription></CardHeader><CardContent><div className="download-grid">{[["participants.csv", "Participants"], ["accounts.csv", "Entreprises"], ["evidence.csv", "Preuves et signaux"]].map(([file, label]) => <a className="download-link" key={file} href={download(run.run_id, file)} download><span>{label}<small className="block text-[#8a8a84] font-normal mt-1 mono">{file}</small></span><ArrowDownToLine size={15} /></a>)}</div></CardContent></Card>
+          </div>}
         </>}
+
       </div>
     </main>
     <Dialog open={!!selected} onOpenChange={open => { if (!open) setSelected(null) }}><DialogContent><DialogHeader><DialogTitle>{selected?.person_name || "Participant"}</DialogTitle><DialogDescription>{selected?.job_title || "Poste à confirmer"} · {selected?.company_name || "Entreprise à confirmer"}</DialogDescription></DialogHeader>{selected && <div className="grid gap-4"><div className="flex flex-wrap items-center gap-2">{fitBadge(selected.fit_status)}<Badge variant="muted">{selected.client_name}</Badge><span className="text-xs text-[#72726c] ml-auto">Priorité {selected.priority_score}/100</span></div><div className="detail-grid"><div className="detail-block"><dt>Pourquoi participer ?</dt><dd>{selected.why_attend || "À confirmer"}</dd></div><div className="detail-block"><dt>Objectif d’affaires</dt><dd>{selected.business_objective || "À confirmer"}</dd></div><div className="detail-block"><dt>Raison du match</dt><dd>{splitPipe(selected.fit_reasons).length ? splitPipe(selected.fit_reasons).join(" · ") : "Aucune réserve documentée"}</dd></div><div className="detail-block"><dt>Angle pour {selected.client_name}</dt><dd>{selected.opportunity_hypothesis}</dd></div></div>{selected.exclusion_reasons && <div className="rounded-lg bg-[#f7ece9] p-4 text-sm"><strong>Exclusions :</strong> {splitPipe(selected.exclusion_reasons).join(" · ")}</div>}<div className="rounded-lg bg-white border border-[#e5e3dd] p-4"><div className="text-xs uppercase tracking-wider font-bold text-[#777770] mb-2">Question de découverte</div><p className="text-sm leading-6 m-0">{selected.next_question}</p></div><div className="text-xs text-[#777770]"><strong>Sources :</strong> {splitPipe(selected.evidence_urls).length ? splitPipe(selected.evidence_urls).filter(url => /^https?:\/\//.test(url)).map(url => <a key={url} href={url} target="_blank" rel="noreferrer" className="block underline break-all mt-1">{url}</a>) : "Aucune preuve externe liée à cette ligne."}</div></div>}</DialogContent></Dialog>

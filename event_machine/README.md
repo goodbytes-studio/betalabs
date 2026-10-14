@@ -14,7 +14,7 @@ python3 -m event_machine serve
 
 Ouvrir `http://127.0.0.1:8765`. Les CSV et les résultats restent dans `.event-machine/` de l'environnement qui lance le serveur. Le serveur n'écoute que l'interface locale de cet environnement.
 
-Parcours recommandé : **Vue d'ensemble → Nouvelle analyse → Résultats & revue → Connexion Clay**. L'événement se saisit dans des champs guidés, les CSV sont chargés séparément, et les ICP restent un JSON explicite que l'équipe peut importer ou coller. La vue des résultats permet de filtrer par client et statut, d'ouvrir les raisons d'une ligne, de télécharger le dossier et d'importer des corrections. Le bouton **Charger l'exemple HOP** préremplit l'événement et les trois ICP ; il ne fournit pas les CSV de personnes.
+Parcours recommandé : **Vue d'ensemble → Nouvelle analyse → Résultats & revue → Export Clay**. L'événement se saisit dans des champs guidés, les CSV sont chargés séparément, et les ICP restent un JSON explicite que l'équipe peut importer ou coller. La vue des résultats permet de filtrer par client et statut, d'ouvrir les raisons d'une ligne, de télécharger le dossier et d'importer des corrections. Le bouton **Charger l'exemple HOP** préremplit l'événement et les trois ICP ; il ne fournit pas les CSV de personnes.
 
 Pour reconstruire l'interface après une modification :
 
@@ -62,6 +62,7 @@ Les modèles CSV sont dans `examples/event-machine/`. Un CA est utilisable pour 
 - `participants.csv` : rattachement, marqueur d'inscription, typologie, niveau d'influence, raison de présence et objectif déduits.
 - `accounts.csv` : comptes rapprochés avec valeurs brutes et sources disponibles.
 - `matches.csv` : statut machine, score de priorité, raisons, exclusions, preuves, relation, angle et question pour chaque couple personne×client.
+- `clay-import-priority.csv`, `clay-import-all.csv` : fichiers simplifiés pour l'import manuel dans Clay, sans webhook.
 - `review-queue.csv` : cas à vérifier, ordonnés pour l'analyste.
 - `feedback-template.csv` : modèle de correction humaine.
 - `event-pages.json`, `research-errors.json`, `evidence.csv`, `run-manifest.json` : traçabilité, dont SHA-256 des entrées.
@@ -82,37 +83,18 @@ python3 -m event_machine stats --db .event-machine/feedback.sqlite3
 
 Une nouvelle analyse reprend la décision humaine sur le même couple événement/personne/client. Après six revues `fort`/`exclu` pour un client, avec au moins trois cas pour une caractéristique, le système ajuste **seulement la priorité de tri** à partir du type d'organisation, du secteur et du niveau de poste. L'ajustement est plafonné à ±12 points; il ne change jamais un seuil ICP ou une exclusion. Les corrections modifient le classement futur sans faire passer une hypothèse pour un fait. La base SQLite peut être sauvegardée avec l'équipe; elle contient des informations de prospection internes.
 
-## Connexion à Clay d'Elizabeth
+## Import dans Clay sans webhook
 
-Dans l'interface locale, Elizabeth peut :
+Après chaque analyse, la machine produit deux fichiers de destination :
 
-1. Cliquer **Obtenir un code Clay**, ouvrir le lien d'autorisation affiché et saisir le code avec son propre compte. Si le code ne peut pas être obtenu dans cet environnement, lancer `clay login --device` dans un terminal de l'ordinateur qui héberge la machine, puis cliquer **Vérifier la connexion**.
-2. Lire l'identité Clay retournée par `clay whoami`, choisir un workspace autorisé et cliquer **Confirmer ce compte et ce workspace**. Aucun email n'est à fournir au développeur : l'ID utilisateur et l'ID workspace vérifiés sont enregistrés dans `.event-machine/clay-connection.json` (permissions locales 0600).
-3. Créer une source **Webhook d'entrée** dans la table de sortie souhaitée dans Clay, puis coller son URL dans l'interface. Elle reste dans le fichier local protégé et n'est jamais ajoutée au dépôt.
-4. Lancer une analyse, cliquer **Prévisualiser l'envoi**, puis **Envoyer les lignes en attente**. Le connecteur revérifie l'ID utilisateur et le workspace juste avant l'envoi.
+- `clay-import-priority.csv` : statuts `fort` et `possible` seulement. À vérifier avant prospection.
+- `clay-import-all.csv` : tous les couples participant × client, y compris `à confirmer` et `exclu`.
 
-L'accès d'Elizabeth au dépôt Git n'authentifie pas son compte Clay. Le webhook est un transport **d'ajout de lignes**; il ne remplace pas et ne met pas à jour les lignes existantes dans Clay. Le registre local empêche de renvoyer une ligne inchangée vers la même destination depuis cette installation. Si une réponse réseau se perd après réception par Clay, une relance peut produire un doublon distant; utiliser `match_key` pour contrôler la table.
+Chaque ligne comporte `match_key` (clé stable événement/personne/client), l'événement, le client, l'email si fourni, le domaine de l'entreprise, le statut, la priorité, les raisons, les questions et les sources. Les autres exports (`participants.csv`, `accounts.csv`, `evidence.csv`) restent disponibles séparément.
 
-Le même parcours peut être fait en ligne de commande lorsque l'interface n'est pas utilisée :
+Dans **Export Clay**, Elizabeth télécharge le lot souhaité. Elle ouvre ensuite le workspace voulu dans Clay, choisit l'import d'un CSV, vérifie l'aperçu des colonnes et le nombre de lignes, puis confirme elle-même l'import. Garder `match_key` pour repérer les doublons lors d'un nouvel import. Cette opération ne nécessite **aucune URL de webhook** dans la machine. Les limites de lignes ou de crédits du compte Clay restent celles de son abonnement; la machine ne prétend pas vérifier l'import dans Clay.
 
-```bash
-clay login
-clay whoami
-export BETA_CLAY_WEBHOOK_MATCHES='https://…clay.com/…'
-python3 -m event_machine clay \
-  --run-dir .event-machine/hop-2026 \
-  --table matches \
-  --workspace-id 'ID_DU_WORKSPACE_ELIZABETH' \
-  --account-email 'elizabeth@domaine.example'
-# Après contrôle de l'identité, de la destination et du nombre de lignes :
-python3 -m event_machine clay \
-  --run-dir .event-machine/hop-2026 \
-  --table matches \
-  --workspace-id 'ID_DU_WORKSPACE_ELIZABETH' \
-  --account-email 'elizabeth@domaine.example' --apply
-```
-
-La même commande accepte `participants`, `accounts` ou `evidence`, avec `BETA_CLAY_WEBHOOK_PARTICIPANTS`, `BETA_CLAY_WEBHOOK_ACCOUNTS` ou `BETA_CLAY_WEBHOOK_EVIDENCE`. Ne jamais mettre les URL webhook ou clés dans Git. Si l'objectif est de **remplacer** une table Clay existante, utiliser l'import CSV avec l'option de remplacement dans l'interface Clay après vérification des colonnes. Le CLI et le MCP Clay disponibles dans cette session ne proposent pas d'écriture de lignes dans les tables existantes; aucun résultat de la machine n'a été synchronisé avec le compte d'Elizabeth ici.
+Le code du connecteur webhook historique reste disponible en ligne de commande pour les workspaces qui disposent déjà de cette fonction Clay. Il est facultatif et absent du parcours principal. Le CLI et le MCP Clay observés ici ne proposent pas d'écriture directe de lignes dans une table existante; aucun résultat n'a été importé dans le compte d'Elizabeth par cette session.
 
 ## Contrôles
 

@@ -17,7 +17,7 @@ Les données et la base de feedback sont dans `.event-machine/` par défaut. Ce 
 
 ## Agents disponibles
 
-À chaque analyse, télécharger `agent-handoff.md` dans **Résultats → Agents & preuves**. Il donne les chemins et les SHA-256 des entrées. Les consignes détaillées sont dans [`AGENTS.md`](AGENTS.md). Dans la tâche Codex, l'orchestrateur peut déléguer simultanément la recherche événement, la résolution des comptes et les signaux entreprises, puis demander un contrôle des preuves. Le rôle de publication Clay intervient après cette revue.
+À chaque analyse, télécharger `agent-handoff.md` dans **Résultats → Agents & preuves**. Il donne les chemins et les SHA-256 des entrées. Les consignes détaillées sont dans [`AGENTS.md`](AGENTS.md). Dans la tâche Codex, l'orchestrateur peut déléguer simultanément la recherche événement, la résolution des comptes et les signaux entreprises, puis demander un contrôle des preuves. L'export Clay prépare ensuite des CSV qu'Elizabeth importe dans son workspace.
 
 L'agent Signaux entreprises produit un JSON conforme à [`company-signals.schema.json`](agents/company-signals.schema.json). L'importer dans l'onglet **Agents & preuves**, ou en ligne de commande :
 
@@ -39,8 +39,9 @@ L'application ne lance pas directement un sous-processus `codex exec` depuis le 
 | Agents Codex de la tâche | Disponibles | Délégation par l'orchestrateur Codex, avec fichiers de transfert |
 | Recherche directe de `www.cqcd.org` | Domaine absent de la politique réseau actuelle | Utiliser les snapshots fournis; la recherche live consigne l'échec |
 | Connecteur Clay de la tâche Codex | Workspace GoodBytes 659090 accessible en lecture | Les agents peuvent consulter les données permises par ce connecteur; cela n'authentifie pas le CLI ni Elizabeth |
-| Clay CLI d'Elizabeth | Non authentifié; domaines Clay absents de la politique | Aucun envoi Clay possible dans cette tâche |
+| Import CSV Clay | Fichiers produits sans connexion Clay | Elizabeth importe le fichier dans son workspace; aucune URL de webhook requise |
+| Clay CLI d'Elizabeth | Non authentifié; domaines Clay absents de la politique | L'option historique de webhook n'est pas utilisable dans cette tâche |
 | `codex exec` lancé depuis le conteneur | API bloquée par la politique réseau actuelle | Ne pas le traiter comme un runner d'agents disponible |
 | Claude Code | CLI et authentification absents | Non vérifié |
 
-La politique réseau et les connexions du cloud doivent être configurées par le mécanisme de configuration de l'environnement, puis revérifiées. Les domaines nécessaires dépendent de l'événement et des appels réels de Clay; pour HOP, commencer par `www.cqcd.org` et les hôtes Clay retournés par le CLI. N'ajouter aucun jeton, webhook ou CSV de participants au dépôt. Le rôle Clay vérifie l'identité et le workspace actifs avant tout envoi.
+La politique réseau et les connexions du cloud doivent être configurées par le mécanisme de configuration de l'environnement, puis revérifiées si la recherche live ou l'option historique de webhook est utilisée. Pour HOP, l'accès direct à `www.cqcd.org` manque encore. N'ajouter aucun jeton, webhook ou CSV de participants au dépôt. L'import manuel des CSV dans Clay fonctionne sans accès réseau Clay depuis la machine.

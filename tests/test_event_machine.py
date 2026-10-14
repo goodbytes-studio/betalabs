@@ -91,6 +91,11 @@ class EventMachineTests(unittest.TestCase):
                 row = next(csv.DictReader(f))
             self.assertEqual(row["machine_status"], "fort")
             self.assertEqual(row["attendance_status"], "marker_confirmed")
+            with (root / "out" / "clay-import-priority.csv").open(encoding="utf-8-sig") as f:
+                clay_row = next(csv.DictReader(f))
+            self.assertEqual(clay_row["match_key"], row["match_key"])
+            self.assertEqual(clay_row["email"], "alice@boutique.test")
+            self.assertEqual(clay_row["company_domain"], "boutique.test")
             self.assertIn("https://example.com/forum", (root / "out" / "event-brief.md").read_text())
             self.assertIn("Recherche événement", (root / "out" / "agent-handoff.md").read_text())
 

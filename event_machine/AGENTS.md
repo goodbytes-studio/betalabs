@@ -12,9 +12,9 @@ Partir d'un `run-manifest.json` et de `agent-handoff.md` produits par la machine
 | Résolution des comptes | `participants.csv`, `accounts.csv` | Tableau des rattachements douteux, sans modification automatique | Recherche entreprise publique si disponible |
 | Signaux entreprises | `accounts.csv`, `icps.json`, `review-queue.csv` | JSON `company-signals.schema.json` | Sites publics; Clay MCP seulement si connecté au bon compte |
 | Contrôle des preuves | Note événement, JSON des signaux, sources | Corrections et éléments à valider par un humain | Pages sources et registres BETA Labs |
-| Publication Clay | Exports revus, identité Clay, aperçu d'envoi | Reçu d'envoi ou blocage expliqué | Clay CLI/MCP du compte autorisé |
+| Préparation Clay | Exports revus, workspace choisi par Elizabeth | CSV d'import et instructions de contrôle | Aucun accès API requis pour produire le CSV |
 
-Ne pas lancer le rôle Clay avant la revue du lot et la vérification de l'utilisateur et du workspace d'Elizabeth. L'accès au dépôt n'est pas un accès à son compte Clay. Le connecteur existant ajoute des lignes et vérifie l'identité avant l'envoi.
+Le rôle Clay prépare le lot et sa clé `match_key`; Elizabeth choisit le workspace et confirme l'import CSV dans Clay. L'accès au dépôt n'est pas un accès à son compte Clay. Aucun webhook n'est nécessaire au parcours principal.
 
 ## Règles de transfert
 
