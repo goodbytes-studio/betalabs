@@ -2,6 +2,8 @@
 
 Application locale en Python 3.10+ pour partir d'une liste d'inscrits et de profils ICP, rechercher le contexte d'un événement, rapprocher les entreprises, qualifier chaque participant pour chaque client, puis intégrer les corrections des analystes. Aucune dépendance Python externe.
 
+L'interface React utilise des composants shadcn/ui adaptés localement (Radix, Tailwind et CVA). Les fichiers compilés sont inclus dans le dépôt : Node.js n'est nécessaire que pour **modifier** l'interface, pas pour la lancer. La palette crème/charbon/lime, le logo original et Inter viennent du guide BETA Labs ; l'accent Newsreader est une proposition v2 sous licence OFL. Cette interface ne prétend pas reproduire le site actuel.
+
 ## Démarrage
 
 Depuis la racine du dépôt :
@@ -11,6 +13,18 @@ python3 -m event_machine serve
 ```
 
 Ouvrir `http://127.0.0.1:8765`. Les CSV et les résultats restent dans `.event-machine/` sur l'ordinateur qui lance le serveur. Le serveur n'écoute que l'interface locale.
+
+Parcours recommandé : **Vue d'ensemble → Nouvelle analyse → Résultats & revue → Connexion Clay**. L'événement se saisit dans des champs guidés, les CSV sont chargés séparément, et les ICP restent un JSON explicite que l'équipe peut importer ou coller. La vue des résultats permet de filtrer par client et statut, d'ouvrir les raisons d'une ligne, de télécharger le dossier et d'importer des corrections. Le bouton **Charger l'exemple HOP** préremplit l'événement et les trois ICP ; il ne fournit pas les CSV de personnes.
+
+Pour reconstruire l'interface après une modification :
+
+```bash
+cd event_machine/frontend
+npm ci
+npm run build
+```
+
+Le build est écrit dans `event_machine/frontend/dist/` et servi par la même application Python. Les licences des polices sont dans `event_machine/frontend/public/brand/`.
 
 Pour une analyse reproductible en ligne de commande :
 
@@ -70,7 +84,7 @@ Une nouvelle analyse reprend la décision humaine sur le même couple événemen
 
 Dans l'interface locale, Elizabeth peut :
 
-1. Cliquer **Connecter Clay** et autoriser le CLI Clay dans son navigateur. Si le navigateur local ne s'ouvre pas, lancer `clay login --device` dans un terminal du même ordinateur, puis cliquer **Vérifier la connexion**.
+1. Cliquer **Obtenir un code Clay**, ouvrir le lien d'autorisation affiché et saisir le code avec son propre compte. Si le code ne peut pas être obtenu dans cet environnement, lancer `clay login --device` dans un terminal de l'ordinateur qui héberge la machine, puis cliquer **Vérifier la connexion**.
 2. Lire l'identité Clay retournée par `clay whoami`, choisir un workspace autorisé et cliquer **Confirmer ce compte et ce workspace**. Aucun email n'est à fournir au développeur : l'ID utilisateur et l'ID workspace vérifiés sont enregistrés dans `.event-machine/clay-connection.json` (permissions locales 0600).
 3. Créer une source **Webhook d'entrée** dans la table de sortie souhaitée dans Clay, puis coller son URL dans l'interface. Elle reste dans le fichier local protégé et n'est jamais ajoutée au dépôt.
 4. Lancer une analyse, cliquer **Prévisualiser l'envoi**, puis **Envoyer les lignes en attente**. Le connecteur revérifie l'ID utilisateur et le workspace juste avant l'envoi.

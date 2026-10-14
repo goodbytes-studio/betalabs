@@ -114,7 +114,9 @@ def main():
             check(all(sid in sources for sid in row["source_ids"].split(";")), f"Registry source missing: {path}")
             if path.name == "claims.csv":
                 check(row["status"] in allowed_claims, "Unknown claim status")
-    docs = [path for path in ROOT.rglob("*.md") if not path.is_relative_to(ROOT / "sources") and ".git" not in path.parts]
+    generated_or_external = {".git", ".event-machine", "node_modules", "dist"}
+    docs = [path for path in ROOT.rglob("*.md") if not path.is_relative_to(ROOT / "sources")
+            and not generated_or_external.intersection(path.parts)]
     links = 0
     for path in docs + [ROOT / "sources/README.md"]:
         for target in re.findall(r"\[[^\]]*\]\(([^\s)]+)\)", path.read_text()):

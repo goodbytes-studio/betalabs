@@ -82,6 +82,7 @@ class EventMachineTests(unittest.TestCase):
             result = run_pipeline(event_path=root / "event.json", participants_path=root / "people.csv",
                 accounts_path=root / "accounts.csv", icps_path=root / "icps.json", out=root / "out", offline=True)
             self.assertEqual(result["counts"]["matches"], 1)
+            self.assertEqual(result["event_name"], "Commerce Forum")
             self.assertEqual(result["counts"]["event_pages"], 1)
             with (root / "out" / "matches.csv").open(encoding="utf-8-sig") as f:
                 row = next(csv.DictReader(f))

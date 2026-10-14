@@ -496,7 +496,8 @@ def feedback_template(matches: list[dict]) -> list[dict]:
 
 
 def run_manifest(event: dict, pages: list[dict], errors: list[dict], people: list[dict], accounts: list[dict], matches: list[dict]) -> dict:
-    return {"event_id": event["id"], "as_of": date.today().isoformat(), "version": "0.1.0",
+    return {"event_id": event["id"], "event_name": event["name"], "event_date": event.get("date", ""),
+            "as_of": date.today().isoformat(), "version": "0.1.0",
             "counts": {"participants": len(people), "accounts": len(accounts), "matches": len(matches),
                        "match_statuses": dict(Counter(r["fit_status"] for r in matches)),
                        "event_pages": len(pages), "research_errors": len(errors)},

@@ -7,3 +7,5 @@ __pycache__/
 scratch/
 *.log
 .event-machine/
+event_machine/frontend/node_modules/
+event_machine/frontend/tsconfig.tsbuildinfo

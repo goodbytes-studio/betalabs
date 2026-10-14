@@ -1,0 +1,66 @@
+{
+  "clients": [
+    {
+      "id": "mirego",
+      "name": "Mirego",
+      "target": {
+        "company_types": ["retailer"],
+        "geographies": ["canada"],
+        "business_models": ["b2b", "b2c"],
+        "sectors_exclude": ["cpg", "pharmacy", "insurance"],
+        "role_functions": ["executive", "marketing", "digital", "operations", "it"],
+        "seniority": ["executive", "vp_clevel", "director"],
+        "revenue_min_cad": 40000000
+      },
+      "signals": [
+        {"field": "marketing_investment", "required": true},
+        {"field": "mobile_product_potential", "required": true}
+      ],
+      "conversation_angle": "Explorer un produit mobile et la stratégie de croissance de marque, si ces projets existent.",
+      "discovery_question": "Quel projet numérique ou mobile est prioritaire cette année ?"
+    },
+    {
+      "id": "ursa",
+      "name": "Ursa Marketing",
+      "target": {
+        "company_types": ["retailer"],
+        "business_models": ["b2c"],
+        "sectors_allow": ["beauty", "sport_outdoor", "fashion", "electronics", "furniture_home", "hardware", "books", "food_beverage", "cpg"],
+        "sectors_exclude": ["automotive", "grocery"],
+        "role_functions": ["executive", "marketing", "digital"],
+        "seniority": ["executive", "vp_clevel", "director"],
+        "revenue_min_cad": 10000000,
+        "revenue_max_cad": 100000000
+      },
+      "signals": [
+        {"field": "online_store", "required": true},
+        {"field": "paid_ads_google_or_meta", "required": true}
+      ],
+      "conversation_angle": "Vérifier la performance acquisition et la maturité publicitaire du magasin en ligne.",
+      "discovery_question": "Quels canaux payants et objectifs d'acquisition sont prioritaires ?"
+    },
+    {
+      "id": "reverbere",
+      "name": "Studio Réverbère",
+      "target": {
+        "company_types": ["retailer"],
+        "business_models": ["b2c"],
+        "sectors_allow": ["beauty", "sport_outdoor", "electronics", "cpg", "grocery", "food_beverage", "furniture_home", "hardware"],
+        "role_functions": ["executive", "marketing", "operations", "hr"],
+        "seniority": ["executive", "vp_clevel", "director"],
+        "revenue_min_cad": 5000000,
+        "revenue_max_cad": 20000000,
+        "revenue_tiers": [
+          {"sectors": ["food_beverage"], "min_cad": 2000000, "max_cad": 5000000}
+        ]
+      },
+      "signals": [
+        {"field": "supported_cms", "required": true, "negative_excludes": true},
+        {"field": "black_friday_readiness", "required": false},
+        {"field": "culture_challenge", "required": false}
+      ],
+      "conversation_angle": "Qualifier les priorités marketing, opérations ou culture et le socle numérique.",
+      "discovery_question": "Quel chantier croissance ou organisationnel demande le plus d'attention ?"
+    }
+  ]
+}

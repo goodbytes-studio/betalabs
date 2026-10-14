@@ -3,8 +3,10 @@
 from __future__ import annotations
 
 import json
+import mimetypes
 import re
 import subprocess
+import threading
 import uuid
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -20,46 +22,7 @@ OUTPUT_FILES = {"event-brief.md", "event-pages.json", "research-errors.json", "p
                 "accounts.csv", "matches.csv", "review-queue.csv", "feedback-template.csv",
                 "evidence.csv", "run-manifest.json"}
 
-HTML = r"""<!doctype html><html lang="fr"><meta charset="utf-8"><meta name="viewport" content="width=device-width">
-<title>BETA Labs · Machine événements</title><style>
-body{font:16px/1.5 system-ui,sans-serif;max-width:1050px;margin:2rem auto;padding:0 1rem;color:#172b31;background:#f4f7f5}
-h1{font-size:2rem}h2{font-size:1.2rem}main{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-section{background:white;padding:1.2rem;border:1px solid #d6e1de;border-radius:8px}section.wide{grid-column:1/-1}
-label{display:block;font-weight:600;margin:.8rem 0 .25rem}input,textarea{box-sizing:border-box;width:100%;font:inherit;padding:.55rem;border:1px solid #9aafaa;border-radius:4px}
-textarea{height:220px;font:13px/1.45 monospace}input[type=file],input[type=checkbox]{width:auto}button{background:#174f46;color:white;border:0;border-radius:4px;padding:.7rem 1rem;font:inherit;cursor:pointer}
-button:disabled{opacity:.5}a{color:#15584d}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#edf4f2;padding:1rem}
-.muted{color:#536c65}#result{min-height:3rem}@media(max-width:740px){main{display:block}section{margin-bottom:1rem}}
-</style><h1>Machine événements BETA Labs</h1><p>Recherche de l’événement, qualification ICP traçable et revue humaine. Les fichiers restent sur cette machine. Les intentions et angles d’approche sont des hypothèses.</p>
-<main><section><h2>1. Événement et ICP</h2><label for="event">Événement (JSON)</label><textarea id="event">{"id":"hop-2026","name":"HOP! Le Sommet du commerce de détail 2026","url":"https://www.cqcd.org/mega-evenements/hop-le-sommet-du-commerce-de-detail-2026/","edition":"2026","date":"2026-10-27"}</textarea>
-<label for="icps">Profils clients (JSON)</label><textarea id="icps">{"clients":[{"id":"client-demo","name":"Client démo","target":{"company_types":["retailer"],"role_functions":["marketing","digital"],"seniority":["executive","vp_clevel","director"]},"conversation_angle":"Vérifier les priorités du commerce numérique.","discovery_question":"Quel projet numérique est prioritaire ?"}]}</textarea>
-<label><input type="checkbox" id="offline"> Mode hors ligne (utilise reference_pages dans le JSON)</label></section>
-<section><h2>2. Données</h2><label>Participants CSV (obligatoire)</label><input id="participants" type="file" accept=".csv,text/csv"><label>Entreprises CSV</label><input id="accounts" type="file" accept=".csv,text/csv"><label>Relations existantes CSV</label><input id="relations" type="file" accept=".csv,text/csv"><label>Preuves et signaux CSV</label><input id="evidence" type="file" accept=".csv,text/csv"><p class="muted">Une ligne de sortie est créée par participant et par profil client. Le CA n’est vérifié que si année, CAD, statut et URL source sont présents.</p><button id="run">Lancer l’analyse</button></section>
-<section class="wide"><h2>3. Résultats</h2><div id="result">Aucune analyse lancée.</div><div id="downloads"></div></section>
-<section class="wide"><h2>4. Retour humain</h2><p>Téléchargez le modèle de revue, remplissez les décisions puis importez-le. Les corrections changent le rang des futures analyses après assez de cas; elles ne modifient pas automatiquement les règles d’exclusion.</p><label>CSV de revue complété</label><input id="reviews" type="file" accept=".csv,text/csv"><button id="feedback">Enregistrer la revue</button><pre id="feedback-result"></pre></section></main>
-<section><h2>5. Connexion Clay d’Elizabeth</h2><p>L’authentification s’ouvre dans le navigateur local. Après connexion, vérifiez l’identité affichée et choisissez le workspace de destination. Les jetons restent gérés par le CLI Clay sur cet ordinateur.</p>
-<button id="clay-login">Connecter Clay</button> <button id="clay-refresh">Vérifier la connexion</button>
-<pre id="clay-status">Vérification…</pre><label>Workspace actif</label><select id="clay-workspaces"></select><button id="clay-switch">Utiliser ce workspace</button>
-<button id="clay-pin">Confirmer ce compte et ce workspace</button><p class="muted">Si le navigateur ne s’ouvre pas, lancer <code>clay login --device</code> dans un terminal de cet ordinateur, puis cliquer « Vérifier la connexion ».</p>
-<label>Table de sortie</label><select id="clay-table"><option>matches</option><option>participants</option><option>accounts</option><option>evidence</option></select>
-<label>URL Webhook d’entrée de la table Clay</label><input id="clay-webhook" type="password" autocomplete="off" placeholder="https://…clay.com/…">
-<button id="clay-save-webhook">Enregistrer la destination</button><p class="muted">L’URL est stockée localement avec accès limité; elle n’apparaît pas dans le dépôt.</p>
-<button id="clay-preview">Prévisualiser l’envoi</button> <button id="clay-apply">Envoyer les lignes en attente</button><pre id="clay-result"></pre></section>
-<script>
-let currentRun=null;const $=id=>document.getElementById(id);
-const fileText=async id=>$(id).files[0]?await $(id).files[0].text():"";
-async function request(path,body){const res=await fetch(path,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});const data=await res.json();if(!res.ok)throw Error(data.error||res.statusText);return data}
-$("run").onclick=async()=>{const btn=$("run");btn.disabled=true;$("result").textContent="Analyse en cours…";try{const inputs={};for(const id of ["participants","accounts","relations","evidence"])inputs[id]=await fileText(id);
-const data=await request("/api/run",{event:JSON.parse($("event").value),icps:JSON.parse($("icps").value),inputs,offline:$("offline").checked});currentRun=data.run_id;
-$("result").textContent=`${data.manifest.counts.participants} participants · ${data.manifest.counts.accounts} entreprises · ${data.manifest.counts.matches} matchs · ${data.manifest.counts.event_pages} pages événement`;
-$("downloads").innerHTML=data.files.map(f=>`<p><a href="/runs/${currentRun}/${f}" download>${f}</a></p>`).join("");}catch(e){$("result").textContent=e.message}finally{btn.disabled=false}};
-$("feedback").onclick=async()=>{try{if(!currentRun)throw Error("Lancez une analyse ici avant la revue.");const reviews=await fileText("reviews");if(!reviews)throw Error("Choisissez le CSV de revue.");const data=await request("/api/feedback",{run_id:currentRun,reviews});$("feedback-result").textContent=JSON.stringify(data,null,2)}catch(e){$("feedback-result").textContent=e.message}};
-async function clayStatus(){try{const res=await fetch("/api/clay/status");const data=await res.json();$("clay-status").textContent=JSON.stringify(data,null,2);const list=data.active.signed_in_workspaces||[];$("clay-workspaces").replaceChildren(...list.map(w=>{const el=document.createElement("option");el.value=w.id;el.textContent=`${w.name||w.id} (${w.id})${w.active?" · actif":""}`;if(w.active)el.selected=true;return el}));}catch(e){$("clay-status").textContent=e.message}}
-async function loadLatest(){try{const res=await fetch("/api/runs/latest");if(!res.ok)return;const data=await res.json();currentRun=data.run_id;$("result").textContent=`Dernière analyse · ${data.manifest.counts.participants} participants · ${data.manifest.counts.accounts} entreprises · ${data.manifest.counts.matches} matchs`;$("downloads").innerHTML=data.files.map(f=>`<p><a href="/runs/${currentRun}/${f}" download>${f}</a></p>`).join("")}catch(e){}}
-$("clay-refresh").onclick=clayStatus;
-for(const [id,action,data] of [["clay-login","login",()=>({})],["clay-switch","switch",()=>({workspace_id:$("clay-workspaces").value})],["clay-pin","pin",()=>({})],["clay-save-webhook","webhook",()=>({table:$("clay-table").value,url:$("clay-webhook").value})],["clay-preview","push",()=>({table:$("clay-table").value,run_id:currentRun,apply:false})],["clay-apply","push",()=>({table:$("clay-table").value,run_id:currentRun,apply:true})]]){
-$(id).onclick=async()=>{try{if(action==="push"&&!currentRun)throw Error("Lancez une analyse dans cette session avant l’envoi.");const result=await request("/api/clay",{action,...data()});$("clay-result").textContent=JSON.stringify(result,null,2);await clayStatus()}catch(e){$("clay-result").textContent=e.message}}}
-clayStatus();loadLatest();
-</script></html>"""
+FRONTEND_DIR = Path(__file__).resolve().parent / "frontend" / "dist"
 
 
 def serve(port: int, data_dir: Path) -> None:
@@ -70,6 +33,29 @@ def serve(port: int, data_dir: Path) -> None:
     root.chmod(0o700)
     db = root / "feedback.sqlite3"
     login_process: subprocess.Popen | None = None
+    login_lines: list[str] = []
+
+    def consume_login(stream) -> None:
+        if stream is None:
+            return
+        for line in stream:
+            login_lines.append(line[:500])
+
+    def login_details() -> dict:
+        output = "\n".join(login_lines[-20:])
+        urls = re.findall(r"https://[^\s<>\"']+", output)
+        safe_url = next((url.rstrip(".,);])") for url in urls
+                         if (urlsplit(url).hostname or "").lower() in {"clay.com", "app.clay.com"}
+                         or (urlsplit(url).hostname or "").lower().endswith(".clay.com")), "")
+        code = re.search(r"(?:user.?code|code)\s*[:=]\s*([A-Z0-9-]{4,})", output, re.I)
+        if not code:
+            code = re.search(r"\b([A-Z0-9]{4}-[A-Z0-9]{4})\b", output)
+        try:
+            error = json.loads(output).get("error", {}).get("message", "")
+        except json.JSONDecodeError:
+            error = ""
+        return {"verification_url": safe_url, "user_code": code.group(1) if code else "",
+                "login_error": str(error)[:200]}
 
     class Handler(BaseHTTPRequestHandler):
         def send_data(self, status: int, body: bytes, content_type: str) -> None:
@@ -86,14 +72,19 @@ def serve(port: int, data_dir: Path) -> None:
 
         def do_GET(self) -> None:
             path = urlsplit(self.path).path
-            if path == "/":
-                return self.send_data(200, HTML.encode(), "text/html; charset=utf-8")
+            if path == "/" or path.startswith(("/assets/", "/brand/", "/examples/")):
+                static_path = (FRONTEND_DIR / ("index.html" if path == "/" else path.lstrip("/"))).resolve()
+                if not static_path.is_relative_to(FRONTEND_DIR) or not static_path.is_file():
+                    return self.send_json(404, {"error": "Asset not found"})
+                content_type = mimetypes.guess_type(static_path.name)[0] or "application/octet-stream"
+                return self.send_data(200, static_path.read_bytes(), content_type)
             if path == "/api/clay/status":
                 from .clay import connection_status
                 result = connection_status(root)
                 result["login_state"] = ("running" if login_process and login_process.poll() is None else
                                           "completed" if login_process and login_process.returncode == 0 else
                                           "failed" if login_process else "not_started")
+                result.update(login_details())
                 return self.send_json(200, result)
             if path == "/api/runs/latest":
                 candidates = sorted((root / "runs").glob("*/outputs/run-manifest.json"),
@@ -134,9 +125,13 @@ def serve(port: int, data_dir: Path) -> None:
                         nonlocal login_process
                         if login_process and login_process.poll() is None:
                             return self.send_json(200, {"login_state": "running"})
-                        login_process = subprocess.Popen(["clay", "login"], stdin=subprocess.DEVNULL,
-                                                         stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-                        return self.send_json(200, {"login_state": "started", "next": "Complete Clay authorization in the browser, then refresh the connection status"})
+                        login_lines.clear()
+                        login_process = subprocess.Popen(["clay", "login", "--device"], stdin=subprocess.DEVNULL,
+                                                         stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                                                         text=True, bufsize=1)
+                        threading.Thread(target=consume_login, args=(login_process.stdout,), daemon=True).start()
+                        threading.Thread(target=consume_login, args=(login_process.stderr,), daemon=True).start()
+                        return self.send_json(200, {"login_state": "started", "next": "Open the Clay verification URL and enter the displayed code"})
                     if action == "switch":
                         who = switch_workspace(str(payload.get("workspace_id", "")))
                         return self.send_json(200, {"workspace": who.get("workspace"), "user": who.get("user")})
