@@ -40,7 +40,7 @@ def main() -> None:
     ap.add_argument("--include-unknown", action="store_true", help="inclure les organisations de type inconnu")
     args = ap.parse_args()
 
-    accounts = {r["account_id"]: r for r in read_csv(args.accounts)}
+    accounts = {r["account_id"]: r for r in read_csv(args.accounts) if r.get("source") != "alias"}
     icps = read_json(args.icps)
     signals = signal_fields(icps)
     keep = {"retailer", "unknown"} if args.include_unknown else {"retailer"}

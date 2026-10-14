@@ -107,8 +107,9 @@ def propose(args) -> None:
 
 def apply(args) -> None:
     accounts = read_csv(args.accounts)
-    by_id = {r["account_id"]: r for r in accounts}
-    by_domain = {r.get("domain"): r for r in accounts if r.get("domain")}
+    primary = [r for r in accounts if r.get("source") != "alias"]
+    by_id = {r["account_id"]: r for r in primary}
+    by_domain = {r.get("domain"): r for r in primary if r.get("domain")}
     evidence, applied = [], Counter()
     checked = args.checked_at or today()
     for row in read_csv(args.review):

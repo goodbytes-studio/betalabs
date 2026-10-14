@@ -46,7 +46,7 @@ def allowed_values(field: str, core) -> set[str]:
 
 def propose(args) -> None:
     core = load_core(args.repo)
-    accounts = {r["account_id"]: r for r in read_csv(args.accounts)}
+    accounts = {r["account_id"]: r for r in read_csv(args.accounts) if r.get("source") != "alias"}
     review, errors = [], []
     files = sorted(args.research_dir.glob("batch-*.json"))
     if not files:
@@ -108,7 +108,7 @@ def propose(args) -> None:
 
 def apply(args) -> None:
     accounts = read_csv(args.accounts)
-    by_id = {r["account_id"]: r for r in accounts}
+    by_id = {r["account_id"]: r for r in accounts if r.get("source") != "alias"}
     applied, skipped = Counter(), Counter()
     for row in read_csv(args.review):
         if not yes(row.get("approve")) or not row.get("field"):

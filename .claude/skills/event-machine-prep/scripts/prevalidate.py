@@ -251,7 +251,16 @@ def main() -> None:
             })
     # Détaillants et inconnus d'abord ; les agences/organismes devinés servent surtout à exclure proprement.
     queue.sort(key=lambda r: (r["research_priority"] != "high", -r["decision_makers"], -r["participants"], r["name"]))
-    write_csv(args.out / "accounts-normalized.csv", normalized)
+    # Le moteur rattache aussi les personnes par nom : garder chaque variante de nom comme ligne alias
+    # (domaine seul), placée après la ligne principale pour que ses valeurs restent prioritaires.
+    primary_names = {(r["domain"], core.norm(r["name"])) for r in normalized}
+    aliases = []
+    for dom, names in sorted(names_by_domain.items()):
+        for name in sorted(names):
+            if name and (dom, core.norm(name)) not in primary_names:
+                primary_names.add((dom, core.norm(name)))
+                aliases.append({"account_id": dom, "name": name, "domain": dom, "source": "alias"})
+    write_csv(args.out / "accounts-normalized.csv", normalized + aliases, list(normalized[0].keys()) if normalized else None)
     write_csv(args.out / "research-queue.csv", queue)
     write_csv(args.out / "account-issues.csv", a_issues, ["account_id", "name", "issue", "detail"])
 
