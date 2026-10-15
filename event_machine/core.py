@@ -109,6 +109,9 @@ def parse_accounts(rows: list[dict]) -> tuple[list[dict], dict, dict]:
             "revenue_source_url": ("revenue_source_url", "revenue_evidence_url"),
             "business_model": ("business_model", "modele_affaires"),
             "business_model_source_url": ("business_model_source_url", "business_model_evidence_url"),
+            "revenue_estimate_band": ("revenue_estimate_band", "revenue_band", "annual_revenue_range"),
+            "revenue_estimate_currency": ("revenue_estimate_currency", "revenue_band_currency"),
+            "revenue_estimate_source": ("revenue_estimate_source", "revenue_band_source"),
         }.items():
             value = first(row, *aliases)
             if value and not account.get(field):
@@ -241,6 +244,28 @@ def verified_revenue(account: dict) -> tuple[float | None, str]:
     return amount, "verified_input"
 
 
+# Bornes prudentes USD -> CAD pour une fourchette estimée : le bas est converti au taux bas,
+# le haut au taux haut, pour qu'une fourchette ne franchisse un seuil que si elle le fait sans ambiguïté.
+USD_CAD_LOW, USD_CAD_HIGH = 1.25, 1.45
+BAND_UNITS = {"": 1, "k": 1e3, "m": 1e6, "b": 1e9, "t": 1e12}
+
+
+def estimated_revenue_band(account: dict) -> tuple[float, float] | None:
+    """Fourchette de CA estimée (ex. « 200M-500M » d'un fournisseur de données), convertie en CAD."""
+    band = str(account.get("revenue_estimate_band", "")).replace("$", "").replace(" ", "").lower()
+    match = re.fullmatch(r"(\d+(?:\.\d+)?)([kmbt]?)-(\d+(?:\.\d+)?)([kmbt]?)", band)
+    if not match:
+        return None
+    low = float(match.group(1)) * BAND_UNITS[match.group(2) or match.group(4)]
+    high = float(match.group(3)) * BAND_UNITS[match.group(4)]
+    currency = str(account.get("revenue_estimate_currency", "")).upper()
+    if currency == "CAD":
+        return low, high
+    if currency == "USD":
+        return low * USD_CAD_LOW, high * USD_CAD_HIGH
+    return None
+
+
 def person_event_hypothesis(title: str, org_type: str) -> tuple[str, str, str]:
     """Conversation hypotheses only; never claim a person's actual intent."""
     functions, _ = role_features(title)
@@ -367,8 +392,22 @@ def match_person(person: dict, account: dict, profile: dict, evidence: dict, rel
             revenue_min = tier.get("min_cad", revenue_min)
             revenue_max = tier.get("max_cad", revenue_max)
             break
+    band = estimated_revenue_band(account) if target.get("revenue_estimate_ok") else None
+    estimate_ok = False
     if revenue_min is not None or revenue_max is not None:
-        if amount is None:
+        if amount is None and band:
+            low, high = band
+            if revenue_min is not None and high < revenue_min:
+                blockers.append("CA estimé (fourchette) sous le seuil")
+            elif revenue_max is not None and low > revenue_max:
+                blockers.append("CA estimé (fourchette) au-dessus du seuil")
+            elif (revenue_min is None or low >= revenue_min) and (revenue_max is None or high <= revenue_max):
+                reasons.append("CA estimé (fourchette) dans la fourchette ICP")
+                estimate_ok = True
+            else:
+                reasons.append("CA estimé (fourchette) chevauche le seuil")
+            revenue_basis = "estimated_band"
+        elif amount is None:
             reasons.append("CA annuel CAD non vérifié")
         elif revenue_min is not None and amount < revenue_min:
             blockers.append("CA CAD sous le seuil")
@@ -390,14 +429,15 @@ def match_person(person: dict, account: dict, profile: dict, evidence: dict, rel
     identity_gaps = ("rattachement", "type d'organisation", "secteur", "fonction du poste",
                      "niveau de décision", "inscription", "géographie")
     unknown_gate = any(x.startswith(identity_gaps) for x in reasons)
-    pending_checks = [x for x in reasons if x != "CA CAD vérifié dans la fourchette"]
+    pending_checks = [x for x in reasons if x not in ("CA CAD vérifié dans la fourchette",
+                                                      "CA estimé (fourchette) dans la fourchette ICP")]
     all_required = all(item["state"] == "verified_yes" for item in signal_results if next((r.get("required") for r in profile.get("signals", []) if r["field"] == item["field"]), False))
     revenue_required = revenue_min is not None or revenue_max is not None
     if blockers:
         machine_status = "exclu"
     elif unknown_gate:
         machine_status = "à confirmer"
-    elif (not revenue_required or amount is not None) and all_required and not pending_checks:
+    elif (not revenue_required or amount is not None or estimate_ok) and all_required and not pending_checks:
         machine_status = "fort"
     else:
         machine_status = "possible"
@@ -426,6 +466,7 @@ def match_person(person: dict, account: dict, profile: dict, evidence: dict, rel
         "priority_score": score, "learned_priority_delta": round(learning_bias, 2),
         "fit_reasons": " | ".join(reasons), "exclusion_reasons": " | ".join(blockers),
         "revenue_raw": account.get("revenue_raw", ""), "revenue_basis": revenue_basis,
+        "revenue_estimate_band": " ".join(x for x in (account.get("revenue_estimate_band", ""), account.get("revenue_estimate_currency", "")) if x),
         "signal_results_json": json.dumps(signal_results, ensure_ascii=False),
         "relationship": relation.get("relation_type", "") if relation else "",
         "relationship_owner": relation.get("owner", "") if relation else "",

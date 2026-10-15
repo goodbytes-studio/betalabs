@@ -5,9 +5,10 @@
   ingest_clay.py apply   --review 04-clay-ingest/clay-review.csv --accounts accounts-prevalidated.csv \
                          --out 04-clay-ingest
 
-`propose` écrit clay-review.csv (une ligne par CA, modèle d'affaires ou signal). `approve` est
-prérempli à `yes` seulement quand la preuve est complète : CA numérique en CAD, daté, sourcé et non
-estimé ; signal yes/no avec URL HTTPS et citation. Une personne relit avant `apply`.
+`propose` écrit clay-review.csv (une ligne par CA, fourchette estimée, modèle d'affaires ou signal).
+`approve` est prérempli à `yes` seulement quand la preuve est complète : CA numérique en CAD, daté,
+sourcé et non estimé ; fourchette estimée lisible avec devise ; signal yes/no avec URL HTTPS et
+citation. Une personne relit avant `apply` (une fourchette invraisemblable se rejette ici).
 
 `apply` écrit accounts-final.csv (CA vérifié seulement pour les lignes approuvées ; sinon CA brut)
 et evidence-final.csv (confiance `high` seulement pour les signaux approuvés).
@@ -79,6 +80,15 @@ def propose(args) -> None:
                            "currency": currency, "year": year, "is_estimate": "yes" if estimate else "",
                            "source_url": url, "quote": raw, "problem": " ".join(problems),
                            "approve": "" if problems else "yes"})
+        band = (row.get("revenue_estimate_band") or "").strip()
+        if band:
+            band_currency = (row.get("revenue_estimate_currency") or "").strip().upper()
+            problems = [p for p, bad in (("fourchette_illisible", not re.fullmatch(r"[\d.]+[kmbtKMBT]?-[\d.]+[kmbtKMBT]?", band.replace(" ", "").replace("$", ""))),
+                                         ("devise_absente", band_currency not in {"CAD", "USD"})) if bad]
+            review.append({**base, "kind": "revenue_estimate", "field": "revenue_estimate_band", "value": band,
+                           "currency": band_currency, "is_estimate": "yes",
+                           "source_url": row.get("revenue_estimate_source", "Clay"),
+                           "problem": " ".join(problems), "approve": "" if problems else "yes"})
         model = (row.get("business_model") or "").strip().lower()
         model_url = row.get("business_model_source_url", "")
         if model and model_url:
@@ -127,6 +137,12 @@ def apply(args) -> None:
             account["revenue_source_url"] = row.get("source_url", "")
             account["revenue_verified"] = "yes" if ok else ""
             applied["revenue_verified" if ok else "revenue_raw_only"] += 1
+        elif row["kind"] == "revenue_estimate":
+            if ok:
+                account["revenue_estimate_band"] = row["value"]
+                account["revenue_estimate_currency"] = row.get("currency", "")
+                account["revenue_estimate_source"] = row.get("source_url", "")
+            applied["revenue_estimate" if ok else "revenue_estimate_rejected"] += 1
         elif row["kind"] == "business_model" and ok:
             account["business_model"] = row["value"]
             account["business_model_source_url"] = row["source_url"]

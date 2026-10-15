@@ -23,7 +23,7 @@ BASE = ["account_id", "domain", "name", "website_url", "linkedin_url", "industry
         "country", "org_type", "sector", "business_model", "clients_concerned", "candidate_people",
         "best_status", "priority_hint"]
 REVENUE = ["revenue_raw", "revenue_currency", "revenue_year", "revenue_source_url", "revenue_is_estimate",
-           "business_model_source_url"]
+           "revenue_estimate_band", "revenue_estimate_currency", "business_model_source_url"]
 RANK = {"fort": 3, "possible": 2, "à confirmer": 1, "exclu": 0}
 
 

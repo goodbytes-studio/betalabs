@@ -54,6 +54,27 @@ class EventMachineTests(unittest.TestCase):
         self.assertEqual(accounts[0]["business_model"], "b2c")
         self.assertEqual(accounts[0]["sector_source_url"], "https://commerce.example/a-propos")
 
+    def test_estimated_revenue_band_only_counts_when_clearly_inside_and_enabled(self):
+        person = parse_people([{"full_name": "Alice Test", "company_name": "Commerce test", "role": "VP marketing",
+                                "country": "Canada", "project_slugs[0]": "pairconnex-test-a"}],
+                              "hop-2026", {}, {}, "pairconnex-test-a")[0]
+        person["company_link_status"] = "domain_match"
+        base = {"name": "Commerce test", "org_type": "retailer", "sector": "beauty", "country": "Canada",
+                "business_model": "b2c", "business_model_source_url": "https://commerce.example/a-propos",
+                "revenue_estimate_currency": "USD"}
+        target = {"company_types": ["retailer"], "role_functions": ["marketing"], "seniority": ["vp_clevel"],
+                  "business_models": ["b2c"], "revenue_min_cad": 10000000, "revenue_max_cad": 100000000}
+        def status(band, enabled=True):
+            profile = {"id": "client", "target": {**target, "revenue_estimate_ok": enabled}}
+            return match_person(person, {**base, "revenue_estimate_band": band}, profile, {}, None)
+        inside = status("25M-50M")
+        self.assertEqual(inside["machine_status"], "fort")
+        self.assertEqual(inside["revenue_basis"], "estimated_band")
+        self.assertEqual(status("25M-50M", enabled=False)["machine_status"], "possible")
+        self.assertEqual(status("50M-75M")["machine_status"], "possible")  # 75M USD > 100M CAD au taux haut
+        self.assertEqual(status("1M-5M")["machine_status"], "exclu")
+        self.assertEqual(status("200M-500M")["machine_status"], "exclu")
+
     def test_feedback_requires_proof_and_only_changes_ranking(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

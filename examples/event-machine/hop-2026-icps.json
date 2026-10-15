@@ -4,6 +4,7 @@
       "id": "mirego",
       "name": "Mirego",
       "target": {
+        "revenue_estimate_ok": true,
         "company_types": ["retailer"],
         "geographies": ["canada"],
         "business_models": ["b2b", "b2c"],
@@ -23,6 +24,7 @@
       "id": "ursa",
       "name": "Ursa Marketing",
       "target": {
+        "revenue_estimate_ok": true,
         "company_types": ["retailer"],
         "business_models": ["b2c"],
         "sectors_allow": ["beauty", "sport_outdoor", "fashion", "electronics", "furniture_home", "hardware", "books", "food_beverage", "cpg"],
@@ -43,6 +45,7 @@
       "id": "reverbere",
       "name": "Studio Réverbère",
       "target": {
+        "revenue_estimate_ok": true,
         "company_types": ["retailer"],
         "business_models": ["b2c"],
         "sectors_allow": ["beauty", "sport_outdoor", "electronics", "cpg", "grocery", "food_beverage", "furniture_home", "hardware"],

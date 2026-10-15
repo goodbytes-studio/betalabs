@@ -468,6 +468,18 @@
       "source_date": null,
       "disposition": "snapshot",
       "summary": "16 événements de recherche ; champs High et dates passées/partielles ne prouvent pas leur actualité."
+    },
+    {
+      "id": "S40",
+      "original_name": "decision-ca-fourchette-estimee-2026-10-15.md",
+      "path": "sources/originals/decision-ca-fourchette-estimee-2026-10-15.md",
+      "sha256": "43e808bded118d6d77305b4835d7f3d015611ff23584afe6efaaa5f41c96dd1c",
+      "bytes": 1294,
+      "format": "md",
+      "topic": "decision",
+      "source_date": "2026-10-15",
+      "disposition": "reference_provisoire",
+      "summary": "Décision d’Elizabeth : une fourchette de CA estimée peut servir aux seuils ICP de la machine si elle est entièrement dans le seuil ; à confirmer avec chaque client."
     }
   ]
 }
