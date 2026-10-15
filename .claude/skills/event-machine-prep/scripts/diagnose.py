@@ -14,10 +14,10 @@ import json
 from collections import Counter, defaultdict
 from pathlib import Path
 
-from _common import read_csv, write_csv
+from _common import read_csv, with_effective_status, write_csv
 
 STATUSES = ["fort", "possible", "à confirmer", "exclu"]
-SHORTLIST_FIELDS = ["client_name", "machine_status", "priority_score", "person_name", "job_title", "company_name",
+SHORTLIST_FIELDS = ["client_name", "machine_status", "status_source", "revenue_basis", "revenue_estimate_band", "priority_score", "person_name", "job_title", "company_name",
                     "sector", "relationship", "relationship_owner", "fit_reasons", "evidence_urls",
                     "opportunity_hypothesis", "next_question", "match_key"]
 
@@ -40,9 +40,10 @@ def main() -> None:
     ap.add_argument("--out", required=True, type=Path)
     ap.add_argument("--top", type=int, default=25)
     args = ap.parse_args()
-    matches = read_csv(args.run / "matches.csv")
+    # La revue humaine prime sur le statut machine partout dans le diagnostic.
+    matches = with_effective_status(read_csv(args.run / "matches.csv"))
     manifest = json.loads((args.run / "run-manifest.json").read_text(encoding="utf-8"))
-    prev = counts(read_csv(args.previous / "matches.csv")) if args.previous else {}
+    prev = counts(with_effective_status(read_csv(args.previous / "matches.csv"))) if args.previous else {}
     now = counts(matches)
     names = {m["client_id"]: m["client_name"] for m in matches}
     args.out.mkdir(parents=True, exist_ok=True)

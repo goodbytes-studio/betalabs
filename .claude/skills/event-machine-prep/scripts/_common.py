@@ -65,3 +65,20 @@ def is_https(url: str) -> bool:
 
 def yes(value: str) -> bool:
     return str(value or "").strip().casefold() in {"yes", "oui", "y", "o", "true", "1", "x"}
+
+
+HUMAN_SUFFIX = " (revue humaine)"
+
+
+def effective_status(match: dict) -> str:
+    """Statut retenu : la décision humaine (fit_status) prime sur le statut calculé par la machine."""
+    fit = match.get("fit_status", "")
+    return fit[: -len(HUMAN_SUFFIX)] if fit.endswith(HUMAN_SUFFIX) else match["machine_status"]
+
+
+def with_effective_status(matches: list[dict]) -> list[dict]:
+    for m in matches:
+        m["machine_status_raw"] = m["machine_status"]
+        m["status_source"] = "revue humaine" if m.get("fit_status", "").endswith(HUMAN_SUFFIX) else "machine"
+        m["machine_status"] = effective_status(m)
+    return matches

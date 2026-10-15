@@ -17,7 +17,7 @@ import json
 from collections import defaultdict
 from pathlib import Path
 
-from _common import read_csv, read_json, write_csv
+from _common import read_csv, read_json, with_effective_status, write_csv
 
 BASE = ["account_id", "domain", "name", "website_url", "linkedin_url", "industry", "estimated_num_employees",
         "country", "org_type", "sector", "business_model", "clients_concerned", "candidate_people",
@@ -46,7 +46,7 @@ def main() -> None:
     keep = {"retailer", "unknown"} if args.include_unknown else {"retailer"}
     agg: dict[str, dict] = defaultdict(lambda: {"clients": set(), "people": set(), "best": 0, "score": 0,
                                                 "org": "", "sector": ""})
-    for m in read_csv(args.matches):
+    for m in with_effective_status(read_csv(args.matches)):
         if m["machine_status"] == "exclu" or m["org_type"] not in keep:
             continue
         a = agg[m["account_id"]]
