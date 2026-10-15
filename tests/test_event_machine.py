@@ -72,6 +72,8 @@ class EventMachineTests(unittest.TestCase):
         self.assertEqual(inside["revenue_basis"], "estimated_band")
         self.assertEqual(status("25M-50M", enabled=False)["machine_status"], "possible")
         self.assertEqual(status("50M-75M")["machine_status"], "possible")  # 75M USD > 100M CAD au taux haut
+        tolerant = {"id": "client", "target": {**target, "revenue_estimate_ok": True, "revenue_estimate_tolerance": 0.10}}
+        self.assertEqual(match_person(person, {**base, "revenue_estimate_band": "25M-75M"}, tolerant, {}, None)["machine_status"], "fort")
         self.assertEqual(status("1M-5M")["machine_status"], "exclu")
         self.assertEqual(status("200M-500M")["machine_status"], "exclu")
 

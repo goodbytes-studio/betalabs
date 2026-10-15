@@ -393,15 +393,19 @@ def match_person(person: dict, account: dict, profile: dict, evidence: dict, rel
             revenue_max = tier.get("max_cad", revenue_max)
             break
     band = estimated_revenue_band(account) if target.get("revenue_estimate_ok") else None
+    # Marge propre au client sur les seuils, appliquée aux seules fourchettes estimées.
+    tolerance = float(target.get("revenue_estimate_tolerance", 0) or 0)
     estimate_ok = False
     if revenue_min is not None or revenue_max is not None:
         if amount is None and band:
             low, high = band
+            soft_min = revenue_min * (1 - tolerance) if revenue_min is not None else None
+            soft_max = revenue_max * (1 + tolerance) if revenue_max is not None else None
             if revenue_min is not None and high < revenue_min:
                 blockers.append("CA estimé (fourchette) sous le seuil")
             elif revenue_max is not None and low > revenue_max:
                 blockers.append("CA estimé (fourchette) au-dessus du seuil")
-            elif (revenue_min is None or low >= revenue_min) and (revenue_max is None or high <= revenue_max):
+            elif (soft_min is None or low >= soft_min) and (soft_max is None or high <= soft_max):
                 reasons.append("CA estimé (fourchette) dans la fourchette ICP")
                 estimate_ok = True
             else:

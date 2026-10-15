@@ -25,6 +25,7 @@
       "name": "Ursa Marketing",
       "target": {
         "revenue_estimate_ok": true,
+        "revenue_estimate_tolerance": 0.10,
         "company_types": ["retailer"],
         "business_models": ["b2c"],
         "sectors_allow": ["beauty", "sport_outdoor", "fashion", "electronics", "furniture_home", "hardware", "books", "food_beverage", "cpg"],

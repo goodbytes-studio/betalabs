@@ -480,6 +480,18 @@
       "source_date": "2026-10-15",
       "disposition": "reference_provisoire",
       "summary": "Décision d’Elizabeth : une fourchette de CA estimée peut servir aux seuils ICP de la machine si elle est entièrement dans le seuil ; à confirmer avec chaque client."
+    },
+    {
+      "id": "S41",
+      "original_name": "decision-tolerance-ursa-mmode-2026-10-15.md",
+      "path": "sources/originals/decision-tolerance-ursa-mmode-2026-10-15.md",
+      "sha256": "12446a9acbb732901de01c3be7e6a9cae9384f913d5e799951bd7b42d4436bda",
+      "bytes": 999,
+      "format": "md",
+      "topic": "decision",
+      "source_date": "2026-10-15",
+      "disposition": "reference_provisoire",
+      "summary": "Décisions d’Elizabeth : tolérance de 10 % sur les fourchettes de CA estimées pour Ursa ; mmode classé écosystème, hors ICP détaillant."
     }
   ]
 }
