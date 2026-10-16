@@ -45,6 +45,10 @@ class EventMachineTests(unittest.TestCase):
         self.assertEqual(result["machine_status"], "à confirmer")
         self.assertIn("CA annuel CAD non vérifié", result["fit_reasons"])
         self.assertEqual(role_features("VP marketing")[1], "vp_clevel")
+        self.assertIn("it", role_features("Chief Information Officer")[0])
+        self.assertEqual(role_features("Regional Vice President"), ({"executive"}, "vp_clevel"))
+        self.assertEqual(role_features("Vice-président régional Est du Canada")[0], {"executive"})
+        self.assertNotIn("executive", role_features("Vice-présidente – Marketing")[0])
 
     def test_optional_account_source_columns_are_read(self):
         accounts, _, _ = parse_accounts([{"name": "Commerce test", "domain": "commerce.example", "sector": "beauty",

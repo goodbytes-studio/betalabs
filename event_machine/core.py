@@ -18,7 +18,8 @@ ROLE_TERMS = {
     "marketing": ("marketing", "publicite", "advertising", "brand", "marque", "communications", "cmo"),
     "digital": ("numerique", "digital", "ecommerce", "e commerce", "commerce electronique", "web"),
     "operations": ("operations", "exploitation", "magasins", "retail operations", "coo"),
-    "it": ("technologie", "technology", "informatique", "innovation", " ti ", " cio ", " cto "),
+    "it": ("technologie", "technology", "informatique", "innovation", " ti ", " cio ", " cto ",
+           "information officer", "systemes d information", "technologies de l information"),
     "hr": ("ressources humaines", "human resources", "recrutement", "talent", " rh "),
     "finance": ("finance", "financial", "comptabilite", "cfo"),
     "legal": ("juridique", "legal", "conformite"),
@@ -191,6 +192,9 @@ def role_features(title: str) -> tuple[set[str], str]:
         functions.add("executive")
         return functions, "executive"
     if vp or any(term in value for term in (" chief ", " cmo ", " coo ", " cio ", " cto ")):
+        # Un VP régional dirige un territoire comme un DG régional (décision D19, source S42).
+        if vp and re.search(r"\b(regional|regionale|regionaux)\b", value):
+            functions.add("executive")
         return functions, "vp_clevel"
     if any(term in value for term in (" directeur ", " directrice ", " director ", " head of ")):
         return functions, "director"
