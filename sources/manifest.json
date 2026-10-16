@@ -516,6 +516,18 @@
       "source_date": "2026-10-16",
       "disposition": "reference_provisoire",
       "summary": "Décision d’Elizabeth : application mobile/fidélité et investissement marketing ne sont plus obligatoires pour un match fort Mirego ; signaux de priorisation seulement."
+    },
+    {
+      "id": "S44",
+      "original_name": "decision-revue-enrichissement-hop-2026-10-16.md",
+      "path": "sources/originals/decision-revue-enrichissement-hop-2026-10-16.md",
+      "sha256": "62a5ee02ebc3663ab782619d0bd73e9e4838f27384116b6ecc6e327b3f0c3d89",
+      "bytes": 1246,
+      "format": "md",
+      "topic": "decision",
+      "source_date": "2026-10-16",
+      "disposition": "reference_provisoire",
+      "summary": "Décisions d’Elizabeth : modèles d’affaires et boutiques en ligne approuvés (14 entreprises), estimations de CA Mode Choc et Bain Dépôt rejetées, Magasins Lecompte classé maison pour Studio Réverbère."
     }
   ]
 }
