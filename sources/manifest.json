@@ -504,6 +504,18 @@
       "source_date": "2026-10-16",
       "disposition": "reference_provisoire",
       "summary": "Décision d’Elizabeth : un VP régional est traité comme une fonction de direction générale ; titres TI en toutes lettres reconnus."
+    },
+    {
+      "id": "S43",
+      "original_name": "decision-signaux-mirego-optionnels-2026-10-16.md",
+      "path": "sources/originals/decision-signaux-mirego-optionnels-2026-10-16.md",
+      "sha256": "cf100ab53854b4b63f5a6049f59f5ebc06a32fbb6a099e0f16f7cf1fed16ef09",
+      "bytes": 1142,
+      "format": "md",
+      "topic": "decision",
+      "source_date": "2026-10-16",
+      "disposition": "reference_provisoire",
+      "summary": "Décision d’Elizabeth : application mobile/fidélité et investissement marketing ne sont plus obligatoires pour un match fort Mirego ; signaux de priorisation seulement."
     }
   ]
 }

@@ -1,0 +1,16 @@
+# Décision — Signaux Mirego non obligatoires pour un match fort
+
+- Date : 2026-10-16 (America/Toronto)
+- Décideuse : Elizabeth (BETA Labs)
+- Contexte : machine événements, HOP 2026, liste Mirego.
+- Forme : décision donnée en conversation de travail avec l'assistant, retranscrite sans modification de sens.
+
+## Décision
+
+« Pour Mirego, application mobile ou programme de fidélité et investissement en marketing étaient des signaux, mais pas des critères absolus. L'enrichissement est cher. Continuons sans pour l'instant, ce n'est plus un critère. Si à la fin il faut retrancher 2 prospects de la liste Mirego pour arriver à 15, on roulera peut-être ces signaux. »
+
+Les signaux `mobile_product_potential` et `marketing_investment` de l'ICP Mirego passent de `required: true` à `required: false`. Ils restent des signaux de priorisation : un signal vérifié ajoute des points au score, mais son absence ne bloque plus le statut `fort`.
+
+## Suite prévue
+
+Cible : environ 15 prospects Mirego. Si la liste dépasse la cible, ces deux signaux pourront servir à départager les derniers prospects, sur un petit échantillon.

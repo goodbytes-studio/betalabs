@@ -14,8 +14,8 @@
         "revenue_min_cad": 40000000
       },
       "signals": [
-        {"field": "marketing_investment", "required": true},
-        {"field": "mobile_product_potential", "required": true}
+        {"field": "marketing_investment", "required": false},
+        {"field": "mobile_product_potential", "required": false}
       ],
       "conversation_angle": "Explorer un produit mobile et la stratégie de croissance de marque, si ces projets existent.",
       "discovery_question": "Quel projet numérique ou mobile est prioritaire cette année ?"
