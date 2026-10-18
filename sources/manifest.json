@@ -564,6 +564,18 @@
       "source_date": "2026-10-18",
       "disposition": "reference_provisoire",
       "summary": "Décision d’Elizabeth : l’expérience client est une fonction distincte du marketing, ciblée par Mirego mais pas par Ursa."
+    },
+    {
+      "id": "S48",
+      "original_name": "decision-distributeurs-mirego-2026-10-18.md",
+      "path": "sources/originals/decision-distributeurs-mirego-2026-10-18.md",
+      "sha256": "a0c0d0ab7762abc1e9bdb064e4e6b478c90f266e760115825c58f28b2e8ae1a5",
+      "bytes": 844,
+      "format": "md",
+      "topic": "decision",
+      "source_date": "2026-10-18",
+      "disposition": "reference_provisoire",
+      "summary": "Décision d’Elizabeth : les distributeurs sont admissibles pour Mirego ; La Maison Lavande retirée pour Mirego, gardée pour Ursa."
     }
   ]
 }

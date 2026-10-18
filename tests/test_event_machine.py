@@ -111,6 +111,10 @@ class EventMachineTests(unittest.TestCase):
         self.assertEqual(other["machine_status"], "possible")
         excluded = match_person(person, {**account, "sector": "fashion"}, open_list, {}, None)
         self.assertEqual(excluded["machine_status"], "exclu")
+        distributor = {**account, "sector": "automotive", "org_type": "distributeur"}
+        self.assertEqual(match_person(person, distributor, open_list, {}, None)["machine_status"], "exclu")
+        both = {"id": "client", "target": {**target, "sectors_allow": [], "company_types": ["retailer", "distributor"]}}
+        self.assertEqual(match_person(person, distributor, both, {}, None)["machine_status"], "fort")
 
     def test_feedback_requires_proof_and_only_changes_ranking(self):
         with tempfile.TemporaryDirectory() as tmp:

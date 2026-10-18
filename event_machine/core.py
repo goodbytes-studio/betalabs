@@ -217,7 +217,8 @@ def role_features(title: str) -> tuple[set[str], str]:
 def infer_org_type(account: dict) -> tuple[str, str]:
     explicit = norm(account.get("org_type", ""))
     aliases = {"retailer": "retailer", "detaillant": "retailer", "seller": "seller", "vendeur": "seller",
-               "manufacturer": "manufacturer", "fabricant": "manufacturer", "ecosystem": "ecosystem", "ecosysteme": "ecosystem"}
+               "manufacturer": "manufacturer", "fabricant": "manufacturer", "ecosystem": "ecosystem", "ecosysteme": "ecosystem",
+               "distributor": "distributor", "distributeur": "distributor"}
     if explicit in aliases:
         return aliases[explicit], "company_input"
     value = " " + norm(account.get("industry", "")) + " "

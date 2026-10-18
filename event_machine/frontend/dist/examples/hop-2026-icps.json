@@ -6,7 +6,7 @@
       "target": {
         "revenue_estimate_ok": true,
         "revenue_estimate_hard_factor": 3,
-        "company_types": ["retailer"],
+        "company_types": ["retailer", "distributor"],
         "geographies": ["canada"],
         "business_models": ["b2b", "b2c"],
         "sectors_exclude": ["cpg", "pharmacy", "insurance"],
