@@ -49,6 +49,9 @@ class EventMachineTests(unittest.TestCase):
         self.assertEqual(role_features("Regional Vice President"), ({"executive"}, "vp_clevel"))
         self.assertEqual(role_features("Vice-président régional Est du Canada")[0], {"executive"})
         self.assertNotIn("executive", role_features("Vice-présidente – Marketing")[0])
+        self.assertEqual(role_features("Chief Executive Officer"), ({"executive"}, "executive"))
+        self.assertEqual(role_features("Présidente"), ({"executive"}, "executive"))
+        self.assertEqual(role_features("Cofounder")[1], "executive")
 
     def test_optional_account_source_columns_are_read(self):
         accounts, _, _ = parse_accounts([{"name": "Commerce test", "domain": "commerce.example", "sector": "beauty",
@@ -80,6 +83,32 @@ class EventMachineTests(unittest.TestCase):
         self.assertEqual(match_person(person, {**base, "revenue_estimate_band": "25M-75M"}, tolerant, {}, None)["machine_status"], "fort")
         self.assertEqual(status("1M-5M")["machine_status"], "exclu")
         self.assertEqual(status("200M-500M")["machine_status"], "exclu")
+        soft = {"id": "client", "target": {**target, "revenue_estimate_ok": True, "revenue_estimate_hard_factor": 3}}
+        near = match_person(person, {**base, "revenue_estimate_band": "200M-500M"}, soft, {}, None)
+        self.assertEqual(near["machine_status"], "possible")  # 250M CAD au taux bas, sous 3 × 100M
+        self.assertIn("à valider : CA estimé (fourchette) au-dessus du seuil", near["fit_reasons"])
+        self.assertEqual(match_person(person, {**base, "revenue_estimate_band": "1B-10B"}, soft, {}, None)["machine_status"], "exclu")
+
+    def test_open_sector_list_asks_for_validation_instead_of_excluding(self):
+        person = parse_people([{"full_name": "Alice Test", "company_name": "Commerce test", "role": "VP marketing",
+                                "country": "Canada", "project_slugs[0]": "pairconnex-test-a"}],
+                              "hop-2026", {}, {}, "pairconnex-test-a")[0]
+        person["company_link_status"] = "domain_match"
+        account = {"name": "Commerce test", "org_type": "retailer", "sector": "pets", "country": "Canada",
+                   "business_model": "b2c", "business_model_source_url": "https://commerce.example/a-propos"}
+        target = {"company_types": ["retailer"], "role_functions": ["marketing"], "seniority": ["vp_clevel"],
+                  "business_models": ["b2c"], "sectors_allow": ["beauty"], "sectors_exclude": ["fashion"]}
+        strict = match_person(person, account, {"id": "client", "target": target}, {}, None)
+        self.assertEqual(strict["machine_status"], "exclu")
+        open_list = {"id": "client", "target": {**target, "sectors_allow_strict": False}}
+        loose = match_person(person, account, open_list, {}, None)
+        self.assertEqual(loose["machine_status"], "possible")
+        self.assertIn("à valider : secteur hors liste (pets)", loose["fit_reasons"])
+        other = match_person(person, {**account, "sector": "other"}, open_list, {}, None)
+        self.assertEqual(other["sector"], "other")
+        self.assertEqual(other["machine_status"], "possible")
+        excluded = match_person(person, {**account, "sector": "fashion"}, open_list, {}, None)
+        self.assertEqual(excluded["machine_status"], "exclu")
 
     def test_feedback_requires_proof_and_only_changes_ranking(self):
         with tempfile.TemporaryDirectory() as tmp:

@@ -120,9 +120,8 @@ def apply(args) -> None:
             continue
         field, value, url = row["field"], row["proposed_value"].strip().lower(), row["source_url"]
         if field == "sector" and value == "other":
+            # « other » approuvé reste un secteur connu : le moteur le fait valider au lieu de l'exclure.
             account["sector_detail"] = row.get("notes", "") or "other"
-            skipped["sector_other"] += 1
-            continue
         account[field] = value
         if field in ("sector", "business_model", "org_type"):
             account[f"{field}_source_url"] = url

@@ -40,6 +40,13 @@ SECTOR_TERMS = {
     "books": ("librairie", "books", "livres"),
     "automotive": ("automobile", "automotive", "dealership"),
     "food_beverage": ("boisson", "beverage", "restaurant", "food"),
+    # Créneaux ajoutés le 2026-10-18 (décision S46) ; placés en dernier pour ne pas changer les inférences existantes.
+    "footwear": ("chaussure", "footwear", "shoes"),
+    "jewelry": ("bijou", "joaillerie", "jewelry", "jewellery"),
+    "pets": ("animalerie", "pet store", "animaux"),
+    "optical": ("optometri", "optique", "lunetterie", "opticien", "eyewear"),
+    "cannabis": ("cannabis",),
+    "convenience": ("depanneur", "convenience store"),
 }
 
 
@@ -188,7 +195,9 @@ def role_features(title: str) -> tuple[set[str], str]:
         return set(), "unknown"
     functions = {function for function, terms in ROLE_TERMS.items() if any(term in value for term in terms)}
     vp = bool(re.search(r"\b(vp|vice president|vice presidente|vice president e)\b", value))
-    if any(term in value for term in (" pdg ", " ceo ", " president ", " owner ", " proprietaire ", " founder ", " fondateur ", " directrice generale ", " directeur general ")) and not vp:
+    if any(term in value for term in (" pdg ", " ceo ", " president ", " presidente ", " chief executive ", " owner ", " proprietaire ",
+                                          " founder ", " cofounder ", " fondateur ", " fondatrice ", " cofondateur ", " cofondatrice ",
+                                          " directrice generale ", " directeur general ")) and not vp:
         functions.add("executive")
         return functions, "executive"
     if vp or any(term in value for term in (" chief ", " cmo ", " coo ", " cio ", " cto ")):
@@ -225,7 +234,7 @@ def infer_sector(account: dict) -> tuple[str, str]:
     raw = account.get("sector", "")
     if raw:
         key = norm(raw).replace(" ", "_")
-        if key in SECTOR_TERMS:
+        if key in SECTOR_TERMS or key == "other":
             return key, "company_input"
     value = " " + norm(" ".join((raw, account.get("industry", ""), account.get("name", "")))) + " "
     for sector, terms in SECTOR_TERMS.items():
@@ -356,8 +365,11 @@ def match_person(person: dict, account: dict, profile: dict, evidence: dict, rel
         else:
             reasons.append("secteur potentiellement exclu à confirmer")
     elif allowed and sector != "unknown" and sector not in allowed:
-        if sector_basis == "company_input":
+        if sector_basis == "company_input" and target.get("sectors_allow_strict", True):
             blockers.append("secteur hors cible : " + sector)
+        elif sector_basis == "company_input":
+            # Liste ouverte : un secteur hors liste se valide à la main au lieu d'exclure.
+            reasons.append("à valider : secteur hors liste (" + sector + ")")
         else:
             reasons.append("secteur potentiellement hors cible à confirmer")
     elif sector == "unknown":
@@ -405,10 +417,18 @@ def match_person(person: dict, account: dict, profile: dict, evidence: dict, rel
             low, high = band
             soft_min = revenue_min * (1 - tolerance) if revenue_min is not None else None
             soft_max = revenue_max * (1 + tolerance) if revenue_max is not None else None
+            # Une fourchette estimée n'exclut que si elle est loin du seuil (facteur propre au client).
+            hard = float(target.get("revenue_estimate_hard_factor", 0) or 0)
             if revenue_min is not None and high < revenue_min:
-                blockers.append("CA estimé (fourchette) sous le seuil")
+                if hard and high >= revenue_min / hard:
+                    reasons.append("à valider : CA estimé (fourchette) sous le seuil")
+                else:
+                    blockers.append("CA estimé (fourchette) sous le seuil")
             elif revenue_max is not None and low > revenue_max:
-                blockers.append("CA estimé (fourchette) au-dessus du seuil")
+                if hard and low <= revenue_max * hard:
+                    reasons.append("à valider : CA estimé (fourchette) au-dessus du seuil")
+                else:
+                    blockers.append("CA estimé (fourchette) au-dessus du seuil")
             elif (soft_min is None or low >= soft_min) and (soft_max is None or high <= soft_max):
                 reasons.append("CA estimé (fourchette) dans la fourchette ICP")
                 estimate_ok = True

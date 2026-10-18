@@ -540,6 +540,18 @@
       "source_date": "2026-10-16",
       "disposition": "reference_provisoire",
       "summary": "Décisions d’Elizabeth : CA estimés Clay acceptés (Corbeil, Bain Dépôt, Mode Choc), estimation Lecompte rejetée, CMS Clay accepté, au plus une personne par entreprise dans chaque sélection client."
+    },
+    {
+      "id": "S46",
+      "original_name": "decision-secteurs-ouverts-et-flow-ursa-2026-10-18.md",
+      "path": "sources/originals/decision-secteurs-ouverts-et-flow-ursa-2026-10-18.md",
+      "sha256": "93af99a6284af16f3fe96de889f46f66a5e7422ceefe1626bc4cfd9fd91e4cfb",
+      "bytes": 2398,
+      "format": "md",
+      "topic": "decision",
+      "source_date": "2026-10-18",
+      "disposition": "reference_provisoire",
+      "summary": "Décisions d’Elizabeth : secteurs ouverts et nouveaux créneaux, pas de prêt-à-porter pour Studio Réverbère, fourchettes de CA non exclusives sauf à plus de 3 fois le seuil, prospects partageables entre clients, ajouts au flow Ursa."
     }
   ]
 }

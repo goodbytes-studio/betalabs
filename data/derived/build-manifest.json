@@ -1,11 +1,11 @@
 {
-  "as_of": "2026-10-16",
+  "as_of": "2026-10-18",
   "outputs": {
     "accounts.csv": "010c24664bc9da1c824ee1047fce8f37e000c26c2328aa274accdae544e5e807",
     "crm-accounts.csv": "6a740ba4d12404015d75f8c7bc0ff473ff377ecd16e868e7ad8a52468dbe4486",
-    "event-prospects.csv": "9b9182c4dbd95254f2f2e5d4bc7cf51f900c9e78d82fd2450b4e42743bc83b76",
-    "events.csv": "b6fc111e1f5dff81fc16074b7075c168da64ff1eb6a6bc3b2dd12ace6bcd79f1",
+    "event-prospects.csv": "bde6c37954305b5cde7d3af847ff62968c8b03c82d55f1528b648131aefaec29",
+    "events.csv": "23d24d608749c12c6bef251248f2c6c9a48f557fd83ae900da68d59f7cc29a10",
     "organizer-contacts.csv": "c3bd6930f51e7b7e135e0cb9ba5a8320cf48a0883dd088b83aec27bc44001084",
-    "quality-report.json": "24143f30f22eb9649e0bd6edbd76c80d907b4c62de43b3c798bd43d5d788a589"
+    "quality-report.json": "c0e22cb9b2ca4956501a6c95a8de7fe38557a9c0189cd008715e06378edff11e"
   }
 }
