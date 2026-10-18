@@ -1,0 +1,13 @@
+# Décision — Taille cible de Studio Réverbère et respect de son portefeuille
+
+- Date : 2026-10-18 (America/Toronto)
+- Décideuse : Elizabeth (BETA Labs), relayant Studio Réverbère
+- Contexte : machine événements, HOP 2026 ; précisions de Studio Réverbère sur son ICP et document de portefeuille client transmis le 2026-10-16.
+- Forme : décision donnée en conversation de travail avec l'assistant, retranscrite sans modification de sens.
+
+## Décision
+
+1. Le sweet spot de Studio Réverbère reste 5-20 M$ CAD. Les entreprises de 20-50 M$ peuvent convenir selon leur taille : environ 100 employés au maximum, parce que Réverbère cherche idéalement une relation directe avec le PDG.
+   - ICP : `revenue_max_cad` 50 M$, `revenue_sweet_max_cad` 20 M$, `max_employees` 100. Au-dessus de 20 M$, le match est « à valider » tant que l'effectif n'est pas connu ou s'il dépasse 100 employés.
+   - Sélection : prioriser les dirigeants (PDG, propriétaires, présidents).
+2. Studio Réverbère a transmis un document confidentiel de reconnaissance de son portefeuille (comptes en conversation, anciens clients, comptes à ne pas approcher, comptes prioritaires). Ce document est conservé hors du dépôt avec les données internes. Les comptes « en conversation » et « à ne pas approcher » sont exclus des recommandations à Réverbère.

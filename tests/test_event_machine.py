@@ -91,6 +91,27 @@ class EventMachineTests(unittest.TestCase):
         self.assertIn("à valider : CA estimé (fourchette) au-dessus du seuil", near["fit_reasons"])
         self.assertEqual(match_person(person, {**base, "revenue_estimate_band": "1B-10B"}, soft, {}, None)["machine_status"], "exclu")
 
+    def test_revenue_above_sweet_spot_needs_a_small_team(self):
+        person = parse_people([{"full_name": "Alice Test", "company_name": "Commerce test", "role": "PDG",
+                                "country": "Canada", "project_slugs[0]": "pairconnex-test-a"}],
+                              "hop-2026", {}, {}, "pairconnex-test-a")[0]
+        person["company_link_status"] = "domain_match"
+        base = {"name": "Commerce test", "org_type": "retailer", "sector": "beauty", "country": "Canada",
+                "business_model": "b2c", "business_model_source_url": "https://commerce.example/a-propos",
+                "revenue_estimate_currency": "CAD"}
+        profile = {"id": "client", "target": {"company_types": ["retailer"], "role_functions": ["executive"],
+                   "seniority": ["executive"], "business_models": ["b2c"], "revenue_estimate_ok": True,
+                   "revenue_min_cad": 5000000, "revenue_max_cad": 50000000,
+                   "revenue_sweet_max_cad": 20000000, "max_employees": 100}}
+        def status(band, employees=""):
+            return match_person(person, {**base, "revenue_estimate_band": band, "employees": employees}, profile, {}, None)
+        self.assertEqual(status("8M-15M")["machine_status"], "fort")
+        self.assertEqual(status("25M-40M", "60")["machine_status"], "fort")
+        unknown = status("25M-40M")
+        self.assertEqual(unknown["machine_status"], "possible")
+        self.assertIn("vérifier la taille de l'équipe", unknown["fit_reasons"])
+        self.assertIn("environ 250 employés", status("25M-40M", "250")["fit_reasons"])
+
     def test_open_sector_list_asks_for_validation_instead_of_excluding(self):
         person = parse_people([{"full_name": "Alice Test", "company_name": "Commerce test", "role": "VP marketing",
                                 "country": "Canada", "project_slugs[0]": "pairconnex-test-a"}],

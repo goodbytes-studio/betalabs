@@ -122,6 +122,7 @@ def parse_accounts(rows: list[dict]) -> tuple[list[dict], dict, dict]:
             "revenue_estimate_band": ("revenue_estimate_band", "revenue_band", "annual_revenue_range"),
             "revenue_estimate_currency": ("revenue_estimate_currency", "revenue_band_currency"),
             "revenue_estimate_source": ("revenue_estimate_source", "revenue_band_source"),
+            "employees": ("estimated_num_employees", "employees", "employee_count", "nb_employes"),
         }.items():
             value = first(row, *aliases)
             if value and not account.get(field):
@@ -447,6 +448,19 @@ def match_person(person: dict, account: dict, profile: dict, evidence: dict, rel
         else:
             reasons.append("CA CAD vérifié dans la fourchette")
             sources.append(account["revenue_source_url"])
+    # Zone au-dessus du sweet spot : acceptable si l'entreprise reste petite (décision S49).
+    sweet_max = target.get("revenue_sweet_max_cad")
+    top = amount if amount is not None else (band[1] if band else None)
+    if sweet_max is not None and top is not None and top > sweet_max and not blockers:
+        max_staff = target.get("max_employees")
+        try:
+            staff = float(str(account.get("employees", "")).replace(",", "").strip())
+        except ValueError:
+            staff = None
+        if max_staff is None or staff is None:
+            reasons.append("à valider : CA au-dessus du sweet spot, vérifier la taille de l'équipe")
+        elif staff > max_staff:
+            reasons.append(f"à valider : environ {staff:.0f} employés (cible ≤ {max_staff})")
     signal_results = []
     for rule in profile.get("signals", []):
         state, url = signal_state(evidence, rule)

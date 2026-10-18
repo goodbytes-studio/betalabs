@@ -59,7 +59,9 @@
         "role_functions": ["executive", "marketing", "operations", "hr"],
         "seniority": ["executive", "vp_clevel", "director"],
         "revenue_min_cad": 5000000,
-        "revenue_max_cad": 20000000,
+        "revenue_max_cad": 50000000,
+        "revenue_sweet_max_cad": 20000000,
+        "max_employees": 100,
         "revenue_tiers": [
           {"sectors": ["food_beverage"], "min_cad": 2000000, "max_cad": 5000000}
         ]
