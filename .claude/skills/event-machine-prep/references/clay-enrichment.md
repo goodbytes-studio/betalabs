@@ -34,7 +34,7 @@ Adapter le prompt si un client définit un nouveau signal. Toujours demander l'U
 |---|---|---|
 | `online_store` | « Le site {{website_url}} permet-il d'acheter en ligne (panier, paiement) ? Réponds yes/no, l'URL d'une page produit et une citation. » | Tech stack : Shopify, Magento, Salesforce Commerce Cloud, WooCommerce |
 | `paid_ads_google_or_meta` | « {{name}} diffuse-t-il des publicités actives sur Meta ou Google ? Vérifie la Meta Ad Library et Google Ads Transparency. yes/no, URL, citation. » | Pixels Meta / Google Ads dans le tech stack |
-| `supported_cms` | « Quel CMS / plateforme e-commerce utilise {{website_url}} ? Réponds yes si Shopify ou WordPress/WooCommerce, no sinon, avec l'outil détecté. » | Tech stack (BuiltWith / Wappalyzer) |
+| `supported_cms` | « Quel CMS / plateforme e-commerce utilise {{website_url}} ? Réponds yes si Shopify, WordPress/WooCommerce ou Magento, no sinon, avec l'outil détecté. » | Tech stack (BuiltWith / Wappalyzer) |
 | `marketing_investment` | « {{name}} montre-t-il un investissement marketing récent (campagnes, embauches marketing, agence, rebranding) en 2025-2026 ? yes/no, URL, citation. » | Offres d'emploi marketing, actualités |
 | `mobile_product_potential` | « {{name}} a-t-il une application mobile, un programme de fidélité ou un projet numérique annoncé ? yes/no, URL, citation. » | App Store / Google Play |
 | `black_friday_readiness` | « {{name}} a-t-il mené une campagne Black Friday / Cyber Monday en 2025 ? yes/no, URL, citation. » | Pages promo archivées |

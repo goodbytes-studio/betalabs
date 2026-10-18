@@ -53,7 +53,7 @@
         "revenue_estimate_hard_factor": 3,
         "company_types": ["retailer"],
         "business_models": ["b2c"],
-        "sectors_allow": ["beauty", "sport_outdoor", "electronics", "cpg", "grocery", "food_beverage", "furniture_home", "hardware"],
+        "sectors_allow": ["beauty", "sport_outdoor", "electronics", "cpg", "grocery", "food_beverage", "furniture_home", "hardware", "footwear", "jewelry"],
         "sectors_allow_strict": false,
         "sectors_exclude": ["fashion"],
         "role_functions": ["executive", "marketing", "operations", "hr"],

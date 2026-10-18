@@ -588,6 +588,18 @@
       "source_date": "2026-10-18",
       "disposition": "reference_provisoire",
       "summary": "Studio Réverbère : sweet spot 5-20 M$, 20-50 M$ acceptable si environ 100 employés ou moins (relation directe avec le PDG) ; portefeuille confidentiel respecté, conservé hors dépôt."
+    },
+    {
+      "id": "S50",
+      "original_name": "decision-cms-et-tailles-reverbere-2026-10-18.md",
+      "path": "sources/originals/decision-cms-et-tailles-reverbere-2026-10-18.md",
+      "sha256": "63ee0ead5fe4c8789268fd9df7ce8c521e1100a55f77cdc0deb0fd2d8b810acb",
+      "bytes": 1091,
+      "format": "md",
+      "topic": "decision",
+      "source_date": "2026-10-18",
+      "disposition": "reference_provisoire",
+      "summary": "Décisions d’Elizabeth pour Studio Réverbère : Magento accepté comme CMS, chaussures et bijoux hors prêt-à-porter, comptes sous 2 M$ rejetés, Club Tissus prioritaire."
     }
   ]
 }
