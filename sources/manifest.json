@@ -552,6 +552,18 @@
       "source_date": "2026-10-18",
       "disposition": "reference_provisoire",
       "summary": "Décisions d’Elizabeth : secteurs ouverts et nouveaux créneaux, pas de prêt-à-porter pour Studio Réverbère, fourchettes de CA non exclusives sauf à plus de 3 fois le seuil, prospects partageables entre clients, ajouts au flow Ursa."
+    },
+    {
+      "id": "S47",
+      "original_name": "decision-fonction-experience-client-2026-10-18.md",
+      "path": "sources/originals/decision-fonction-experience-client-2026-10-18.md",
+      "sha256": "5592a49dae2c0c05d31e5f7fcbe651a6da309ca2ae8b89339b235c692df92e9e",
+      "bytes": 1023,
+      "format": "md",
+      "topic": "decision",
+      "source_date": "2026-10-18",
+      "disposition": "reference_provisoire",
+      "summary": "Décision d’Elizabeth : l’expérience client est une fonction distincte du marketing, ciblée par Mirego mais pas par Ursa."
     }
   ]
 }

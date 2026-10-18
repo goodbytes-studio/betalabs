@@ -10,7 +10,7 @@
         "geographies": ["canada"],
         "business_models": ["b2b", "b2c"],
         "sectors_exclude": ["cpg", "pharmacy", "insurance"],
-        "role_functions": ["executive", "marketing", "digital", "operations", "it"],
+        "role_functions": ["executive", "marketing", "digital", "operations", "it", "customer_experience"],
         "seniority": ["executive", "vp_clevel", "director"],
         "revenue_min_cad": 40000000
       },

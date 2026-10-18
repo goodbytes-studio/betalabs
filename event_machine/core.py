@@ -25,6 +25,8 @@ ROLE_TERMS = {
     "legal": ("juridique", "legal", "conformite"),
     "logistics": ("logistique", "logistics", "supply chain"),
     "sales": ("vente", "sales", "business development", "developpement des affaires"),
+    # Fonction distincte du marketing : chaque ICP choisit de la cibler ou non (décision S47).
+    "customer_experience": ("experience client", "customer experience", "client experience", "experience consommateur"),
 }
 SECTOR_TERMS = {
     "cpg": ("consumer packaged goods", "cpg", "produits de consommation"),

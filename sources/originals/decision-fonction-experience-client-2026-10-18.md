@@ -1,0 +1,12 @@
+# Décision — Fonction « expérience client » distincte du marketing
+
+- Date : 2026-10-18 (America/Toronto)
+- Décideuse : Elizabeth (BETA Labs)
+- Contexte : machine événements, HOP 2026 ; postes « expérience client » non reconnus (SQDC).
+- Forme : décision donnée en conversation de travail avec l'assistant, retranscrite sans modification de sens.
+
+## Décision
+
+« Expérience client n'est pas toujours marketing. Dans le cas d'un VP expérience client, ça englobe sûrement du marketing et surtout du numérique, et expérience client est bon pour Mirego dans ce cas. Mais expérience client n'est pas considéré marketing dans tous les cas : par exemple pour Ursa, qui cherche des décideurs marketing et qui vend des services de publicité à la performance, expérience client n'est pas vraiment son prospect. »
+
+La machine reconnaît une fonction `customer_experience` distincte. Mirego la cible ; Ursa ne la cible pas. Studio Réverbère ne la cible pas tant qu'Elizabeth n'en décide pas autrement.
