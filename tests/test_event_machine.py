@@ -54,6 +54,8 @@ class EventMachineTests(unittest.TestCase):
         self.assertEqual(role_features("Cofounder")[1], "executive")
         self.assertEqual(role_features("Vice-président Principal Expérience Client"), ({"customer_experience"}, "vp_clevel"))
         self.assertIn("digital", role_features("Director - Digital Customer Experience")[0])
+        self.assertEqual(role_features("Directrice commerce de détail et restauration")[0], {"operations"})
+        self.assertIn("digital", role_features("Directrice e-commerce")[0])
 
     def test_optional_account_source_columns_are_read(self):
         accounts, _, _ = parse_accounts([{"name": "Commerce test", "domain": "commerce.example", "sector": "beauty",

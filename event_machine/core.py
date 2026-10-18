@@ -16,8 +16,8 @@ from urllib.parse import urlparse
 GENERIC_EMAIL_DOMAINS = {"gmail.com", "hotmail.com", "outlook.com", "yahoo.com", "icloud.com", "live.ca", "videotron.ca"}
 ROLE_TERMS = {
     "marketing": ("marketing", "publicite", "advertising", "brand", "marque", "communications", "cmo"),
-    "digital": ("numerique", "digital", "ecommerce", "e commerce", "commerce electronique", "web"),
-    "operations": ("operations", "exploitation", "magasins", "retail operations", "coo"),
+    "digital": ("numerique", "digital", "ecommerce", " e commerce", "commerce electronique", "web"),
+    "operations": ("operations", "exploitation", "magasins", "retail operations", "coo", "commerce de detail"),
     "it": ("technologie", "technology", "informatique", "innovation", " ti ", " cio ", " cto ",
            "information officer", "systemes d information", "technologies de l information"),
     "hr": ("ressources humaines", "human resources", "recrutement", "talent", " rh "),
