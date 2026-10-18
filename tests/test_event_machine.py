@@ -52,6 +52,7 @@ class EventMachineTests(unittest.TestCase):
         self.assertEqual(role_features("Chief Executive Officer"), ({"executive"}, "executive"))
         self.assertEqual(role_features("Présidente"), ({"executive"}, "executive"))
         self.assertEqual(role_features("Cofounder")[1], "executive")
+        self.assertEqual(role_features("General Manager"), ({"executive"}, "executive"))
         self.assertEqual(role_features("Vice-président Principal Expérience Client"), ({"customer_experience"}, "vp_clevel"))
         self.assertIn("digital", role_features("Director - Digital Customer Experience")[0])
         self.assertEqual(role_features("Directrice commerce de détail et restauration")[0], {"operations"})

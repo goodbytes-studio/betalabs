@@ -200,7 +200,7 @@ def role_features(title: str) -> tuple[set[str], str]:
     vp = bool(re.search(r"\b(vp|vice president|vice presidente|vice president e)\b", value))
     if any(term in value for term in (" pdg ", " ceo ", " president ", " presidente ", " chief executive ", " owner ", " proprietaire ",
                                           " founder ", " cofounder ", " fondateur ", " fondatrice ", " cofondateur ", " cofondatrice ",
-                                          " directrice generale ", " directeur general ")) and not vp:
+                                          " directrice generale ", " directeur general ", " general manager ")) and not vp:
         functions.add("executive")
         return functions, "executive"
     if vp or any(term in value for term in (" chief ", " cmo ", " coo ", " cio ", " cto ")):
