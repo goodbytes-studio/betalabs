@@ -624,6 +624,18 @@
       "source_date": "2026-10-19",
       "disposition": "reference_provisoire",
       "summary": "Décisions d’Elizabeth du 2026-10-19 : comptes trop justes retirés du top Réverbère, vêtements sur mesure (Surmesur) hors prêt-à-porter et ajoutés."
+    },
+    {
+      "id": "S53",
+      "original_name": "decision-collants-reverbere-2026-10-19.md",
+      "path": "sources/originals/decision-collants-reverbere-2026-10-19.md",
+      "sha256": "b70cbdd256d42426d81c572b3b10c500a53bdf4e0bcb2cd80ceb238be90d8ded",
+      "bytes": 762,
+      "format": "md",
+      "topic": "decision",
+      "source_date": "2026-10-19",
+      "disposition": "reference_provisoire",
+      "summary": "Décision d’Elizabeth du 2026-10-19 : une marque de collants (Rachel) n’est pas du prêt-à-porter et entre dans la sélection Réverbère."
     }
   ]
 }
