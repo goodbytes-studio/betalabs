@@ -4,21 +4,23 @@ Mettre à jour quand Elizabeth change une consigne. Ces profils servent à écri
 
 ## Mirego
 
-- **Offre à mettre de l'avant** : conception de produits numériques **et solutions d'IA** pour les détaillants (applications, plateformes web et e-commerce, expérience client numérique).
-- **Phrase d'offre type** : « Chez Mirego, on conçoit des produits numériques et des solutions d'IA pour des détaillants qui vivent ce genre de virage. »
+- **Positionnement** (site mirego.com, 2026-10-19) : équipe de stratégie, design et développement qui conçoit des produits numériques (applications mobiles, web, tablette, bornes) et accélère l'adoption de l'IA (offre Mirego.ai, plateforme Forra lancée en juin 2026). 18 ans, plus de 300 produits lancés.
+- **Phrase d'offre** (choisie par Elizabeth le 2026-10-19) : « Mirego a conçu les expériences numériques de détaillants comme la SAQ, IGA et DAVIDsTEA : on aide les détaillants à relier magasin, fidélité et numérique, avec l'IA quand elle sert vraiment. »
+- **Références citables** : SAQ, IGA et DAVIDsTEA seulement (projets publics sur mirego.com). Ne pas citer Familiprix ni d'autres clients sans accord.
 - **ICP** : détaillants et distributeurs canadiens de 40 M$ CAD et plus ; décideurs (direction, VP, directeurs) en direction générale, marketing, numérique, TI, opérations ou expérience client.
-- **Angle** : produit mobile ou numérique, refonte de l'expérience, croissance de la marque. Question de découverte : « Quel projet numérique ou mobile est prioritaire cette année ? »
-- **Signature** : « Elisa-Eve, Mirego »
-- **À éviter** : nommer d'autres clients de Mirego ; présenter un prospect comme client existant.
+- **Angle** : relier magasin, fidélité et numérique ; application, parcours omnicanal, IA utile aux clients et aux équipes. Partir de l'actualité de l'entreprise.
+- **Gabarit du brouillon** : « Bonjour [Prénom], » ; « Je vois que vous serez à HOP le 27. » + accroche sur l'actualité (1 ou 2 phrases) ; phrase d'offre ; « Êtes-vous disponible pour prendre un café sur place pour échanger ? » ; signature.
+- **Signature** : « Élisa Ève, Mirego »
+- **À éviter** : présenter un prospect comme client existant ; parler des campagnes publicitaires du prospect.
 
 ## Ursa Marketing
 
-- **Offre** : agence marketing, publicité à la performance (Google, Meta), acquisition payante.
-- **ICP** : détaillants B2C de 10 à 100 M$ CAD avec boutique en ligne et publicités actives ; décideurs marketing, numérique ou direction (pas l'expérience client ni les opérations).
-- **Angle** : performance de l'acquisition et maturité publicitaire de la boutique en ligne. Question de découverte : « Quels canaux payants et objectifs d'acquisition sont prioritaires ? »
-- **Phrase d'offre type** : « Chez Ursa Marketing, on aide des détaillants à faire croître leurs ventes en ligne grâce à la publicité performance sur Google et Meta. »
-- **Tags** : la boutique en ligne, les Google ads et les Meta ads actives font partie de l'ICP d'Ursa ; ils vont dans les tags quand ils sont prouvés (« Boutique en ligne », « Google ads actives », « Meta ads actives »).
-- **Signature** : « Michel, Ursa Marketing »
+- **Positionnement** (site ursa.marketing, 2026-10-19) : agence de marketing numérique de Saint-Jean-sur-Richelieu, « moteur de profitabilité et de croissance » : stratégie, mesure de performance, publicité numérique, référencement (SEO/GEO), infolettre et automatisation, création visuelle. Stratège dédié, sans contrat à long terme.
+- **Phrase d'offre** (choisie par Elizabeth le 2026-10-19) : « Chez Ursa Marketing, on aide des détaillants à savoir ce qui performe vraiment, puis à investir là où ça rapporte : publicité, référencement et infolettre, pilotés par les données. »
+- **ICP** : détaillants B2C de 10 à 100 M$ CAD avec boutique en ligne et publicités actives ; franchiseurs oui, franchisés non ; pas d'automobile ni d'épicerie ; décideurs marketing, numérique ou direction.
+- **Tags** : « Boutique en ligne », « Google ads actives », « Meta ads actives » quand c'est prouvé. Les pubs ne doivent jamais apparaître dans les textes destinés au prospect.
+- **Gabarit du brouillon** : « Bonjour [Prénom], » ; accroche sur l'actualité de l'entreprise + enjeu (sans « Je vois que vous serez à HOP ») ; phrase d'offre ; « On sera à HOP le 27 : êtes-vous disponible pour prendre un café sur place pour échanger ? » ; signature. Si la personne (ou une collègue) est aussi chez Mirego : « Si vous avez un moment le 27 à HOP, j'aimerais vous offrir un café pour en discuter. »
+- **Signature** : « Michel, Ursa Marketing » (Michel Domingue, VP développement des affaires)
 
 ## Studio Réverbère
 
@@ -26,6 +28,7 @@ Mettre à jour quand Elizabeth change une consigne. Ces profils servent à écri
 - **Phrase d'offre type** : « Chez Studio Réverbère, on agit comme partenaire de croissance auprès des dirigeants de détaillants : coûts d'acquisition, marges et planification, pour une croissance rentable et prévisible. »
 - **ICP** : détaillants de 5 à 20 M$ CAD (jusqu'à 50 M$ si environ 100 employés ou moins ; alimentation 2 à 5 M$), CMS Shopify, WordPress/WooCommerce ou Magento, relation directe avec le PDG ou le propriétaire ; pas de prêt-à-porter pour l'instant (chaussures, bijoux, collants et sur-mesure acceptés).
 - **Tags** : le CMS supporté fait partie de l'ICP ; il va dans les tags (« CMS Shopify », « CMS Magento », « CMS WooCommerce »).
-- **Angle** : coûts d'acquisition, marges, planification, coordination entre équipes. Question de découverte : « Quel chantier de croissance ou d'organisation demande le plus votre attention cette année ? »
+- **Angle** : coûts d'acquisition, marges, planification, coordination entre équipes.
+- **Gabarit du brouillon** : « Je vois que vous serez à HOP le 27. » + accroche ; phrase d'offre ; « Êtes-vous disponible pour prendre un café sur place pour échanger ? ». Si la personne est aussi chez Ursa : autre structure (ouverture sur l'actualité, invitation formulée autrement). Question de découverte : « Quel chantier de croissance ou d'organisation demande le plus votre attention cette année ? »
 - **Signature** : « Charlie, Studio Réverbère » (Charlie Fernandez).
 - **Confidentiel** : Réverbère a partagé son portefeuille client ; n'en rien citer.
