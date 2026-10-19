@@ -17,7 +17,7 @@ Mettre à jour quand Elizabeth change une consigne. Ces profils servent à écri
 - **ICP** : détaillants B2C de 10 à 100 M$ CAD avec boutique en ligne et publicités actives ; décideurs marketing, numérique ou direction (pas l'expérience client ni les opérations).
 - **Angle** : performance de l'acquisition et maturité publicitaire de la boutique en ligne. Question de découverte : « Quels canaux payants et objectifs d'acquisition sont prioritaires ? »
 - **Phrase d'offre type** : « Chez Ursa Marketing, on aide des détaillants à faire croître leurs ventes en ligne grâce à la publicité performance sur Google et Meta. »
-- **Tags** : la boutique en ligne et les pubs actives font partie de l'ICP d'Ursa ; ils vont dans les tags quand ils sont prouvés.
+- **Tags** : la boutique en ligne, les Google ads et les Meta ads actives font partie de l'ICP d'Ursa ; ils vont dans les tags quand ils sont prouvés (« Boutique en ligne », « Google ads actives », « Meta ads actives »).
 - **Signature** : « Michel, Ursa Marketing »
 
 ## Studio Réverbère
