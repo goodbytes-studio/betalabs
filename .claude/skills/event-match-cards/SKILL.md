@@ -36,11 +36,12 @@ Les tags (colonne `interests`) disent au client, d'un coup d'œil, que le prospe
    - **Secteur standardisé** : regrouper les entreprises de la sélection dans une liste courte de secteurs (viser 8 à 12 pour 15 prospects). Deux entreprises du même métier ont le même secteur. Exemples : Mobilier et décoration ; Piscines, spas et extérieur ; Rénovation et quincaillerie ; Mode et vêtements ; Sport et plein air ; Beauté ; Animalerie ; Optique ; Pneus et automobile ; Cannabis.
    - **Tranche de CA** (CAD) : définir 3 à 5 tranches qui séparent bien la sélection, sans le mot « CA ». Exemple pour Mirego : 40-100 M$ ; 100-250 M$ ; 250-500 M$ ; 500 M$ et plus. Une tranche s'appuie sur la meilleure estimation disponible ; si une estimation est en USD ou incertaine, choisir la tranche la plus plausible en CAD et le noter dans le référentiel.
    - **Rôle** : la fonction ciblée par l'ICP qui correspond au prospect (Direction générale, Marketing, Numérique et e-commerce, TI, Opérations, Expérience client...).
-3. Ne pas mettre de tags hors ICP : pas de plateforme (Shopify), pas de région, pas de « multi-enseignes ».
+   - **Critères ICP prouvés** (facultatif, 2 au maximum) : seulement si l'ICP du client les exige et qu'ils sont prouvés pour ce prospect. Exemple pour Ursa : Boutique en ligne ; Pubs Google et Meta actives.
+3. Ne pas mettre de tags hors ICP : pas de plateforme (Shopify) ni de région pour Mirego, pas de « multi-enseignes ».
 4. Écrire `livrables-<événement>/fiches/<client>-tags-reference.md` : les familles, la liste des secteurs avec les entreprises de chaque secteur, les tranches avec les entreprises de chaque tranche, et une note sur le caractère estimé des tranches.
 5. Montrer le référentiel à Elizabeth avant de rédiger les fiches : un changement de taxonomie après coup oblige à tout reprendre.
 
-Format dans la fiche et le CSV : `Type; Secteur; Tranche; Rôle` (séparateur « ; »).
+Format dans la fiche et le CSV : `Type; Secteur; Tranche; Rôle` puis, s'il y a lieu, les critères ICP prouvés (séparateur « ; », 4 à 6 tags).
 
 ## Étape 2 - Une fiche test
 

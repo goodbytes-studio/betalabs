@@ -51,8 +51,8 @@ def check(card: dict, signature: str) -> list[str]:
     if not 30 <= words(card.get("match_reason_long")) <= 60:
         problems.append(f"match_reason_long : {words(card.get('match_reason_long'))} mots (viser environ 50)")
     tags = [t.strip() for t in str(card.get("interests", "")).split(";") if t.strip()]
-    if len(tags) != 4:
-        problems.append(f"interests : {len(tags)} tags (4 attendus : type; secteur; tranche; rôle)")
+    if not 4 <= len(tags) <= 6:
+        problems.append(f"interests : {len(tags)} tags (4 à 6 : type; secteur; tranche; rôle; critères ICP prouvés)")
     if re.search(r"\bCA\b", str(card.get("interests", ""))):
         problems.append("interests : enlever « CA » devant la tranche")
     starters = card.get("conversation_starter", [])
