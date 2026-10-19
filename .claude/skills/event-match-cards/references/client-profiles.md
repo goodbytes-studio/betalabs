@@ -22,8 +22,10 @@ Mettre à jour quand Elizabeth change une consigne. Ces profils servent à écri
 
 ## Studio Réverbère
 
-- **Offre** : accompagnement des détaillants sur le marketing, les opérations, la culture et le socle numérique (Shopify, WordPress/WooCommerce, Magento).
-- **ICP** : détaillants de 5 à 20 M$ CAD (jusqu'à 50 M$ si environ 100 employés ou moins ; alimentation 2 à 5 M$), relation directe avec le PDG ou le propriétaire ; pas de prêt-à-porter pour l'instant.
-- **Angle** : priorités marketing, opérations ou culture, et socle numérique. Question de découverte : « Quel chantier croissance ou organisationnel demande le plus d'attention ? »
-- **Signature** : à confirmer avec Elizabeth (interlocuteur : Charlie Fernandez).
+- **Positionnement** : partenaire de croissance pour les dirigeants de PME du commerce de détail, et non agence réactive. Intervient en amont sur les coûts d'acquisition client, les marges et la planification stratégique, de haut en bas et entre les départements (marketing, ressources humaines, finances), pour une croissance pérenne, prévisible et rentable. Le site public le présente comme agence de performance Meta (publicité, influence, contenus) : ne pas réduire l'offre à la publicité.
+- **Phrase d'offre type** : « Chez Studio Réverbère, on agit comme partenaire de croissance auprès des dirigeants de détaillants : coûts d'acquisition, marges et planification, pour une croissance rentable et prévisible. »
+- **ICP** : détaillants de 5 à 20 M$ CAD (jusqu'à 50 M$ si environ 100 employés ou moins ; alimentation 2 à 5 M$), CMS Shopify, WordPress/WooCommerce ou Magento, relation directe avec le PDG ou le propriétaire ; pas de prêt-à-porter pour l'instant (chaussures, bijoux, collants et sur-mesure acceptés).
+- **Tags** : le CMS supporté fait partie de l'ICP ; il va dans les tags (« CMS Shopify », « CMS Magento », « CMS WooCommerce »).
+- **Angle** : coûts d'acquisition, marges, planification, coordination entre équipes. Question de découverte : « Quel chantier de croissance ou d'organisation demande le plus votre attention cette année ? »
+- **Signature** : « Charlie, Studio Réverbère » (Charlie Fernandez).
 - **Confidentiel** : Réverbère a partagé son portefeuille client ; n'en rien citer.
