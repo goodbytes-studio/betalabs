@@ -9,7 +9,7 @@ Mettre à jour quand Elizabeth change une consigne. Ces profils servent à écri
 - **Références citables** : SAQ, IGA et DAVIDsTEA seulement (projets publics sur mirego.com). Ne pas citer Familiprix ni d'autres clients sans accord.
 - **ICP** : détaillants et distributeurs canadiens de 40 M$ CAD et plus ; décideurs (direction, VP, directeurs) en direction générale, marketing, numérique, TI, opérations ou expérience client.
 - **Angle** : relier magasin, fidélité et numérique ; application, parcours omnicanal, IA utile aux clients et aux équipes. Partir de l'actualité de l'entreprise.
-- **Gabarit du brouillon** : « Bonjour [Prénom], » ; « Je vois que vous serez à HOP le 27. » + accroche sur l'actualité (1 ou 2 phrases) ; phrase d'offre ; « Êtes-vous disponible pour prendre un café sur place pour échanger ? » ; signature.
+- **Gabarit du brouillon** : « Bonjour [Prénom], » ; accroche sur l'actualité (1 ou 2 phrases) ; phrase d'offre ; « On sera à HOP le 27 : êtes-vous disponible pour prendre un café sur place pour échanger ? » ; signature. La présence à HOP est l'invitation, pas le sujet du message.
 - **Signature** : « Élisa Ève, Mirego »
 - **À éviter** : présenter un prospect comme client existant ; parler des campagnes publicitaires du prospect.
 
