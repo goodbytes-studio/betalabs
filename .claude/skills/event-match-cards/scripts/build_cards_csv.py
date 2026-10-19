@@ -44,7 +44,7 @@ def check(card: dict, signature: str) -> list[str]:
                 "match_reason_long", "suggested_outreach", "match_score"):
         if not str(card.get(col, "")).strip():
             problems.append(f"{col} : vide")
-    if not 45 <= words(card.get("brief")) <= 80:
+    if not 50 <= words(card.get("brief")) <= 75:
         problems.append(f"brief : {words(card.get('brief'))} mots (viser 50 à 75)")
     if words(card.get("match_reason_short")) > 10:
         problems.append(f"match_reason_short : {words(card.get('match_reason_short'))} mots (10 au maximum)")
