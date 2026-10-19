@@ -34,6 +34,7 @@ Une liste d'entreprises, une par ligne : `nom | site web | personne inscrite et 
 
 - WebSearch pour trouver ; lancer plusieurs recherches en parallèle (nom de l'entreprise + « 2026 », « ouverture », « acquisition », « nouveau concept », nom + média régional).
 - Pour lire une page : si WebFetch est bloqué, utiliser `curl -sL --max-time 25 -A "Mozilla/5.0" URL` et extraire le texte avec Python (`re` + `html.unescape`). Retail Insider, LinkedIn et certains médias bloquent la lecture : statut « résumé ».
+- Si aucune page ne peut être lue (tous les faits au statut « résumé »), le signaler clairement : la session qui rédige les fiches doit alors lire elle-même la source du fait retenu pour l'accroche avant de l'utiliser.
 - Pour un gros lot, répartir les entreprises entre plusieurs agents (5 à 8 entreprises chacun). Un modèle plus léger (Sonnet) suffit pour ce travail si les règles ci-dessus sont dans la consigne.
 
 ## Sortie
