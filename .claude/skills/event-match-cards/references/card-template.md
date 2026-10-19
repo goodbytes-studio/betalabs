@@ -87,7 +87,7 @@ Retenus (dans le CSV) :
 
 > Bonjour Julie,
 >
-> Je vois que vous serez au HOP le 27. Le lancement de votre programme de fidélité ouvre de belles occasions pour relier vos magasins et votre site.
+> Je vois que vous serez à HOP le 27. Le lancement de votre programme de fidélité ouvre de belles occasions pour relier vos magasins et votre site.
 >
 > Chez Mirego, on conçoit des produits numériques et des solutions d'IA pour des détaillants qui vivent ce genre de virage. Êtes-vous disponible pour prendre un café sur place pour échanger ?
 >
