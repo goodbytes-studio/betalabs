@@ -600,6 +600,18 @@
       "source_date": "2026-10-18",
       "disposition": "reference_provisoire",
       "summary": "Décisions d’Elizabeth pour Studio Réverbère : Magento accepté comme CMS, chaussures et bijoux hors prêt-à-porter, comptes sous 2 M$ rejetés, Club Tissus prioritaire."
+    },
+    {
+      "id": "S51",
+      "original_name": "decision-ajouts-tced-dubois-2026-10-19.md",
+      "path": "sources/originals/decision-ajouts-tced-dubois-2026-10-19.md",
+      "sha256": "dc4fa21d625491946873f22923d701c92bf6ee4f255bb6886322fe6fa6bc4960",
+      "bytes": 1439,
+      "format": "md",
+      "topic": "decision",
+      "source_date": "2026-10-19",
+      "disposition": "reference_provisoire",
+      "summary": "Décisions d’Elizabeth du 2026-10-19 : réseau franchisé évalué critère par critère (enseigne et société mère) pour Ursa, estimation Clay invraisemblable écartable, ajout d’une inscrite pour Studio Réverbère."
     }
   ]
 }

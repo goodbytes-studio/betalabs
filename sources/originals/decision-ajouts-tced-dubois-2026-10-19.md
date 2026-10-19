@@ -1,0 +1,17 @@
+# Décision : ajouts de nouvelles inscrites HOP 2026 pour Ursa et Studio Réverbère
+
+- Date : 2026-10-19 (America/Toronto)
+- Décideuse : Elizabeth (BETA Labs)
+- Contexte : machine événements, HOP 2026 ; nouvelle liste d'inscrits et nouvel export Clay reçus le 2026-10-19 (données internes, hors dépôt).
+- Forme : décision donnée en conversation de travail avec l'assistant, retranscrite sans modification de sens.
+
+## Décisions
+
+1. Ursa Marketing : une entreprise de réseau de détail franchisé, dont la société mère est un distributeur, peut être évaluée critère par critère au niveau pertinent : boutique en ligne et publicités au niveau de l'enseigne de détail, taille au niveau de la société mère.
+2. Une estimation de CA Clay jugée invraisemblable au regard de la taille du réseau (nombre de magasins, nombre de marques) peut être écartée au profit d'une autre estimation disponible ; la tranche retenue reste une estimation à confirmer.
+3. Studio Réverbère : ajout d'une nouvelle inscrite, directrice marketing et numérique d'une entreprise familiale québécoise d'équipement agricole et horticole avec boutique en ligne Magento.
+
+## Points ouverts
+
+- Tranche de CA retenue pour l'ajout Ursa.
+- Pour l'ajout Réverbère : clientèle surtout professionnelle (B2B) et interlocutrice qui n'est pas la PDG, alors que Réverbère privilégie les détaillants et la relation directe avec la direction.
