@@ -744,6 +744,18 @@
       "source_date": "2026-10-20",
       "disposition": "reference_provisoire",
       "summary": "Décisions d’Elizabeth du 2026-10-20 : un directeur général convient comme contact Desjardins ; les grandes entreprises (CA estimé d'au moins 25 M$) sont exclues."
+    },
+    {
+      "id": "S63",
+      "original_name": "decision-enrichissement-agents-statera-2026-10-20.md",
+      "path": "sources/originals/decision-enrichissement-agents-statera-2026-10-20.md",
+      "sha256": "5167f73d179da5bf28d6eaf0c217433cea031e5403416cbd223a0fb4ddef52ea",
+      "bytes": 1066,
+      "format": "md",
+      "topic": "decision",
+      "source_date": "2026-10-20",
+      "disposition": "reference_provisoire",
+      "summary": "Décisions d’Elizabeth du 2026-10-20 : enrichissement par agents avant Clay, estimation de CA ensuite pour les comptes vides, Statera Spirits (stateraspirits.com) remplace Gestion PDV."
     }
   ]
 }

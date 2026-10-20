@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 from collections import Counter
 from pathlib import Path
 
@@ -72,12 +73,16 @@ def propose(args) -> None:
                                "problem": "aucun_resultat", "approve": ""})
             for item in fields:
                 field = item.get("field", "")
-                value = str(item.get("value", "")).strip().lower()
+                value = str(item.get("value", "")).strip()
+                if field != "leader":
+                    value = value.lower()
                 problems = []
                 if field not in RESEARCH_FIELDS:
                     problems.append("champ_non_permis")
                 permitted = allowed_values(field, core)
                 if permitted and value not in permitted:
+                    problems.append("valeur_non_permise")
+                if field == "employees" and not re.fullmatch(r"\d{1,6}", value):
                     problems.append("valeur_non_permise")
                 if not is_https(item.get("source_url", "")):
                     problems.append("url_non_https")
@@ -120,7 +125,9 @@ def apply(args) -> None:
         if not account:
             skipped["compte_inconnu"] += 1
             continue
-        field, value, url = row["field"], row["proposed_value"].strip().lower(), row["source_url"]
+        field, value, url = row["field"], row["proposed_value"].strip(), row["source_url"]
+        if field != "leader":
+            value = value.lower()
         if field == "sector" and value == "other":
             # « other » approuvé reste un secteur connu : le moteur le fait valider au lieu de l'exclure.
             account["sector_detail"] = row.get("notes", "") or "other"
