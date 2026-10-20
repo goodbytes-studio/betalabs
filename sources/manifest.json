@@ -876,6 +876,18 @@
       "source_date": "2026-10-20",
       "disposition": "reference_provisoire",
       "summary": "Décision d’Elizabeth du 2026-10-20 : deuxièmes estimations de CA par calcul appliquées pour Nuspace, Baronesse et Maison Roseaux (confiance basse)."
+    },
+    {
+      "id": "S74",
+      "original_name": "decision-ecartes-reserve-2026-10-20.md",
+      "path": "sources/originals/decision-ecartes-reserve-2026-10-20.md",
+      "sha256": "15a63e985a0ecab03e0e7d9f7f835bc1b2c65658ad3ac06f3407cc562c259708",
+      "bytes": 729,
+      "format": "md",
+      "topic": "decision",
+      "source_date": "2026-10-20",
+      "disposition": "reference_provisoire",
+      "summary": "Décisions d’Elizabeth du 2026-10-20 : Adrenaline Hobby et Déco Surfaces écartées de la sélection Desjardins, Nuspace en réserve."
     }
   ]
 }
