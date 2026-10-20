@@ -648,6 +648,30 @@
       "source_date": "2026-10-19",
       "disposition": "reference_provisoire",
       "summary": "Notes d’appel avec Studio Réverbère : partenaire de croissance (coûts d’acquisition, marges, planification) plutôt qu’agence réactive ; signature Charlie, Studio Réverbère."
+    },
+    {
+      "id": "S55",
+      "original_name": "desjardins-icp-2026-10-20.md",
+      "path": "sources/originals/desjardins-icp-2026-10-20.md",
+      "sha256": "3bfebe87337cc72beb5cf0849cdfc3f4dd0f0780c051c93d470f0d6db4dff346",
+      "bytes": 2007,
+      "format": "md",
+      "topic": "client",
+      "source_date": "2026-10-20",
+      "disposition": "reference_provisoire",
+      "summary": "Profil de client idéal transmis par Desjardins pour HOP 2026 : détaillants et distributeurs du Québec et de l’Ontario, 3 à 20 employés, 1 à 10 M$, propriétaires décideurs ; exclusions grandes entreprises, cannabis, gambling, franchises."
+    },
+    {
+      "id": "S56",
+      "original_name": "decision-icp-desjardins-2026-10-20.md",
+      "path": "sources/originals/decision-icp-desjardins-2026-10-20.md",
+      "sha256": "205601ced0cdcdfa49aa3636fde5f23c9c040d7f879ab20f05da3edf17680c4a",
+      "bytes": 1961,
+      "format": "md",
+      "topic": "decision",
+      "source_date": "2026-10-20",
+      "disposition": "reference_provisoire",
+      "summary": "Décisions d’Elizabeth du 2026-10-20 : cadrage de l’ICP Desjardins (franchises exclues, seuils souples, province, dirigeants seulement, signaux optionnels, exclusion de Desjardins)."
     }
   ]
 }

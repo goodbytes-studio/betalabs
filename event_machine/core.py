@@ -28,6 +28,8 @@ ROLE_TERMS = {
     # Fonction distincte du marketing : chaque ICP choisit de la cibler ou non (décision S47).
     "customer_experience": ("experience client", "customer experience", "client experience", "experience consommateur"),
 }
+PROVINCES = {"qc": "quebec", "que": "quebec", "on": "ontario", "ont": "ontario", "nb": "new brunswick",
+             "ns": "nova scotia", "bc": "british columbia", "ab": "alberta", "mb": "manitoba", "sk": "saskatchewan"}
 SECTOR_TERMS = {
     "cpg": ("consumer packaged goods", "cpg", "produits de consommation"),
     "pharmacy": ("pharmacie", "pharmacy", "drugstore"),
@@ -123,6 +125,7 @@ def parse_accounts(rows: list[dict]) -> tuple[list[dict], dict, dict]:
             "revenue_estimate_currency": ("revenue_estimate_currency", "revenue_band_currency"),
             "revenue_estimate_source": ("revenue_estimate_source", "revenue_band_source"),
             "employees": ("estimated_num_employees", "employees", "employee_count", "nb_employes"),
+            "province": ("province", "state", "region"),
         }.items():
             value = first(row, *aliases)
             if value and not account.get(field):
@@ -388,6 +391,20 @@ def match_person(person: dict, account: dict, profile: dict, evidence: dict, rel
         reasons.append("niveau de décision à confirmer")
     elif allowed_seniority and seniority not in allowed_seniority:
         blockers.append("niveau hors ICP : " + seniority)
+    # Exclusion propre au client : le client lui-même et ses comptes à ne pas approcher (décision D31, source S56).
+    excluded_domains = {norm(v) for v in target.get("exclude_domains", [])}
+    excluded_names = {norm(v) for v in target.get("exclude_names", [])}
+    identities = {norm(account.get("domain", "")), norm(person.get("email", "").split("@")[-1])} - {""}
+    names = {norm(account.get("name", "")), norm(person.get("company_supplied", ""))} - {""}
+    if identities & excluded_domains or names & excluded_names:
+        blockers.append("compte exclu pour ce client : " + (account.get("name") or person.get("company_supplied", "")))
+    provinces = {norm(v) for v in target.get("provinces", [])}
+    if provinces:
+        province = PROVINCES.get(norm(account.get("province", "")), norm(account.get("province", "")))
+        if not province:
+            reasons.append("géographie (province) à confirmer")
+        elif province not in provinces:
+            blockers.append("province hors ICP : " + province)
     geography = {norm(v) for v in target.get("geographies", [])}
     country = norm(person.get("country") or account.get("country"))
     if geography and country and country not in geography:
@@ -461,6 +478,18 @@ def match_person(person: dict, account: dict, profile: dict, evidence: dict, rel
             reasons.append("à valider : CA au-dessus du sweet spot, vérifier la taille de l'équipe")
         elif staff > max_staff:
             reasons.append(f"à valider : environ {staff:.0f} employés (cible ≤ {max_staff})")
+    # Seuils d'effectifs souples (à valider) et fermes (exclusion), décision D31.
+    try:
+        staff_count = float(str(account.get("employees", "")).replace(",", "").strip())
+    except ValueError:
+        staff_count = None
+    if staff_count is not None:
+        hard_staff = target.get("employees_hard_max")
+        soft_staff = target.get("employees_soft_max")
+        if hard_staff is not None and staff_count > hard_staff:
+            blockers.append(f"environ {staff_count:.0f} employés (limite ferme {hard_staff})")
+        elif soft_staff is not None and staff_count > soft_staff:
+            reasons.append(f"à valider : environ {staff_count:.0f} employés (cible ≤ {soft_staff})")
     signal_results = []
     for rule in profile.get("signals", []):
         state, url = signal_state(evidence, rule)

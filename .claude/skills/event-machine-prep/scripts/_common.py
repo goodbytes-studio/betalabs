@@ -51,7 +51,7 @@ def today() -> str:
     return date.today().isoformat()
 
 
-ORG_TYPES = ["retailer", "seller", "manufacturer", "ecosystem"]
+ORG_TYPES = ["retailer", "distributor", "seller", "manufacturer", "ecosystem"]
 BUSINESS_MODELS = ["b2c", "b2b", "b2b b2c"]
 SENIORITY = ["executive", "vp_clevel", "director", "manager"]
 DECISION_LEVELS = {"executive", "vp_clevel", "director"}

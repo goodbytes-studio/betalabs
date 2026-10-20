@@ -73,6 +73,36 @@
       ],
       "conversation_angle": "Qualifier les priorités marketing, opérations ou culture et le socle numérique.",
       "discovery_question": "Quel chantier croissance ou organisationnel demande le plus d'attention ?"
+    },
+    {
+      "id": "desjardins",
+      "name": "Desjardins",
+      "target": {
+        "revenue_estimate_ok": true,
+        "revenue_estimate_hard_factor": 3,
+        "company_types": ["retailer", "distributor"],
+        "geographies": ["canada"],
+        "provinces": ["quebec", "ontario"],
+        "sectors_exclude": ["cannabis"],
+        "role_functions": ["executive"],
+        "seniority": ["executive"],
+        "revenue_min_cad": 1000000,
+        "revenue_max_cad": 10000000,
+        "employees_soft_max": 20,
+        "employees_hard_max": 100,
+        "exclude_domains": ["desjardins.com", "jeancoutu.com", "familiprix.com", "cantire.com", "tced.ca"],
+        "exclude_names": ["Desjardins"]
+      },
+      "signals": [
+        {"field": "growth_expansion", "required": false},
+        {"field": "new_locations", "required": false},
+        {"field": "digital_transformation", "required": false},
+        {"field": "succession_planning", "required": false},
+        {"field": "acquisition_transfer", "required": false},
+        {"field": "financing_need", "required": false}
+      ],
+      "conversation_angle": "Explorer les projets de croissance, de relève ou de financement et la façon dont Desjardins peut accompagner l'entreprise.",
+      "discovery_question": "Quel projet de croissance, de relève ou d'investissement est le plus proche de se concrétiser ?"
     }
   ]
 }
