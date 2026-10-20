@@ -924,6 +924,18 @@
       "source_date": "2026-10-20",
       "disposition": "reference_provisoire",
       "summary": "Décisions d’Elizabeth du 2026-10-20 : Zorah laissée tomber, profil Desjardins validé (signature vide), Librairie Raffin en réserve, Rachel gardée avec mention du groupe Nolk (Melisa CEO et propriétaire)."
+    },
+    {
+      "id": "S78",
+      "original_name": "decision-tag-vetements-accessoires-2026-10-20.md",
+      "path": "sources/originals/decision-tag-vetements-accessoires-2026-10-20.md",
+      "sha256": "59ea198596ba7f6ad3c2b9d8f0851f519f34ee83bebd7ba89e3c8a1216c3b31a",
+      "bytes": 560,
+      "format": "md",
+      "topic": "decision",
+      "source_date": "2026-10-20",
+      "disposition": "reference_provisoire",
+      "summary": "Décision d’Elizabeth du 2026-10-20 : le secteur « Mode et vêtements » devient « Vêtements et accessoires » et inclut La Forge d'or (tags Desjardins)."
     }
   ]
 }
