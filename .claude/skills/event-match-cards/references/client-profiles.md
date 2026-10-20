@@ -32,3 +32,15 @@ Mettre à jour quand Elizabeth change une consigne. Ces profils servent à écri
 - **Gabarit du brouillon** : « Bonjour [Prénom], » ; accroche sur l'actualité ou le modèle d'affaires + enjeu de croissance ; phrase d'offre ; « On sera à HOP le 27 : êtes-vous disponible pour prendre un café sur place pour échanger ? » ; signature. Si la personne (ou une collègue) est aussi chez Ursa : autre fait, autres angles, offre reformulée et invitation formulée autrement. Question de découverte : « Quel chantier de croissance ou d'organisation demande le plus votre attention cette année ? »
 - **Signature** : « Charlie, Studio Réverbère » (Charlie Fernandez).
 - **Confidentiel** : Réverbère a partagé son portefeuille client ; n'en rien citer.
+
+## Desjardins
+
+- **Positionnement** (ICP transmis par Desjardins, S55, 2026-10-20) : accompagne les propriétaires et actionnaires de petites entreprises du commerce de détail dans leurs démarches de financement, de croissance, de relève et de transfert d'entreprise.
+- **Phrase d'offre** (validée par Elizabeth le 2026-10-20) : « Chez Desjardins, on accompagne les propriétaires de commerces dans leurs projets : financement, croissance, relève et transfert d'entreprise. »
+- **Références citables** : aucune sans accord.
+- **ICP** : détaillants et distributeurs du Québec et de l'Ontario, TPE (3 à 20 employés, souple jusqu'à environ 100), CA de 1 à 10 M$ CAD (zone élargie de 0,5 à 20 M$) ; propriétaire, actionnaire, président, fondateur ou direction générale ; pas de franchises, de grandes entreprises, de cannabis, de jeux de hasard ni d'industrie à caractère sexuel.
+- **Tags** : Type; Secteur; Tranche; Rôle; puis « Québec » et « TPE » quand c'est prouvé. Le référentiel du client est dans `livrables-hop-2026/fiches/desjardins-tags-reference.md`.
+- **Angle** : partir d'un fait de croissance de l'entreprise (nouvelle boutique, déménagement, acquisition, nouvelles marques, expansion, relève annoncée). Ne jamais présumer un besoin de financement.
+- **Gabarit du brouillon** : « Bonjour [Prénom], » ; accroche sur un fait de l'entreprise (1 ou 2 phrases) ; phrase d'offre ; « On sera à HOP le 27 : êtes-vous disponible pour prendre un café sur place pour échanger ? » ; signature.
+- **Signature** : vide pour l'instant (signataire inconnu) : mettre « [Signature Desjardins à compléter] » dans les brouillons.
+- **À éviter** : présumer un besoin de financement ; parler de taux ou de produits précis ; évoquer des difficultés financières, des marges de crédit ou des prêts existants ; présenter un prospect comme client de Desjardins ; les campagnes publicitaires du prospect.

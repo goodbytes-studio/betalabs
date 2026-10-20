@@ -912,6 +912,18 @@
       "source_date": "2026-10-20",
       "disposition": "reference_provisoire",
       "summary": "Décisions d’Elizabeth du 2026-10-20 : CA d'Ora Protections estimé à 500 K-3 M$ ; signataire de Desjardins inconnu, signature laissée vide."
+    },
+    {
+      "id": "S77",
+      "original_name": "decision-fiches-raffin-rachel-zorah-2026-10-20.md",
+      "path": "sources/originals/decision-fiches-raffin-rachel-zorah-2026-10-20.md",
+      "sha256": "118556e8ad3aed91a0d4b94bec9c26da31faa05470ae5e59fc2ba35551fb4659",
+      "bytes": 864,
+      "format": "md",
+      "topic": "decision",
+      "source_date": "2026-10-20",
+      "disposition": "reference_provisoire",
+      "summary": "Décisions d’Elizabeth du 2026-10-20 : Zorah laissée tomber, profil Desjardins validé (signature vide), Librairie Raffin en réserve, Rachel gardée avec mention du groupe Nolk (Melisa CEO et propriétaire)."
     }
   ]
 }
