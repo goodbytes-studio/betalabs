@@ -79,7 +79,7 @@
       "name": "Desjardins",
       "target": {
         "revenue_estimate_ok": true,
-        "revenue_estimate_hard_factor": 3,
+        "revenue_estimates_never_exclude": true,
         "company_types": ["retailer", "distributor"],
         "geographies": ["canada"],
         "provinces": ["quebec", "ontario"],
@@ -87,11 +87,13 @@
         "sectors_exclude": ["cannabis"],
         "role_functions": ["executive"],
         "seniority": ["executive"],
-        "revenue_min_cad": 1000000,
-        "revenue_max_cad": 10000000,
+        "revenue_min_cad": 500000,
+        "revenue_max_cad": 20000000,
+        "revenue_core_min_cad": 1000000,
+        "revenue_core_max_cad": 10000000,
         "employees_soft_max": 20,
         "employees_hard_max": 100,
-        "exclude_domains": ["desjardins.com", "jeancoutu.com", "familiprix.com", "cantire.com", "tced.ca", "maglecompte.ca"],
+        "exclude_domains": ["desjardins.com", "jeancoutu.com", "familiprix.com", "cantire.com", "tced.ca", "maglecompte.ca", "saman.ca"],
         "exclude_names": ["Desjardins"]
       },
       "signals": [

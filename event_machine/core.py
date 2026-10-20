@@ -12,6 +12,7 @@ from datetime import date
 from pathlib import Path
 from urllib.parse import urlparse
 
+from .geography import province_from_city
 
 GENERIC_EMAIL_DOMAINS = {"gmail.com", "hotmail.com", "outlook.com", "yahoo.com", "icloud.com", "live.ca", "videotron.ca"}
 ROLE_TERMS = {
@@ -192,7 +193,7 @@ def parse_people(rows: list[dict], event_id: str, accounts_by_key: dict, account
             "event_id": event_id, "person_id": person_id, "source_row": str(index), "name": name or "À confirmer",
             "email": email, "company_supplied": company, "account_id": account_key,
             "company_link_status": link_status, "job_title": first(row, "role", "job_title", "title", "poste"),
-            "country": first(row, "country", "pays"),
+            "country": first(row, "country", "pays"), "city": first(row, "city", "ville"),
             "profile_url": first(row, "linkedin_url", "profile_url"),
             "attendance_marker": markers, "attendance_status": attendance_status,
         })
@@ -429,10 +430,18 @@ def match_person(person: dict, account: dict, profile: dict, evidence: dict, rel
     provinces = {norm(v) for v in target.get("provinces", [])}
     if provinces:
         province = PROVINCES.get(norm(account.get("province", "")), norm(account.get("province", "")))
-        if not province:
-            reasons.append("géographie (province) à confirmer")
-        elif province not in provinces:
-            blockers.append("province hors ICP : " + province)
+        if province:
+            if province not in provinces:
+                blockers.append("province hors ICP : " + province)
+        else:
+            # Sans province au dossier de l'entreprise, la ville de l'inscrit sert d'indice, sans jamais exclure.
+            deduced = province_from_city(person.get("city", ""), person.get("country") or account.get("country"))
+            if not deduced:
+                reasons.append("géographie (province) à confirmer")
+            elif deduced in provinces:
+                reasons.append("[Déduit] province " + deduced + " (ville de l'inscrit)")
+            else:
+                reasons.append("à valider : [Déduit] province hors ICP : " + deduced + " (ville de l'inscrit)")
     geography = {norm(v) for v in target.get("geographies", [])}
     country = norm(person.get("country") or account.get("country"))
     if geography and country and country not in geography:
@@ -468,13 +477,14 @@ def match_person(person: dict, account: dict, profile: dict, evidence: dict, rel
             soft_max = revenue_max * (1 + tolerance) if revenue_max is not None else None
             # Une fourchette estimée n'exclut que si elle est loin du seuil (facteur propre au client).
             hard = float(target.get("revenue_estimate_hard_factor", 0) or 0)
+            never = bool(target.get("revenue_estimates_never_exclude"))
             if revenue_min is not None and high < revenue_min:
-                if hard and high >= revenue_min / hard:
+                if never or (hard and high >= revenue_min / hard):
                     reasons.append("à valider : CA estimé (fourchette) sous le seuil")
                 else:
                     blockers.append("CA estimé (fourchette) sous le seuil")
             elif revenue_max is not None and low > revenue_max:
-                if hard and low <= revenue_max * hard:
+                if never or (hard and low <= revenue_max * hard):
                     reasons.append("à valider : CA estimé (fourchette) au-dessus du seuil")
                 else:
                     blockers.append("CA estimé (fourchette) au-dessus du seuil")
@@ -493,6 +503,14 @@ def match_person(person: dict, account: dict, profile: dict, evidence: dict, rel
         else:
             reasons.append("CA CAD vérifié dans la fourchette")
             sources.append(account["revenue_source_url"])
+    # Zone de CA : le cœur de l'ICP se distingue de la zone élargie acceptée par le client (décision D36, S61).
+    core_min, core_max = target.get("revenue_core_min_cad"), target.get("revenue_core_max_cad")
+    in_core = False
+    if (core_min is not None or core_max is not None) and not blockers:
+        low_top = (amount, amount) if amount is not None else (band if band else (None, None))
+        if low_top[0] is not None:
+            in_core = (core_min is None or low_top[0] >= core_min) and (core_max is None or low_top[1] <= core_max)
+            reasons.append("zone de CA : cœur ICP" if in_core else "zone de CA : élargie")
     # Zone au-dessus du sweet spot : acceptable si l'entreprise reste petite (décision S49).
     sweet_max = target.get("revenue_sweet_max_cad")
     top = amount if amount is not None else (band[1] if band else None)
@@ -532,7 +550,9 @@ def match_person(person: dict, account: dict, profile: dict, evidence: dict, rel
                      "niveau de décision", "inscription", "géographie")
     unknown_gate = any(x.startswith(identity_gaps) for x in reasons)
     pending_checks = [x for x in reasons if x not in ("CA CAD vérifié dans la fourchette",
-                                                      "CA estimé (fourchette) dans la fourchette ICP")]
+                                                      "CA estimé (fourchette) dans la fourchette ICP",
+                                                      "zone de CA : cœur ICP", "zone de CA : élargie")
+                      and not x.startswith("[Déduit] province")]
     all_required = all(item["state"] == "verified_yes" for item in signal_results if next((r.get("required") for r in profile.get("signals", []) if r["field"] == item["field"]), False))
     revenue_required = revenue_min is not None or revenue_max is not None
     if blockers:
@@ -546,6 +566,7 @@ def match_person(person: dict, account: dict, profile: dict, evidence: dict, rel
     role_score = {"executive": 16, "vp_clevel": 13, "director": 10, "manager": 3, "unknown": 0}[seniority]
     score = 45 + role_score + (8 if org == "retailer" else 0) + (5 if sector != "unknown" else 0)
     score += sum(6 for s in signal_results if s["state"] == "verified_yes")
+    score += 6 if in_core else 0
     if relation:
         score += 5
     score = max(0, min(100, round(score + learning_bias)))

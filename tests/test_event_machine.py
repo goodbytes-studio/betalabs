@@ -72,6 +72,43 @@ class EventMachineTests(unittest.TestCase):
                       "Human Resources Business Partner", "Gérant", "Partner"):
             self.assertNotEqual(role_features(title)[1], "executive", title)
 
+    def test_province_from_city_and_revenue_zones_for_small_businesses(self):
+        from event_machine.geography import province_from_city
+        self.assertEqual(province_from_city("Montreal", "Canada"), "quebec")
+        self.assertEqual(province_from_city("L'Ile-Perrot", ""), "quebec")
+        self.assertEqual(province_from_city("Toronto", "Canada"), "ontario")
+        self.assertEqual(province_from_city("Paris", "France"), "")
+        self.assertEqual(province_from_city("Ville inconnue", "Canada"), "")
+        profile = {"id": "d", "target": {
+            "company_types": ["retailer"], "role_functions": ["executive"], "seniority": ["executive"],
+            "provinces": ["quebec", "ontario"], "revenue_estimate_ok": True, "revenue_estimates_never_exclude": True,
+            "revenue_min_cad": 500000, "revenue_max_cad": 20000000,
+            "revenue_core_min_cad": 1000000, "revenue_core_max_cad": 10000000}}
+        account = {"name": "Petit commerce", "domain": "petit.ca", "org_type": "retailer", "sector": "fashion",
+                   "country": "Canada", "province": ""}
+        person = parse_people([{"full_name": "P Test", "email": "p@petit.ca", "company_name": "Petit commerce",
+                                "role": "Propriétaire", "city": "Longueuil", "country": "Canada",
+                                "project_slugs[0]": "hop-2026"}], "hop-2026", {"petit.ca": account}, {"petit commerce": {"petit.ca"}}, "hop-2026")[0]
+        result = match_person(person, {**account, "revenue_estimate_band": "2M-3M", "revenue_estimate_currency": "CAD"}, profile, {}, None)
+        self.assertEqual(result["machine_status"], "fort")
+        self.assertIn("[Déduit] province quebec", result["fit_reasons"])
+        self.assertIn("zone de CA : cœur ICP", result["fit_reasons"])
+        wide = match_person(person, {**account, "revenue_estimate_band": "12M-15M", "revenue_estimate_currency": "CAD"}, profile, {}, None)
+        self.assertIn("zone de CA : élargie", wide["fit_reasons"])
+        self.assertLess(wide["priority_score"], result["priority_score"])
+        # Une estimation très éloignée n'exclut jamais ; un montant CAD vérifié hors fourchette exclut.
+        tiny = match_person(person, {**account, "revenue_estimate_band": "50K-80K", "revenue_estimate_currency": "CAD"}, profile, {}, None)
+        self.assertNotEqual(tiny["machine_status"], "exclu")
+        verified = {**account, "revenue_raw": "90000000", "revenue_currency": "CAD", "revenue_year": "2026",
+                    "revenue_verified": "yes", "revenue_source_url": "https://exemple.ca/ca"}
+        self.assertEqual(match_person(person, verified, profile, {}, None)["machine_status"], "exclu")
+        outside = parse_people([{"full_name": "Q Test", "email": "q@petit.ca", "company_name": "Petit commerce",
+                                 "role": "Propriétaire", "city": "Vancouver", "country": "Canada",
+                                 "project_slugs[0]": "hop-2026"}], "hop-2026", {"petit.ca": account}, {"petit commerce": {"petit.ca"}}, "hop-2026")[0]
+        far = match_person(outside, {**account, "revenue_estimate_band": "2M-3M", "revenue_estimate_currency": "CAD"}, profile, {}, None)
+        self.assertNotEqual(far["machine_status"], "exclu")
+        self.assertIn("à valider", far["fit_reasons"])
+
     def test_revenue_and_attendance_cannot_be_assumed(self):
         account = {"name": "Commerce test", "org_type": "retailer", "sector": "beauty", "country": "Canada",
                    "revenue_raw": "15000000", "revenue_currency": "CAD", "revenue_year": "2026",

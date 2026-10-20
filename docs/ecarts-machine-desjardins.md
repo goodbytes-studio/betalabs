@@ -48,6 +48,14 @@ La lecture de la province est donc l'écart principal. Les CA bruts de Clay sont
 | Les comptes « dirigeant, déjà recherché, province inconnue » n'ont pas été examinés | Ils n'étaient pas à rechercher, donc je les ai laissés de côté, alors que leur blocage était la province. |
 | Les chiffres du diagnostic n'étaient pas mis à jour après chaque étape | Il a fallu les recalculer (120 devenus 92). |
 
-## Statut
+## Statut au 2026-10-20 (décision D36, source S61)
 
-Aucun correctif de moteur n'est appliqué par ce document. Les correctifs E1, E2, E5, E6 et E9 demandent une décision d'Elizabeth avant de modifier le moteur.
+| Écart | État |
+|---|---|
+| E1, E2 province | **Corrigé** : le moteur lit la colonne `city` et déduit la province (`event_machine/geography.py`) ; l'hypothèse est signalée `[Déduit]` et n'exclut jamais. La colonne `city` reste à redemander à l'organisateur ; les villes de l'ancien export ont été fusionnées par courriel. |
+| E3 CA | **Adapté** pour Desjardins : une estimation n'exclut jamais ; cœur 1 à 10 M$, zone élargie 0,5 à 20 M$ acceptée ; seul un CA vérifié hors zone exclut. Les estimations Clay brutes restent à approuver compte par compte. |
+| E5 compte bon, contact à trouver | **Corrigé** : vue `contact-a-trouver-<client>.csv` du diagnostic. |
+| E6 « à confirmer » fourre-tout | **Corrigé** : vue `near-miss-<client>.csv` (un seul élément manquant). |
+| E4 effectifs, E7 sites inaccessibles, E8 comptes en double, E9 General Manager, E10 noms commerciaux | **Ouverts**. |
+
+Résultat sur la même liste de pistes : 0 fort et 2 possibles avant, 4 forts et 15 possibles après (dont un doublon de compte pour une même personne, E8).

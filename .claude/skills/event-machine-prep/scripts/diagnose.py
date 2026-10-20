@@ -4,7 +4,9 @@
   diagnose.py --run .event-machine/<event>/runs/final --previous .event-machine/<event>/runs/baseline \
               --out .event-machine/<event>/prep/05-diagnostic
 
-Écrit diagnostic.md et shortlist-<client>.csv (matchs `fort` puis `possible`, triés par score).
+Écrit diagnostic.md et shortlist-<client>.csv (matchs `fort` puis `possible`, triés par score), ainsi que
+  near-miss-<client>.csv (« presque fort » : un seul élément à prouver) et
+  contact-a-trouver-<client>.csv (compte conforme dont aucun inscrit n'est le bon contact).
 """
 
 from __future__ import annotations
@@ -17,6 +19,14 @@ from pathlib import Path
 from _common import read_csv, with_effective_status, write_csv
 
 STATUSES = ["fort", "possible", "à confirmer", "exclu"]
+# Raisons qui ne sont pas des éléments manquants : elles confirment le match.
+CONFIRMING = ("CA CAD vérifié dans la fourchette", "CA estimé (fourchette) dans la fourchette ICP",
+              "zone de CA : cœur ICP", "zone de CA : élargie")
+# Une exclusion qui ne vise que la personne laisse le compte intact.
+PERSON_ONLY = ("fonction hors ICP", "niveau hors ICP")
+NEAR_MISS_FIELDS = ["client_name", "machine_status", "priority_score", "missing", "person_name", "job_title", "company_name",
+                    "sector", "fit_reasons", "match_key"]
+CONTACT_FIELDS = ["client_name", "company_name", "account_id", "sector", "people", "titles_seen", "company_reasons", "next_step"]
 SHORTLIST_FIELDS = ["client_name", "machine_status", "status_source", "revenue_basis", "revenue_estimate_band", "priority_score", "person_name", "job_title", "company_name",
                     "sector", "relationship", "relationship_owner", "fit_reasons", "evidence_urls",
                     "opportunity_hypothesis", "next_question", "match_key"]
@@ -79,10 +89,50 @@ def main() -> None:
             lines.append(f"| … | | {len(short) - args.top} autres dans le CSV | | | |")
         lines.append("")
 
+    lines += ["## Presque fort : un seul élément à prouver", ""]
+    for cid, cname in names.items():
+        near = []
+        for m in matches:
+            if m["client_id"] != cid or m["machine_status"] not in ("possible", "à confirmer"):
+                continue
+            missing = [x for x in parts(m["fit_reasons"]) if x not in CONFIRMING and not x.startswith("[Déduit] province")]
+            if len(missing) == 1:
+                near.append({**m, "missing": missing[0]})
+        near.sort(key=lambda m: (-int(m["priority_score"] or 0), m["company_name"]))
+        write_csv(args.out / f"near-miss-{cid}.csv", near, NEAR_MISS_FIELDS)
+        top_missing = Counter(m["missing"] for m in near)
+        lines.append(f"- **{cname}** : {len(near)} (`near-miss-{cid}.csv`)"
+                     + (" ; manque : " + " ; ".join(f"{k} ({v})" for k, v in top_missing.most_common(4)) if near else ""))
+
+    lines += ["", "## Compte conforme, contact à trouver", ""]
+    for cid, cname in names.items():
+        by_account: dict[str, list] = defaultdict(list)
+        for m in matches:
+            if m["client_id"] == cid:
+                by_account[m["account_id"]].append(m)
+        rows = []
+        for key, people in by_account.items():
+            if any(p["machine_status"] != "exclu" for p in people):
+                continue
+            reasons = [x for p in people for x in parts(p["exclusion_reasons"])]
+            company = [x for x in reasons if not x.startswith(PERSON_ONLY)]
+            # Le compte doit être un détaillant ou un distributeur connu : un type inconnu n'est pas « conforme ».
+            if company or not reasons or people[0].get("org_type") not in ("retailer", "distributor"):
+                continue
+            rows.append({"client_name": cname, "company_name": people[0]["company_name"], "account_id": key,
+                         "sector": people[0]["sector"], "people": len(people),
+                         "titles_seen": " | ".join(sorted({p["job_title"] or "(vide)" for p in people}))[:200],
+                         "company_reasons": "aucune : seul le poste des inscrits est hors ICP",
+                         "next_step": "trouver le propriétaire, fondateur ou président (LinkedIn, registre)"})
+        rows.sort(key=lambda r: r["company_name"])
+        write_csv(args.out / f"contact-a-trouver-{cid}.csv", rows, CONTACT_FIELDS)
+        lines.append(f"- **{cname}** : {len(rows)} (`contact-a-trouver-{cid}.csv`)")
+    lines += [""]
+
     lines += ["## Ce qui empêche `possible` → `fort`", ""]
     for cid, cname in names.items():
         pending = Counter(p for m in matches if m["client_id"] == cid and m["machine_status"] == "possible"
-                          for p in parts(m["fit_reasons"]) if p != "CA CAD vérifié dans la fourchette")
+                          for p in parts(m["fit_reasons"]) if p not in CONFIRMING)
         if pending:
             lines.append(f"- **{cname}** : " + " ; ".join(f"{k} ({v})" for k, v in pending.most_common(5)))
     lines += ["", "## Ce qui bloque les `à confirmer`", ""]

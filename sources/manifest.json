@@ -720,6 +720,18 @@
       "source_date": "2026-10-20",
       "disposition": "reference_provisoire",
       "summary": "Décision d’Elizabeth du 2026-10-20 : Magasins Lecompte écarté de la sélection Desjardins (déjà trop gros et établi)."
+    },
+    {
+      "id": "S61",
+      "original_name": "decision-criteres-desjardins-2026-10-20.md",
+      "path": "sources/originals/decision-criteres-desjardins-2026-10-20.md",
+      "sha256": "92388066a47f1c2e70b2022864b1fc8acbaf6024a97083e4e2f24cb4cfd17661",
+      "bytes": 1711,
+      "format": "md",
+      "topic": "decision",
+      "source_date": "2026-10-20",
+      "disposition": "reference_provisoire",
+      "summary": "Décisions d’Elizabeth du 2026-10-20 : correctifs du moteur (province par la ville, vues presque fort et contact à trouver), Saman écartée, Statera = Gestion PDV, Léa Rousseau DG, revenu souple (0,5 à 20 M$, cœur 1 à 10 M$)."
     }
   ]
 }
