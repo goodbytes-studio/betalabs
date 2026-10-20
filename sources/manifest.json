@@ -888,6 +888,18 @@
       "source_date": "2026-10-20",
       "disposition": "reference_provisoire",
       "summary": "Décisions d’Elizabeth du 2026-10-20 : Adrenaline Hobby et Déco Surfaces écartées de la sélection Desjardins, Nuspace en réserve."
+    },
+    {
+      "id": "S75",
+      "original_name": "decision-florilege-ora-detaillantes-2026-10-20.md",
+      "path": "sources/originals/decision-florilege-ora-detaillantes-2026-10-20.md",
+      "sha256": "54048430d04e5a50ac411727705f7413aa31d5d6ed04ef00190d5ddd89b1ea9e",
+      "bytes": 1062,
+      "format": "md",
+      "topic": "decision",
+      "source_date": "2026-10-20",
+      "disposition": "reference_provisoire",
+      "summary": "Décision d’Elizabeth du 2026-10-20 : Florilège et Ora Protections sont des détaillantes qui correspondent à l'ICP Desjardins ; suivi des entrées et sorties à chaque version de la liste."
     }
   ]
 }
