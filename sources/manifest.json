@@ -972,6 +972,18 @@
       "source_date": "2026-10-20",
       "disposition": "reference_provisoire",
       "summary": "Décision d’Elizabeth du 2026-10-20 : Les Effrontés est un choix possible dans l’ICP élargi (non-détaillants) si les autres critères sont respectés."
+    },
+    {
+      "id": "S82",
+      "original_name": "decision-statera-estimation-tranche-2026-10-20.md",
+      "path": "sources/originals/decision-statera-estimation-tranche-2026-10-20.md",
+      "sha256": "e1c5a3182408c2b7aab33397f2fa5fa26f780d2e22057ed674a3bfc9de9b6849",
+      "bytes": 832,
+      "format": "md",
+      "topic": "decision",
+      "source_date": "2026-10-20",
+      "disposition": "reference_provisoire",
+      "summary": "Décision d’Elizabeth du 2026-10-20 : estimation de CA de Statera (0,3 à 3,5 M$) appliquée ; tranche des tags 500 K$ à 3 M$."
     }
   ]
 }
