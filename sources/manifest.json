@@ -1008,6 +1008,18 @@
       "source_date": "2026-10-20",
       "disposition": "reference_provisoire",
       "summary": "Décision d’Elizabeth du 2026-10-20 : Les Effrontés classée « Service » (et non « Détaillant ») dans les tags Desjardins."
+    },
+    {
+      "id": "S85",
+      "original_name": "decision-nuspace-tranche-signature-2026-10-20.md",
+      "path": "sources/originals/decision-nuspace-tranche-signature-2026-10-20.md",
+      "sha256": "7d62e6a89e6d18585bee06c1d06321988e9979f5a8a0f5a4ef262ef21c2e267f",
+      "bytes": 629,
+      "format": "md",
+      "topic": "decision",
+      "source_date": "2026-10-20",
+      "disposition": "reference_provisoire",
+      "summary": "Décision d’Elizabeth du 2026-10-20 : Nuspace dans la tranche 3 à 10 M$ ; signature des brouillons Desjardins laissée à compléter."
     }
   ]
 }
