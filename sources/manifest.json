@@ -828,6 +828,18 @@
       "source_date": "2026-10-20",
       "disposition": "reference_provisoire",
       "summary": "Décisions d’Elizabeth du 2026-10-20 : CA de l'export Clay ignoré, effectifs LinkedIn retenus comme indication, Rachel à 7-10 personnes, impression que Nuspace est plus grosse que 3,6 M$."
+    },
+    {
+      "id": "S70",
+      "original_name": "decision-effectifs-baronesse-roseaux-2026-10-20.md",
+      "path": "sources/originals/decision-effectifs-baronesse-roseaux-2026-10-20.md",
+      "sha256": "58e19c966c0a37f4bc75fb931923f4e500db3a0c967dcabfe50d8285faa48ed2",
+      "bytes": 908,
+      "format": "md",
+      "topic": "decision",
+      "source_date": "2026-10-20",
+      "disposition": "reference_provisoire",
+      "summary": "Observations d’Elizabeth du 2026-10-20 : Baronesse environ 22 personnes, Maison Roseaux 3, La Forge d'or entreprise familiale établie ; nouvelle estimation du CA demandée pour Nuspace et Baronesse."
     }
   ]
 }

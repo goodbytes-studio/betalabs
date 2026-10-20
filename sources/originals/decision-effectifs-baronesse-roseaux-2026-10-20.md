@@ -1,0 +1,13 @@
+# Décision : effectifs de Baronesse et de Maison Roseaux, La Forge d'or (HOP 2026, Desjardins)
+
+- Date : 2026-10-20 (America/Toronto)
+- Décideuse : Elizabeth (BETA Labs)
+- Contexte : machine événements, HOP 2026 ; sélection Desjardins (S55). Observations d'Elizabeth sur LinkedIn après l'export Clay (S69).
+- Forme : observations données en conversation de travail avec l'assistant, retranscrites sans modification de sens.
+
+## Décisions
+
+1. Baronesse compte environ 22 personnes (page LinkedIn consultée par Elizabeth), ce qui remplace l'effectif supposé de 13 à 25.
+2. Maison Roseaux compte environ 3 personnes ; la fourchette 11-50 venait de la plage LinkedIn.
+3. La Forge d'or semble être une entreprise familiale établie (observation d'Elizabeth, sans chiffre).
+4. Une deuxième estimation du CA est demandée pour Nuspace et Baronesse (agent Opus), avec preuves de maturité et de taille.
