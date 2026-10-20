@@ -1,0 +1,12 @@
+# Décision : comptes écartés et rôle de Philippe chez Statera (HOP 2026, Desjardins)
+
+- Date : 2026-10-20 (America/Toronto)
+- Décideuse : Elizabeth (BETA Labs)
+- Contexte : machine événements, HOP 2026 ; sélection Desjardins (S55). Revue de l'enrichissement par agents.
+- Forme : décisions données en conversation de travail avec l'assistant, retranscrites sans modification de sens. Captures LinkedIn et de la plateforme de l'événement fournies par Elizabeth, non versionnées.
+
+## Décisions
+
+1. Perlimpinpin, Lambert et Deux par Deux sont écartés de la sélection Desjardins : le contact inscrit n'est pas le bon rôle (« on oublie »).
+2. Bikini Village est hors périmètre pour Desjardins.
+3. Philippe Pâquet-De Varennes est bien dirigeant de Statera Spirits (copropriétaire et cofondateur ; profil LinkedIn : partenaire depuis avril 2021, à temps partiel ; la plateforme de l'événement le présente comme « Co-Fondateur, Spiritueux Statera » avec l'étiquette « Détaillant.e »), même si Lysandre Nadeau l'est aussi.

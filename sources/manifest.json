@@ -768,6 +768,18 @@
       "source_date": "2026-10-20",
       "disposition": "reference_provisoire",
       "summary": "Décision d’Elizabeth du 2026-10-20 : l'estimation de CA de 1,8 M$ est bien celle de Bôsapin (source TVA Nouvelles) ; David Thibeault compté une seule fois."
+    },
+    {
+      "id": "S65",
+      "original_name": "decision-ecartes-statera-philippe-2026-10-20.md",
+      "path": "sources/originals/decision-ecartes-statera-philippe-2026-10-20.md",
+      "sha256": "a960083390223daf48e80e4f5671bfe1acf0e1124ecfb8cf163df5a53702b720",
+      "bytes": 1049,
+      "format": "md",
+      "topic": "decision",
+      "source_date": "2026-10-20",
+      "disposition": "reference_provisoire",
+      "summary": "Décisions d’Elizabeth du 2026-10-20 : Perlimpinpin, Lambert, Deux par Deux et Bikini Village écartés pour Desjardins ; Philippe Pâquet-De Varennes est bien dirigeant de Statera Spirits."
     }
   ]
 }
