@@ -18,7 +18,7 @@ import json
 from collections import Counter
 from pathlib import Path
 
-from _common import (BUSINESS_MODELS, ORG_TYPES, RESEARCH_FIELDS, is_https, load_core, read_csv,
+from _common import (BUSINESS_MODELS, FRANCHISE_VALUES, ORG_TYPES, RESEARCH_FIELDS, is_https, load_core, read_csv,
                      write_csv, yes)
 
 REVIEW_FIELDS = ["account_id", "name", "field", "current_value", "proposed_value", "confidence",
@@ -41,6 +41,8 @@ def allowed_values(field: str, core) -> set[str]:
         return set(core.SECTOR_TERMS) | {"other"}
     if field == "business_model":
         return set(BUSINESS_MODELS)
+    if field == "franchise":
+        return set(FRANCHISE_VALUES)
     return set()
 
 

@@ -12,10 +12,12 @@ Pour chaque entreprise, cherche sur le web public (site officiel d'abord, puis r
 
 | Champ | Valeurs permises | Sens |
 |---|---|---|
-| `org_type` | `retailer`, `seller`, `manufacturer`, `ecosystem` | `retailer` vend aux consommateurs via magasins ou site (y compris bannières, franchises, coopératives de détail). `seller` vend des services ou logiciels aux détaillants (agence, SaaS, paiement, logistique, conseil). `manufacturer` fabrique et vend surtout en gros. `ecosystem` : association, gouvernement, école, média, immobilier commercial, organisme. |
+| `org_type` | `retailer`, `distributor`, `seller`, `manufacturer`, `ecosystem` | `retailer` vend aux consommateurs via magasins ou site (y compris bannières, franchises, coopératives de détail). `seller` vend des services ou logiciels aux détaillants (agence, SaaS, paiement, logistique, conseil). `manufacturer` fabrique et vend surtout en gros. `distributor` : grossiste ou distributeur qui vend à des détaillants ou commerces. `ecosystem` : association, gouvernement, école, média, immobilier commercial, organisme. |
 | `sector` | `{{SECTORS}}` ou `other` | Seulement pour `retailer` ou `manufacturer`. Choisir le secteur principal par chiffre d'affaires. `other` si aucun ne convient (ex. animalerie, piscines, alcool) — l'indiquer dans `notes`. |
 | `business_model` | `b2c`, `b2b`, `b2b b2c` | Clientèle principale. |
 | `country` | nom de pays en anglais minuscule, ex. `canada` | Siège social. |
+| `province` | province ou État du siège, en anglais minuscule, ex. `quebec`, `ontario` | Optionnel : seulement si la colonne `fields_to_research` ou la consigne du lot le demande. |
+| `franchise` | `independent`, `franchisor`, `franchisee` | `franchisor` : bannière ou réseau qui vend des franchises (ou chaîne corporative de grande taille). `franchisee` : magasin ou entreprise détenu par un franchisé d'une bannière. `independent` : ni l'un ni l'autre. Optionnel, même règle que `province`. |
 
 Règles :
 

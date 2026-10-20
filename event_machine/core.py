@@ -126,6 +126,7 @@ def parse_accounts(rows: list[dict]) -> tuple[list[dict], dict, dict]:
             "revenue_estimate_source": ("revenue_estimate_source", "revenue_band_source"),
             "employees": ("estimated_num_employees", "employees", "employee_count", "nb_employes"),
             "province": ("province", "state", "region"),
+            "franchise": ("franchise", "franchise_status"),
         }.items():
             value = first(row, *aliases)
             if value and not account.get(field):
@@ -398,6 +399,13 @@ def match_person(person: dict, account: dict, profile: dict, evidence: dict, rel
     names = {norm(account.get("name", "")), norm(person.get("company_supplied", ""))} - {""}
     if identities & excluded_domains or names & excluded_names:
         blockers.append("compte exclu pour ce client : " + (account.get("name") or person.get("company_supplied", "")))
+    # Franchiseur ou réseau exclu, franchisé propriétaire à valider (décision D31).
+    if target.get("franchise_policy") == "exclude_franchisors":
+        franchise = norm(account.get("franchise", ""))
+        if franchise == "franchisor":
+            blockers.append("franchiseur ou réseau : " + (account.get("name") or ""))
+        elif franchise == "franchisee":
+            reasons.append("à valider : franchisé propriétaire")
     provinces = {norm(v) for v in target.get("provinces", [])}
     if provinces:
         province = PROVINCES.get(norm(account.get("province", "")), norm(account.get("province", "")))

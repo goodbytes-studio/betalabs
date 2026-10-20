@@ -83,6 +83,7 @@
         "company_types": ["retailer", "distributor"],
         "geographies": ["canada"],
         "provinces": ["quebec", "ontario"],
+        "franchise_policy": "exclude_franchisors",
         "sectors_exclude": ["cannabis"],
         "role_functions": ["executive"],
         "seniority": ["executive"],

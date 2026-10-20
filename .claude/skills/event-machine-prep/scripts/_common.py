@@ -56,7 +56,8 @@ BUSINESS_MODELS = ["b2c", "b2b", "b2b b2c"]
 SENIORITY = ["executive", "vp_clevel", "director", "manager"]
 DECISION_LEVELS = {"executive", "vp_clevel", "director"}
 # Agents may answer with these research fields; anything else is rejected.
-RESEARCH_FIELDS = ["org_type", "sector", "business_model", "country"]
+RESEARCH_FIELDS = ["org_type", "sector", "business_model", "country", "province", "franchise"]
+FRANCHISE_VALUES = ["independent", "franchisor", "franchisee"]
 
 
 def is_https(url: str) -> bool:
