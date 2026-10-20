@@ -900,6 +900,18 @@
       "source_date": "2026-10-20",
       "disposition": "reference_provisoire",
       "summary": "Décision d’Elizabeth du 2026-10-20 : Florilège et Ora Protections sont des détaillantes qui correspondent à l'ICP Desjardins ; suivi des entrées et sorties à chaque version de la liste."
+    },
+    {
+      "id": "S76",
+      "original_name": "decision-ora-ca-signataire-2026-10-20.md",
+      "path": "sources/originals/decision-ora-ca-signataire-2026-10-20.md",
+      "sha256": "c39170faf108e8f36d0fa66004c7b3a817de78a8017ca7a3f9cba0c610107135",
+      "bytes": 757,
+      "format": "md",
+      "topic": "decision",
+      "source_date": "2026-10-20",
+      "disposition": "reference_provisoire",
+      "summary": "Décisions d’Elizabeth du 2026-10-20 : CA d'Ora Protections estimé à 500 K-3 M$ ; signataire de Desjardins inconnu, signature laissée vide."
     }
   ]
 }

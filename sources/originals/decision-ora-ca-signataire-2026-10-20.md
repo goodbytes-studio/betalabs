@@ -1,0 +1,11 @@
+# Décision : CA d'Ora Protections et signataire de Desjardins (HOP 2026)
+
+- Date : 2026-10-20 (America/Toronto)
+- Décideuse : Elizabeth (BETA Labs)
+- Contexte : machine événements, HOP 2026 ; sélection Desjardins (S55) ; estimations par calcul (D43, S68). L'agent d'estimation donnait 90 K à 1,5 M$ pour Ora Protections.
+- Forme : décisions données en conversation de travail avec l'assistant, retranscrites sans modification de sens.
+
+## Décisions
+
+1. Le CA d'Ora Protections est estimé à 500 K à 3 M$ (estimation d'Elizabeth, qui remplace le calcul de l'agent). Elle reste de confiance basse : plafonnée à « possible », n'exclut jamais.
+2. Le signataire des messages de Desjardins n'est pas connu : la signature reste vide pour l'instant.
