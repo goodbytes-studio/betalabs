@@ -960,6 +960,18 @@
       "source_date": "2026-10-20",
       "disposition": "reference_provisoire",
       "summary": "Décision d’Elizabeth du 2026-10-20 : Rachel classée dans la tranche de CA 3 à 10 M$ des tags Desjardins ; Statera à décider."
+    },
+    {
+      "id": "S81",
+      "original_name": "decision-effrontes-icp-elargi-2026-10-20.md",
+      "path": "sources/originals/decision-effrontes-icp-elargi-2026-10-20.md",
+      "sha256": "408ae68054f3801fe84e5747c67cb70406ce1ede743ad4fd54c5d6fd3d2ebcf9",
+      "bytes": 952,
+      "format": "md",
+      "topic": "decision",
+      "source_date": "2026-10-20",
+      "disposition": "reference_provisoire",
+      "summary": "Décision d’Elizabeth du 2026-10-20 : Les Effrontés est un choix possible dans l’ICP élargi (non-détaillants) si les autres critères sont respectés."
     }
   ]
 }
