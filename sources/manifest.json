@@ -996,6 +996,18 @@
       "source_date": "2026-10-20",
       "disposition": "reference_provisoire",
       "summary": "Décision d’Elizabeth du 2026-10-20 : Les Effrontés (estimation de CA appliquée) et Nuspace entrent dans la liste principale Desjardins (15 entreprises)."
+    },
+    {
+      "id": "S84",
+      "original_name": "decision-effrontes-type-service-2026-10-20.md",
+      "path": "sources/originals/decision-effrontes-type-service-2026-10-20.md",
+      "sha256": "828b42e3788c887c768d37d9725ecdfad9074b732ca8a1559bc2897963d193a0",
+      "bytes": 590,
+      "format": "md",
+      "topic": "decision",
+      "source_date": "2026-10-20",
+      "disposition": "reference_provisoire",
+      "summary": "Décision d’Elizabeth du 2026-10-20 : Les Effrontés classée « Service » (et non « Détaillant ») dans les tags Desjardins."
     }
   ]
 }
