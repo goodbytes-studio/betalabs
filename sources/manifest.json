@@ -936,6 +936,18 @@
       "source_date": "2026-10-20",
       "disposition": "reference_provisoire",
       "summary": "Décision d’Elizabeth du 2026-10-20 : le secteur « Mode et vêtements » devient « Vêtements et accessoires » et inclut La Forge d'or (tags Desjardins)."
+    },
+    {
+      "id": "S79",
+      "original_name": "decision-tranches-ca-tags-2026-10-20.md",
+      "path": "sources/originals/decision-tranches-ca-tags-2026-10-20.md",
+      "sha256": "bae64153b0fb20fadaa4f5d6d2b750d382349d86f5f1b048aaa93bc3aed93462",
+      "bytes": 552,
+      "format": "md",
+      "topic": "decision",
+      "source_date": "2026-10-20",
+      "disposition": "reference_provisoire",
+      "summary": "Décision d’Elizabeth du 2026-10-20 : les tranches de CA « Moins de 1 M$ » et « 1 à 3 M$ » des tags Desjardins sont fusionnées en « 500 K$ à 3 M$»."
     }
   ]
 }
