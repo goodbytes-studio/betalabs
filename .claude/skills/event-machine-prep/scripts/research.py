@@ -120,6 +120,12 @@ def apply(args) -> None:
     for row in read_csv(args.review):
         if not yes(row.get("approve")) or not row.get("field"):
             skipped[row.get("field") or "aucun"] += 1
+            hint = (row.get("proposed_value") or "").strip().lower()
+            account = by_id.get(row.get("account_id", ""))
+            # Un indice de franchise non approuvé (confiance basse) reste visible : le moteur le signale « à valider ».
+            if row.get("field") == "franchise" and hint in ("franchisee", "franchisor") and account and not account.get("franchise"):
+                account["franchise_hint"] = hint
+                account["franchise_hint_source"] = (row.get("quote") or "")[:120]
             continue
         account = by_id.get(row["account_id"])
         if not account:
@@ -137,7 +143,7 @@ def apply(args) -> None:
         account["research_checked"] = "yes"
         applied[field] += 1
     fields = list(dict.fromkeys(k for r in accounts for k in r))
-    for extra in ("org_type_source_url", "sector_detail", "research_checked"):
+    for extra in ("org_type_source_url", "sector_detail", "research_checked", "franchise_hint", "franchise_hint_source"):
         if extra not in fields:
             fields.append(extra)
     write_csv(args.out, accounts, fields)

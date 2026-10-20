@@ -94,7 +94,7 @@
         "revenue_core_max_cad": 10000000,
         "employees_soft_max": 20,
         "employees_hard_max": 100,
-        "exclude_domains": ["desjardins.com", "jeancoutu.com", "familiprix.com", "cantire.com", "tced.ca", "maglecompte.ca", "saman.ca", "perlimpinpin.com", "designlambert.com", "deuxpardeux.com", "bikinivillage.com"],
+        "exclude_domains": ["desjardins.com", "jeancoutu.com", "familiprix.com", "cantire.com", "tced.ca", "maglecompte.ca", "saman.ca", "perlimpinpin.com", "designlambert.com", "deuxpardeux.com", "bikinivillage.com", "acuitis.com"],
         "exclude_names": ["Desjardins"]
       },
       "signals": [

@@ -50,6 +50,9 @@ class EventMachineTests(unittest.TestCase):
         self.assertIn("à valider", status({**base, "employees": "40"})["fit_reasons"])
         self.assertIn("franchiseur", status({**base, "franchise": "franchisor"})["exclusion_reasons"])
         self.assertIn("franchisé", status({**base, "franchise": "franchisee"})["fit_reasons"])
+        hinted = status({**base, "franchise_hint": "franchisee"})
+        self.assertIn("franchise possible", hinted["fit_reasons"])
+        self.assertNotEqual(hinted["machine_status"], "fort")
         own = {**base, "name": "Desjardins", "domain": "desjardins.com"}
         self.assertEqual(status(own)["machine_status"], "exclu")
         perso = {**person, "email": "k@hotmail.com", "company_supplied": "Desjardins"}

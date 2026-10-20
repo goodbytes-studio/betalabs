@@ -840,6 +840,18 @@
       "source_date": "2026-10-20",
       "disposition": "reference_provisoire",
       "summary": "Observations d’Elizabeth du 2026-10-20 : Baronesse environ 22 personnes, Maison Roseaux 3, La Forge d'or entreprise familiale établie ; nouvelle estimation du CA demandée pour Nuspace et Baronesse."
+    },
+    {
+      "id": "S71",
+      "original_name": "decision-acuitis-baronesse-roseaux-2026-10-20.md",
+      "path": "sources/originals/decision-acuitis-baronesse-roseaux-2026-10-20.md",
+      "sha256": "dcef1fc658949a4860d8ddff9538a5bc09f128abe7a88a91df75e3fc8fd8a9a0",
+      "bytes": 968,
+      "format": "md",
+      "topic": "decision",
+      "source_date": "2026-10-20",
+      "disposition": "reference_provisoire",
+      "summary": "Décisions d’Elizabeth du 2026-10-20 : AcuITIs (franchise) retirée, Baronesse distributrice (remplace D33), Maison Roseaux détaillante de mobilier à estimer."
     }
   ]
 }

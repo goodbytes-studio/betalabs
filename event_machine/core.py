@@ -129,6 +129,7 @@ def parse_accounts(rows: list[dict]) -> tuple[list[dict], dict, dict]:
             "employees": ("estimated_num_employees", "employees", "employee_count", "nb_employes"),
             "province": ("province", "state", "region"),
             "franchise": ("franchise", "franchise_status"),
+            "franchise_hint": ("franchise_hint",),
         }.items():
             value = first(row, *aliases)
             if value and not account.get(field):
@@ -428,6 +429,9 @@ def match_person(person: dict, account: dict, profile: dict, evidence: dict, rel
             blockers.append("franchiseur ou réseau : " + (account.get("name") or ""))
         elif franchise == "franchisee":
             reasons.append("à valider : franchisé propriétaire")
+        elif not franchise and norm(account.get("franchise_hint", "")) in ("franchisor", "franchisee"):
+            # Un indice de franchise non approuvé (confiance basse) ne se perd plus : il bloque le « fort ».
+            reasons.append("à valider : franchise possible (indice non approuvé : " + account["franchise_hint"] + ")")
     provinces = {norm(v) for v in target.get("provinces", [])}
     if provinces:
         province = PROVINCES.get(norm(account.get("province", "")), norm(account.get("province", "")))
