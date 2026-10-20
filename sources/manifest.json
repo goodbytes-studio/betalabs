@@ -732,6 +732,18 @@
       "source_date": "2026-10-20",
       "disposition": "reference_provisoire",
       "summary": "Décisions d’Elizabeth du 2026-10-20 : correctifs du moteur (province par la ville, vues presque fort et contact à trouver), Saman écartée, Statera = Gestion PDV, Léa Rousseau DG, revenu souple (0,5 à 20 M$, cœur 1 à 10 M$)."
+    },
+    {
+      "id": "S62",
+      "original_name": "decision-taille-dg-desjardins-2026-10-20.md",
+      "path": "sources/originals/decision-taille-dg-desjardins-2026-10-20.md",
+      "sha256": "581715fdde0767bed95d25b18cd0aeb2b5b6caac07deacee7070fd30570c97e3",
+      "bytes": 938,
+      "format": "md",
+      "topic": "decision",
+      "source_date": "2026-10-20",
+      "disposition": "reference_provisoire",
+      "summary": "Décisions d’Elizabeth du 2026-10-20 : un directeur général convient comme contact Desjardins ; les grandes entreprises (CA estimé d'au moins 25 M$) sont exclues."
     }
   ]
 }

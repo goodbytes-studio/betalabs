@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -39,6 +40,12 @@ def counts(matches: list[dict]) -> dict[str, Counter]:
     return out
 
 
+def band_low(text: str) -> float | None:
+    """Borne basse d'une fourchette « 25M-75M » ou « 500K-1M », en dollars."""
+    found = re.match(r"([\d.]+)([KMB])-", text or "")
+    return float(found.group(1)) * {"K": 1e3, "M": 1e6, "B": 1e9}[found.group(2)] if found else None
+
+
 def parts(text: str) -> list[str]:
     return [p.strip() for p in (text or "").split("|") if p.strip()]
 
@@ -49,6 +56,7 @@ def main() -> None:
     ap.add_argument("--previous", type=Path)
     ap.add_argument("--out", required=True, type=Path)
     ap.add_argument("--top", type=int, default=25)
+    ap.add_argument("--icps", type=Path, help="ICP JSON : active l'alerte de taille selon le plafond de CA de chaque client")
     args = ap.parse_args()
     # La revue humaine prime sur le statut machine partout dans le diagnostic.
     matches = with_effective_status(read_csv(args.run / "matches.csv"))
@@ -127,6 +135,24 @@ def main() -> None:
         rows.sort(key=lambda r: r["company_name"])
         write_csv(args.out / f"contact-a-trouver-{cid}.csv", rows, CONTACT_FIELDS)
         lines.append(f"- **{cname}** : {len(rows)} (`contact-a-trouver-{cid}.csv`)")
+    lines += [""]
+
+    ceilings = {}
+    if args.icps:
+        for client in json.loads(args.icps.read_text(encoding="utf-8")).get("clients", []):
+            target = client.get("target", {})
+            ceilings[client["id"]] = target.get("revenue_estimate_hard_max_cad") or target.get("revenue_max_cad")
+    lines += ["## Contrôle de taille des listes courtes", "",
+              "Un compte `fort` ou `possible` dont la taille est inconnue est un risque : une grande entreprise peut s'y glisser."
+              + ("" if args.icps else " Passer `--icps` pour activer l'alerte de plafond de CA."), ""]
+    for cid, cname in names.items():
+        short = [m for m in matches if m["client_id"] == cid and m["machine_status"] in ("fort", "possible")]
+        ceiling = ceilings.get(cid)
+        big = sorted({m["company_name"] for m in short if ceiling and (band_low(m["revenue_estimate_band"]) or 0) >= ceiling})
+        unknown = sorted({m["company_name"] for m in short if not m["revenue_estimate_band"] and m["revenue_basis"] != "verified_input"})
+        verdict = (f"ALERTE, CA estimé au-dessus du plafond ({ceiling / 1e6:g} M$) : {', '.join(big)}" if big
+                   else (f"aucune estimation au-dessus du plafond ({ceiling / 1e6:g} M$)" if ceiling else "plafond de CA non défini"))
+        lines.append(f"- **{cname}** : {verdict} ; taille inconnue : {len(unknown)} sur {len({m['company_name'] for m in short})} entreprises")
     lines += [""]
 
     lines += ["## Ce qui empêche `possible` → `fort`", ""]

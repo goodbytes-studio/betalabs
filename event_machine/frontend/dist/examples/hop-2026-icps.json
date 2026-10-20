@@ -80,6 +80,7 @@
       "target": {
         "revenue_estimate_ok": true,
         "revenue_estimates_never_exclude": true,
+        "revenue_estimate_hard_max_cad": 25000000,
         "company_types": ["retailer", "distributor"],
         "geographies": ["canada"],
         "provinces": ["quebec", "ontario"],

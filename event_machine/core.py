@@ -478,7 +478,11 @@ def match_person(person: dict, account: dict, profile: dict, evidence: dict, rel
             # Une fourchette estimée n'exclut que si elle est loin du seuil (facteur propre au client).
             hard = float(target.get("revenue_estimate_hard_factor", 0) or 0)
             never = bool(target.get("revenue_estimates_never_exclude"))
-            if revenue_min is not None and high < revenue_min:
+            # Une estimation ne sauve jamais une grande entreprise : limite ferme vers le haut (décision D37, S62).
+            hard_cap = target.get("revenue_estimate_hard_max_cad")
+            if hard_cap is not None and low >= hard_cap:
+                blockers.append("CA estimé (fourchette) au-dessus de la limite ferme")
+            elif revenue_min is not None and high < revenue_min:
                 if never or (hard and high >= revenue_min / hard):
                     reasons.append("à valider : CA estimé (fourchette) sous le seuil")
                 else:

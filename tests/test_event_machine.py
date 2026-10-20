@@ -96,7 +96,15 @@ class EventMachineTests(unittest.TestCase):
         wide = match_person(person, {**account, "revenue_estimate_band": "12M-15M", "revenue_estimate_currency": "CAD"}, profile, {}, None)
         self.assertIn("zone de CA : élargie", wide["fit_reasons"])
         self.assertLess(wide["priority_score"], result["priority_score"])
-        # Une estimation très éloignée n'exclut jamais ; un montant CAD vérifié hors fourchette exclut.
+        # Une estimation ne sauve jamais une grande entreprise : limite ferme vers le haut (D37).
+        capped = {**profile, "target": {**profile["target"], "revenue_estimate_hard_max_cad": 25000000}}
+        for band in ("25M-75M", "1B-10B"):
+            big = match_person(person, {**account, "revenue_estimate_band": band, "revenue_estimate_currency": "CAD"}, capped, {}, None)
+            self.assertEqual(big["machine_status"], "exclu", band)
+            self.assertIn("limite ferme", big["exclusion_reasons"])
+        near = match_person(person, {**account, "revenue_estimate_band": "21M-24M", "revenue_estimate_currency": "CAD"}, capped, {}, None)
+        self.assertNotEqual(near["machine_status"], "exclu")
+        # Une estimation très éloignée vers le bas n'exclut jamais ; un montant CAD vérifié hors fourchette exclut.
         tiny = match_person(person, {**account, "revenue_estimate_band": "50K-80K", "revenue_estimate_currency": "CAD"}, profile, {}, None)
         self.assertNotEqual(tiny["machine_status"], "exclu")
         verified = {**account, "revenue_raw": "90000000", "revenue_currency": "CAD", "revenue_year": "2026",

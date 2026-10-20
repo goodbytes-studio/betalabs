@@ -38,6 +38,7 @@ La lecture de la province est donc l'écart principal. Les CA bruts de Clay sont
 | E7 | **Type inconnu quand le site est inaccessible** (erreurs 429 et 503, mauvais domaine). Les agents de recherche n'ont aucune autre source et la machine ne sait pas relancer. | 2 comptes sur 17 ; 16 comptes déjà tentés en vain. | Prévoir une recherche par le nom et la ville, puis une identification à la main. |
 | E8 | **Le rattachement entreprise-personne est fragile** : un même inscrit peut se retrouver dans trois comptes (domaine personnel, nom seul, domaine de l'entreprise). Un cas a été corrigé le 2026-10-20 (courriels personnels). | Un compte « domaine personnel » regroupait 15 personnes d'entreprises différentes. | Fusionner les comptes par nom normalisé et domaine ; ne jamais clé sur un domaine de messagerie. |
 | E9 | **Le titre « General Manager » compte comme décideur**, alors que Desjardins veut propriétaire ou actionnaire. | 3 comptes sur 17 ont ce titre. | Garder « à valider » pour les titres de direction salariée quand l'ICP demande un propriétaire. |
+| E11 | **Un assouplissement a créé un trou de l'autre côté** : n'exclure jamais sur une estimation a laissé passer de grandes entreprises. | Touchette, MUST et d'autres, de 25 M$ à plus de 1 G$ (noms dans `.event-machine/`). | Asymétrie : jamais d'exclusion vers le bas sur estimation, limite ferme vers le haut ; contrôle de taille automatique du diagnostic. |
 | E10 | **Une entreprise du client n'apparaît pas sous le nom donné** (nom commercial différent de celui du formulaire). | 1 piste sur 18 introuvable. | Rapprocher le nom par recherche floue et par domaine, et le dire à l'utilisatrice. |
 
 ## Du côté du processus
@@ -56,6 +57,8 @@ La lecture de la province est donc l'écart principal. Les CA bruts de Clay sont
 | E3 CA | **Adapté** pour Desjardins : une estimation n'exclut jamais ; cœur 1 à 10 M$, zone élargie 0,5 à 20 M$ acceptée ; seul un CA vérifié hors zone exclut. Les estimations Clay brutes restent à approuver compte par compte. |
 | E5 compte bon, contact à trouver | **Corrigé** : vue `contact-a-trouver-<client>.csv` du diagnostic. |
 | E6 « à confirmer » fourre-tout | **Corrigé** : vue `near-miss-<client>.csv` (un seul élément manquant). |
-| E4 effectifs, E7 sites inaccessibles, E8 comptes en double, E9 General Manager, E10 noms commerciaux | **Ouverts**. |
+| E9 General Manager | **Clos** : un directeur général convient (D37, S62). |
+| E11 grandes entreprises dans les listes | **Corrigé** : la décision S61 (une estimation n'exclut jamais) a laissé passer des comptes de 25 M$ à plus de 1 G$. Limite ferme à 25 M$ vers le haut (D37), et section « Contrôle de taille » dans le diagnostic. |
+| E4 effectifs, E7 sites inaccessibles, E8 comptes en double, E10 noms commerciaux | **Ouverts**. |
 
 Résultat sur la même liste de pistes : 0 fort et 2 possibles avant, 4 forts et 15 possibles après (dont un doublon de compte pour une même personne, E8).
