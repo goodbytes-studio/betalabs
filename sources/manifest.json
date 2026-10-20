@@ -804,6 +804,18 @@
       "source_date": "2026-10-20",
       "disposition": "reference_provisoire",
       "summary": "Décision d’Elizabeth du 2026-10-20 : Statera Spirits est dans le secteur boissons et alimentation, au Canada."
+    },
+    {
+      "id": "S68",
+      "original_name": "decision-estimations-ca-desjardins-2026-10-20.md",
+      "path": "sources/originals/decision-estimations-ca-desjardins-2026-10-20.md",
+      "sha256": "9c7aaff4cf5a59a566d86289eb935dc229fb1f4c3c77aa790661467aabd2baf7",
+      "bytes": 1397,
+      "format": "md",
+      "topic": "decision",
+      "source_date": "2026-10-20",
+      "disposition": "reference_provisoire",
+      "summary": "Décisions d’Elizabeth du 2026-10-20 : 11 estimations de CA par calcul approuvées pour Desjardins, plafonnées à « possible » (confiance basse) ; Nuspace par calcul ; une estimation de confiance basse n'exclut jamais."
     }
   ]
 }

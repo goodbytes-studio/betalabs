@@ -71,6 +71,7 @@ def apply(args) -> None:
             continue
         account["revenue_estimate_band"] = row["revenue_estimate_band"]
         account["revenue_estimate_currency"] = "CAD"
+        account["revenue_estimate_confidence"] = row["confidence"]
         account["revenue_estimate_source"] = f"Estimation par calcul (agent, confiance {row['confidence']}) : {row['methods']}"[:400]
         applied += 1
     fields = list(dict.fromkeys(k for r in accounts for k in r))

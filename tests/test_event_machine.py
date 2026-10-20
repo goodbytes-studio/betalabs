@@ -104,6 +104,20 @@ class EventMachineTests(unittest.TestCase):
             self.assertIn("limite ferme", big["exclusion_reasons"])
         near = match_person(person, {**account, "revenue_estimate_band": "21M-24M", "revenue_estimate_currency": "CAD"}, capped, {}, None)
         self.assertNotEqual(near["machine_status"], "exclu")
+        # Une estimation par calcul de confiance basse plafonne le match à « possible » (D43).
+        low_conf = match_person(person, {**account, "revenue_estimate_band": "2M-3M", "revenue_estimate_currency": "CAD",
+                                         "revenue_estimate_confidence": "low"}, profile, {}, None)
+        self.assertEqual(low_conf["machine_status"], "possible")
+        self.assertIn("confiance basse", low_conf["fit_reasons"])
+        parsed = parse_accounts([{"name": "Petit commerce", "domain": "petit.ca", "revenue_estimate_band": "2M-3M",
+                                  "revenue_estimate_confidence": "low"}])[1]["petit.ca"]
+        self.assertEqual(parsed["revenue_estimate_confidence"], "low")
+        # Pour un client sans cette option, une estimation de confiance basse n'exclut pas non plus.
+        strict = {"id": "x", "target": {"company_types": ["retailer"], "role_functions": ["executive"], "seniority": ["executive"],
+                                        "revenue_estimate_ok": True, "revenue_min_cad": 40000000, "revenue_estimate_hard_factor": 3}}
+        tiny_low = {**account, "revenue_estimate_band": "2M-3M", "revenue_estimate_currency": "CAD"}
+        self.assertEqual(match_person(person, tiny_low, strict, {}, None)["machine_status"], "exclu")
+        self.assertNotEqual(match_person(person, {**tiny_low, "revenue_estimate_confidence": "low"}, strict, {}, None)["machine_status"], "exclu")
         # Une estimation très éloignée vers le bas n'exclut jamais ; un montant CAD vérifié hors fourchette exclut.
         tiny = match_person(person, {**account, "revenue_estimate_band": "50K-80K", "revenue_estimate_currency": "CAD"}, profile, {}, None)
         self.assertNotEqual(tiny["machine_status"], "exclu")

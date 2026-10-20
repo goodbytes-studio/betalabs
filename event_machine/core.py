@@ -125,6 +125,7 @@ def parse_accounts(rows: list[dict]) -> tuple[list[dict], dict, dict]:
             "revenue_estimate_band": ("revenue_estimate_band", "revenue_band", "annual_revenue_range"),
             "revenue_estimate_currency": ("revenue_estimate_currency", "revenue_band_currency"),
             "revenue_estimate_source": ("revenue_estimate_source", "revenue_band_source"),
+            "revenue_estimate_confidence": ("revenue_estimate_confidence",),
             "employees": ("estimated_num_employees", "employees", "employee_count", "nb_employes"),
             "province": ("province", "state", "region"),
             "franchise": ("franchise", "franchise_status"),
@@ -477,7 +478,8 @@ def match_person(person: dict, account: dict, profile: dict, evidence: dict, rel
             soft_max = revenue_max * (1 + tolerance) if revenue_max is not None else None
             # Une fourchette estimée n'exclut que si elle est loin du seuil (facteur propre au client).
             hard = float(target.get("revenue_estimate_hard_factor", 0) or 0)
-            never = bool(target.get("revenue_estimates_never_exclude"))
+            # Une estimation par calcul de confiance basse n'exclut jamais, pour aucun client (décision D43, S68).
+            never = bool(target.get("revenue_estimates_never_exclude")) or norm(account.get("revenue_estimate_confidence", "")) == "low"
             # Une estimation ne sauve jamais une grande entreprise : limite ferme vers le haut (décision D37, S62).
             hard_cap = target.get("revenue_estimate_hard_max_cad")
             if hard_cap is not None and low >= hard_cap:
@@ -498,6 +500,10 @@ def match_person(person: dict, account: dict, profile: dict, evidence: dict, rel
             else:
                 reasons.append("CA estimé (fourchette) chevauche le seuil")
             revenue_basis = "estimated_band"
+            # Une estimation par calcul de confiance basse ne suffit pas à un « fort » (décision D43, source S68).
+            if estimate_ok and norm(account.get("revenue_estimate_confidence", "")) == "low":
+                estimate_ok = False
+                reasons.append("à valider : CA estimé par calcul (confiance basse)")
         elif amount is None:
             reasons.append("CA annuel CAD non vérifié")
         elif revenue_min is not None and amount < revenue_min:
