@@ -59,6 +59,7 @@ La lecture de la province est donc l'écart principal. Les CA bruts de Clay sont
 | E6 « à confirmer » fourre-tout | **Corrigé** : vue `near-miss-<client>.csv` (un seul élément manquant). |
 | E9 General Manager | **Clos** : un directeur général convient (D37, S62). |
 | E11 grandes entreprises dans les listes | **Corrigé** : la décision S61 (une estimation n'exclut jamais) a laissé passer des comptes de 25 M$ à plus de 1 G$. Limite ferme à 25 M$ vers le haut (D37), et section « Contrôle de taille » dans le diagnostic. |
+| E12 estimation du CA des TPE | **À prévoir** (décision d'Elizabeth, 2026-10-20) : recherche poussée, sur le modèle de la recherche d'actualités, qui estime le CA à partir des années d'existence, des prix, du nombre de clients ou de commandes et de mentions publiques ; fourchette sourcée, jamais présentée comme vérifiée. |
 | E4 effectifs, E7 sites inaccessibles, E8 comptes en double, E10 noms commerciaux | **Ouverts**. |
 
 Résultat sur la même liste de pistes : 0 fort et 2 possibles avant, 4 forts et 15 possibles après (dont un doublon de compte pour une même personne, E8).
