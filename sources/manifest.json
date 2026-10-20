@@ -756,6 +756,18 @@
       "source_date": "2026-10-20",
       "disposition": "reference_provisoire",
       "summary": "Décisions d’Elizabeth du 2026-10-20 : enrichissement par agents avant Clay, estimation de CA ensuite pour les comptes vides, Statera Spirits (stateraspirits.com) remplace Gestion PDV."
+    },
+    {
+      "id": "S64",
+      "original_name": "decision-bosapin-ca-2026-10-20.md",
+      "path": "sources/originals/decision-bosapin-ca-2026-10-20.md",
+      "sha256": "db047af43730921c2f2af400b31468dd79bd54520674f5a382a9d00c9a6cb0af",
+      "bytes": 1126,
+      "format": "md",
+      "topic": "decision",
+      "source_date": "2026-10-20",
+      "disposition": "reference_provisoire",
+      "summary": "Décision d’Elizabeth du 2026-10-20 : l'estimation de CA de 1,8 M$ est bien celle de Bôsapin (source TVA Nouvelles) ; David Thibeault compté une seule fois."
     }
   ]
 }
