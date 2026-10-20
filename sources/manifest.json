@@ -792,6 +792,18 @@
       "source_date": "2026-10-20",
       "disposition": "reference_provisoire",
       "summary": "Décisions d’Elizabeth du 2026-10-20 : 49 valeurs d'enrichissement approuvées pour Desjardins, Baronesse et Rachel gardées, Statera Spirits détaillant (étiquette de la plateforme), Bôsapin à reconfirmer."
+    },
+    {
+      "id": "S67",
+      "original_name": "decision-statera-secteur-pays-2026-10-20.md",
+      "path": "sources/originals/decision-statera-secteur-pays-2026-10-20.md",
+      "sha256": "043ba6348616f34e443c0b210986334a25f38316ae7cdb412cb71c449a43815c",
+      "bytes": 571,
+      "format": "md",
+      "topic": "decision",
+      "source_date": "2026-10-20",
+      "disposition": "reference_provisoire",
+      "summary": "Décision d’Elizabeth du 2026-10-20 : Statera Spirits est dans le secteur boissons et alimentation, au Canada."
     }
   ]
 }
