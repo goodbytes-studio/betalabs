@@ -1,0 +1,10 @@
+# Décision : Magasins Lecompte écarté de la sélection Desjardins (HOP 2026)
+
+- Date : 2026-10-20 (America/Toronto)
+- Décideuse : Elizabeth (BETA Labs)
+- Contexte : machine événements, HOP 2026 ; sélection Desjardins. Éric Lecompte (Magasins Lecompte) ressortait « possible » avec un CA estimé de 10 à 25 M$, au-dessus du seuil de 10 M$ (S55).
+- Forme : décision donnée en conversation de travail avec l'assistant, retranscrite sans modification de sens.
+
+## Décision
+
+1. Magasins Lecompte est écarté de la sélection Desjardins : l'entreprise est déjà trop grosse et trop établie pour la cible. Aucun enrichissement Clay n'est à faire pour ce compte dans ce but. Le compte est exclu pour ce client seulement (maglecompte.ca) ; les autres clients ne sont pas touchés.

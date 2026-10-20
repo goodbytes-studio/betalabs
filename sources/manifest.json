@@ -708,6 +708,18 @@
       "source_date": "2026-10-20",
       "disposition": "reference_provisoire",
       "summary": "Décisions d’Elizabeth du 2026-10-20 : valeurs de recherche approuvées pour la sélection Desjardins (vendeurs écartés, Baronesse beauté, Librairie Raffin détaillante) ; CA à enrichir."
+    },
+    {
+      "id": "S60",
+      "original_name": "decision-lecompte-desjardins-2026-10-20.md",
+      "path": "sources/originals/decision-lecompte-desjardins-2026-10-20.md",
+      "sha256": "2241f735ed586878a86aeedfe179104294d2469b9c54a60d333f0b9e04a6d45c",
+      "bytes": 790,
+      "format": "md",
+      "topic": "decision",
+      "source_date": "2026-10-20",
+      "disposition": "reference_provisoire",
+      "summary": "Décision d’Elizabeth du 2026-10-20 : Magasins Lecompte écarté de la sélection Desjardins (déjà trop gros et établi)."
     }
   ]
 }
