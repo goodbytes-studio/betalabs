@@ -780,6 +780,18 @@
       "source_date": "2026-10-20",
       "disposition": "reference_provisoire",
       "summary": "Décisions d’Elizabeth du 2026-10-20 : Perlimpinpin, Lambert, Deux par Deux et Bikini Village écartés pour Desjardins ; Philippe Pâquet-De Varennes est bien dirigeant de Statera Spirits."
+    },
+    {
+      "id": "S66",
+      "original_name": "decision-enrichissement-approuve-2026-10-20.md",
+      "path": "sources/originals/decision-enrichissement-approuve-2026-10-20.md",
+      "sha256": "011deb3352a62c8b440548671f085050d1494bb88f639fe300b62f2ffedf6388",
+      "bytes": 1417,
+      "format": "md",
+      "topic": "decision",
+      "source_date": "2026-10-20",
+      "disposition": "reference_provisoire",
+      "summary": "Décisions d’Elizabeth du 2026-10-20 : 49 valeurs d'enrichissement approuvées pour Desjardins, Baronesse et Rachel gardées, Statera Spirits détaillant (étiquette de la plateforme), Bôsapin à reconfirmer."
     }
   ]
 }
