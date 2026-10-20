@@ -149,6 +149,9 @@ def parse_people(rows: list[dict], event_id: str, accounts_by_key: dict, account
         email = first(row, "email", "work_email", "courriel").lower()
         company = first(row, "company_name", "company", "entreprise", "employer")
         explicit_domain = domain(first(row, "company_domain", "email_domain"))
+        if explicit_domain in GENERIC_EMAIL_DOMAINS:
+            # Un courriel personnel ne désigne pas l'entreprise : sinon tous ces inscrits se regroupent sous « gmail.com ».
+            explicit_domain = ""
         email_domain = domain(email)
         candidate_domain = explicit_domain or (email_domain if email_domain not in GENERIC_EMAIL_DOMAINS else "")
         account_key = ""

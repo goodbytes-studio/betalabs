@@ -31,6 +31,36 @@ class EventMachineTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 set_webhook(root, "accounts", "http://127.0.0.1/test")
 
+    def test_client_specific_exclusions_province_staff_and_franchise(self):
+        profile = {"id": "desjardins", "target": {
+            "company_types": ["retailer"], "role_functions": ["executive"], "seniority": ["executive"],
+            "provinces": ["quebec", "ontario"], "employees_soft_max": 20, "employees_hard_max": 100,
+            "exclude_domains": ["desjardins.com"], "exclude_names": ["Desjardins"],
+            "franchise_policy": "exclude_franchisors"}}
+        base = {"name": "Boutique test", "domain": "boutique.ca", "org_type": "retailer", "sector": "fashion",
+                "country": "Canada", "province": "Quebec", "employees": "10"}
+        person = parse_people([{"full_name": "P Test", "email": "a@boutique.ca", "company_name": "Boutique test",
+                                "role": "Propriétaire", "project_slugs[0]": "hop-2026"}], "hop-2026", {}, {}, "hop-2026")[0]
+        status = lambda account, who=person: match_person(who, account, profile, {}, None)
+        self.assertNotIn("province", status(base)["exclusion_reasons"])
+        self.assertIn("province hors ICP", status({**base, "province": "Alberta"})["exclusion_reasons"])
+        self.assertIn("province", status({**base, "province": ""})["fit_reasons"])
+        self.assertEqual(status({**base, "province": ""})["machine_status"], "à confirmer")
+        self.assertIn("employés", status({**base, "employees": "150"})["exclusion_reasons"])
+        self.assertIn("à valider", status({**base, "employees": "40"})["fit_reasons"])
+        self.assertIn("franchiseur", status({**base, "franchise": "franchisor"})["exclusion_reasons"])
+        self.assertIn("franchisé", status({**base, "franchise": "franchisee"})["fit_reasons"])
+        own = {**base, "name": "Desjardins", "domain": "desjardins.com"}
+        self.assertEqual(status(own)["machine_status"], "exclu")
+        perso = {**person, "email": "k@hotmail.com", "company_supplied": "Desjardins"}
+        self.assertEqual(status({**base, "name": "Desjardins"}, perso)["machine_status"], "exclu")
+
+    def test_personal_email_domain_does_not_group_attendees(self):
+        rows = [{"full_name": "A", "email": "a@gmail.com", "email_domain": "gmail.com", "company_name": "Magasin A"},
+                {"full_name": "B", "email": "b@gmail.com", "email_domain": "gmail.com", "company_name": "Magasin B"}]
+        people = parse_people(rows, "hop-2026", {}, {})
+        self.assertEqual(len({p["account_id"] for p in people}), 2)
+
     def test_revenue_and_attendance_cannot_be_assumed(self):
         account = {"name": "Commerce test", "org_type": "retailer", "sector": "beauty", "country": "Canada",
                    "revenue_raw": "15000000", "revenue_currency": "CAD", "revenue_year": "2026",
