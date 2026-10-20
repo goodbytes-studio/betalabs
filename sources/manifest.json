@@ -852,6 +852,18 @@
       "source_date": "2026-10-20",
       "disposition": "reference_provisoire",
       "summary": "Décisions d’Elizabeth du 2026-10-20 : AcuITIs (franchise) retirée, Baronesse distributrice (remplace D33), Maison Roseaux détaillante de mobilier à estimer."
+    },
+    {
+      "id": "S72",
+      "original_name": "decision-bosapin-franchise-2026-10-20.md",
+      "path": "sources/originals/decision-bosapin-franchise-2026-10-20.md",
+      "sha256": "64a2d5a4acefc49d759bcfd600f82274c3ede8059c220c5769a864b1f562df6f",
+      "bytes": 796,
+      "format": "md",
+      "topic": "decision",
+      "source_date": "2026-10-20",
+      "disposition": "reference_provisoire",
+      "summary": "Décision d’Elizabeth du 2026-10-20 : Bôsapin a des plans de franchise, classée franchise et écartée de la sélection Desjardins."
     }
   ]
 }
