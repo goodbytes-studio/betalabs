@@ -684,6 +684,18 @@
       "source_date": "2026-10-20",
       "disposition": "reference_provisoire",
       "summary": "Décision d’Elizabeth du 2026-10-20 : registre complet des variantes de titres de décideur (propriétaire, actionnaire, fondateur, président, PDG, CEO, féminins, co-) appliqué à tous les clients."
+    },
+    {
+      "id": "S58",
+      "original_name": "decision-baronesse-detaillant-2026-10-20.md",
+      "path": "sources/originals/decision-baronesse-detaillant-2026-10-20.md",
+      "sha256": "f76e5ef17ebc62b1c120f61e90db5dd1a4811f95d0e3aa532b5ff5af28b635ae",
+      "bytes": 624,
+      "format": "md",
+      "topic": "decision",
+      "source_date": "2026-10-20",
+      "disposition": "reference_provisoire",
+      "summary": "Décision d’Elizabeth du 2026-10-20 : Baronesse est un détaillant (et non un distributeur), pour la sélection Desjardins HOP 2026."
     }
   ]
 }
