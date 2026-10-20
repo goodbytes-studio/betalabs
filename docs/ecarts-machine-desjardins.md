@@ -61,7 +61,8 @@ La lecture de la province est donc l'écart principal. Les CA bruts de Clay sont
 | E11 grandes entreprises dans les listes | **Corrigé** : la décision S61 (une estimation n'exclut jamais) a laissé passer des comptes de 25 M$ à plus de 1 G$. Limite ferme à 25 M$ vers le haut (D37), et section « Contrôle de taille » dans le diagnostic. |
 | E12 estimation du CA des TPE | **Fait** (D43, S68) : estimation par calcul (`references/revenue-estimate-agent.md`, `scripts/revenue_estimate.py`) à partir d'indices sourcés et de références de Statistique Canada ; confiance basse ou moyenne ; une estimation de confiance basse plafonne le match à « possible » et n'exclut jamais ; revue humaine obligatoire. 11 comptes estimés, 2 sans estimation (indices insuffisants ou fourchette trop large). |
 | E13 type d'organisation de la plateforme | **Ouvert** (réponse d'Elizabeth, 2026-10-20) : la plateforme de l'événement affiche une étiquette de type (par exemple « Détaillant.e ») sur chaque profil, mais elle **n'est pas exportable**. Elle ne sert qu'à la saisie manuelle des cas utiles (comme Statera, D41) ; à redemander à l'organisateur comme colonne de l'export. |
-| E4 effectifs, E7 sites inaccessibles, E8 comptes en double, E10 noms commerciaux | **Ouverts**. |
+| E4 effectifs | **Partiellement corrigé** (D44, S69) : export Clay des effectifs par LinkedIn. À retenir : le compteur de Clay est souvent la borne basse de la fourchette (2 pour 2-10, 11 pour 11-50, 51 pour 51-200) ; plusieurs pages LinkedIn trouvées étaient de la mauvaise entreprise (Rachel : 85 personnes d'une autre page ; Bôsapin : page de Treasy Trees) ; le CA « IA » de Clay a été ignoré. |
+| E7 sites inaccessibles, E8 comptes en double, E10 noms commerciaux | **Ouverts**. |
 
 Après l'estimation du CA (D43) : 3 forts et 13 possibles pour Desjardins, les forts étant ceux dont l'estimation vient d'un fournisseur approuvé.
 

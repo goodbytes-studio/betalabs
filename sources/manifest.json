@@ -816,6 +816,18 @@
       "source_date": "2026-10-20",
       "disposition": "reference_provisoire",
       "summary": "Décisions d’Elizabeth du 2026-10-20 : 11 estimations de CA par calcul approuvées pour Desjardins, plafonnées à « possible » (confiance basse) ; Nuspace par calcul ; une estimation de confiance basse n'exclut jamais."
+    },
+    {
+      "id": "S69",
+      "original_name": "decision-export-clay-effectifs-2026-10-20.md",
+      "path": "sources/originals/decision-export-clay-effectifs-2026-10-20.md",
+      "sha256": "d9eade6c32dff2343687c3d45612a016a84a8808fea78ed12812a0b82e5031ed",
+      "bytes": 964,
+      "format": "md",
+      "topic": "decision",
+      "source_date": "2026-10-20",
+      "disposition": "reference_provisoire",
+      "summary": "Décisions d’Elizabeth du 2026-10-20 : CA de l'export Clay ignoré, effectifs LinkedIn retenus comme indication, Rachel à 7-10 personnes, impression que Nuspace est plus grosse que 3,6 M$."
     }
   ]
 }
