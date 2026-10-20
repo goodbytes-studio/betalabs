@@ -948,6 +948,18 @@
       "source_date": "2026-10-20",
       "disposition": "reference_provisoire",
       "summary": "Décision d’Elizabeth du 2026-10-20 : les tranches de CA « Moins de 1 M$ » et « 1 à 3 M$ » des tags Desjardins sont fusionnées en « 500 K$ à 3 M$»."
+    },
+    {
+      "id": "S80",
+      "original_name": "decision-rachel-tranche-3-10-2026-10-20.md",
+      "path": "sources/originals/decision-rachel-tranche-3-10-2026-10-20.md",
+      "sha256": "dd8cd0f1767113d73e0a70f424f399cd09d5a58245eb38f233b460e28e65d50e",
+      "bytes": 677,
+      "format": "md",
+      "topic": "decision",
+      "source_date": "2026-10-20",
+      "disposition": "reference_provisoire",
+      "summary": "Décision d’Elizabeth du 2026-10-20 : Rachel classée dans la tranche de CA 3 à 10 M$ des tags Desjardins ; Statera à décider."
     }
   ]
 }
