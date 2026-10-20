@@ -696,6 +696,18 @@
       "source_date": "2026-10-20",
       "disposition": "reference_provisoire",
       "summary": "Décision d’Elizabeth du 2026-10-20 : Baronesse est un détaillant (et non un distributeur), pour la sélection Desjardins HOP 2026."
+    },
+    {
+      "id": "S59",
+      "original_name": "decision-recherche-desjardins-2026-10-20.md",
+      "path": "sources/originals/decision-recherche-desjardins-2026-10-20.md",
+      "sha256": "3d72ed5b075f4bf8dadba6d5d49c762e5129f2506ba189cb92714d31de20524c",
+      "bytes": 1673,
+      "format": "md",
+      "topic": "decision",
+      "source_date": "2026-10-20",
+      "disposition": "reference_provisoire",
+      "summary": "Décisions d’Elizabeth du 2026-10-20 : valeurs de recherche approuvées pour la sélection Desjardins (vendeurs écartés, Baronesse beauté, Librairie Raffin détaillante) ; CA à enrichir."
     }
   ]
 }

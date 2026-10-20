@@ -1,0 +1,13 @@
+# Décision : approbation de la recherche entreprises pour Desjardins (HOP 2026)
+
+- Date : 2026-10-20 (America/Toronto)
+- Décideuse : Elizabeth (BETA Labs)
+- Contexte : machine événements, HOP 2026 ; deux recherches web (39 puis 17 entreprises) pour la sélection Desjardins. Cadre : ICP S55, décision D31 (S56), registre des titres D32 (S57), Baronesse détaillante D33 (S58).
+- Forme : approbations données en conversation de travail avec l'assistant (« option A » puis « ok ma proposition »), retranscrites sans modification de sens.
+
+## Décisions
+
+1. Première recherche (39 entreprises), option A : approuvés les types « vendeur » ou « organisme » de confiance haute ou moyenne (Fenix Technologie, Otovbox, Retailogists, Azius, Orama Marketing, Ladev, L'effet Futé, Systematik, Reelast, San Rita, SDC Pointe-Saint-Charles, VisualizeNow, Adbionic, Oriana Solutions, Volcan Solutions, GeniusXR, Agence Rally) et les pays et provinces de confiance haute ou moyenne. Non approuvés : AcuITIs et Protégez-Vous (mauvais site ou page bloquée), Insertech, Eva, Baronesse, Réno-Jouets et Jeux Face4 (confiance basse ou type à confirmer).
+2. Deuxième recherche (17 entreprises) : approuvées les valeurs de confiance haute ou moyenne proposées, dont Ascendis, Swatfactory, E3-Consulting et RG Marketing (vendeurs), Kotmo (fabricant) et Librairie Raffin (détaillant indépendant, livres). Non approuvés : Eva (confiance basse), secteur, modèle et pays de Kotmo, franchise d'AcuITIs (inférence).
+3. Baronesse : secteur beauté confirmé.
+4. Aucune valeur de CA n'est approuvée : le CA et les effectifs restent à enrichir (Clay) avec accord préalable.
