@@ -672,6 +672,18 @@
       "source_date": "2026-10-20",
       "disposition": "reference_provisoire",
       "summary": "Décisions d’Elizabeth du 2026-10-20 : cadrage de l’ICP Desjardins (franchises exclues, seuils souples, province, dirigeants seulement, signaux optionnels, exclusion de Desjardins)."
+    },
+    {
+      "id": "S57",
+      "original_name": "decision-registre-titres-decideurs-2026-10-20.md",
+      "path": "sources/originals/decision-registre-titres-decideurs-2026-10-20.md",
+      "sha256": "f2f42e2ebcb8ec00afbb817f1313a3430a4ccc0d1d12a8c6a6e76cdb08cecdc8",
+      "bytes": 1253,
+      "format": "md",
+      "topic": "decision",
+      "source_date": "2026-10-20",
+      "disposition": "reference_provisoire",
+      "summary": "Décision d’Elizabeth du 2026-10-20 : registre complet des variantes de titres de décideur (propriétaire, actionnaire, fondateur, président, PDG, CEO, féminins, co-) appliqué à tous les clients."
     }
   ]
 }

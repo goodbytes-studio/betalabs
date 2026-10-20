@@ -199,17 +199,34 @@ def parse_people(rows: list[dict], event_id: str, accounts_by_key: dict, account
     return people
 
 
+# Registre des titres de décideur (décision D32, source S57). `norm` retire accents, traits d'union et
+# ponctuation : « Co-propriétaire », « P.-D.G. » et « Fondateur·trice » se comparent donc sous leur forme simple.
+OWNER_TERMS = (" owner ", " proprietor ", " proprietaire ", " coproprietaire ", " coowner ",
+               " actionnaire ", " shareholder ", " associe ", " associee ", " managing partner ",
+               " founder ", " cofounder ", " fondateur ", " fondatrice ", " cofondateur ", " cofondatrice ",
+               " entrepreneur ", " entrepreneure ", " entrepreneuse ", " dirigeant ", " dirigeante ",
+               " chef d entreprise ")
+LEAD_TERMS = (" pdg ", " p d g ", " ceo ", " chief executive ", " chef de la direction ",
+              " president ", " presidente ", " copresident ", " copresidente ", " chairman ", " chairwoman ",
+              " directrice generale ", " directeur general ", " general manager ", " managing director ", " dg ")
+# Un titre d'adjoint, d'ancien ou de rôle produit n'est pas un décideur final.
+NOT_PRINCIPAL_TERMS = (" adjoint ", " adjointe ", " adj ", " assistant ", " assistante ", " deputy ",
+                       " ancien ", " ancienne ", " former ", " past ", " ex ")
+
+
 def role_features(title: str) -> tuple[set[str], str]:
     value = " " + norm(title) + " "
     if not title or norm(title) in {"nan", "none", "null"}:
         return set(), "unknown"
     functions = {function for function, terms in ROLE_TERMS.items() if any(term in value for term in terms)}
     vp = bool(re.search(r"\b(vp|vice president|vice presidente|vice president e)\b", value))
-    if any(term in value for term in (" pdg ", " ceo ", " president ", " presidente ", " chief executive ", " owner ", " proprietaire ",
-                                          " founder ", " cofounder ", " fondateur ", " fondatrice ", " cofondateur ", " cofondatrice ",
-                                          " directrice generale ", " directeur general ", " general manager ")) and not vp:
-        functions.add("executive")
-        return functions, "executive"
+    principal = value.replace(" product owner ", " ")
+    if not any(term in principal for term in NOT_PRINCIPAL_TERMS):
+        # Une propriété ou une fondation prime sur un titre de vice-président (« Vice-président – Propriétaire »).
+        if any(term in principal for term in OWNER_TERMS) or (
+                not vp and any(term in principal for term in LEAD_TERMS)):
+            functions.add("executive")
+            return functions, "executive"
     if vp or any(term in value for term in (" chief ", " cmo ", " coo ", " cio ", " cto ")):
         # Un VP régional dirige un territoire comme un DG régional (décision D19, source S42).
         if vp and re.search(r"\b(regional|regionale|regionaux)\b", value):

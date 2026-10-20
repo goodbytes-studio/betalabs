@@ -61,6 +61,17 @@ class EventMachineTests(unittest.TestCase):
         people = parse_people(rows, "hop-2026", {}, {})
         self.assertEqual(len({p["account_id"] for p in people}), 2)
 
+    def test_decision_maker_title_registry(self):
+        for title in ("Propriétaire", "Co-propriétaire", "Copropriétaire", "Co-owner", "Owner", "Actionnaire", "Co-actionnaire",
+                      "Shareholder", "Fondatrice", "Co-fondatrice", "Cofondatrice", "Fondateur·trice", "Founder", "Co-founder",
+                      "Présidente", "Président(e)", "PDG", "P.-D.G.", "CEO", "Chef de la direction", "Chairman", "Managing Director",
+                      "Vice président - Propriétaire", "CO-Owner | Vice President, Purchasing & Logistics", "Associée"):
+            self.assertEqual(role_features(title)[1], "executive", title)
+        for title in ("Directrice générale adjointe", "Directeur Général adj.", "Assistant du président",
+                      "Adjointe à la présidente", "Ancien président", "Product Owner", "Vice-président marketing",
+                      "Human Resources Business Partner", "Gérant", "Partner"):
+            self.assertNotEqual(role_features(title)[1], "executive", title)
+
     def test_revenue_and_attendance_cannot_be_assumed(self):
         account = {"name": "Commerce test", "org_type": "retailer", "sector": "beauty", "country": "Canada",
                    "revenue_raw": "15000000", "revenue_currency": "CAD", "revenue_year": "2026",
