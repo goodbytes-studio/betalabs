@@ -38431,10 +38431,12 @@
   {
    "event_id": "BL-EVT-84343be4bb",
    "name": "Digital Government Summit Maine 2026",
-   "name_variants": "inconnu",
+   "name_variants": [
+    "Maine Digital Government Summit 2026"
+   ],
    "start_date": "2026-11-10",
    "end_date": "2026-11-10",
-   "date_raw": "vendelux: 2026-11-10 → 2026-11-10",
+   "date_raw": "vendelux: 2026-11-10 → 2026-11-10 | lensmor: Nov 10, 2026",
    "date_conflict": false,
    "event_format": "in_person",
    "venue": "Augusta Civic Center",
@@ -38442,7 +38444,11 @@
    "region": "Maine",
    "country": "United States",
    "organizer": "inconnu",
-   "industries": "inconnu",
+   "industries": [
+    "Business Services",
+    "IT & Technology",
+    "Security & Defense"
+   ],
    "topics_keywords": [
     "Al",
     "Digital Government",
@@ -38455,21 +38461,23 @@
    "description": "Public-sector leaders from state and local government are invited to elevate their expertise at the Digital Government Summit Maine 2026, taking place on Tuesday, November 10, at the Augusta Civic Center.\n\nThis full-day event offers practical approaches for government professionals to modernize operations and address current challenges. The agenda includes discussions on cybersecurity and digital trust, AI governance, resident-centered digital service delivery, and building an AI-enabled workforce. A keynote address will be delivered by Paralympic medalist John Register, alongside practical sessions such as the hands-on AI Promptathon.\n\nThe summit is designed for public sector attendees only, allowing for focused conversations among peers. The aim is to provide participants with insights and tools to navigate the evolving landscape of public service.",
    "attendees": 40,
    "attendees_expected": 300,
-   "exhibitors": "inconnu",
+   "exhibitors": 31,
    "price_min": "inconnu",
    "price_max": "inconnu",
    "price_currency": "inconnu",
    "url": "https://events.govtech.com/maine-digital-government-summit.html",
-   "lensmor_url": "inconnu",
+   "lensmor_url": "https://www.lensmor.com/events/maine-digital-government-summit-2026",
    "vendelux_verified": false,
    "sources": [
-    "vendelux"
+    "vendelux",
+    "lensmor"
    ],
-   "source_count": 1,
+   "source_count": 2,
    "source_refs": [
-    "S86#196"
+    "S86#196",
+    "S87#340"
    ],
-   "match_method": "source_unique",
+   "match_method": "decision_manuelle",
    "conflicts": "inconnu",
    "inferred_fields": "inconnu",
    "last_retrieved": "2026-11-09"
@@ -40228,10 +40236,12 @@
   {
    "event_id": "BL-EVT-592bb4393a",
    "name": "ERE Recruiting Innovation Summit 2026",
-   "name_variants": "inconnu",
+   "name_variants": [
+    "ERE Recruiting Innovation Summit San Diego 2026"
+   ],
    "start_date": "2026-11-10",
    "end_date": "2026-11-11",
-   "date_raw": "vendelux: 2026-11-10 → 2026-11-11",
+   "date_raw": "vendelux: 2026-11-10 → 2026-11-11 | lensmor: Nov 10 – 11, 2026",
    "date_conflict": false,
    "event_format": "in_person",
    "venue": "Hyatt Regency LA Jolla",
@@ -40239,7 +40249,11 @@
    "region": "California",
    "country": "United States",
    "organizer": "inconnu",
-   "industries": "inconnu",
+   "industries": [
+    "Business Services",
+    "Education & Training",
+    "IT & Technology"
+   ],
    "topics_keywords": [
     "AI",
     "AI Adoption",
@@ -40454,63 +40468,23 @@
    "description": "Prepare to redefine your talent acquisition strategy at the ERE Recruiting Innovation Summit 2026, scheduled for November 10-11 at the Hyatt Regency La Jolla in San Diego, CA. This event is designed for talent acquisition leaders and HR teams facing real-world changes, exploring effective approaches in today's evolving landscape.\n\nThe program covers practical skills, new technologies, and strategic leadership insights, structured around three tracks: Recruiting, Innovation, and Summit. Participants will have opportunities to connect with experts during dedicated \"Ask Me Anything Lounge\" sessions for in-depth discussions and problem-solving. There will also be time for peer networking and the possibility of pre-conference team retreats.\n\nDiscussions will include the application of AI in hiring and developing more efficient recruiting operations, all aimed at enhancing an organization's talent strategy. The summit provides a setting for community building and collaboration among professionals.",
    "attendees": 157,
    "attendees_expected": "inconnu",
-   "exhibitors": "inconnu",
-   "price_min": "inconnu",
-   "price_max": "inconnu",
-   "price_currency": "inconnu",
-   "url": "https://www.ererecruitingconference.com/",
-   "lensmor_url": "inconnu",
-   "vendelux_verified": false,
-   "sources": [
-    "vendelux"
-   ],
-   "source_count": 1,
-   "source_refs": [
-    "S86#169"
-   ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
-   "inferred_fields": "inconnu",
-   "last_retrieved": "2026-11-09"
-  },
-  {
-   "event_id": "BL-EVT-b7faad8c5c",
-   "name": "ERE Recruiting Innovation Summit San Diego 2026",
-   "name_variants": "inconnu",
-   "start_date": "2026-11-10",
-   "end_date": "2026-11-11",
-   "date_raw": "lensmor: Nov 10 – 11, 2026",
-   "date_conflict": false,
-   "event_format": "inconnu",
-   "venue": "inconnu",
-   "city": "San Diego",
-   "region": "inconnu",
-   "country": "United States",
-   "organizer": "inconnu",
-   "industries": [
-    "Business Services",
-    "Education & Training",
-    "IT & Technology"
-   ],
-   "topics_keywords": "inconnu",
-   "description": "inconnu",
-   "attendees": 1221,
-   "attendees_expected": "inconnu",
    "exhibitors": 111,
    "price_min": "inconnu",
    "price_max": "inconnu",
    "price_currency": "inconnu",
-   "url": "inconnu",
+   "url": "https://www.ererecruitingconference.com/",
    "lensmor_url": "https://www.lensmor.com/events/ere-recruiting-innovation-summit-san-diego-2026",
-   "vendelux_verified": "inconnu",
+   "vendelux_verified": false,
    "sources": [
+    "vendelux",
     "lensmor"
    ],
-   "source_count": 1,
+   "source_count": 2,
    "source_refs": [
+    "S86#169",
     "S87#186"
    ],
-   "match_method": "source_unique",
+   "match_method": "decision_manuelle",
    "conflicts": "inconnu",
    "inferred_fields": "inconnu",
    "last_retrieved": "2026-11-09"
@@ -45726,48 +45700,6 @@
    "last_retrieved": "2026-11-09"
   },
   {
-   "event_id": "BL-EVT-c4d3e4dfd6",
-   "name": "Maine Digital Government Summit 2026",
-   "name_variants": "inconnu",
-   "start_date": "2026-11-10",
-   "end_date": "2026-11-10",
-   "date_raw": "lensmor: Nov 10, 2026",
-   "date_conflict": false,
-   "event_format": "inconnu",
-   "venue": "inconnu",
-   "city": "Augusta",
-   "region": "inconnu",
-   "country": "United States",
-   "organizer": "inconnu",
-   "industries": [
-    "Business Services",
-    "IT & Technology",
-    "Security & Defense"
-   ],
-   "topics_keywords": "inconnu",
-   "description": "inconnu",
-   "attendees": 646,
-   "attendees_expected": "inconnu",
-   "exhibitors": 31,
-   "price_min": "inconnu",
-   "price_max": "inconnu",
-   "price_currency": "inconnu",
-   "url": "inconnu",
-   "lensmor_url": "https://www.lensmor.com/events/maine-digital-government-summit-2026",
-   "vendelux_verified": "inconnu",
-   "sources": [
-    "lensmor"
-   ],
-   "source_count": 1,
-   "source_refs": [
-    "S87#340"
-   ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
-   "inferred_fields": "inconnu",
-   "last_retrieved": "2026-11-09"
-  },
-  {
    "event_id": "BL-EVT-787e1b923d",
    "name": "Melbourne CIO Community Executive Summit 2026",
    "name_variants": "inconnu",
@@ -46350,53 +46282,14 @@
    "last_retrieved": "2026-11-09"
   },
   {
-   "event_id": "BL-EVT-5e1bca8fa0",
-   "name": "NextGen Payments & RegTech Forum Austin 2026",
-   "name_variants": "inconnu",
-   "start_date": "2026-11-10",
-   "end_date": "2026-11-10",
-   "date_raw": "lensmor: Nov 10, 2026",
-   "date_conflict": false,
-   "event_format": "inconnu",
-   "venue": "inconnu",
-   "city": "Austin",
-   "region": "inconnu",
-   "country": "United States",
-   "organizer": "inconnu",
-   "industries": [
-    "Banking & Finance",
-    "IT & Technology"
-   ],
-   "topics_keywords": "inconnu",
-   "description": "inconnu",
-   "attendees": 335,
-   "attendees_expected": "inconnu",
-   "exhibitors": 27,
-   "price_min": "inconnu",
-   "price_max": "inconnu",
-   "price_currency": "inconnu",
-   "url": "inconnu",
-   "lensmor_url": "https://www.lensmor.com/events/nextgen-payments-regtech-forum-austin-2026",
-   "vendelux_verified": "inconnu",
-   "sources": [
-    "lensmor"
-   ],
-   "source_count": 1,
-   "source_refs": [
-    "S87#542"
-   ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
-   "inferred_fields": "inconnu",
-   "last_retrieved": "2026-11-09"
-  },
-  {
    "event_id": "BL-EVT-db1ce19163",
    "name": "NextGen Payments & RegTech Forum USA 2026",
-   "name_variants": "inconnu",
+   "name_variants": [
+    "NextGen Payments & RegTech Forum Austin 2026"
+   ],
    "start_date": "2026-11-10",
    "end_date": "2026-11-10",
-   "date_raw": "vendelux: 2026-11-10 → 2026-11-10",
+   "date_raw": "vendelux: 2026-11-10 → 2026-11-10 | lensmor: Nov 10, 2026",
    "date_conflict": false,
    "event_format": "in_person",
    "venue": "W Austin",
@@ -46404,7 +46297,10 @@
    "region": "Texas",
    "country": "United States",
    "organizer": "inconnu",
-   "industries": "inconnu",
+   "industries": [
+    "Banking & Finance",
+    "IT & Technology"
+   ],
    "topics_keywords": [
     "2025",
     "AGI",
@@ -47217,21 +47113,23 @@
    "description": "Set for November 12, 2026, at the Hyatt Regency in Austin, Texas, the NextGen Payments & RegTech Forum USA 2026 is the definitive gathering for over 400 payments, compliance, and RegTech leaders. This full-day event will examine the evolving landscape of US financial services.\n\nProfessionals from banks, fintechs, regulators, and merchants will explore strategies for navigating instant and A2A payments, digital wallets, and embedded finance. The forum will also address the complexities of regulatory shifts, the future of crypto and CBDCs, and the impact of AI and Agentic AI on fraud detection, AML, and compliance.\n\nThrough keynotes, fireside chats, and interactive panels, attendees will have opportunities for networking and focused one-to-one discussions, supporting their strategic initiatives.",
    "attendees": 792,
    "attendees_expected": 400,
-   "exhibitors": "inconnu",
+   "exhibitors": 27,
    "price_min": 1249,
    "price_max": 1249,
    "price_currency": "inconnu",
    "url": "https://www.qubevents.com/nextgen-payments-austin",
-   "lensmor_url": "inconnu",
+   "lensmor_url": "https://www.lensmor.com/events/nextgen-payments-regtech-forum-austin-2026",
    "vendelux_verified": false,
    "sources": [
-    "vendelux"
+    "vendelux",
+    "lensmor"
    ],
-   "source_count": 1,
+   "source_count": 2,
    "source_refs": [
-    "S86#138"
+    "S86#138",
+    "S87#542"
    ],
-   "match_method": "source_unique",
+   "match_method": "decision_manuelle",
    "conflicts": "inconnu",
    "inferred_fields": "inconnu",
    "last_retrieved": "2026-11-09"
@@ -47287,54 +47185,14 @@
    "last_retrieved": "2026-11-09"
   },
   {
-   "event_id": "BL-EVT-17db3a6ce0",
-   "name": "NSGC 45th Annual Conference 2026",
-   "name_variants": "inconnu",
-   "start_date": "2026-11-10",
-   "end_date": "2026-11-14",
-   "date_raw": "lensmor: Nov 10 – 14, 2026",
-   "date_conflict": false,
-   "event_format": "inconnu",
-   "venue": "inconnu",
-   "city": "Baltimore",
-   "region": "inconnu",
-   "country": "United States",
-   "organizer": "inconnu",
-   "industries": [
-    "Education & Training",
-    "Medical & Pharma",
-    "Science & Research"
-   ],
-   "topics_keywords": "inconnu",
-   "description": "inconnu",
-   "attendees": 532,
-   "attendees_expected": "inconnu",
-   "exhibitors": 90,
-   "price_min": "inconnu",
-   "price_max": "inconnu",
-   "price_currency": "inconnu",
-   "url": "inconnu",
-   "lensmor_url": "https://www.lensmor.com/events/nsgc-45th-annual-conference-2026",
-   "vendelux_verified": "inconnu",
-   "sources": [
-    "lensmor"
-   ],
-   "source_count": 1,
-   "source_refs": [
-    "S87#393"
-   ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
-   "inferred_fields": "inconnu",
-   "last_retrieved": "2026-11-09"
-  },
-  {
    "event_id": "BL-EVT-8d08eae88f",
    "name": "NSGC Annual Conference 2026",
-   "name_variants": "inconnu",
+   "name_variants": [
+    "NSGC 45th Annual Conference 2026"
+   ],
    "start_date": "2026-11-10",
    "end_date": "2026-11-14",
-   "date_raw": "vendelux: 2026-11-10 → 2026-11-14",
+   "date_raw": "vendelux: 2026-11-10 → 2026-11-14 | lensmor: Nov 10 – 14, 2026",
    "date_conflict": false,
    "event_format": "in_person",
    "venue": "The Baltimore Convention Center",
@@ -47342,7 +47200,11 @@
    "region": "Maryland",
    "country": "United States",
    "organizer": "inconnu",
-   "industries": "inconnu",
+   "industries": [
+    "Education & Training",
+    "Medical & Pharma",
+    "Science & Research"
+   ],
    "topics_keywords": [
     "Al",
     "Annual",
@@ -47352,21 +47214,23 @@
    "description": "The National Society of Genetic Counselors (NSGC) proudly presents its 45th Annual Conference, a pivotal event for the entire genetic counseling community. This year's conference takes place from November 10-14 in Baltimore, Maryland, offering a valuable space for learning, connecting with peers, and gaining new perspectives.\n\nAttendees, whether students, recent graduates, or experienced professionals, will have the opportunity to explore emerging research, gather practical insights, and discover innovative ideas that are influencing the profession's direction. It's a place where colleagues can connect, new collaborations can begin, and everyone can feel part of a community committed to moving genetic counseling forward. The event offers a chance to acknowledge shared achievements and contribute to the continued development of this important field.",
    "attendees": 258,
    "attendees_expected": 2500,
-   "exhibitors": "inconnu",
+   "exhibitors": 90,
    "price_min": "inconnu",
    "price_max": "inconnu",
    "price_currency": "inconnu",
    "url": "https://www.nsgc.org/conference",
-   "lensmor_url": "inconnu",
+   "lensmor_url": "https://www.lensmor.com/events/nsgc-45th-annual-conference-2026",
    "vendelux_verified": false,
    "sources": [
-    "vendelux"
+    "vendelux",
+    "lensmor"
    ],
-   "source_count": 1,
+   "source_count": 2,
    "source_refs": [
-    "S86#157"
+    "S86#157",
+    "S87#393"
    ],
-   "match_method": "source_unique",
+   "match_method": "decision_manuelle",
    "conflicts": "inconnu",
    "inferred_fields": "inconnu",
    "last_retrieved": "2026-11-09"
@@ -48647,10 +48511,12 @@
   {
    "event_id": "BL-EVT-97096d1796",
    "name": "#RISK EUROPE 2026",
-   "name_variants": "inconnu",
+   "name_variants": [
+    "#RISK Expo Europe 2026"
+   ],
    "start_date": "2026-11-10",
    "end_date": "2026-11-11",
-   "date_raw": "vendelux: 2026-11-10 → 2026-11-11",
+   "date_raw": "vendelux: 2026-11-10 → 2026-11-11 | lensmor: Nov 10 – 11, 2026",
    "date_conflict": false,
    "event_format": "in_person",
    "venue": "ExCeL London",
@@ -48658,7 +48524,11 @@
    "region": "England",
    "country": "United Kingdom",
    "organizer": "inconnu",
-   "industries": "inconnu",
+   "industries": [
+    "Banking & Finance",
+    "IT & Technology",
+    "Security & Defense"
+   ],
    "topics_keywords": [
     "AI",
     "AI Governance",
@@ -49071,63 +48941,23 @@
    "description": "Elevate your strategic influence at #RISK EUROPE 2026, Europe's foremost expo for Risk, GRC, Security, and RegTech professionals. The event takes place on November 10-11, 2026, at ExCeL London. It is designed to help professionals shift their perspective, supporting a move from purely compliance-driven work to becoming strategic business partners.\n\nThe agenda spans five content stages, exploring new categories beyond traditional GRC. Discussions will cover topics such as AI and cloud security, human risk, operational resilience, financial crime, and the complexities of ESG and supply chain security. Specific areas like DORA, NIS2, unified GRC platforms, and the regulatory impact of AI will also be addressed.\n\nThis gathering provides an opportunity for security leaders, risk owners, and C-suite executives to connect, challenge ideas, and navigate the intricate global risk landscape.",
    "attendees": 1810,
    "attendees_expected": 6000,
-   "exhibitors": "inconnu",
-   "price_min": "inconnu",
-   "price_max": "inconnu",
-   "price_currency": "inconnu",
-   "url": "https://www.grcworldforums.com/risk/risk-expo-europe",
-   "lensmor_url": "inconnu",
-   "vendelux_verified": false,
-   "sources": [
-    "vendelux"
-   ],
-   "source_count": 1,
-   "source_refs": [
-    "S86#126"
-   ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
-   "inferred_fields": "inconnu",
-   "last_retrieved": "2026-11-09"
-  },
-  {
-   "event_id": "BL-EVT-27b0684e4b",
-   "name": "#RISK Expo Europe 2026",
-   "name_variants": "inconnu",
-   "start_date": "2026-11-10",
-   "end_date": "2026-11-11",
-   "date_raw": "lensmor: Nov 10 – 11, 2026",
-   "date_conflict": false,
-   "event_format": "inconnu",
-   "venue": "inconnu",
-   "city": "London",
-   "region": "inconnu",
-   "country": "United Kingdom",
-   "organizer": "inconnu",
-   "industries": [
-    "Banking & Finance",
-    "IT & Technology",
-    "Security & Defense"
-   ],
-   "topics_keywords": "inconnu",
-   "description": "inconnu",
-   "attendees": 1403,
-   "attendees_expected": "inconnu",
    "exhibitors": 78,
    "price_min": "inconnu",
    "price_max": "inconnu",
    "price_currency": "inconnu",
-   "url": "inconnu",
+   "url": "https://www.grcworldforums.com/risk/risk-expo-europe",
    "lensmor_url": "https://www.lensmor.com/events/risk-expo-europe-2026",
-   "vendelux_verified": "inconnu",
+   "vendelux_verified": false,
    "sources": [
+    "vendelux",
     "lensmor"
    ],
-   "source_count": 1,
+   "source_count": 2,
    "source_refs": [
+    "S86#126",
     "S87#150"
    ],
-   "match_method": "source_unique",
+   "match_method": "decision_manuelle",
    "conflicts": "inconnu",
    "inferred_fields": "inconnu",
    "last_retrieved": "2026-11-09"
@@ -52261,10 +52091,12 @@
   {
    "event_id": "BL-EVT-432f3fa883",
    "name": "Technology Sourcing 2026",
-   "name_variants": "inconnu",
+   "name_variants": [
+    "Technology Sourcing Summit 2026"
+   ],
    "start_date": "2026-11-10",
    "end_date": "2026-11-11",
-   "date_raw": "vendelux: 2026-11-10 → 2026-11-11",
+   "date_raw": "vendelux: 2026-11-10 → 2026-11-11 | lensmor: Nov 10 – 11, 2026",
    "date_conflict": false,
    "event_format": "in_person",
    "venue": "Aon Ballroom Navy Pier",
@@ -52272,7 +52104,10 @@
    "region": "Illinois",
    "country": "United States",
    "organizer": "inconnu",
-   "industries": "inconnu",
+   "industries": [
+    "Business Services",
+    "IT & Technology"
+   ],
    "topics_keywords": [
     "2025",
     "AGI",
@@ -52549,62 +52384,23 @@
    "description": "Transforming procurement from a cost center to a strategic profit engine, Technology Sourcing 2026 is the essential gathering for senior IT and procurement leaders. The event will be held November 10-11, 2026, at the Aon Ballroom, Navy Pier, Chicago. It is specifically designed for CPOs, CIOs, and digital futurists.\n\nAttendees include a significant number of buy-side leaders, collectively managing over $30 billion in IT spending across Fortune 500 companies and high-growth startups. Discussions will focus on how AI, automation, and orchestration are reshaping sourcing strategies. Participants can expect peer-led sessions, interactive roundtables, and a dedicated technology marketplace.\n\nThe agenda aims to provide practical strategies for fostering innovation through effective supplier partnerships and optimizing technology investments to deliver business value. Networking opportunities, including champagne roundtables, are designed to facilitate meaningful connections. The goal is for attendees to depart with insights and relationships that can support organizational growth.",
    "attendees": 510,
    "attendees_expected": 250,
-   "exhibitors": "inconnu",
-   "price_min": "inconnu",
-   "price_max": "inconnu",
-   "price_currency": "inconnu",
-   "url": "https://www.konnecthouse.com/events/technology-sourcing/",
-   "lensmor_url": "inconnu",
-   "vendelux_verified": false,
-   "sources": [
-    "vendelux"
-   ],
-   "source_count": 1,
-   "source_refs": [
-    "S86#146"
-   ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
-   "inferred_fields": "inconnu",
-   "last_retrieved": "2026-11-09"
-  },
-  {
-   "event_id": "BL-EVT-1ac67bb5d2",
-   "name": "Technology Sourcing Summit 2026",
-   "name_variants": "inconnu",
-   "start_date": "2026-11-10",
-   "end_date": "2026-11-11",
-   "date_raw": "lensmor: Nov 10 – 11, 2026",
-   "date_conflict": false,
-   "event_format": "inconnu",
-   "venue": "inconnu",
-   "city": "Chicago",
-   "region": "inconnu",
-   "country": "United States",
-   "organizer": "inconnu",
-   "industries": [
-    "Business Services",
-    "IT & Technology"
-   ],
-   "topics_keywords": "inconnu",
-   "description": "inconnu",
-   "attendees": 255,
-   "attendees_expected": "inconnu",
    "exhibitors": 17,
    "price_min": "inconnu",
    "price_max": "inconnu",
    "price_currency": "inconnu",
-   "url": "inconnu",
+   "url": "https://www.konnecthouse.com/events/technology-sourcing/",
    "lensmor_url": "https://www.lensmor.com/events/technology-sourcing-summit-2026",
-   "vendelux_verified": "inconnu",
+   "vendelux_verified": false,
    "sources": [
+    "vendelux",
     "lensmor"
    ],
-   "source_count": 1,
+   "source_count": 2,
    "source_refs": [
+    "S86#146",
     "S87#624"
    ],
-   "match_method": "source_unique",
+   "match_method": "decision_manuelle",
    "conflicts": "inconnu",
    "inferred_fields": "inconnu",
    "last_retrieved": "2026-11-09"
@@ -64473,10 +64269,12 @@
   {
    "event_id": "BL-EVT-cf07bcdc51",
    "name": "Education People Show 2026",
-   "name_variants": "inconnu",
+   "name_variants": [
+    "The Education People Show 2026"
+   ],
    "start_date": "2026-11-11",
    "end_date": "2026-11-11",
-   "date_raw": "vendelux: 2026-11-11 → 2026-11-11",
+   "date_raw": "vendelux: 2026-11-11 → 2026-11-11 | lensmor: Nov 11, 2026",
    "date_conflict": false,
    "event_format": "in_person",
    "venue": "Kent Event Centre",
@@ -64484,7 +64282,10 @@
    "region": "England",
    "country": "United Kingdom",
    "organizer": "inconnu",
-   "industries": "inconnu",
+   "industries": [
+    "Business Services",
+    "Education & Training"
+   ],
    "topics_keywords": [
     "2025",
     "3D",
@@ -64967,22 +64768,26 @@
    "description": "Mark your calendars for the Education People Show 2026, the South-East’s premier event dedicated to fostering excellence in school leadership, management, learning, and teaching. This free-to-attend event takes place on Wednesday, November 11, at the Kent Event Centre. It offers a valuable opportunity for Head Teachers, Bursars, Governors, and school leadership teams from all sectors to gain vital insights.\n\nThe event includes a conference featuring keynotes from figures like Mary Myatt and Hywel Roberts, alongside engaging workshops and an exhibition showcasing a range of education suppliers. The agenda features CPD-Accredited Sessions, designed to provide practical advice on achieving strong leadership, excellent teaching, and effective management systems. Registration, lunch, refreshments, and parking are all provided without charge, aiming to facilitate the sharing of best practice and contribute to the future of education in the region.",
    "attendees": 119,
    "attendees_expected": 33,
-   "exhibitors": "inconnu",
+   "exhibitors": 120,
    "price_min": "inconnu",
    "price_max": "inconnu",
    "price_currency": "inconnu",
    "url": "https://theeducationpeopleshow.co.uk/",
-   "lensmor_url": "inconnu",
+   "lensmor_url": "https://www.lensmor.com/events/the-education-people-show-2026",
    "vendelux_verified": false,
    "sources": [
-    "vendelux"
+    "vendelux",
+    "lensmor"
    ],
-   "source_count": 1,
+   "source_count": 2,
    "source_refs": [
-    "S86#262"
+    "S86#262",
+    "S87#577"
    ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
+   "match_method": "decision_manuelle",
+   "conflicts": [
+    "city: vendelux=Maidstone / lensmor=Detling"
+   ],
    "inferred_fields": "inconnu",
    "last_retrieved": "2026-11-09"
   },
@@ -72726,53 +72531,14 @@
    "last_retrieved": "2026-11-09"
   },
   {
-   "event_id": "BL-EVT-3f2aa55cbe",
-   "name": "Marketing Leaders 2026",
-   "name_variants": "inconnu",
-   "start_date": "2026-11-11",
-   "end_date": "2026-11-12",
-   "date_raw": "lensmor: Nov 11 – 12, 2026",
-   "date_conflict": false,
-   "event_format": "inconnu",
-   "venue": "inconnu",
-   "city": "Southbank",
-   "region": "inconnu",
-   "country": "Australia",
-   "organizer": "inconnu",
-   "industries": [
-    "Business Services",
-    "IT & Technology"
-   ],
-   "topics_keywords": "inconnu",
-   "description": "inconnu",
-   "attendees": 312,
-   "attendees_expected": "inconnu",
-   "exhibitors": 16,
-   "price_min": "inconnu",
-   "price_max": "inconnu",
-   "price_currency": "inconnu",
-   "url": "inconnu",
-   "lensmor_url": "https://www.lensmor.com/events/marketing-leaders-2026",
-   "vendelux_verified": "inconnu",
-   "sources": [
-    "lensmor"
-   ],
-   "source_count": 1,
-   "source_refs": [
-    "S87#571"
-   ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
-   "inferred_fields": "inconnu",
-   "last_retrieved": "2026-11-09"
-  },
-  {
    "event_id": "BL-EVT-504a395ebb",
    "name": "Marketing Leaders Summit 2026",
-   "name_variants": "inconnu",
+   "name_variants": [
+    "Marketing Leaders 2026"
+   ],
    "start_date": "2026-11-11",
    "end_date": "2026-11-12",
-   "date_raw": "vendelux: 2026-11-11 → 2026-11-12",
+   "date_raw": "vendelux: 2026-11-11 → 2026-11-12 | lensmor: Nov 11 – 12, 2026",
    "date_conflict": false,
    "event_format": "in_person",
    "venue": "Crown Melbourne",
@@ -72780,7 +72546,10 @@
    "region": "Victoria",
    "country": "Australia",
    "organizer": "inconnu",
-   "industries": "inconnu",
+   "industries": [
+    "Business Services",
+    "IT & Technology"
+   ],
    "topics_keywords": [
     "2024",
     "2025",
@@ -74135,21 +73904,23 @@
    "description": "Prepare to redefine the future of marketing at the Marketing Leaders Summit 2025, taking place on 29-30 October at Crown Melbourne, Australia. This two-day gathering brings together Australia’s C-Suite leaders, VPs, and senior in-house marketing professionals from consumer or government-facing organizations, creating a space for genuine peer-to-peer exchange.\r\n\r\nParticipants will gain valuable insights from over 40 industry leaders, including executives from Mastercard, McDonald's, and Unilever. The discussions will cover strategies in brand innovation, data-driven growth, ethical marketing, and how to effectively integrate AI while maintaining a human focus.\r\n\r\nThis is an opportunity to connect with influential figures shaping the industry. The aim is for participants to depart with fresh perspectives and practical approaches to enhance operations, strengthen engagement, and foster meaningful growth.",
    "attendees": 423,
    "attendees_expected": 150,
-   "exhibitors": "inconnu",
+   "exhibitors": 16,
    "price_min": 1287,
    "price_max": 1545,
    "price_currency": "inconnu",
    "url": "https://mlsummit.com.au/",
-   "lensmor_url": "inconnu",
+   "lensmor_url": "https://www.lensmor.com/events/marketing-leaders-2026",
    "vendelux_verified": false,
    "sources": [
-    "vendelux"
+    "vendelux",
+    "lensmor"
    ],
-   "source_count": 1,
+   "source_count": 2,
    "source_refs": [
-    "S86#235"
+    "S86#235",
+    "S87#571"
    ],
-   "match_method": "source_unique",
+   "match_method": "decision_manuelle",
    "conflicts": "inconnu",
    "inferred_fields": "inconnu",
    "last_retrieved": "2026-11-09"
@@ -88856,47 +88627,6 @@
    "last_retrieved": "2026-11-09"
   },
   {
-   "event_id": "BL-EVT-0a2b2e2a3c",
-   "name": "The Education People Show 2026",
-   "name_variants": "inconnu",
-   "start_date": "2026-11-11",
-   "end_date": "2026-11-11",
-   "date_raw": "lensmor: Nov 11, 2026",
-   "date_conflict": false,
-   "event_format": "inconnu",
-   "venue": "inconnu",
-   "city": "Detling",
-   "region": "inconnu",
-   "country": "United Kingdom",
-   "organizer": "inconnu",
-   "industries": [
-    "Business Services",
-    "Education & Training"
-   ],
-   "topics_keywords": "inconnu",
-   "description": "inconnu",
-   "attendees": 298,
-   "attendees_expected": "inconnu",
-   "exhibitors": 120,
-   "price_min": "inconnu",
-   "price_max": "inconnu",
-   "price_currency": "inconnu",
-   "url": "inconnu",
-   "lensmor_url": "https://www.lensmor.com/events/the-education-people-show-2026",
-   "vendelux_verified": "inconnu",
-   "sources": [
-    "lensmor"
-   ],
-   "source_count": 1,
-   "source_refs": [
-    "S87#577"
-   ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
-   "inferred_fields": "inconnu",
-   "last_retrieved": "2026-11-09"
-  },
-  {
    "event_id": "BL-EVT-cd90828ba8",
    "name": "The New Era of Taxation 2026",
    "name_variants": "inconnu",
@@ -99074,10 +98804,12 @@
   {
    "event_id": "BL-EVT-ba1f129249",
    "name": "GA Emerging Technology Summit 2026",
-   "name_variants": "inconnu",
+   "name_variants": [
+    "Georgia Emerging Technology Summit: Data & AI 2026"
+   ],
    "start_date": "2026-11-12",
    "end_date": "2026-11-12",
-   "date_raw": "vendelux: 2026-11-12 → 2026-11-12",
+   "date_raw": "vendelux: 2026-11-12 → 2026-11-12 | lensmor: Nov 12, 2026",
    "date_conflict": false,
    "event_format": "in_person",
    "venue": "Courtland Grand Hotel",
@@ -99085,7 +98817,10 @@
    "region": "Georgia",
    "country": "United States",
    "organizer": "inconnu",
-   "industries": "inconnu",
+   "industries": [
+    "Business Services",
+    "IT & Technology"
+   ],
    "topics_keywords": [
     "2024",
     "2025",
@@ -100093,21 +99828,23 @@
    "description": "Public-sector leaders seeking to harness the power of cutting-edge innovation are invited to the GA Emerging Technology Summit 2026. This gathering will be held on November 12, 2026, at Atlanta's Courtland Grand Hotel, bringing together state, regional, and local government professionals.\r\n\r\nParticipants will explore the impact of AI, automation, edge computing, and data, understanding how these technologies can reshape public service. The program will feature hands-on demonstrations, insights into policy, and real-world case studies. The aim is to identify strategies for serving communities more efficiently, equitably, and effectively.\r\n\r\nRegistration is free for eligible public-sector participants, supporting efforts to advance innovation within government.",
    "attendees": 71,
    "attendees_expected": 247,
-   "exhibitors": "inconnu",
+   "exhibitors": 22,
    "price_min": "inconnu",
    "price_max": "inconnu",
    "price_currency": "inconnu",
    "url": "https://events.govtech.com/Georgia-Emerging-Technology-Summit-Data-AI",
-   "lensmor_url": "inconnu",
+   "lensmor_url": "https://www.lensmor.com/events/georgia-emerging-technology-summit-data-ai-2026",
    "vendelux_verified": false,
    "sources": [
-    "vendelux"
+    "vendelux",
+    "lensmor"
    ],
-   "source_count": 1,
+   "source_count": 2,
    "source_refs": [
-    "S86#359"
+    "S86#359",
+    "S87#372"
    ],
-   "match_method": "source_unique",
+   "match_method": "decision_manuelle",
    "conflicts": "inconnu",
    "inferred_fields": "inconnu",
    "last_retrieved": "2026-11-09"
@@ -100614,47 +100351,6 @@
    "source_count": 1,
    "source_refs": [
     "S86#356"
-   ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
-   "inferred_fields": "inconnu",
-   "last_retrieved": "2026-11-09"
-  },
-  {
-   "event_id": "BL-EVT-dfe2f893cc",
-   "name": "Georgia Emerging Technology Summit: Data & AI 2026",
-   "name_variants": "inconnu",
-   "start_date": "2026-11-12",
-   "end_date": "2026-11-12",
-   "date_raw": "lensmor: Nov 12, 2026",
-   "date_conflict": false,
-   "event_format": "inconnu",
-   "venue": "inconnu",
-   "city": "Atlanta",
-   "region": "inconnu",
-   "country": "United States",
-   "organizer": "inconnu",
-   "industries": [
-    "Business Services",
-    "IT & Technology"
-   ],
-   "topics_keywords": "inconnu",
-   "description": "inconnu",
-   "attendees": 571,
-   "attendees_expected": "inconnu",
-   "exhibitors": 22,
-   "price_min": "inconnu",
-   "price_max": "inconnu",
-   "price_currency": "inconnu",
-   "url": "inconnu",
-   "lensmor_url": "https://www.lensmor.com/events/georgia-emerging-technology-summit-data-ai-2026",
-   "vendelux_verified": "inconnu",
-   "sources": [
-    "lensmor"
-   ],
-   "source_count": 1,
-   "source_refs": [
-    "S87#372"
    ],
    "match_method": "source_unique",
    "conflicts": "inconnu",
@@ -118904,18 +118600,23 @@
   {
    "event_id": "BL-EVT-27d47f10b7",
    "name": "WiTWA Tech [+] Awards 2026",
-   "name_variants": "inconnu",
+   "name_variants": [
+    "WiTWA Tech [+] Awards Night 2026"
+   ],
    "start_date": "2026-11-13",
    "end_date": "2026-11-13",
-   "date_raw": "vendelux: 2026-11-13 → 2026-11-13",
+   "date_raw": "vendelux: 2026-11-13 → 2026-11-13 | lensmor: Nov 13, 2026",
    "date_conflict": false,
    "event_format": "in_person",
    "venue": "inconnu",
-   "city": "inconnu",
+   "city": "Perth",
    "region": "inconnu",
-   "country": "inconnu",
+   "country": "Australia",
    "organizer": "inconnu",
-   "industries": "inconnu",
+   "industries": [
+    "Business Services",
+    "IT & Technology"
+   ],
    "topics_keywords": [
     "AM",
     "AND",
@@ -119094,62 +118795,23 @@
    "description": "An evening of unparalleled celebration awaits at the WiTWA Tech [+] Awards 2026!\n\nOn November 13, 2026, beginning at 6:00 PM, the Western Australian tech community will gather to recognize the exceptional women and their allies who are leading innovation and progress within the sector.\n\nThe five-hour evening includes a seated dinner, beverages, and a Welcome to Country. A central part of the night will be the presentation of the WiTWA Tech [+] Awards across all categories. Guests are invited to dress elegantly for an evening designed for connection, enjoyment, and dancing with a DJ.\n\nThis gathering brings together emerging leaders, established industry figures, and a diverse group of individuals within an inclusive and inspiring setting. The focus remains on celebrating the achievements in Western Australia's technology sector.",
    "attendees": 391,
    "attendees_expected": 800,
-   "exhibitors": "inconnu",
-   "price_min": "inconnu",
-   "price_max": "inconnu",
-   "price_currency": "inconnu",
-   "url": "https://www.witwa.org.au/event/witwa-tech-awards/",
-   "lensmor_url": "inconnu",
-   "vendelux_verified": false,
-   "sources": [
-    "vendelux"
-   ],
-   "source_count": 1,
-   "source_refs": [
-    "S86#391"
-   ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
-   "inferred_fields": "inconnu",
-   "last_retrieved": "2026-11-09"
-  },
-  {
-   "event_id": "BL-EVT-8275f6fd77",
-   "name": "WiTWA Tech [+] Awards Night 2026",
-   "name_variants": "inconnu",
-   "start_date": "2026-11-13",
-   "end_date": "2026-11-13",
-   "date_raw": "lensmor: Nov 13, 2026",
-   "date_conflict": false,
-   "event_format": "inconnu",
-   "venue": "inconnu",
-   "city": "Perth",
-   "region": "inconnu",
-   "country": "Australia",
-   "organizer": "inconnu",
-   "industries": [
-    "Business Services",
-    "IT & Technology"
-   ],
-   "topics_keywords": "inconnu",
-   "description": "inconnu",
-   "attendees": 33,
-   "attendees_expected": "inconnu",
    "exhibitors": 1,
    "price_min": "inconnu",
    "price_max": "inconnu",
    "price_currency": "inconnu",
-   "url": "inconnu",
+   "url": "https://www.witwa.org.au/event/witwa-tech-awards/",
    "lensmor_url": "https://www.lensmor.com/events/witwa-tech-awards-night-2026",
-   "vendelux_verified": "inconnu",
+   "vendelux_verified": false,
    "sources": [
+    "vendelux",
     "lensmor"
    ],
-   "source_count": 1,
+   "source_count": 2,
    "source_refs": [
+    "S86#391",
     "S87#921"
    ],
-   "match_method": "source_unique",
+   "match_method": "decision_manuelle",
    "conflicts": "inconnu",
    "inferred_fields": "inconnu",
    "last_retrieved": "2026-11-09"
@@ -124942,18 +124604,24 @@
   {
    "event_id": "BL-EVT-8362c2ab6d",
    "name": "Cyber Marketing Con 2026",
-   "name_variants": "inconnu",
+   "name_variants": [
+    "CyberMarketingCon 2026"
+   ],
    "start_date": "2026-11-15",
    "end_date": "2026-11-19",
-   "date_raw": "vendelux: 2026-11-15 → 2026-11-19",
-   "date_conflict": false,
+   "date_raw": "vendelux: 2026-11-15 → 2026-11-19 | lensmor: Nov 15 – 18, 2026",
+   "date_conflict": true,
    "event_format": "hybrid",
    "venue": "Austin Marriott Downtown",
    "city": "Austin",
    "region": "Texas",
    "country": "United States",
    "organizer": "inconnu",
-   "industries": "inconnu",
+   "industries": [
+    "Business Services",
+    "IT & Technology",
+    "Security & Defense"
+   ],
    "topics_keywords": [
     "2025",
     "AND",
@@ -125146,64 +124814,26 @@
    "description": "Elevate your cybersecurity Go-To-Market strategies at Cyber Marketing Con 2026, the premier educational and networking event for GTM teams. The Cybersecurity Marketing Society presents this four-day conference from November 15-18, 2026. It will be held in person at the Austin Marriott Downtown, with virtual access also available.\n\nParticipants can engage with three live-streamed tracks, connect through virtual networking, and access session replays. Specialized content is available through dedicated summits focusing on CyberCMO, CyberCEO, CYBERSALES, and the Gov & Public Sector. The event provides a setting to connect with industry leaders, gather actionable insights, and acknowledge achievements at the Marquee Awards.\n\nAimed at CMOs, sales leaders, and solution providers, the conference helps participants sharpen their skills and expand their professional network within the evolving cybersecurity landscape.",
    "attendees": 2926,
    "attendees_expected": 700,
-   "exhibitors": "inconnu",
+   "exhibitors": 40,
    "price_min": 299,
    "price_max": 1095,
    "price_currency": "inconnu",
    "url": "https://www.cybermarketingconference.com/purchase-2026-tickets",
-   "lensmor_url": "inconnu",
+   "lensmor_url": "https://www.lensmor.com/events/cyber-marketing-con-2026",
    "vendelux_verified": false,
    "sources": [
-    "vendelux"
-   ],
-   "source_count": 1,
-   "source_refs": [
-    "S86#432"
-   ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
-   "inferred_fields": "inconnu",
-   "last_retrieved": "2026-11-09"
-  },
-  {
-   "event_id": "BL-EVT-359ab7f2c8",
-   "name": "CyberMarketingCon 2026",
-   "name_variants": "inconnu",
-   "start_date": "2026-11-15",
-   "end_date": "2026-11-18",
-   "date_raw": "lensmor: Nov 15 – 18, 2026",
-   "date_conflict": false,
-   "event_format": "inconnu",
-   "venue": "inconnu",
-   "city": "Austin",
-   "region": "inconnu",
-   "country": "United States",
-   "organizer": "inconnu",
-   "industries": [
-    "Business Services",
-    "IT & Technology",
-    "Security & Defense"
-   ],
-   "topics_keywords": "inconnu",
-   "description": "inconnu",
-   "attendees": 1381,
-   "attendees_expected": "inconnu",
-   "exhibitors": 40,
-   "price_min": "inconnu",
-   "price_max": "inconnu",
-   "price_currency": "inconnu",
-   "url": "inconnu",
-   "lensmor_url": "https://www.lensmor.com/events/cyber-marketing-con-2026",
-   "vendelux_verified": "inconnu",
-   "sources": [
+    "vendelux",
     "lensmor"
    ],
-   "source_count": 1,
+   "source_count": 2,
    "source_refs": [
+    "S86#432",
     "S87#158"
    ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
+   "match_method": "decision_manuelle",
+   "conflicts": [
+    "dates lensmor: 2026-11-15 → 2026-11-18 (retenu vendelux)"
+   ],
    "inferred_fields": "inconnu",
    "last_retrieved": "2026-11-09"
   },
@@ -128953,48 +128583,6 @@
    "last_retrieved": "2026-11-09"
   },
   {
-   "event_id": "BL-EVT-ac8a43f27b",
-   "name": "NTA Travel Exchange 2026",
-   "name_variants": "inconnu",
-   "start_date": "2026-11-15",
-   "end_date": "2026-11-18",
-   "date_raw": "lensmor: Nov 15 – 18, 2026",
-   "date_conflict": false,
-   "event_format": "inconnu",
-   "venue": "inconnu",
-   "city": "Tulsa",
-   "region": "inconnu",
-   "country": "United States",
-   "organizer": "inconnu",
-   "industries": [
-    "Business Services",
-    "Hospitality",
-    "Travel & Tourism"
-   ],
-   "topics_keywords": "inconnu",
-   "description": "inconnu",
-   "attendees": 315,
-   "attendees_expected": "inconnu",
-   "exhibitors": 76,
-   "price_min": "inconnu",
-   "price_max": "inconnu",
-   "price_currency": "inconnu",
-   "url": "inconnu",
-   "lensmor_url": "https://www.lensmor.com/events/nta-travel-exchange-2026",
-   "vendelux_verified": "inconnu",
-   "sources": [
-    "lensmor"
-   ],
-   "source_count": 1,
-   "source_refs": [
-    "S87#565"
-   ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
-   "inferred_fields": "inconnu",
-   "last_retrieved": "2026-11-09"
-  },
-  {
    "event_id": "BL-EVT-63ed53c3aa",
    "name": "Ocean City Resort Gift Expo 2026",
    "name_variants": "inconnu",
@@ -129217,10 +128805,12 @@
   {
    "event_id": "BL-EVT-28a9f7492d",
    "name": "PLMA Annual Private Label Trade Show 2026",
-   "name_variants": "inconnu",
+   "name_variants": [
+    "PLMA's 2026 Private Label Trade Show"
+   ],
    "start_date": "2026-11-15",
    "end_date": "2026-11-17",
-   "date_raw": "vendelux: 2026-11-15 → 2026-11-17",
+   "date_raw": "vendelux: 2026-11-15 → 2026-11-17 | lensmor: Nov 15 – 17, 2026",
    "date_conflict": false,
    "event_format": "in_person",
    "venue": "Donald E. Stephens Convention Center",
@@ -129228,7 +128818,12 @@
    "region": "Illinois",
    "country": "United States",
    "organizer": "inconnu",
-   "industries": "inconnu",
+   "industries": [
+    "Food & Beverages",
+    "Health & Fitness",
+    "Retail & E-commerce",
+    "Wellness"
+   ],
    "topics_keywords": [
     "AND",
     "AR",
@@ -129330,64 +128925,23 @@
    "description": "The Private Label Manufacturers Association (PLMA) invites you to the industry's most anticipated event. The PLMA Annual Private Label Trade Show 2026 is scheduled for November 15-17 at the Donald E. Stephens Convention Center in Chicago. This gathering serves as a key opportunity for retailers and manufacturers to explore the latest innovations and trends influencing the private label market.\n\nThose attending can expect to see thousands of new products spanning various categories, including food and beverages, health, beauty, and general merchandise. It offers a chance to connect with leading suppliers, establish strategic partnerships, and gain insights into consumer demands and market growth.\n\nFor individuals aiming to expand their private label offerings or present new creations, PLMA 2026 provides a setting where new directions in private label are often identified.",
    "attendees": 746,
    "attendees_expected": 15000,
-   "exhibitors": "inconnu",
-   "price_min": "inconnu",
-   "price_max": "inconnu",
-   "price_currency": "inconnu",
-   "url": "https://www.plma.com/events/plmas-2026-annual-private-label-trade-show",
-   "lensmor_url": "inconnu",
-   "vendelux_verified": false,
-   "sources": [
-    "vendelux"
-   ],
-   "source_count": 1,
-   "source_refs": [
-    "S86#436"
-   ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
-   "inferred_fields": "inconnu",
-   "last_retrieved": "2026-11-09"
-  },
-  {
-   "event_id": "BL-EVT-b76e0e38cc",
-   "name": "PLMA's 2026 Private Label Trade Show",
-   "name_variants": "inconnu",
-   "start_date": "2026-11-15",
-   "end_date": "2026-11-17",
-   "date_raw": "lensmor: Nov 15 – 17, 2026",
-   "date_conflict": false,
-   "event_format": "inconnu",
-   "venue": "inconnu",
-   "city": "Chicago",
-   "region": "inconnu",
-   "country": "United States",
-   "organizer": "inconnu",
-   "industries": [
-    "Food & Beverages",
-    "Health & Fitness",
-    "Retail & E-commerce",
-    "Wellness"
-   ],
-   "topics_keywords": "inconnu",
-   "description": "inconnu",
-   "attendees": 337,
-   "attendees_expected": "inconnu",
    "exhibitors": 23,
    "price_min": "inconnu",
    "price_max": "inconnu",
    "price_currency": "inconnu",
-   "url": "inconnu",
+   "url": "https://www.plma.com/events/plmas-2026-annual-private-label-trade-show",
    "lensmor_url": "https://www.lensmor.com/events/plma-s-2026-private-label-trade-show-2026",
-   "vendelux_verified": "inconnu",
+   "vendelux_verified": false,
    "sources": [
+    "vendelux",
     "lensmor"
    ],
-   "source_count": 1,
+   "source_count": 2,
    "source_refs": [
+    "S86#436",
     "S87#539"
    ],
-   "match_method": "source_unique",
+   "match_method": "decision_manuelle",
    "conflicts": "inconnu",
    "inferred_fields": "inconnu",
    "last_retrieved": "2026-11-09"
@@ -130003,10 +129557,12 @@
   {
    "event_id": "BL-EVT-29ddcaf26b",
    "name": "Travel Exchange 2026",
-   "name_variants": "inconnu",
+   "name_variants": [
+    "NTA Travel Exchange 2026"
+   ],
    "start_date": "2026-11-15",
    "end_date": "2026-11-18",
-   "date_raw": "vendelux: 2026-11-15 → 2026-11-18",
+   "date_raw": "vendelux: 2026-11-15 → 2026-11-18 | lensmor: Nov 15 – 18, 2026",
    "date_conflict": false,
    "event_format": "in_person",
    "venue": "inconnu",
@@ -130014,7 +129570,11 @@
    "region": "Oklahoma",
    "country": "United States",
    "organizer": "inconnu",
-   "industries": "inconnu",
+   "industries": [
+    "Business Services",
+    "Hospitality",
+    "Travel & Tourism"
+   ],
    "topics_keywords": [
     "AM",
     "AND",
@@ -130165,21 +129725,23 @@
    "description": "The global packaged travel community converges in Tulsa, Oklahoma, for Travel Exchange 2026, running from November 15–18 at the Cox Business Convention Center. This event brings together professionals in packaged travel – including buyers, suppliers, DMOs, and DMCs – from across North America and other regions. They attend to form meaningful partnerships and develop engaging travel experiences.\n\nThe program features pre-scheduled meetings between buyers and sellers, alongside seminars exploring new ideas and opportunities for learning from peers. Beyond the convention center, participants will have opportunities to experience Tulsa through sightseeing tours and social gatherings.\n\nTravel Exchange 2026 offers a setting to learn about new strategies, discuss industry solutions, and discover new products, destinations, and collaborations within the NTA community. The aim is to support growth and new ideas in the tourism sector.",
    "attendees": 429,
    "attendees_expected": 3500,
-   "exhibitors": "inconnu",
+   "exhibitors": 76,
    "price_min": 0,
    "price_max": 1895,
    "price_currency": "inconnu",
    "url": "https://ntatravelexchange.com/",
-   "lensmor_url": "inconnu",
+   "lensmor_url": "https://www.lensmor.com/events/nta-travel-exchange-2026",
    "vendelux_verified": false,
    "sources": [
-    "vendelux"
+    "vendelux",
+    "lensmor"
    ],
-   "source_count": 1,
+   "source_count": 2,
    "source_refs": [
-    "S86#441"
+    "S86#441",
+    "S87#565"
    ],
-   "match_method": "source_unique",
+   "match_method": "decision_manuelle",
    "conflicts": "inconnu",
    "inferred_fields": "inconnu",
    "last_retrieved": "2026-11-09"
@@ -147063,54 +146625,14 @@
    "last_retrieved": "2026-11-09"
   },
   {
-   "event_id": "BL-EVT-d95933afad",
-   "name": "LSX Investival Showcase London 2026",
-   "name_variants": "inconnu",
-   "start_date": "2026-11-16",
-   "end_date": "2026-11-16",
-   "date_raw": "lensmor: Nov 16, 2026",
-   "date_conflict": false,
-   "event_format": "inconnu",
-   "venue": "inconnu",
-   "city": "London",
-   "region": "inconnu",
-   "country": "United Kingdom",
-   "organizer": "inconnu",
-   "industries": [
-    "Banking & Finance",
-    "Medical & Pharma",
-    "Science & Research"
-   ],
-   "topics_keywords": "inconnu",
-   "description": "inconnu",
-   "attendees": 786,
-   "attendees_expected": "inconnu",
-   "exhibitors": 71,
-   "price_min": "inconnu",
-   "price_max": "inconnu",
-   "price_currency": "inconnu",
-   "url": "inconnu",
-   "lensmor_url": "https://www.lensmor.com/events/lsx-investival-showcase-london-2026",
-   "vendelux_verified": "inconnu",
-   "sources": [
-    "lensmor"
-   ],
-   "source_count": 1,
-   "source_refs": [
-    "S87#282"
-   ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
-   "inferred_fields": "inconnu",
-   "last_retrieved": "2026-11-09"
-  },
-  {
    "event_id": "BL-EVT-53d4f66dc0",
    "name": "LSX Investival Showcase UK 2026",
-   "name_variants": "inconnu",
+   "name_variants": [
+    "LSX Investival Showcase London 2026"
+   ],
    "start_date": "2026-11-16",
    "end_date": "2026-11-16",
-   "date_raw": "vendelux: 2026-11-16 → 2026-11-16",
+   "date_raw": "vendelux: 2026-11-16 → 2026-11-16 | lensmor: Nov 16, 2026",
    "date_conflict": false,
    "event_format": "in_person",
    "venue": "Old Billingsgate",
@@ -147118,7 +146640,11 @@
    "region": "England",
    "country": "United Kingdom",
    "organizer": "inconnu",
-   "industries": "inconnu",
+   "industries": [
+    "Banking & Finance",
+    "Medical & Pharma",
+    "Science & Research"
+   ],
    "topics_keywords": [
     "2025",
     "AM",
@@ -147411,21 +146937,23 @@
    "description": "On Monday, November 16, 2026, London will host the LSX Investival Showcase UK, marking the first and largest public event of London Life Science Week. This conference brings together executives from biopharma and medtech with investors and strategic partners, aiming to foster connections that drive growth in the life science and healthcare sectors.\n\nThe day is expected to draw over 1000 participants, including more than 400 investors and strategic decision-makers. Attendees will have the opportunity for over 2000 one-on-one partnering meetings. The agenda also includes presentations from more than 150 companies across seven stages, alongside sessions led by experts discussing current investment trends and best practices, such as a dedicated US IPO Bootcamp.\n\nThis gathering serves as a significant forum for individuals working to advance innovation and secure funding within the global life science community.",
    "attendees": 935,
    "attendees_expected": 1000,
-   "exhibitors": "inconnu",
+   "exhibitors": 71,
    "price_min": "inconnu",
    "price_max": "inconnu",
    "price_currency": "inconnu",
    "url": "https://informaconnect.com/investival-showcase/",
-   "lensmor_url": "inconnu",
+   "lensmor_url": "https://www.lensmor.com/events/lsx-investival-showcase-london-2026",
    "vendelux_verified": false,
    "sources": [
-    "vendelux"
+    "vendelux",
+    "lensmor"
    ],
-   "source_count": 1,
+   "source_count": 2,
    "source_refs": [
-    "S86#492"
+    "S86#492",
+    "S87#282"
    ],
-   "match_method": "source_unique",
+   "match_method": "decision_manuelle",
    "conflicts": "inconnu",
    "inferred_fields": "inconnu",
    "last_retrieved": "2026-11-09"
@@ -162041,49 +161569,6 @@
    "last_retrieved": "2026-11-09"
   },
   {
-   "event_id": "BL-EVT-d78a9f0781",
-   "name": "2026 ASCP/CAP-ACP ANNUAL MEETING",
-   "name_variants": "inconnu",
-   "start_date": "2026-11-17",
-   "end_date": "2026-11-22",
-   "date_raw": "congresmtl: 17 au 22 Novembre 2026",
-   "date_conflict": false,
-   "event_format": "inconnu",
-   "venue": "Palais des congrès de Montréal",
-   "city": "Montréal",
-   "region": "Québec",
-   "country": "Canada",
-   "organizer": "American Society for Clinical Pathology",
-   "industries": "inconnu",
-   "topics_keywords": "inconnu",
-   "description": "inconnu",
-   "attendees": "inconnu",
-   "attendees_expected": "inconnu",
-   "exhibitors": "inconnu",
-   "price_min": "inconnu",
-   "price_max": "inconnu",
-   "price_currency": "inconnu",
-   "url": "https://store.ascp.org/productlisting/MeetingDetail?productId=182372920",
-   "lensmor_url": "inconnu",
-   "vendelux_verified": "inconnu",
-   "sources": [
-    "congresmtl"
-   ],
-   "source_count": 1,
-   "source_refs": [
-    "S88#12"
-   ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
-   "inferred_fields": [
-    "city (congresmtl)",
-    "country (congresmtl)",
-    "region (congresmtl)",
-    "venue (congresmtl)"
-   ],
-   "last_retrieved": "2026-11-09"
-  },
-  {
    "event_id": "BL-EVT-8a6add3a38",
    "name": "AAAA Cribbins Readiness Conference 2026",
    "name_variants": "inconnu",
@@ -165903,17 +165388,19 @@
   {
    "event_id": "BL-EVT-decb0ca449",
    "name": "ASCP Annual Meeting 2026",
-   "name_variants": "inconnu",
+   "name_variants": [
+    "2026 ASCP/CAP-ACP ANNUAL MEETING"
+   ],
    "start_date": "2026-11-17",
    "end_date": "2026-11-20",
-   "date_raw": "vendelux: 2026-11-17 → 2026-11-20",
-   "date_conflict": false,
+   "date_raw": "vendelux: 2026-11-17 → 2026-11-20 | congresmtl: 17 au 22 Novembre 2026",
+   "date_conflict": true,
    "event_format": "in_person",
    "venue": "Palais Des Congres De Montreal",
    "city": "Montreal",
    "region": "Québec",
    "country": "Canada",
-   "organizer": "inconnu",
+   "organizer": "American Society for Clinical Pathology",
    "industries": "inconnu",
    "topics_keywords": [
     "Al",
@@ -165933,15 +165420,22 @@
    "lensmor_url": "inconnu",
    "vendelux_verified": false,
    "sources": [
-    "vendelux"
+    "vendelux",
+    "congresmtl"
    ],
-   "source_count": 1,
+   "source_count": 2,
    "source_refs": [
-    "S86#681"
+    "S86#681",
+    "S88#12"
    ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
-   "inferred_fields": "inconnu",
+   "match_method": "decision_manuelle",
+   "conflicts": [
+    "dates congresmtl: 2026-11-17 → 2026-11-22 (retenu vendelux)"
+   ],
+   "inferred_fields": [
+    "country (congresmtl)",
+    "region (congresmtl)"
+   ],
    "last_retrieved": "2026-11-09"
   },
   {
@@ -206315,10 +205809,12 @@
   {
    "event_id": "BL-EVT-beb7500600",
    "name": "Tech Talent North West 2026",
-   "name_variants": "inconnu",
+   "name_variants": [
+    "Tech Talent North Western Edition 2026"
+   ],
    "start_date": "2026-11-17",
    "end_date": "2026-11-17",
-   "date_raw": "vendelux: 2026-11-17 → 2026-11-17",
+   "date_raw": "vendelux: 2026-11-17 → 2026-11-17 | lensmor: Nov 17, 2026",
    "date_conflict": false,
    "event_format": "in_person",
    "venue": "Vancouver Convention Centre",
@@ -206326,7 +205822,10 @@
    "region": "British Columbia",
    "country": "Canada",
    "organizer": "inconnu",
-   "industries": "inconnu",
+   "industries": [
+    "Business Services",
+    "IT & Technology"
+   ],
    "topics_keywords": [
     "2025",
     "AI",
@@ -206809,62 +206308,23 @@
    "description": "Designed specifically for Canada's senior People & Culture leaders in tech, Tech Talent North West 2026 offers an essential one-day deep dive into the evolving landscape of HR. This focused event will be held on November 17, 2026, at the Vancouver Convention Centre West. It is intended to help leaders, ranging from Talent Manager Partners to Heads of HR, develop effective strategies for navigating current industry shifts.\n\nThe program is presented by TAP Network and produced by Cube Business Media, with Workday serving as the Lead Sponsor. Event Chair Lewisa Anciano guides the content, which includes discussions and practical insights. These sessions will address building trust, leading through uncertainty, and aligning people strategies directly with business outcomes, exploring how to effectively evolve, scale, and respond to change within tech organizations.",
    "attendees": 107,
    "attendees_expected": 99,
-   "exhibitors": "inconnu",
-   "price_min": "inconnu",
-   "price_max": "inconnu",
-   "price_currency": "inconnu",
-   "url": "https://techtalentnorth.com/west/",
-   "lensmor_url": "inconnu",
-   "vendelux_verified": false,
-   "sources": [
-    "vendelux"
-   ],
-   "source_count": 1,
-   "source_refs": [
-    "S86#647"
-   ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
-   "inferred_fields": "inconnu",
-   "last_retrieved": "2026-11-09"
-  },
-  {
-   "event_id": "BL-EVT-ce4d94c898",
-   "name": "Tech Talent North Western Edition 2026",
-   "name_variants": "inconnu",
-   "start_date": "2026-11-17",
-   "end_date": "2026-11-17",
-   "date_raw": "lensmor: Nov 17, 2026",
-   "date_conflict": false,
-   "event_format": "inconnu",
-   "venue": "inconnu",
-   "city": "Vancouver",
-   "region": "inconnu",
-   "country": "Canada",
-   "organizer": "inconnu",
-   "industries": [
-    "Business Services",
-    "IT & Technology"
-   ],
-   "topics_keywords": "inconnu",
-   "description": "inconnu",
-   "attendees": 1033,
-   "attendees_expected": "inconnu",
    "exhibitors": 174,
    "price_min": "inconnu",
    "price_max": "inconnu",
    "price_currency": "inconnu",
-   "url": "inconnu",
+   "url": "https://techtalentnorth.com/west/",
    "lensmor_url": "https://www.lensmor.com/events/tech-talent-north-western-edition-2026",
-   "vendelux_verified": "inconnu",
+   "vendelux_verified": false,
    "sources": [
+    "vendelux",
     "lensmor"
    ],
-   "source_count": 1,
+   "source_count": 2,
    "source_refs": [
+    "S86#647",
     "S87#222"
    ],
-   "match_method": "source_unique",
+   "match_method": "decision_manuelle",
    "conflicts": "inconnu",
    "inferred_fields": "inconnu",
    "last_retrieved": "2026-11-09"
@@ -217169,53 +216629,14 @@
    "last_retrieved": "2026-11-09"
   },
   {
-   "event_id": "BL-EVT-970f9df44d",
-   "name": "Asset Performance Conference 2026",
-   "name_variants": "inconnu",
-   "start_date": "2026-11-18",
-   "end_date": "2026-11-19",
-   "date_raw": "lensmor: Nov 18 – 19, 2026",
-   "date_conflict": false,
-   "event_format": "inconnu",
-   "venue": "inconnu",
-   "city": "Antwerp",
-   "region": "inconnu",
-   "country": "Belgium",
-   "organizer": "inconnu",
-   "industries": [
-    "IT & Technology",
-    "Industrial Engineering"
-   ],
-   "topics_keywords": "inconnu",
-   "description": "inconnu",
-   "attendees": 200,
-   "attendees_expected": "inconnu",
-   "exhibitors": 26,
-   "price_min": "inconnu",
-   "price_max": "inconnu",
-   "price_currency": "inconnu",
-   "url": "inconnu",
-   "lensmor_url": "https://www.lensmor.com/events/asset-performance-conference-2026",
-   "vendelux_verified": "inconnu",
-   "sources": [
-    "lensmor"
-   ],
-   "source_count": 1,
-   "source_refs": [
-    "S87#682"
-   ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
-   "inferred_fields": "inconnu",
-   "last_retrieved": "2026-11-09"
-  },
-  {
    "event_id": "BL-EVT-ad2a14f1ec",
    "name": "Asset Performance International Conference 2026",
-   "name_variants": "inconnu",
+   "name_variants": [
+    "Asset Performance Conference 2026"
+   ],
    "start_date": "2026-11-18",
    "end_date": "2026-11-19",
-   "date_raw": "vendelux: 2026-11-18 → 2026-11-19",
+   "date_raw": "vendelux: 2026-11-18 → 2026-11-19 | lensmor: Nov 18 – 19, 2026",
    "date_conflict": false,
    "event_format": "in_person",
    "venue": "Flanders Meeting & Convention Center",
@@ -217223,7 +216644,10 @@
    "region": "Vlaanderen",
    "country": "Belgium",
    "organizer": "inconnu",
-   "industries": "inconnu",
+   "industries": [
+    "IT & Technology",
+    "Industrial Engineering"
+   ],
    "topics_keywords": [
     "AGI",
     "AI",
@@ -217638,21 +217062,23 @@
    "description": "The Asset Performance International Conference 2026, powered by BEMAS, stands as Europe's leading forum for digital transformation in Maintenance and Asset Management. The conference will take place at the Flanders Meeting & Convention Center Antwerp, bringing together reliability engineers, maintenance managers, and digitization professionals from across Europe.\n\nAttendees can expect to explore ways to improve equipment reliability, manage costs more effectively, and build stronger, more sustainable operations. Discussions will cover the latest advancements, including AI systems, Asset Management 5.0, Predictive and Prescriptive Maintenance, and the Industrial Internet of Things.\n\nIt offers a chance to exchange knowledge, share experiences, and connect with industry leaders who are shaping the future of asset performance.",
    "attendees": 366,
    "attendees_expected": 300,
-   "exhibitors": "inconnu",
+   "exhibitors": 26,
    "price_min": "inconnu",
    "price_max": "inconnu",
    "price_currency": "inconnu",
    "url": "https://assetperformance.eu/",
-   "lensmor_url": "inconnu",
+   "lensmor_url": "https://www.lensmor.com/events/asset-performance-conference-2026",
    "vendelux_verified": false,
    "sources": [
-    "vendelux"
+    "vendelux",
+    "lensmor"
    ],
-   "source_count": 1,
+   "source_count": 2,
    "source_refs": [
-    "S86#742"
+    "S86#742",
+    "S87#682"
    ],
-   "match_method": "source_unique",
+   "match_method": "decision_manuelle",
    "conflicts": "inconnu",
    "inferred_fields": "inconnu",
    "last_retrieved": "2026-11-09"
@@ -305564,47 +304990,6 @@
    "last_retrieved": "2026-11-09"
   },
   {
-   "event_id": "BL-EVT-dbe1263876",
-   "name": "FT Future of Asset Management Europe 2026",
-   "name_variants": "inconnu",
-   "start_date": "2026-11-24",
-   "end_date": "2026-11-25",
-   "date_raw": "lensmor: Nov 24 – 25, 2026",
-   "date_conflict": false,
-   "event_format": "inconnu",
-   "venue": "inconnu",
-   "city": "London",
-   "region": "inconnu",
-   "country": "United Kingdom",
-   "organizer": "inconnu",
-   "industries": [
-    "Banking & Finance",
-    "Business Services"
-   ],
-   "topics_keywords": "inconnu",
-   "description": "inconnu",
-   "attendees": 572,
-   "attendees_expected": "inconnu",
-   "exhibitors": 30,
-   "price_min": "inconnu",
-   "price_max": "inconnu",
-   "price_currency": "inconnu",
-   "url": "inconnu",
-   "lensmor_url": "https://www.lensmor.com/events/ft-future-of-asset-management-europe-2026",
-   "vendelux_verified": "inconnu",
-   "sources": [
-    "lensmor"
-   ],
-   "source_count": 1,
-   "source_refs": [
-    "S87#371"
-   ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
-   "inferred_fields": "inconnu",
-   "last_retrieved": "2026-11-09"
-  },
-  {
    "event_id": "BL-EVT-ebb389ebe7",
    "name": "Future Battery Forum 2026",
    "name_variants": "inconnu",
@@ -305667,10 +305052,12 @@
   {
    "event_id": "BL-EVT-bbb5c007d6",
    "name": "Future of Asset Management Europe 2026",
-   "name_variants": "inconnu",
+   "name_variants": [
+    "FT Future of Asset Management Europe 2026"
+   ],
    "start_date": "2026-11-24",
    "end_date": "2026-11-25",
-   "date_raw": "vendelux: 2026-11-24 → 2026-11-25",
+   "date_raw": "vendelux: 2026-11-24 → 2026-11-25 | lensmor: Nov 24 – 25, 2026",
    "date_conflict": false,
    "event_format": "hybrid",
    "venue": "inconnu",
@@ -305678,7 +305065,10 @@
    "region": "England",
    "country": "United Kingdom",
    "organizer": "inconnu",
-   "industries": "inconnu",
+   "industries": [
+    "Banking & Finance",
+    "Business Services"
+   ],
    "topics_keywords": [
     "AI",
     "AM",
@@ -306023,21 +305413,23 @@
    "description": "The Future of Asset Management Europe 2026 is set to be the definitive two-day gathering for senior leaders shaping the continent's financial landscape. This summit will offer a clear perspective on the evolving economics of asset and wealth management. It brings together leading CEOs from Europe’s top firms, alternative platforms, and regulatory bodies.\r\n\r\nParticipants, whether attending in person or online, will examine new developments in areas like AI, tokenisation, and active ETFs. They can also compare their strategies with others on important subjects such as M&A, private market access, and sustainability. The program includes panels, off-the-record roundtables, and keynote interviews. These sessions are designed to help participants gain a deeper understanding of their strategic direction, the development of private markets, and the influence of policy and geopolitics. It's an opportunity to connect with influential decision-makers and discuss how to shape the future of European asset management.",
    "attendees": 432,
    "attendees_expected": 400,
-   "exhibitors": "inconnu",
+   "exhibitors": 30,
    "price_min": 293,
    "price_max": 8299,
    "price_currency": "inconnu",
    "url": "https://foameurope.live.ft.com/home",
-   "lensmor_url": "inconnu",
+   "lensmor_url": "https://www.lensmor.com/events/ft-future-of-asset-management-europe-2026",
    "vendelux_verified": false,
    "sources": [
-    "vendelux"
+    "vendelux",
+    "lensmor"
    ],
-   "source_count": 1,
+   "source_count": 2,
    "source_refs": [
-    "S86#1054"
+    "S86#1054",
+    "S87#371"
    ],
-   "match_method": "source_unique",
+   "match_method": "decision_manuelle",
    "conflicts": "inconnu",
    "inferred_fields": "inconnu",
    "last_retrieved": "2026-11-09"
@@ -307432,10 +306824,12 @@
   {
    "event_id": "BL-EVT-0a1133e1ff",
    "name": "International Banking Forum 2026",
-   "name_variants": "inconnu",
+   "name_variants": [
+    "X International Banking Forum 2026"
+   ],
    "start_date": "2026-11-24",
    "end_date": "2026-11-25",
-   "date_raw": "vendelux: 2026-11-24 → 2026-11-25",
+   "date_raw": "vendelux: 2026-11-24 → 2026-11-25 | lensmor: Nov 24 – 25, 2026",
    "date_conflict": false,
    "event_format": "in_person",
    "venue": "Baku Marriott Boulevard Hotel",
@@ -307443,7 +306837,11 @@
    "region": "inconnu",
    "country": "Azerbaijan",
    "organizer": "inconnu",
-   "industries": "inconnu",
+   "industries": [
+    "Banking & Finance",
+    "Business Services",
+    "IT & Technology"
+   ],
    "topics_keywords": [
     "2024",
     "2025",
@@ -308152,21 +307550,23 @@
    "description": "Prepare to explore the future of finance at the International Banking Forum 2026, taking place on November 24-25 at the prestigious Baku Marriott Boulevard Hotel in Azerbaijan. This two-day event centers on the theme \"Reliable, Safe, and Sustainable Banking.\" It is expected to bring together over 1500 individuals from the financial sector, including Bank CEOs, regulators, fintech leaders, and global influencers.\n\nFifty expert speakers will share their perspectives across nine discussion panels. An exhibition area will also be available. Participants, whether attending in person or virtually, will have opportunities to connect with representatives from 270 companies.\n\nMastercard is supporting the forum as its Main Partner. The conversations and insights shared are intended to help attendees understand and contribute to the evolving landscape of banking worldwide.",
    "attendees": 168,
    "attendees_expected": 1200,
-   "exhibitors": "inconnu",
+   "exhibitors": 43,
    "price_min": "inconnu",
    "price_max": "inconnu",
    "price_currency": "inconnu",
    "url": "https://gbmevents.az/en/event/x-international-banking-forum",
-   "lensmor_url": "inconnu",
+   "lensmor_url": "https://www.lensmor.com/events/x-international-banking-forum-2026",
    "vendelux_verified": false,
    "sources": [
-    "vendelux"
+    "vendelux",
+    "lensmor"
    ],
-   "source_count": 1,
+   "source_count": 2,
    "source_refs": [
-    "S86#1057"
+    "S86#1057",
+    "S87#714"
    ],
-   "match_method": "source_unique",
+   "match_method": "decision_manuelle",
    "conflicts": "inconnu",
    "inferred_fields": "inconnu",
    "last_retrieved": "2026-11-09"
@@ -311575,10 +310975,12 @@
   {
    "event_id": "BL-EVT-8f9048e47a",
    "name": "Smart Production Solutions Nuremberg 2026",
-   "name_variants": "inconnu",
+   "name_variants": [
+    "SPS-Smart Production Solutions Nuremberg 2026"
+   ],
    "start_date": "2026-11-24",
    "end_date": "2026-11-26",
-   "date_raw": "vendelux: 2026-11-24 → 2026-11-26",
+   "date_raw": "vendelux: 2026-11-24 → 2026-11-26 | lensmor: Nov 24 – 26, 2026",
    "date_conflict": false,
    "event_format": "in_person",
    "venue": "inconnu",
@@ -311586,7 +310988,11 @@
    "region": "inconnu",
    "country": "Germany",
    "organizer": "inconnu",
-   "industries": "inconnu",
+   "industries": [
+    "Electric & Electronics",
+    "IT & Technology",
+    "Industrial Engineering"
+   ],
    "topics_keywords": [
     "2025",
     "3D",
@@ -312099,105 +311505,23 @@
    "description": "Prepare to immerse yourself in the forefront of industrial transformation at Smart Production Solutions Nuremberg 2026, taking place from 24 – 26 November in Nuremberg, Germany. Recognized as a leading event for the automation sector, SPS 2026 offers a comprehensive look at smart and digital automation.\r\n\r\nThe event will feature tangible solutions, current digital trends, and practical innovations that are shaping manufacturing's future. It will cover a range of topics, from intelligent control systems to fully connected industrial environments, illustrating current capabilities and future possibilities. With more than 1,000 exhibitors and a diverse international audience, visitors can expect to find valuable perspectives and opportunities to connect with peers, relevant for navigating an increasingly automated industrial landscape.",
    "attendees": 5501,
    "attendees_expected": 55938,
-   "exhibitors": "inconnu",
-   "price_min": "inconnu",
-   "price_max": "inconnu",
-   "price_currency": "inconnu",
-   "url": "https://sps.mesago.com/nuernberg/en.html",
-   "lensmor_url": "inconnu",
-   "vendelux_verified": false,
-   "sources": [
-    "vendelux"
-   ],
-   "source_count": 1,
-   "source_refs": [
-    "S86#1045"
-   ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
-   "inferred_fields": "inconnu",
-   "last_retrieved": "2026-11-09"
-  },
-  {
-   "event_id": "BL-EVT-9d0b14e6a7",
-   "name": "SPS-Smart Production Solutions Nuremberg 2026",
-   "name_variants": "inconnu",
-   "start_date": "2026-11-24",
-   "end_date": "2026-11-26",
-   "date_raw": "lensmor: Nov 24 – 26, 2026",
-   "date_conflict": false,
-   "event_format": "inconnu",
-   "venue": "inconnu",
-   "city": "Nuremberg",
-   "region": "inconnu",
-   "country": "Germany",
-   "organizer": "inconnu",
-   "industries": [
-    "Electric & Electronics",
-    "IT & Technology",
-    "Industrial Engineering"
-   ],
-   "topics_keywords": "inconnu",
-   "description": "inconnu",
-   "attendees": 5810,
-   "attendees_expected": "inconnu",
    "exhibitors": 1182,
    "price_min": "inconnu",
    "price_max": "inconnu",
    "price_currency": "inconnu",
-   "url": "inconnu",
+   "url": "https://sps.mesago.com/nuernberg/en.html",
    "lensmor_url": "https://www.lensmor.com/events/sps-smart-production-solutions-nuremberg-2026",
-   "vendelux_verified": "inconnu",
+   "vendelux_verified": false,
    "sources": [
+    "vendelux",
     "lensmor"
    ],
-   "source_count": 1,
+   "source_count": 2,
    "source_refs": [
+    "S86#1045",
     "S87#24"
    ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
-   "inferred_fields": "inconnu",
-   "last_retrieved": "2026-11-09"
-  },
-  {
-   "event_id": "BL-EVT-c7883c893d",
-   "name": "X International Banking Forum 2026",
-   "name_variants": "inconnu",
-   "start_date": "2026-11-24",
-   "end_date": "2026-11-25",
-   "date_raw": "lensmor: Nov 24 – 25, 2026",
-   "date_conflict": false,
-   "event_format": "inconnu",
-   "venue": "inconnu",
-   "city": "Baku",
-   "region": "inconnu",
-   "country": "Azerbaijan",
-   "organizer": "inconnu",
-   "industries": [
-    "Banking & Finance",
-    "Business Services",
-    "IT & Technology"
-   ],
-   "topics_keywords": "inconnu",
-   "description": "inconnu",
-   "attendees": 177,
-   "attendees_expected": "inconnu",
-   "exhibitors": 43,
-   "price_min": "inconnu",
-   "price_max": "inconnu",
-   "price_currency": "inconnu",
-   "url": "inconnu",
-   "lensmor_url": "https://www.lensmor.com/events/x-international-banking-forum-2026",
-   "vendelux_verified": "inconnu",
-   "sources": [
-    "lensmor"
-   ],
-   "source_count": 1,
-   "source_refs": [
-    "S87#714"
-   ],
-   "match_method": "source_unique",
+   "match_method": "decision_manuelle",
    "conflicts": "inconnu",
    "inferred_fields": "inconnu",
    "last_retrieved": "2026-11-09"
@@ -348707,10 +348031,12 @@
   {
    "event_id": "BL-EVT-5c5af5d2c9",
    "name": "Apartment Development & Affordable Housing 2026",
-   "name_variants": "inconnu",
+   "name_variants": [
+    "Apartment Development & Affordable Housing Conference 2026"
+   ],
    "start_date": "2026-12-01",
    "end_date": "2026-12-01",
-   "date_raw": "vendelux: 2026-12-01 → 2026-12-01",
+   "date_raw": "vendelux: 2026-12-01 → 2026-12-01 | lensmor: Dec 1, 2026",
    "date_conflict": false,
    "event_format": "in_person",
    "venue": "Metro Toronto Convention Centre",
@@ -348718,7 +348044,11 @@
    "region": "Ontario",
    "country": "Canada",
    "organizer": "inconnu",
-   "industries": "inconnu",
+   "industries": [
+    "Banking & Finance",
+    "Building & Construction",
+    "Business Services"
+   ],
    "topics_keywords": [
     "2025",
     "AM",
@@ -349014,63 +348344,23 @@
    "description": "Addressing Canada's surging demand for rental housing, Apartment Development & Affordable Housing 2026 is set to convene on December 1, 2026, at the Metro Toronto Convention Centre, South Building. This gathering will explore the anticipated \"apartment boom,\" examining the entire development lifecycle from financial viability and initial projections to feasibility, design considerations, and long-term ownership strategies. Discussions will encompass critical areas such as private equity, joint ventures, and the strategic shift from condominium to rental development.\n\nThe event brings together over 250 senior-level professionals, including more than 100 building owners, developers, and investors. It provides an environment for significant networking, allowing attendees to engage with institutional developers, lenders, municipalities, and financiers. Opportunities for collaboration and partnership building are facilitated through dedicated sessions, as well as during breakfast and lunch. Insights will be shared through expert keynotes, real-world case studies, and timely market updates, featuring confirmed speakers such as Stefania Parnanzone, Steven Gross, and Adrian Rocca.",
    "attendees": 243,
    "attendees_expected": 250,
-   "exhibitors": "inconnu",
+   "exhibitors": 102,
    "price_min": 900,
    "price_max": 1044,
    "price_currency": "inconnu",
    "url": "https://informaconnect.com/toronto-real-estate-forum/apartment-development-affordable-housing/",
-   "lensmor_url": "inconnu",
+   "lensmor_url": "https://www.lensmor.com/events/apartment-development-affordable-housing-conference-2026",
    "vendelux_verified": false,
    "sources": [
-    "vendelux"
-   ],
-   "source_count": 1,
-   "source_refs": [
-    "S86#1273"
-   ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
-   "inferred_fields": "inconnu",
-   "last_retrieved": "2026-11-09"
-  },
-  {
-   "event_id": "BL-EVT-9e09efc5a7",
-   "name": "Apartment Development & Affordable Housing Conference 2026",
-   "name_variants": "inconnu",
-   "start_date": "2026-12-01",
-   "end_date": "2026-12-01",
-   "date_raw": "lensmor: Dec 1, 2026",
-   "date_conflict": false,
-   "event_format": "inconnu",
-   "venue": "inconnu",
-   "city": "Toronto",
-   "region": "inconnu",
-   "country": "Canada",
-   "organizer": "inconnu",
-   "industries": [
-    "Banking & Finance",
-    "Building & Construction",
-    "Business Services"
-   ],
-   "topics_keywords": "inconnu",
-   "description": "inconnu",
-   "attendees": 746,
-   "attendees_expected": "inconnu",
-   "exhibitors": 102,
-   "price_min": "inconnu",
-   "price_max": "inconnu",
-   "price_currency": "inconnu",
-   "url": "inconnu",
-   "lensmor_url": "https://www.lensmor.com/events/apartment-development-affordable-housing-conference-2026",
-   "vendelux_verified": "inconnu",
-   "sources": [
+    "vendelux",
     "lensmor"
    ],
-   "source_count": 1,
+   "source_count": 2,
    "source_refs": [
+    "S86#1273",
     "S87#303"
    ],
-   "match_method": "source_unique",
+   "match_method": "decision_manuelle",
    "conflicts": "inconnu",
    "inferred_fields": "inconnu",
    "last_retrieved": "2026-11-09"
@@ -352316,47 +351606,6 @@
    "conflicts": [
     "dates lensmor: 2026-12-02 → 2026-12-03 (retenu vendelux)"
    ],
-   "inferred_fields": "inconnu",
-   "last_retrieved": "2026-11-09"
-  },
-  {
-   "event_id": "BL-EVT-fc095f3d44",
-   "name": "Chicago CIO Community Executive Summit Winter 2026",
-   "name_variants": "inconnu",
-   "start_date": "2026-12-01",
-   "end_date": "2026-12-01",
-   "date_raw": "lensmor: Dec 1, 2026",
-   "date_conflict": false,
-   "event_format": "inconnu",
-   "venue": "inconnu",
-   "city": "Chicago",
-   "region": "inconnu",
-   "country": "United States",
-   "organizer": "inconnu",
-   "industries": [
-    "Business Services",
-    "IT & Technology"
-   ],
-   "topics_keywords": "inconnu",
-   "description": "inconnu",
-   "attendees": 485,
-   "attendees_expected": "inconnu",
-   "exhibitors": 15,
-   "price_min": "inconnu",
-   "price_max": "inconnu",
-   "price_currency": "inconnu",
-   "url": "inconnu",
-   "lensmor_url": "https://www.lensmor.com/events/chicago-cio-community-executive-summit-winter-2026",
-   "vendelux_verified": "inconnu",
-   "sources": [
-    "lensmor"
-   ],
-   "source_count": 1,
-   "source_refs": [
-    "S87#424"
-   ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
    "inferred_fields": "inconnu",
    "last_retrieved": "2026-11-09"
   },
@@ -361417,10 +360666,12 @@
   {
    "event_id": "BL-EVT-ae744eea9a",
    "name": "Gartner Chicago CIO Community Executive Summit Winter 2026",
-   "name_variants": "inconnu",
+   "name_variants": [
+    "Chicago CIO Community Executive Summit Winter 2026"
+   ],
    "start_date": "2026-12-01",
    "end_date": "2026-12-01",
-   "date_raw": "vendelux: 2026-12-01 → 2026-12-01",
+   "date_raw": "vendelux: 2026-12-01 → 2026-12-01 | lensmor: Dec 1, 2026",
    "date_conflict": false,
    "event_format": "in_person",
    "venue": "convene willis tower",
@@ -361428,7 +360679,10 @@
    "region": "Illinois",
    "country": "United States",
    "organizer": "inconnu",
-   "industries": "inconnu",
+   "industries": [
+    "Business Services",
+    "IT & Technology"
+   ],
    "topics_keywords": [
     "2024",
     "2025",
@@ -362183,21 +361437,23 @@
    "description": "Chicago's top CIOs and C-level peers are invited to an exclusive, one-day program on December 1, 2026, at Convene in the iconic Willis Tower. This event, the Chicago CIO Community Executive Summit Winter 2026, is built \"By CIOs, For CIOs®,\" ensuring the conversations directly address the most important challenges and opportunities facing leaders today.\r\n\r\nParticipation is by invitation, creating an environment where leaders can truly connect and share insights with their peers. The day will explore significant subjects, including how to build strategic agility, evaluate the financial returns of AI investments, and manage complex risks and regulations, particularly through geostrategic sourcing.\r\n\r\nThe program features a mix of engaging keynote presentations, focused boardroom discussions, and private one-on-one meetings. These formats are designed to offer practical perspectives and foster stronger connections within Chicago's CIO community.",
    "attendees": 274,
    "attendees_expected": 243,
-   "exhibitors": "inconnu",
+   "exhibitors": 15,
    "price_min": "inconnu",
    "price_max": "inconnu",
    "price_currency": "inconnu",
    "url": "https://www.evanta.com/cio/chicago/chicago-cio-executive-summit-8488",
-   "lensmor_url": "inconnu",
+   "lensmor_url": "https://www.lensmor.com/events/chicago-cio-community-executive-summit-winter-2026",
    "vendelux_verified": false,
    "sources": [
-    "vendelux"
+    "vendelux",
+    "lensmor"
    ],
-   "source_count": 1,
+   "source_count": 2,
    "source_refs": [
-    "S86#1270"
+    "S86#1270",
+    "S87#424"
    ],
-   "match_method": "source_unique",
+   "match_method": "decision_manuelle",
    "conflicts": "inconnu",
    "inferred_fields": "inconnu",
    "last_retrieved": "2026-11-09"
@@ -365864,53 +365120,14 @@
    "last_retrieved": "2026-11-09"
   },
   {
-   "event_id": "BL-EVT-986a3d1ae4",
-   "name": "Handelsblatt BankenTech 2026",
-   "name_variants": "inconnu",
-   "start_date": "2026-12-01",
-   "end_date": "2026-12-02",
-   "date_raw": "lensmor: Dec 1 – 2, 2026",
-   "date_conflict": false,
-   "event_format": "inconnu",
-   "venue": "inconnu",
-   "city": "Frankfurt",
-   "region": "inconnu",
-   "country": "Germany",
-   "organizer": "inconnu",
-   "industries": [
-    "Banking & Finance",
-    "IT & Technology"
-   ],
-   "topics_keywords": "inconnu",
-   "description": "inconnu",
-   "attendees": 319,
-   "attendees_expected": "inconnu",
-   "exhibitors": 17,
-   "price_min": "inconnu",
-   "price_max": "inconnu",
-   "price_currency": "inconnu",
-   "url": "inconnu",
-   "lensmor_url": "https://www.lensmor.com/events/handelsblatt-bankentech-2026",
-   "vendelux_verified": "inconnu",
-   "sources": [
-    "lensmor"
-   ],
-   "source_count": 1,
-   "source_refs": [
-    "S87#560"
-   ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
-   "inferred_fields": "inconnu",
-   "last_retrieved": "2026-11-09"
-  },
-  {
    "event_id": "BL-EVT-db58183195",
    "name": "Handelsblatt BankingTech 2026",
-   "name_variants": "inconnu",
+   "name_variants": [
+    "Handelsblatt BankenTech 2026"
+   ],
    "start_date": "2026-12-01",
    "end_date": "2026-12-02",
-   "date_raw": "vendelux: 2026-12-01 → 2026-12-02",
+   "date_raw": "vendelux: 2026-12-01 → 2026-12-02 | lensmor: Dec 1 – 2, 2026",
    "date_conflict": false,
    "event_format": "in_person",
    "venue": "Hilton Frankfurt City Centre",
@@ -365918,7 +365135,10 @@
    "region": "Hessen",
    "country": "Germany",
    "organizer": "inconnu",
-   "industries": "inconnu",
+   "industries": [
+    "Banking & Finance",
+    "IT & Technology"
+   ],
    "topics_keywords": [
     "2024",
     "2025",
@@ -366180,22 +365400,26 @@
    "description": "Shaping the future of the financial sector, Handelsblatt BankingTech 2026 invites industry leaders and innovators to Frankfurt am Main. The event will take place on December 1st and 2nd at the Hilton Frankfurt City Centre, where participants will explore critical themes. Discussions will cover digital operational resilience (DORA), the impact of AI and Real World Assets (RWA), and changes in the regulatory environment.\r\n\r\nFurther topics include cybersecurity, API infrastructure, and how to meet evolving customer expectations within the fast-paced banking world. Attendees will have opportunities to connect with colleagues and discuss strategies for navigating the future of the industry.",
    "attendees": 686,
    "attendees_expected": 150,
-   "exhibitors": "inconnu",
+   "exhibitors": 17,
    "price_min": "inconnu",
    "price_max": "inconnu",
    "price_currency": "inconnu",
    "url": "https://live.handelsblatt.com/event/jahrestagung-bankentech/",
-   "lensmor_url": "inconnu",
+   "lensmor_url": "https://www.lensmor.com/events/handelsblatt-bankentech-2026",
    "vendelux_verified": false,
    "sources": [
-    "vendelux"
+    "vendelux",
+    "lensmor"
    ],
-   "source_count": 1,
+   "source_count": 2,
    "source_refs": [
-    "S86#1254"
+    "S86#1254",
+    "S87#560"
    ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
+   "match_method": "decision_manuelle",
+   "conflicts": [
+    "city: vendelux=Frankfurt am Main / lensmor=Frankfurt"
+   ],
    "inferred_fields": "inconnu",
    "last_retrieved": "2026-11-09"
   },
@@ -372954,53 +372178,14 @@
    "last_retrieved": "2026-11-09"
   },
   {
-   "event_id": "BL-EVT-fd98067f70",
-   "name": "Seattle CIO Community Executive Summit 2026",
-   "name_variants": "inconnu",
-   "start_date": "2026-12-01",
-   "end_date": "2026-12-01",
-   "date_raw": "lensmor: Dec 1, 2026",
-   "date_conflict": false,
-   "event_format": "inconnu",
-   "venue": "inconnu",
-   "city": "Seattle",
-   "region": "inconnu",
-   "country": "United States",
-   "organizer": "inconnu",
-   "industries": [
-    "Business Services",
-    "IT & Technology"
-   ],
-   "topics_keywords": "inconnu",
-   "description": "inconnu",
-   "attendees": 152,
-   "attendees_expected": "inconnu",
-   "exhibitors": 6,
-   "price_min": "inconnu",
-   "price_max": "inconnu",
-   "price_currency": "inconnu",
-   "url": "inconnu",
-   "lensmor_url": "https://www.lensmor.com/events/seattle-cio-community-executive-summit-2026",
-   "vendelux_verified": "inconnu",
-   "sources": [
-    "lensmor"
-   ],
-   "source_count": 1,
-   "source_refs": [
-    "S87#741"
-   ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
-   "inferred_fields": "inconnu",
-   "last_retrieved": "2026-11-09"
-  },
-  {
    "event_id": "BL-EVT-9042d2d8ba",
    "name": "Seattle CIO Community Executive Summit Winter 2026",
-   "name_variants": "inconnu",
+   "name_variants": [
+    "Seattle CIO Community Executive Summit 2026"
+   ],
    "start_date": "2026-12-01",
    "end_date": "2026-12-01",
-   "date_raw": "vendelux: 2026-12-01 → 2026-12-01",
+   "date_raw": "vendelux: 2026-12-01 → 2026-12-01 | lensmor: Dec 1, 2026",
    "date_conflict": false,
    "event_format": "in_person",
    "venue": "Grand Hyatt Seattle",
@@ -373008,7 +372193,10 @@
    "region": "Washington",
    "country": "United States",
    "organizer": "inconnu",
-   "industries": "inconnu",
+   "industries": [
+    "Business Services",
+    "IT & Technology"
+   ],
    "topics_keywords": [
     "2024",
     "2025",
@@ -373765,21 +372953,23 @@
    "description": "Seattle's premier gathering for IT leadership, the Seattle CIO Community Executive Summit Winter 2026, offers an exclusive, one-day program at the Grand Hyatt Seattle on December 1, 2026. Designed \"By CIOs, For CIOs®,\" this summit brings together C-level and senior executives from organizations with over $500M in revenue. It's a chance for these leaders to discuss and address their most pressing strategic priorities.\r\n\r\nThe program features interactive keynotes, breakout sessions, and private peer-to-peer meetings. These sessions are designed to help participants explore topics such as strategic agility, understanding the financial impact of AI investments, and navigating geostrategic sourcing challenges, providing practical insights.\r\n\r\nHosted by Evanta (A Gartner Company), the summit offers a valuable opportunity for leaders to connect with their peers. It's a setting where they can collectively address common business challenges and share perspectives within a select group.",
    "attendees": 60,
    "attendees_expected": 300,
-   "exhibitors": "inconnu",
+   "exhibitors": 6,
    "price_min": "inconnu",
    "price_max": "inconnu",
    "price_currency": "inconnu",
    "url": "https://www.evanta.com/cio/seattle/seattle-cio-executive-summit-9354",
-   "lensmor_url": "inconnu",
+   "lensmor_url": "https://www.lensmor.com/events/seattle-cio-community-executive-summit-2026",
    "vendelux_verified": false,
    "sources": [
-    "vendelux"
+    "vendelux",
+    "lensmor"
    ],
-   "source_count": 1,
+   "source_count": 2,
    "source_refs": [
-    "S86#1300"
+    "S86#1300",
+    "S87#741"
    ],
-   "match_method": "source_unique",
+   "match_method": "decision_manuelle",
    "conflicts": "inconnu",
    "inferred_fields": "inconnu",
    "last_retrieved": "2026-11-09"
@@ -380932,54 +380122,14 @@
    "last_retrieved": "2026-11-09"
   },
   {
-   "event_id": "BL-EVT-bc819ee1ec",
-   "name": "Building Material & Equipment Expo Tokyo 2026",
-   "name_variants": "inconnu",
-   "start_date": "2026-12-02",
-   "end_date": "2026-12-04",
-   "date_raw": "lensmor: Dec 2 – 4, 2026",
-   "date_conflict": false,
-   "event_format": "inconnu",
-   "venue": "inconnu",
-   "city": "Tokyo",
-   "region": "inconnu",
-   "country": "Japan",
-   "organizer": "inconnu",
-   "industries": [
-    "Building & Construction",
-    "Home & Office",
-    "IT & Technology"
-   ],
-   "topics_keywords": "inconnu",
-   "description": "inconnu",
-   "attendees": 575,
-   "attendees_expected": "inconnu",
-   "exhibitors": 478,
-   "price_min": "inconnu",
-   "price_max": "inconnu",
-   "price_currency": "inconnu",
-   "url": "inconnu",
-   "lensmor_url": "https://www.lensmor.com/events/building-material-equipment-expo-tokyo-2026",
-   "vendelux_verified": "inconnu",
-   "sources": [
-    "lensmor"
-   ],
-   "source_count": 1,
-   "source_refs": [
-    "S87#369"
-   ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
-   "inferred_fields": "inconnu",
-   "last_retrieved": "2026-11-09"
-  },
-  {
    "event_id": "BL-EVT-82d6b59861",
    "name": "Building Material & Housing Equipment Expo Tokyo 2026",
-   "name_variants": "inconnu",
+   "name_variants": [
+    "Building Material & Equipment Expo Tokyo 2026"
+   ],
    "start_date": "2026-12-02",
    "end_date": "2026-12-04",
-   "date_raw": "vendelux: 2026-12-02 → 2026-12-04",
+   "date_raw": "vendelux: 2026-12-02 → 2026-12-04 | lensmor: Dec 2 – 4, 2026",
    "date_conflict": false,
    "event_format": "in_person",
    "venue": "Tokyo Big Sight",
@@ -380987,7 +380137,11 @@
    "region": "Tokyo",
    "country": "Japan",
    "organizer": "inconnu",
-   "industries": "inconnu",
+   "industries": [
+    "Building & Construction",
+    "Home & Office",
+    "IT & Technology"
+   ],
    "topics_keywords": [
     "2025",
     "3D",
@@ -381386,22 +380540,26 @@
    "description": "Discover the forefront of construction and housing innovation at the Building Material & Housing Equipment Expo Tokyo 2026. The expo takes place from December 2 to 4, 2026, at Tokyo Big Sight, as a key part of JAPAN BUILD – International Building & Home Week. Recognized as a significant gathering for Japan's building and housing industries, the event brings together 11 specialized shows.\n\nVisitors can expect to see a wide range of innovations, from advanced building materials, smart home technologies, and green building solutions to housing DX, digital construction, and real estate technology.\n\nIt's an opportunity to meet with many industry professionals, including architects, developers, contractors, and real estate experts. This setting allows for discussions on current trends, finding new products, and developing collaborations. Organized by RX Japan, the event serves as a significant point of reference for those involved in the future of the built environment.",
    "attendees": 74,
    "attendees_expected": 38000,
-   "exhibitors": "inconnu",
+   "exhibitors": 478,
    "price_min": "inconnu",
    "price_max": "inconnu",
    "price_currency": "inconnu",
    "url": "https://www.japan-build.jp/hub/en-gb.html",
-   "lensmor_url": "inconnu",
+   "lensmor_url": "https://www.lensmor.com/events/building-material-equipment-expo-tokyo-2026",
    "vendelux_verified": false,
    "sources": [
-    "vendelux"
+    "vendelux",
+    "lensmor"
    ],
-   "source_count": 1,
+   "source_count": 2,
    "source_refs": [
-    "S86#1373"
+    "S86#1373",
+    "S87#369"
    ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
+   "match_method": "decision_manuelle",
+   "conflicts": [
+    "city: vendelux=Koto City / lensmor=Tokyo"
+   ],
    "inferred_fields": "inconnu",
    "last_retrieved": "2026-11-09"
   },
@@ -396027,10 +395185,12 @@
   {
    "event_id": "BL-EVT-0654dc73ee",
    "name": "PEI Women in Private Markets Summit Europe 2026",
-   "name_variants": "inconnu",
+   "name_variants": [
+    "Women in Private Markets Summit 2026"
+   ],
    "start_date": "2026-12-02",
    "end_date": "2026-12-03",
-   "date_raw": "vendelux: 2026-12-02 → 2026-12-03",
+   "date_raw": "vendelux: 2026-12-02 → 2026-12-03 | lensmor: Dec 2 – 3, 2026",
    "date_conflict": false,
    "event_format": "in_person",
    "venue": "Convene 133 Houndsditch",
@@ -396038,7 +395198,10 @@
    "region": "England",
    "country": "United Kingdom",
    "organizer": "inconnu",
-   "industries": "inconnu",
+   "industries": [
+    "Banking & Finance",
+    "Business Services"
+   ],
    "topics_keywords": [
     "Business",
     "Europe",
@@ -396056,21 +395219,23 @@
    "description": "Dedicated to empowering women across the alternatives landscape, the PEI Women in Private Markets Summit Europe 2026 returns to Convene 133 Houndsditch, London, on December 2-3, 2026. This two-day event brings together more than 800 LPs, GPs, fund managers, and advisors, offering valuable perspectives on the evolving private markets.\n\nAttendees will examine important themes including capital allocation, liquidity, and the impact of AI. These discussions will unfold across a main summit and six focused forums, covering specialized areas such as Infrastructure, Private Equity, Private Credit, Real Estate, Private Wealth, and Fund Operations.\n\nThe summit provides opportunities for structured networking, allowing individuals to build relevant connections. Practical career advice will also be available through the \"How women beat imposter syndrome\" series. These elements aim to support professional growth and foster connections within the industry.",
    "attendees": 158,
    "attendees_expected": 188,
-   "exhibitors": "inconnu",
+   "exhibitors": 20,
    "price_min": "inconnu",
    "price_max": "inconnu",
    "price_currency": "inconnu",
    "url": "https://www.peievents.com/en/event/women-in-private-markets-summit/",
-   "lensmor_url": "inconnu",
+   "lensmor_url": "https://www.lensmor.com/events/women-in-private-markets-summit-2026",
    "vendelux_verified": false,
    "sources": [
-    "vendelux"
+    "vendelux",
+    "lensmor"
    ],
-   "source_count": 1,
+   "source_count": 2,
    "source_refs": [
-    "S86#1366"
+    "S86#1366",
+    "S87#563"
    ],
-   "match_method": "source_unique",
+   "match_method": "decision_manuelle",
    "conflicts": "inconnu",
    "inferred_fields": "inconnu",
    "last_retrieved": "2026-11-09"
@@ -403454,47 +402619,6 @@
    "source_count": 1,
    "source_refs": [
     "S86#1401"
-   ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
-   "inferred_fields": "inconnu",
-   "last_retrieved": "2026-11-09"
-  },
-  {
-   "event_id": "BL-EVT-08d3d08a21",
-   "name": "Women in Private Markets Summit 2026",
-   "name_variants": "inconnu",
-   "start_date": "2026-12-02",
-   "end_date": "2026-12-03",
-   "date_raw": "lensmor: Dec 2 – 3, 2026",
-   "date_conflict": false,
-   "event_format": "inconnu",
-   "venue": "inconnu",
-   "city": "London",
-   "region": "inconnu",
-   "country": "United Kingdom",
-   "organizer": "inconnu",
-   "industries": [
-    "Banking & Finance",
-    "Business Services"
-   ],
-   "topics_keywords": "inconnu",
-   "description": "inconnu",
-   "attendees": 319,
-   "attendees_expected": "inconnu",
-   "exhibitors": 20,
-   "price_min": "inconnu",
-   "price_max": "inconnu",
-   "price_currency": "inconnu",
-   "url": "inconnu",
-   "lensmor_url": "https://www.lensmor.com/events/women-in-private-markets-summit-2026",
-   "vendelux_verified": "inconnu",
-   "sources": [
-    "lensmor"
-   ],
-   "source_count": 1,
-   "source_refs": [
-    "S87#563"
    ],
    "match_method": "source_unique",
    "conflicts": "inconnu",
@@ -431209,10 +430333,12 @@
   {
    "event_id": "BL-EVT-83b0c04196",
    "name": "Single Family Rental Awards 2026",
-   "name_variants": "inconnu",
+   "name_variants": [
+    "Single Family Rental Industry Awards 2026"
+   ],
    "start_date": "2026-12-06",
    "end_date": "2026-12-06",
-   "date_raw": "vendelux: 2026-12-06 → 2026-12-06",
+   "date_raw": "vendelux: 2026-12-06 → 2026-12-06 | lensmor: Dec 6, 2026",
    "date_conflict": false,
    "event_format": "in_person",
    "venue": "Fairmont Scottsdale Princess",
@@ -431220,7 +430346,11 @@
    "region": "Arizona",
    "country": "United States",
    "organizer": "inconnu",
-   "industries": "inconnu",
+   "industries": [
+    "Banking & Finance",
+    "Building & Construction",
+    "IT & Technology"
+   ],
    "topics_keywords": [
     "2025",
     "AI",
@@ -431594,63 +430724,23 @@
    "description": "The pinnacle of achievement in the single-family rental industry will be celebrated at the Single Family Rental Awards 2026. On December 6, 2026, the Fairmont Scottsdale Princess in Scottsdale, AZ, will host the annual gathering where the SFR and Build-to-Rent (BTR) sectors honor their leading figures and innovators.\n\nThis event acknowledges excellence within institutional single-family rental, with winners named across 25 categories. These include SFR/BTR Operator of the Year, Woman Operator of the Year, and AI Application of the Year. Industry leaders, including operators, investors, lenders, and technology providers, will attend. They will have opportunities to connect, build relationships, and learn from those shaping the industry, all focused on advancing the single-family rental sector.",
    "attendees": 545,
    "attendees_expected": 119,
-   "exhibitors": "inconnu",
-   "price_min": "inconnu",
-   "price_max": "inconnu",
-   "price_currency": "inconnu",
-   "url": "https://informaconnect.com/imn-sfr-awards/",
-   "lensmor_url": "inconnu",
-   "vendelux_verified": false,
-   "sources": [
-    "vendelux"
-   ],
-   "source_count": 1,
-   "source_refs": [
-    "S86#1532"
-   ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
-   "inferred_fields": "inconnu",
-   "last_retrieved": "2026-11-09"
-  },
-  {
-   "event_id": "BL-EVT-2031eb4212",
-   "name": "Single Family Rental Industry Awards 2026",
-   "name_variants": "inconnu",
-   "start_date": "2026-12-06",
-   "end_date": "2026-12-06",
-   "date_raw": "lensmor: Dec 6, 2026",
-   "date_conflict": false,
-   "event_format": "inconnu",
-   "venue": "inconnu",
-   "city": "Scottsdale",
-   "region": "inconnu",
-   "country": "United States",
-   "organizer": "inconnu",
-   "industries": [
-    "Banking & Finance",
-    "Building & Construction",
-    "IT & Technology"
-   ],
-   "topics_keywords": "inconnu",
-   "description": "inconnu",
-   "attendees": 127,
-   "attendees_expected": "inconnu",
    "exhibitors": 1,
    "price_min": "inconnu",
    "price_max": "inconnu",
    "price_currency": "inconnu",
-   "url": "inconnu",
+   "url": "https://informaconnect.com/imn-sfr-awards/",
    "lensmor_url": "https://www.lensmor.com/events/single-family-rental-industry-awards-2026",
-   "vendelux_verified": "inconnu",
+   "vendelux_verified": false,
    "sources": [
+    "vendelux",
     "lensmor"
    ],
-   "source_count": 1,
+   "source_count": 2,
    "source_refs": [
+    "S86#1532",
     "S87#772"
    ],
-   "match_method": "source_unique",
+   "match_method": "decision_manuelle",
    "conflicts": "inconnu",
    "inferred_fields": "inconnu",
    "last_retrieved": "2026-11-09"
@@ -488956,48 +488046,6 @@
    "last_retrieved": "2026-11-09"
   },
   {
-   "event_id": "BL-EVT-2dc7d9d961",
-   "name": "London International Horse Show 2026",
-   "name_variants": "inconnu",
-   "start_date": "2026-12-17",
-   "end_date": "2026-12-21",
-   "date_raw": "lensmor: Dec 17 – 21, 2026",
-   "date_conflict": false,
-   "event_format": "inconnu",
-   "venue": "inconnu",
-   "city": "London",
-   "region": "inconnu",
-   "country": "United Kingdom",
-   "organizer": "inconnu",
-   "industries": [
-    "Animals & Pets",
-    "Entertainment & Media",
-    "Retail & E-commerce"
-   ],
-   "topics_keywords": "inconnu",
-   "description": "inconnu",
-   "attendees": 128,
-   "attendees_expected": "inconnu",
-   "exhibitors": 190,
-   "price_min": "inconnu",
-   "price_max": "inconnu",
-   "price_currency": "inconnu",
-   "url": "inconnu",
-   "lensmor_url": "https://www.lensmor.com/events/london-international-horse-show-2026",
-   "vendelux_verified": "inconnu",
-   "sources": [
-    "lensmor"
-   ],
-   "source_count": 1,
-   "source_refs": [
-    "S87#769"
-   ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
-   "inferred_fields": "inconnu",
-   "last_retrieved": "2026-11-09"
-  },
-  {
    "event_id": "BL-EVT-c44036ef35",
    "name": "Money Fund University 2026",
    "name_variants": "inconnu",
@@ -489148,10 +488196,12 @@
   {
    "event_id": "BL-EVT-d155e50313",
    "name": "Olympia The London International Horse Show 2026",
-   "name_variants": "inconnu",
+   "name_variants": [
+    "London International Horse Show 2026"
+   ],
    "start_date": "2026-12-17",
    "end_date": "2026-12-21",
-   "date_raw": "vendelux: 2026-12-17 → 2026-12-21",
+   "date_raw": "vendelux: 2026-12-17 → 2026-12-21 | lensmor: Dec 17 – 21, 2026",
    "date_conflict": false,
    "event_format": "in_person",
    "venue": "ExCeL London",
@@ -489159,7 +488209,11 @@
    "region": "England",
    "country": "United Kingdom",
    "organizer": "inconnu",
-   "industries": "inconnu",
+   "industries": [
+    "Animals & Pets",
+    "Entertainment & Media",
+    "Retail & E-commerce"
+   ],
    "topics_keywords": [
     "2025",
     "AM",
@@ -489382,21 +488436,23 @@
    "description": "Get ready for \"The Horse World’s Christmas Party\" as Olympia The London International Horse Show returns to ExCeL London from Thursday 17 to Monday 21 December 2026. The show features three FEI World Cup™ Qualifiers across Jumping, Dressage, and Driving, bringing together leading equestrian athletes. Over five days, attendees can expect a full schedule of competition, including the London International Showing Series finals and masterclasses led by prominent riders.\n\nBeyond the main arena, there will be more than 200 country and equestrian shops available, offering a wide selection for those looking for gifts or unique items. The event's schedule includes various disciplines, from 5* Jumping to the Six Bar and Grand Prix, catering to a broad interest in equestrian sport.",
    "attendees": 273,
    "attendees_expected": 80000,
-   "exhibitors": "inconnu",
+   "exhibitors": 190,
    "price_min": 1139,
    "price_max": 1139,
    "price_currency": "inconnu",
    "url": "https://londonhorseshow.com/",
-   "lensmor_url": "inconnu",
+   "lensmor_url": "https://www.lensmor.com/events/london-international-horse-show-2026",
    "vendelux_verified": false,
    "sources": [
-    "vendelux"
+    "vendelux",
+    "lensmor"
    ],
-   "source_count": 1,
+   "source_count": 2,
    "source_refs": [
-    "S86#1763"
+    "S86#1763",
+    "S87#769"
    ],
-   "match_method": "source_unique",
+   "match_method": "decision_manuelle",
    "conflicts": "inconnu",
    "inferred_fields": "inconnu",
    "last_retrieved": "2026-11-09"
@@ -513641,10 +512697,12 @@
   {
    "event_id": "BL-EVT-4f9303f81d",
    "name": "International Dive Show 2027",
-   "name_variants": "inconnu",
+   "name_variants": [
+    "Paris International Dive Show 2027"
+   ],
    "start_date": "2027-01-14",
    "end_date": "2027-01-17",
-   "date_raw": "vendelux: 2027-01-14 → 2027-01-17",
+   "date_raw": "vendelux: 2027-01-14 → 2027-01-17 | lensmor: Jan 14 – 17, 2027",
    "date_conflict": false,
    "event_format": "in_person",
    "venue": "Paris Expo Porte de Versailles",
@@ -513652,7 +512710,12 @@
    "region": "Île-de-France",
    "country": "France",
    "organizer": "inconnu",
-   "industries": "inconnu",
+   "industries": [
+    "Education & Training",
+    "Health & Fitness",
+    "Travel & Tourism",
+    "Wellness"
+   ],
    "topics_keywords": [
     "AM",
     "AND",
@@ -513804,65 +512867,25 @@
     "With"
    ],
    "description": "inconnu",
-   "attendees": "inconnu",
+   "attendees": 155,
    "attendees_expected": 66500,
-   "exhibitors": "inconnu",
+   "exhibitors": 331,
    "price_min": "inconnu",
    "price_max": "inconnu",
    "price_currency": "inconnu",
    "url": "https://www.salon-de-la-plongee.com/en/home.html",
-   "lensmor_url": "inconnu",
+   "lensmor_url": "https://www.lensmor.com/events/paris-international-dive-show-2027",
    "vendelux_verified": false,
    "sources": [
-    "vendelux"
-   ],
-   "source_count": 1,
-   "source_refs": [
-    "S86#1894"
-   ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
-   "inferred_fields": "inconnu",
-   "last_retrieved": "2026-11-09"
-  },
-  {
-   "event_id": "BL-EVT-12bf935be0",
-   "name": "Maison&Objet Premier 2027",
-   "name_variants": "inconnu",
-   "start_date": "2027-01-14",
-   "end_date": "2027-01-18",
-   "date_raw": "lensmor: Jan 14 – 18, 2027",
-   "date_conflict": false,
-   "event_format": "inconnu",
-   "venue": "inconnu",
-   "city": "Paris",
-   "region": "inconnu",
-   "country": "France",
-   "organizer": "inconnu",
-   "industries": [
-    "Arts & Crafts",
-    "Fashion & Beauty",
-    "Home & Office"
-   ],
-   "topics_keywords": "inconnu",
-   "description": "inconnu",
-   "attendees": 396,
-   "attendees_expected": "inconnu",
-   "exhibitors": 1713,
-   "price_min": "inconnu",
-   "price_max": "inconnu",
-   "price_currency": "inconnu",
-   "url": "inconnu",
-   "lensmor_url": "https://www.lensmor.com/events/maison-objet-premier-2027",
-   "vendelux_verified": "inconnu",
-   "sources": [
+    "vendelux",
     "lensmor"
    ],
-   "source_count": 1,
+   "source_count": 2,
    "source_refs": [
-    "S87#488"
+    "S86#1894",
+    "S87#738"
    ],
-   "match_method": "source_unique",
+   "match_method": "decision_manuelle",
    "conflicts": "inconnu",
    "inferred_fields": "inconnu",
    "last_retrieved": "2026-11-09"
@@ -513870,10 +512893,12 @@
   {
    "event_id": "BL-EVT-cdd0112d80",
    "name": "Maison&Objet Winter 2027",
-   "name_variants": "inconnu",
+   "name_variants": [
+    "Maison&Objet Premier 2027"
+   ],
    "start_date": "2027-01-14",
    "end_date": "2027-01-18",
-   "date_raw": "vendelux: 2027-01-14 → 2027-01-18",
+   "date_raw": "vendelux: 2027-01-14 → 2027-01-18 | lensmor: Jan 14 – 18, 2027",
    "date_conflict": false,
    "event_format": "in_person",
    "venue": "Paris Nord Villepinte Exhibition Centre",
@@ -513881,7 +512906,11 @@
    "region": "Île-de-France",
    "country": "France",
    "organizer": "inconnu",
-   "industries": "inconnu",
+   "industries": [
+    "Arts & Crafts",
+    "Fashion & Beauty",
+    "Home & Office"
+   ],
    "topics_keywords": [
     "AM",
     "AND",
@@ -514295,21 +513324,23 @@
    "description": "Prepare to immerse yourself in the forefront of design and lifestyle at Maison&Objet Winter 2027, taking place in Paris from January 14-18.\n\nThe Paris Nord Villepinte exhibition center will host a comprehensive display of home decor, design, crafts, and fashion. Attendees will find a wide array of brands, from established names to emerging talents, showcasing their latest work. This gathering provides an opportunity to see both innovative concepts and classic designs.\n\nBeyond the main halls, the event extends into the city with 'Maison&Objet In The City.' This program guides visitors through 100 locations across Paris, including decorator showrooms and artisan workshops. Throughout the event, attendees can experience special installations, attend 'The Talks' conferences for expert perspectives, and consider new directions in design, craftsmanship, and sustainable practices. It offers a setting for discovering new products, finding inspiration, and connecting with others in the global design community.",
    "attendees": 2075,
    "attendees_expected": 67286,
-   "exhibitors": "inconnu",
+   "exhibitors": 1713,
    "price_min": "inconnu",
    "price_max": "inconnu",
    "price_currency": "inconnu",
    "url": "https://www.maison-objet.com/en/paris/programme",
-   "lensmor_url": "inconnu",
+   "lensmor_url": "https://www.lensmor.com/events/maison-objet-premier-2027",
    "vendelux_verified": false,
    "sources": [
-    "vendelux"
+    "vendelux",
+    "lensmor"
    ],
-   "source_count": 1,
+   "source_count": 2,
    "source_refs": [
-    "S86#1878"
+    "S86#1878",
+    "S87#488"
    ],
-   "match_method": "source_unique",
+   "match_method": "decision_manuelle",
    "conflicts": "inconnu",
    "inferred_fields": "inconnu",
    "last_retrieved": "2026-11-09"
@@ -515261,49 +514292,6 @@
    "source_count": 1,
    "source_refs": [
     "S86#1889"
-   ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
-   "inferred_fields": "inconnu",
-   "last_retrieved": "2026-11-09"
-  },
-  {
-   "event_id": "BL-EVT-26e1e1078a",
-   "name": "Paris International Dive Show 2027",
-   "name_variants": "inconnu",
-   "start_date": "2027-01-14",
-   "end_date": "2027-01-17",
-   "date_raw": "lensmor: Jan 14 – 17, 2027",
-   "date_conflict": false,
-   "event_format": "inconnu",
-   "venue": "inconnu",
-   "city": "Paris",
-   "region": "inconnu",
-   "country": "France",
-   "organizer": "inconnu",
-   "industries": [
-    "Education & Training",
-    "Health & Fitness",
-    "Travel & Tourism",
-    "Wellness"
-   ],
-   "topics_keywords": "inconnu",
-   "description": "inconnu",
-   "attendees": 155,
-   "attendees_expected": "inconnu",
-   "exhibitors": 331,
-   "price_min": "inconnu",
-   "price_max": "inconnu",
-   "price_currency": "inconnu",
-   "url": "inconnu",
-   "lensmor_url": "https://www.lensmor.com/events/paris-international-dive-show-2027",
-   "vendelux_verified": "inconnu",
-   "sources": [
-    "lensmor"
-   ],
-   "source_count": 1,
-   "source_refs": [
-    "S87#738"
    ],
    "match_method": "source_unique",
    "conflicts": "inconnu",
@@ -522516,47 +521504,6 @@
    "last_retrieved": "2026-11-09"
   },
   {
-   "event_id": "BL-EVT-0cb522e54b",
-   "name": "Global Seafood Market Conference 2027",
-   "name_variants": "inconnu",
-   "start_date": "2027-01-17",
-   "end_date": "2027-01-21",
-   "date_raw": "lensmor: Jan 17 – 21, 2027",
-   "date_conflict": false,
-   "event_format": "inconnu",
-   "venue": "inconnu",
-   "city": "Scottsdale",
-   "region": "inconnu",
-   "country": "United States",
-   "organizer": "inconnu",
-   "industries": [
-    "Business Services",
-    "Food & Beverages"
-   ],
-   "topics_keywords": "inconnu",
-   "description": "inconnu",
-   "attendees": 884,
-   "attendees_expected": "inconnu",
-   "exhibitors": 296,
-   "price_min": "inconnu",
-   "price_max": "inconnu",
-   "price_currency": "inconnu",
-   "url": "inconnu",
-   "lensmor_url": "https://www.lensmor.com/events/global-seafood-market-conference-2027",
-   "vendelux_verified": "inconnu",
-   "sources": [
-    "lensmor"
-   ],
-   "source_count": 1,
-   "source_refs": [
-    "S87#258"
-   ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
-   "inferred_fields": "inconnu",
-   "last_retrieved": "2026-11-09"
-  },
-  {
    "event_id": "BL-EVT-226fa95bb2",
    "name": "IEEE Radio & Wireless Symposium 2027",
    "name_variants": "inconnu",
@@ -522860,6 +521807,61 @@
    ],
    "match_method": "nom_normalise+dates",
    "conflicts": "inconnu",
+   "inferred_fields": "inconnu",
+   "last_retrieved": "2026-11-09"
+  },
+  {
+   "event_id": "BL-EVT-885f6f7d6f",
+   "name": "NFI Global Seafood Market Conference 2027",
+   "name_variants": [
+    "Global Seafood Market Conference 2027"
+   ],
+   "start_date": "2027-01-17",
+   "end_date": "2027-01-21",
+   "date_raw": "vendelux: 2027-01-18 → 2027-01-21 | lensmor: Jan 17 – 21, 2027",
+   "date_conflict": true,
+   "event_format": "in_person",
+   "venue": "inconnu",
+   "city": "Scottsdale",
+   "region": "inconnu",
+   "country": "United States",
+   "organizer": "inconnu",
+   "industries": [
+    "Business Services",
+    "Food & Beverages"
+   ],
+   "topics_keywords": [
+    "Al",
+    "Conf",
+    "Food",
+    "Food Market",
+    "Market",
+    "Sea",
+    "Seafood"
+   ],
+   "description": "Prepare to immerse yourself in the definitive event for the global seafood industry: the NFI Global Seafood Market Conference 2027. From January 18-21, 2027, this gathering brings together C-suite executives, industry leaders, and key decision-makers from across the sector.\n\nThe program is designed to provide a clear understanding of current seafood and business trends. Attendees can expect to gain valuable insights that will help them develop their strategies and plans for the year ahead.\n\nBeyond the presentations, the agenda also emphasizes opportunities for connection. Extended lunch breaks and receptions are planned, allowing participants to engage with peers, reinforce existing relationships, and explore new collaborations within the industry.",
+   "attendees": 393,
+   "attendees_expected": 500,
+   "exhibitors": 296,
+   "price_min": "inconnu",
+   "price_max": "inconnu",
+   "price_currency": "inconnu",
+   "url": "https://aboutseafood.com/event/global-seafood-market-conference-2025/",
+   "lensmor_url": "https://www.lensmor.com/events/global-seafood-market-conference-2027",
+   "vendelux_verified": false,
+   "sources": [
+    "vendelux",
+    "lensmor"
+   ],
+   "source_count": 2,
+   "source_refs": [
+    "S86#1944",
+    "S87#258"
+   ],
+   "match_method": "decision_manuelle",
+   "conflicts": [
+    "dates vendelux: 2027-01-18 → 2027-01-21 (retenu lensmor)"
+   ],
    "inferred_fields": "inconnu",
    "last_retrieved": "2026-11-09"
   },
@@ -526516,52 +525518,6 @@
    "source_count": 1,
    "source_refs": [
     "S86#1946"
-   ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
-   "inferred_fields": "inconnu",
-   "last_retrieved": "2026-11-09"
-  },
-  {
-   "event_id": "BL-EVT-ff94fca281",
-   "name": "NFI Global Seafood Market Conference 2027",
-   "name_variants": "inconnu",
-   "start_date": "2027-01-18",
-   "end_date": "2027-01-21",
-   "date_raw": "vendelux: 2027-01-18 → 2027-01-21",
-   "date_conflict": false,
-   "event_format": "in_person",
-   "venue": "inconnu",
-   "city": "inconnu",
-   "region": "inconnu",
-   "country": "inconnu",
-   "organizer": "inconnu",
-   "industries": "inconnu",
-   "topics_keywords": [
-    "Al",
-    "Conf",
-    "Food",
-    "Food Market",
-    "Market",
-    "Sea",
-    "Seafood"
-   ],
-   "description": "Prepare to immerse yourself in the definitive event for the global seafood industry: the NFI Global Seafood Market Conference 2027. From January 18-21, 2027, this gathering brings together C-suite executives, industry leaders, and key decision-makers from across the sector.\n\nThe program is designed to provide a clear understanding of current seafood and business trends. Attendees can expect to gain valuable insights that will help them develop their strategies and plans for the year ahead.\n\nBeyond the presentations, the agenda also emphasizes opportunities for connection. Extended lunch breaks and receptions are planned, allowing participants to engage with peers, reinforce existing relationships, and explore new collaborations within the industry.",
-   "attendees": 393,
-   "attendees_expected": 500,
-   "exhibitors": "inconnu",
-   "price_min": "inconnu",
-   "price_max": "inconnu",
-   "price_currency": "inconnu",
-   "url": "https://aboutseafood.com/event/global-seafood-market-conference-2025/",
-   "lensmor_url": "inconnu",
-   "vendelux_verified": false,
-   "sources": [
-    "vendelux"
-   ],
-   "source_count": 1,
-   "source_refs": [
-    "S86#1944"
    ],
    "match_method": "source_unique",
    "conflicts": "inconnu",
@@ -563764,48 +562720,6 @@
    "last_retrieved": "2026-11-09"
   },
   {
-   "event_id": "BL-EVT-e9985a9f33",
-   "name": "Nuclear Deterrence Summit 2027",
-   "name_variants": "inconnu",
-   "start_date": "2027-01-25",
-   "end_date": "2027-01-27",
-   "date_raw": "lensmor: Jan 25 – 27, 2027",
-   "date_conflict": false,
-   "event_format": "inconnu",
-   "venue": "inconnu",
-   "city": "Arlington",
-   "region": "inconnu",
-   "country": "United States",
-   "organizer": "inconnu",
-   "industries": [
-    "Power & Energy",
-    "Science & Research",
-    "Security & Defense"
-   ],
-   "topics_keywords": "inconnu",
-   "description": "inconnu",
-   "attendees": 323,
-   "attendees_expected": "inconnu",
-   "exhibitors": 31,
-   "price_min": "inconnu",
-   "price_max": "inconnu",
-   "price_currency": "inconnu",
-   "url": "inconnu",
-   "lensmor_url": "https://www.lensmor.com/events/nuclear-deterance-summit-2027",
-   "vendelux_verified": "inconnu",
-   "sources": [
-    "lensmor"
-   ],
-   "source_count": 1,
-   "source_refs": [
-    "S87#555"
-   ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
-   "inferred_fields": "inconnu",
-   "last_retrieved": "2026-11-09"
-  },
-  {
    "event_id": "BL-EVT-43a5eef35d",
    "name": "PAVE/X 2027",
    "name_variants": "inconnu",
@@ -570043,18 +568957,24 @@
   {
    "event_id": "BL-EVT-6f15356e68",
    "name": "Nuclear Deterance Summit 2027",
-   "name_variants": "inconnu",
+   "name_variants": [
+    "Nuclear Deterrence Summit 2027"
+   ],
    "start_date": "2027-01-26",
    "end_date": "2027-01-28",
-   "date_raw": "vendelux: 2027-01-26 → 2027-01-28",
-   "date_conflict": false,
+   "date_raw": "vendelux: 2027-01-26 → 2027-01-28 | lensmor: Jan 25 – 27, 2027",
+   "date_conflict": true,
    "event_format": "in_person",
    "venue": "Crystal Gateway Marriott",
    "city": "Arlington",
    "region": "Virginia",
    "country": "United States",
    "organizer": "inconnu",
-   "industries": "inconnu",
+   "industries": [
+    "Power & Energy",
+    "Science & Research",
+    "Security & Defense"
+   ],
    "topics_keywords": [
     "AI",
     "AM",
@@ -570374,22 +569294,26 @@
    "description": "The U.S. nuclear enterprise convenes for its 19th Annual Nuclear Deterrence Summit 2027, from January 26-28 at the Crystal Gateway Marriott in Arlington, VA. This gathering brings together leaders, operators, strategists, and business partners. Participants will work to align key priorities and programs, and address the practical challenges in modernization, production, and the industrial base.\n\nAttendees will have the opportunity to speak directly with senior officials from NNSA, DOE, DoD, and national laboratories. Conversations will cover important topics such as technology, artificial intelligence, and workforce resilience. The event provides a setting for valuable connections among professionals, serving as an important unclassified space where government and industry can work together to strengthen the nation's deterrence capabilities.",
    "attendees": 194,
    "attendees_expected": 723,
-   "exhibitors": "inconnu",
+   "exhibitors": 31,
    "price_min": "inconnu",
    "price_max": "inconnu",
    "price_currency": "inconnu",
    "url": "https://www.exchangemonitor.com/go/nuclear-deterrence-summit-2027/",
-   "lensmor_url": "inconnu",
+   "lensmor_url": "https://www.lensmor.com/events/nuclear-deterance-summit-2027",
    "vendelux_verified": false,
    "sources": [
-    "vendelux"
+    "vendelux",
+    "lensmor"
    ],
-   "source_count": 1,
+   "source_count": 2,
    "source_refs": [
-    "S86#2168"
+    "S86#2168",
+    "S87#555"
    ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
+   "match_method": "decision_manuelle",
+   "conflicts": [
+    "dates lensmor: 2027-01-25 → 2027-01-27 (retenu vendelux)"
+   ],
    "inferred_fields": "inconnu",
    "last_retrieved": "2026-11-09"
   },
@@ -600609,10 +599533,12 @@
   {
    "event_id": "BL-EVT-385d7dea18",
    "name": "SLAS International Conference & Exhibition 2027",
-   "name_variants": "inconnu",
+   "name_variants": [
+    "SLAS2027 International Conference & Exhibition"
+   ],
    "start_date": "2027-01-30",
    "end_date": "2027-02-03",
-   "date_raw": "vendelux: 2027-01-30 → 2027-02-03",
+   "date_raw": "vendelux: 2027-01-30 → 2027-02-03 | lensmor: Jan 30 – Feb 3, 2027",
    "date_conflict": false,
    "event_format": "in_person",
    "venue": "inconnu",
@@ -600620,7 +599546,11 @@
    "region": "California",
    "country": "United States",
    "organizer": "inconnu",
-   "industries": "inconnu",
+   "industries": [
+    "IT & Technology",
+    "Medical & Pharma",
+    "Science & Research"
+   ],
    "topics_keywords": [
     "Al",
     "Conf",
@@ -600640,58 +599570,18 @@
    "price_max": "inconnu",
    "price_currency": "inconnu",
    "url": "https://www.slas.org/events-calendar/slas2027-international-conference-exhibition/",
-   "lensmor_url": "inconnu",
+   "lensmor_url": "https://www.lensmor.com/events/slas2027-international-conference-exhibition-2027",
    "vendelux_verified": false,
    "sources": [
-    "vendelux"
-   ],
-   "source_count": 1,
-   "source_refs": [
-    "S86#2300"
-   ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
-   "inferred_fields": "inconnu",
-   "last_retrieved": "2026-11-09"
-  },
-  {
-   "event_id": "BL-EVT-5d40b298ca",
-   "name": "SLAS2027 International Conference & Exhibition",
-   "name_variants": "inconnu",
-   "start_date": "2027-01-30",
-   "end_date": "2027-02-03",
-   "date_raw": "lensmor: Jan 30 – Feb 3, 2027",
-   "date_conflict": false,
-   "event_format": "inconnu",
-   "venue": "inconnu",
-   "city": "San Diego",
-   "region": "inconnu",
-   "country": "United States",
-   "organizer": "inconnu",
-   "industries": [
-    "IT & Technology",
-    "Medical & Pharma",
-    "Science & Research"
-   ],
-   "topics_keywords": "inconnu",
-   "description": "inconnu",
-   "attendees": 126,
-   "attendees_expected": "inconnu",
-   "exhibitors": "inconnu",
-   "price_min": "inconnu",
-   "price_max": "inconnu",
-   "price_currency": "inconnu",
-   "url": "inconnu",
-   "lensmor_url": "https://www.lensmor.com/events/slas2027-international-conference-exhibition-2027",
-   "vendelux_verified": "inconnu",
-   "sources": [
+    "vendelux",
     "lensmor"
    ],
-   "source_count": 1,
+   "source_count": 2,
    "source_refs": [
+    "S86#2300",
     "S87#773"
    ],
-   "match_method": "source_unique",
+   "match_method": "decision_manuelle",
    "conflicts": "inconnu",
    "inferred_fields": "inconnu",
    "last_retrieved": "2026-11-09"
@@ -602704,54 +601594,14 @@
    "last_retrieved": "2026-11-09"
   },
   {
-   "event_id": "BL-EVT-728810886e",
-   "name": "PARMA 53rd Annual Conference 2027",
-   "name_variants": "inconnu",
-   "start_date": "2027-01-31",
-   "end_date": "2027-02-03",
-   "date_raw": "lensmor: Jan 31 – Feb 3, 2027",
-   "date_conflict": false,
-   "event_format": "inconnu",
-   "venue": "inconnu",
-   "city": "Chula Vista",
-   "region": "inconnu",
-   "country": "United States",
-   "organizer": "inconnu",
-   "industries": [
-    "Banking & Finance",
-    "Business Services",
-    "Education & Training"
-   ],
-   "topics_keywords": "inconnu",
-   "description": "inconnu",
-   "attendees": 71,
-   "attendees_expected": "inconnu",
-   "exhibitors": "inconnu",
-   "price_min": "inconnu",
-   "price_max": "inconnu",
-   "price_currency": "inconnu",
-   "url": "inconnu",
-   "lensmor_url": "https://www.lensmor.com/events/parma-53rd-annual-conference-2027",
-   "vendelux_verified": "inconnu",
-   "sources": [
-    "lensmor"
-   ],
-   "source_count": 1,
-   "source_refs": [
-    "S87#848"
-   ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
-   "inferred_fields": "inconnu",
-   "last_retrieved": "2026-11-09"
-  },
-  {
    "event_id": "BL-EVT-c63f4d6156",
    "name": "PARMA Annual Conference 2027",
-   "name_variants": "inconnu",
+   "name_variants": [
+    "PARMA 53rd Annual Conference 2027"
+   ],
    "start_date": "2027-01-31",
    "end_date": "2027-02-03",
-   "date_raw": "vendelux: 2027-01-31 → 2027-02-03",
+   "date_raw": "vendelux: 2027-01-31 → 2027-02-03 | lensmor: Jan 31 – Feb 3, 2027",
    "date_conflict": false,
    "event_format": "in_person",
    "venue": "Gaylord Pacific Resort & Convention Center",
@@ -602759,7 +601609,11 @@
    "region": "California",
    "country": "United States",
    "organizer": "inconnu",
-   "industries": "inconnu",
+   "industries": [
+    "Banking & Finance",
+    "Business Services",
+    "Education & Training"
+   ],
    "topics_keywords": [
     "Al",
     "Annual",
@@ -602774,17 +601628,21 @@
    "price_max": "inconnu",
    "price_currency": "inconnu",
    "url": "https://parma.com/events/parma-53rd-annual-conference-2027",
-   "lensmor_url": "inconnu",
+   "lensmor_url": "https://www.lensmor.com/events/parma-53rd-annual-conference-2027",
    "vendelux_verified": false,
    "sources": [
-    "vendelux"
+    "vendelux",
+    "lensmor"
    ],
-   "source_count": 1,
+   "source_count": 2,
    "source_refs": [
-    "S86#2326"
+    "S86#2326",
+    "S87#848"
    ],
-   "match_method": "source_unique",
-   "conflicts": "inconnu",
+   "match_method": "decision_manuelle",
+   "conflicts": [
+    "city: vendelux=San Diego / lensmor=Chula Vista"
+   ],
    "inferred_fields": "inconnu",
    "last_retrieved": "2026-11-09"
   },

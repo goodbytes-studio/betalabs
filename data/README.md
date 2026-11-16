@@ -10,8 +10,8 @@ Les CSV sont en UTF-8, séparateur virgule, champs manquants vides. Les valeurs 
 | [organizer-contacts.csv](derived/organizer-contacts.csv) | Un contact dans l’export organisateurs | 9 |
 | [events.csv](derived/events.csv) | Un événement S39 ou une campagne ajoutée | 17 |
 
-| [events-master.csv](derived/events-master.csv) / [.json](derived/events-master.json) | Un événement du marché, tous catalogues fusionnés (**base maîtresse BETA Labs**) | 3 170 au 2026-11-09 |
-| [events-merge-review.csv](derived/events-merge-review.csv) | Paires inter-sources ressemblantes **non** fusionnées, à relire | 36 |
+| [events-master.csv](derived/events-master.csv) / [.json](derived/events-master.json) | Un événement du marché, tous catalogues fusionnés (**base maîtresse BETA Labs**) | 3 136 au 2026-11-09 |
+| [events-merge-review.csv](derived/events-merge-review.csv) | Paires inter-sources ressemblantes non encore tranchées (vide : les 36 sont décidées) | 0 |
 | [events-master-quality.json](derived/events-master-quality.json) | Compteurs, remplissage par champ, notes | — |
 
 Les [originaux CSV](../sources/README.md) constituent la couche brute. La table d’événements contient 16 lignes S39 et HOP ajouté depuis S08/S09 ; ALL IN est relié au même ID dans le catalogue et dans les prospects. Elle n’inclut pas toute la recherche internationale.
@@ -52,7 +52,7 @@ Voir [quality-report.json](derived/quality-report.json) pour les compteurs, vale
 
 ## Base maîtresse d'événements (S86, S87, S88)
 
-`python3 scripts/merge_events.py` fusionne trois extractions du 2026-11-09 : **S86** Vendelux (2 639), **S87** Lensmor (1 031) et **S88** calendrier du Palais des congrès de Montréal (228). Résultat : 3 170 événements (728 présents dans Vendelux et Lensmor ; aucun recoupement avec Montréal). Les 3 898 lignes sources sont toutes retrouvables via `source_refs` (`S86#i` = i-ième événement du JSON, base 0). Ce catalogue du marché est distinct de `events.csv` (campagnes BETA Labs) ; aucun lien n'a été établi entre les deux.
+`python3 scripts/merge_events.py` fusionne trois extractions du 2026-11-09 : **S86** Vendelux (2 639), **S87** Lensmor (1 031) et **S88** calendrier du Palais des congrès de Montréal (228). Résultat : 3 136 événements (761 présents dans Vendelux et Lensmor, un dans Vendelux et Montréal). Les 36 paires douteuses ont été tranchées une à une dans [event-merge-decisions.csv](config/event-merge-decisions.csv) : 34 fusionnées (`match_method=decision_manuelle`), 2 gardées séparées (Chicago/Seattle ; ICHOM Montréal/IHEEP Austin). Deux décisions s'appuient sur une vérification web du 2026-11-16 (Maison&Objet Premier = édition de janvier 2027 ; Global Seafood Market Conference du 17 au 21 janvier, dates de Lensmor retenues). Toute nouvelle paire douteuse apparaît dans `events-merge-review.csv` ; l'ajouter au fichier de décisions pour la trancher. Les 3 898 lignes sources sont toutes retrouvables via `source_refs` (`S86#i` = i-ième événement du JSON, base 0). Ce catalogue du marché est distinct de `events.csv` (campagnes BETA Labs) ; aucun lien n'a été établi entre les deux.
 
 Règle : chaque colonne existe pour chaque événement ; une valeur absente vaut `inconnu` (jamais vide, jamais 0). Les 0 des extractions (participants, exposants, prix 0/0) sont traités comme inconnus, car un placeholder n'est pas un compte réel ; les originaux gardent la valeur brute.
 

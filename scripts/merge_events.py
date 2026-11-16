@@ -160,14 +160,14 @@ def iso(d):
     return d.isoformat() if d else UNKNOWN
 
 
-def merge_group(records, method):
+def merge_group(records, method, prefer_dates=None):
     records = sorted(records, key=lambda r: PRIORITY.index(r["source"]))
     out = {f: UNKNOWN for f in FIELDS}
     conflicts = []
     name = records[0]["name"]
     out["name"] = name
     out["name_variants"] = sorted({r["name"] for r in records if r["name"] != name})
-    dated = [r for r in records if r["start"]]
+    dated = sorted((r for r in records if r["start"]), key=lambda r: r["source"] != prefer_dates)
     if dated:
         out["start_date"], out["end_date"] = iso(dated[0]["start"]), iso(dated[0]["end"])
         for r in dated[1:]:
@@ -226,7 +226,28 @@ def build():
             g = {"records": [rec]}
             groups.append(g)
             index.setdefault(norm(rec["name"]), []).append(g)
-    events = [merge_group(g["records"], "nom_normalise+dates" if len(g["records"]) > 1 else "source_unique") for g in groups]
+    # 2) décisions de relecture humaine (data/config/event-merge-decisions.csv)
+    decisions = list(csv.DictReader((ROOT / "data/config/event-merge-decisions.csv").open(encoding="utf-8")))
+    where = {(r["source"], r["index"]): g for g in groups for r in g["records"]}
+    prefer = {}
+    for d in decisions:
+        if d["decision"] != "merge":
+            continue
+        ga = where[tuple([d["source_a"].split("#")[0], int(d["source_a"].split("#")[1])])]
+        gb = where[tuple([d["source_b"].split("#")[0], int(d["source_b"].split("#")[1])])]
+        if ga is gb:
+            continue
+        if {r["source"] for r in ga["records"]} & {r["source"] for r in gb["records"]}:
+            raise ValueError(f"Décision incohérente (même source des deux côtés) : {d['source_a']} / {d['source_b']}")
+        ga["records"] += gb["records"]
+        ga["manual"] = True
+        if d["prefer_dates"]:
+            prefer[id(ga)] = d["prefer_dates"]
+        groups.remove(gb)
+        for r in gb["records"]:
+            where[(r["source"], r["index"])] = ga
+    events = [merge_group(g["records"], "decision_manuelle" if g.get("manual") else "nom_normalise+dates" if len(g["records"]) > 1 else "source_unique",
+                          prefer.get(id(g))) for g in groups]
     ids = [e["event_id"] for e in events]
     if len(ids) != len(set(ids)):
         raise ValueError("Collision d'identifiants événement")
@@ -235,6 +256,7 @@ def build():
 
 
 def review_candidates(groups):
+    decided = {frozenset((d["source_a"], d["source_b"])) for d in csv.DictReader((ROOT / "data/config/event-merge-decisions.csv").open(encoding="utf-8"))}
     """Paires inter-sources non fusionnées qui ressemblent à un doublon : à relire, jamais fusionnées."""
     singles = [g["records"][0] for g in groups if len(g["records"]) == 1 and g["records"][0]["start"]]
     by_date = {}
@@ -250,7 +272,7 @@ def review_candidates(groups):
                 ratio = difflib.SequenceMatcher(None, a, b).ratio()
                 same_dom = bool(r["url"] != UNKNOWN and o["url"] != UNKNOWN and
                                 urlparse(r["url"]).netloc.removeprefix("www.") == urlparse(o["url"]).netloc.removeprefix("www."))
-                if ratio >= 0.8 or same_dom:
+                if (ratio >= 0.8 or same_dom) and frozenset((f"{r['source']}#{r['index']}", f"{o['source']}#{o['index']}")) not in decided:
                     out.append(dict(source_a=f"{r['source']}#{r['index']}", name_a=r["name"], start_a=iso(r["start"]),
                                     source_b=f"{o['source']}#{o['index']}", name_b=o["name"], start_b=iso(o["start"]),
                                     similarity=round(ratio, 3), same_url_domain=same_dom))
