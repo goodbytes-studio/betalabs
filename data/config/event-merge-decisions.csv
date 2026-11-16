@@ -1,0 +1,37 @@
+source_a,source_b,decision,prefer_dates,basis
+lensmor#714,vendelux#1057,merge,,"Même forum à Bakou, mêmes dates ; « X » est le numéro d'édition (URL gbmevents.az …/x-international-banking-forum)."
+lensmor#371,vendelux#1054,merge,,"Même événement FT à Londres, mêmes dates ; seul le préfixe « FT » diffère."
+lensmor#773,vendelux#2300,merge,,"Même conférence SLAS à San Diego, mêmes dates ; URL S86 = slas2027-international-conference-exhibition."
+lensmor#24,vendelux#1045,merge,,"Même salon SPS à Nuremberg, mêmes dates (sps.mesago.com)."
+lensmor#158,vendelux#432,merge,,"Même conférence à Austin ; « CyberMarketingCon » = « Cyber Marketing Con » ; fin différente d'un jour (18 vs 19), S86 retenue."
+lensmor#258,vendelux#1944,merge,lensmor,"Vérifié sur aboutseafood.com : Global Seafood Market Conference 2027 du 17 au 21 janvier 2027, Scottsdale. Dates S87 retenues (S86 : début au 18)."
+lensmor#555,vendelux#2168,merge,,"« Deterrence » / « Deterance » (faute dans S86), même ville et salle Arlington ; décalage d'un jour entre les sources, S86 retenue, à vérifier."
+lensmor#560,vendelux#1254,merge,,"Même événement à Francfort, mêmes dates ; BankenTech (allemand) et BankingTech (anglais)."
+lensmor#542,vendelux#138,merge,,"Même forum à Austin le même jour (qubevents.com/nextgen-payments-austin) ; S87 précise « Austin », S86 « USA »."
+lensmor#424,vendelux#1270,merge,,Même sommet Evanta/Gartner à Chicago le même jour.
+lensmor#741,vendelux#1300,merge,,Même sommet Evanta à Seattle le même jour.
+lensmor#577,vendelux#262,merge,,"Même salon, même jour, Kent Event Centre (Detling, près de Maidstone)."
+lensmor#369,vendelux#1373,merge,,"Même expo à Tokyo Big Sight, mêmes dates (japan-build.jp)."
+lensmor#848,vendelux#2326,merge,,"Même conférence PARMA 2027 ; l'URL S86 mentionne parma-53rd-annual-conference-2027 ; Chula Vista et San Diego : le Gaylord Pacific est à Chula Vista (ville S86 retenue, à relire)."
+lensmor#393,vendelux#157,merge,,"Même conférence NSGC à Baltimore, mêmes dates ; S87 ajoute « 45th »."
+lensmor#738,vendelux#1894,merge,,"Même salon de la plongée à Paris, mêmes dates."
+lensmor#539,vendelux#436,merge,,"Même salon PLMA à Chicago, mêmes dates."
+lensmor#565,vendelux#441,merge,,"Même événement NTA à Tulsa (URL ntatravelexchange.com), mêmes dates."
+lensmor#303,vendelux#1273,merge,,Même conférence à Toronto le même jour.
+lensmor#424,vendelux#1300,keep_separate,,Chicago et Seattle : deux sommets distincts (villes différentes).
+lensmor#186,vendelux#169,merge,,"Même sommet ERE à San Diego, mêmes dates ; S87 ajoute « San Diego » au nom."
+lensmor#282,vendelux#492,merge,,Même événement LSX à Londres le même jour (« London » / « UK »).
+lensmor#772,vendelux#1532,merge,,Même remise de prix à Scottsdale le même jour.
+lensmor#921,vendelux#391,merge,,"Même soirée de prix WiTWA à Perth (witwa.org.au) le même jour ; lieu absent dans S86, rempli par S87."
+lensmor#563,vendelux#1366,merge,,"Même sommet Women in Private Markets à Londres (PEI), mêmes dates."
+lensmor#624,vendelux#146,merge,,"Même événement à Chicago, mêmes dates."
+lensmor#769,vendelux#1763,merge,,"Même salon hippique à Londres, mêmes dates ; salle indiquée par S86 (ExCeL) à vérifier."
+lensmor#571,vendelux#235,merge,,"Même événement à Southbank (Melbourne), mêmes dates."
+congresmtl#12,vendelux#681,merge,,"Même URL (store.ascp.org, productId 182372920) ; mêmes lieu et début ; fin 22 (S88) vs 20 (S86), S86 retenue."
+lensmor#488,vendelux#1878,merge,,"Vérifié sur maison-objet.com : l'édition de janvier 2027 s'appelle Maison&Objet Premier, du 14 au 18 janvier, Paris Nord Villepinte ; « Winter » est le libellé S86 de la même édition."
+lensmor#372,vendelux#359,merge,,Même sommet à Atlanta le même jour (events.govtech.com/Georgia-Emerging-Technology-Summit-Data-AI).
+lensmor#150,vendelux#126,merge,,"Même événement #RISK à Londres, mêmes dates."
+congresmtl#27,vendelux#1540,keep_separate,,"ICHOM (Montréal) et IHEEP (Austin) : organisations, villes et dates différentes."
+lensmor#340,vendelux#196,merge,,Même sommet à Augusta (Maine) le même jour.
+lensmor#222,vendelux#647,merge,,Même événement Tech Talent North West à Vancouver le même jour.
+lensmor#682,vendelux#742,merge,,"Même conférence à Anvers, mêmes dates."

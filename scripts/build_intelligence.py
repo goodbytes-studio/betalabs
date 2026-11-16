@@ -56,6 +56,14 @@ def integer(value):
 
 def source_text(source):
     path = ROOT / source["path"]
+    if source["format"] == "json":
+        # Extractions volumineuses : décrire la structure, ne pas recopier des Mo dans le texte consultable.
+        data = json.loads(path.read_text(encoding="utf-8"))["data"]
+        events = data["events"]
+        fields = sorted({key for event in events for key in event if not key.endswith("_citation")})
+        return (f"Extraction JSON de {len(events)} événements (non recopiée ici : {source['bytes']} octets). "
+                f"Champs : {', '.join(fields)}.\n\nPremier événement :\n\n```json\n"
+                f"{json.dumps(events[0], ensure_ascii=False, indent=2)}\n```\n\nFusion : `python3 scripts/merge_events.py`.\n")
     if source["format"] != "docx":
         text = path.read_text(encoding="utf-8-sig")
         if source["format"] in {"csv", "js"}:

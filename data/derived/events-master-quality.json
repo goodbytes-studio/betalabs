@@ -1,0 +1,64 @@
+{
+  "input_rows": {
+    "vendelux": 2639,
+    "lensmor": 1031,
+    "congresmtl": 228
+  },
+  "master_rows": 3136,
+  "rows_by_source_combination": {
+    "vendelux": 1877,
+    "vendelux+lensmor": 761,
+    "congresmtl": 227,
+    "lensmor": 270,
+    "vendelux+congresmtl": 1
+  },
+  "duplicates_merged": 762,
+  "date_conflicts": 42,
+  "events_with_conflict_notes": 98,
+  "unparsed_dates": 0,
+  "possible_duplicates_not_merged": 0,
+  "filled_values_per_field": {
+    "event_id": 3136,
+    "name": 3136,
+    "name_variants": 49,
+    "start_date": 3136,
+    "end_date": 3136,
+    "date_raw": 3136,
+    "date_conflict": 3136,
+    "event_format": 2639,
+    "venue": 2300,
+    "city": 3041,
+    "region": 2651,
+    "country": 3011,
+    "organizer": 228,
+    "industries": 1031,
+    "topics_keywords": 2603,
+    "description": 2294,
+    "attendees": 2361,
+    "attendees_expected": 2190,
+    "exhibitors": 955,
+    "price_min": 597,
+    "price_max": 597,
+    "price_currency": 0,
+    "url": 2665,
+    "lensmor_url": 1031,
+    "vendelux_verified": 2639,
+    "sources": 3136,
+    "source_count": 3136,
+    "source_refs": 3136,
+    "match_method": 3136,
+    "conflicts": 98,
+    "inferred_fields": 228,
+    "last_retrieved": 3136
+  },
+  "notes": [
+    "« inconnu » = champ conservé sans valeur ; un 0 des extractions (participants, exposants, prix) est traité comme inconnu.",
+    "Devise des prix inconnue (aucune source ne la donne).",
+    "Congrès Montréal : lieu, ville, région et pays déduits du calendrier du Palais des congrès (colonne inferred_fields).",
+    "Les `topics` Vendelux sont des mots-clés bruts, parfois tronqués (ex. « Busines ») : ne pas les employer comme taxonomie."
+  ],
+  "retrieved": {
+    "vendelux": "2026-11-09T16:31:10.089Z",
+    "lensmor": "2026-11-09"
+  }
+}

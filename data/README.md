@@ -10,6 +10,10 @@ Les CSV sont en UTF-8, séparateur virgule, champs manquants vides. Les valeurs 
 | [organizer-contacts.csv](derived/organizer-contacts.csv) | Un contact dans l’export organisateurs | 9 |
 | [events.csv](derived/events.csv) | Un événement S39 ou une campagne ajoutée | 17 |
 
+| [events-master.csv](derived/events-master.csv) / [.json](derived/events-master.json) | Un événement du marché, tous catalogues fusionnés (**base maîtresse BETA Labs**) | 3 136 au 2026-11-09 |
+| [events-merge-review.csv](derived/events-merge-review.csv) | Paires inter-sources ressemblantes non encore tranchées (vide : les 36 sont décidées) | 0 |
+| [events-master-quality.json](derived/events-master-quality.json) | Compteurs, remplissage par champ, notes | — |
+
 Les [originaux CSV](../sources/README.md) constituent la couche brute. La table d’événements contient 16 lignes S39 et HOP ajouté depuis S08/S09 ; ALL IN est relié au même ID dans le catalogue et dans les prospects. Elle n’inclut pas toute la recherche internationale.
 
 ## Dictionnaire des champs ajoutés
@@ -45,3 +49,27 @@ Les colonnes originales `action`, `forfait_recommande`, `confiance_donnees`, `so
 Les données de contacts restent des éléments internes de travail. La présence d’une adresse, d’un numéro ou d’une connexion ne prouve ni actualité, ni disponibilité, ni demande de contact.
 
 Voir [quality-report.json](derived/quality-report.json) pour les compteurs, valeurs vides et statistiques CRM, et [les registres](../intelligence/09-preuves-decisions.md) pour leur interprétation. Les tables générées se reconstruisent avec les commandes du README ; les registres restent éditoriaux et ne sont pas réapprouvés automatiquement.
+
+## Base maîtresse d'événements (S86, S87, S88)
+
+`python3 scripts/merge_events.py` fusionne trois extractions du 2026-11-09 : **S86** Vendelux (2 639), **S87** Lensmor (1 031) et **S88** calendrier du Palais des congrès de Montréal (228). Résultat : 3 136 événements (761 présents dans Vendelux et Lensmor, un dans Vendelux et Montréal). Les 36 paires douteuses ont été tranchées une à une dans [event-merge-decisions.csv](config/event-merge-decisions.csv) : 34 fusionnées (`match_method=decision_manuelle`), 2 gardées séparées (Chicago/Seattle ; ICHOM Montréal/IHEEP Austin). Deux décisions s'appuient sur une vérification web du 2026-11-16 (Maison&Objet Premier = édition de janvier 2027 ; Global Seafood Market Conference du 17 au 21 janvier, dates de Lensmor retenues). Toute nouvelle paire douteuse apparaît dans `events-merge-review.csv` ; l'ajouter au fichier de décisions pour la trancher. Les 3 898 lignes sources sont toutes retrouvables via `source_refs` (`S86#i` = i-ième événement du JSON, base 0). Ce catalogue du marché est distinct de `events.csv` (campagnes BETA Labs) ; aucun lien n'a été établi entre les deux.
+
+Règle : chaque colonne existe pour chaque événement ; une valeur absente vaut `inconnu` (jamais vide, jamais 0). Les 0 des extractions (participants, exposants, prix 0/0) sont traités comme inconnus, car un placeholder n'est pas un compte réel ; les originaux gardent la valeur brute.
+
+| Champ | Origine |
+|---|---|
+| `event_id` | `BL-EVT-` + hash du nom normalisé et de la date de début retenue ; change si la date est corrigée |
+| `name`, `name_variants` | S86 > S87 > S88 ; autres graphies conservées |
+| `start_date`, `end_date`, `date_raw`, `date_conflict` | Dates ISO (S86 ; S87 et S88 converties depuis le texte) ; `date_raw` garde chaque formulation ; `date_conflict` = les sources divergent (S86 retenue) |
+| `event_format` | S86 : in_person / hybrid / virtual ; inconnu pour S87 et S88 |
+| `venue`, `city`, `region`, `country` | S86, complété par S87 (ville, pays) ; « TBA » → inconnu ; pays unifiés (UK, USA, The Bahamas) ; « MI » invalide → inconnu |
+| `organizer`, `url` | S88 ; `url` aussi S86 |
+| `industries` (S87), `topics_keywords` (S86) | Listes séparées par `; ` ; les mots-clés S86 sont bruts et parfois tronqués, pas une taxonomie |
+| `description`, `vendelux_verified` | S86 |
+| `attendees` | S86 sinon S87 ; les deux sources ne comptent pas pareil, l'écart n'est pas signalé comme conflit |
+| `attendees_expected`, `price_min`, `price_max` | S86 ; `price_currency` toujours inconnu (aucune devise dans les sources) |
+| `exhibitors`, `lensmor_url` | S87 |
+| `sources`, `source_count`, `source_refs`, `match_method`, `last_retrieved` | Provenance et méthode (même nom normalisé, début à moins de 31 jours, un-pour-un) |
+| `conflicts`, `inferred_fields` | Divergences de ville ou de pays ; champs déduits (S88 : lieu = Palais des congrès de Montréal, pris du calendrier et non de chaque ligne) |
+
+Éditions répétées d'un même nom dans S88 (ex. Stratégies PME 2026/2027/2028) restent des événements distincts. Aucune vérification externe n'a été faite ; `verified` de Vendelux est reproduit tel quel (45 vrais sur 2 639).
