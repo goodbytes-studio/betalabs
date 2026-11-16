@@ -1,12 +1,13 @@
 {
   "as_of": "2026-10-20",
-  "source_count": 85,
+  "source_count": 88,
   "format_counts": {
     "md": 65,
     "docx": 12,
     "csv": 5,
     "txt": 2,
-    "js": 1
+    "js": 1,
+    "json": 3
   },
   "csv_rows": {
     "S07": 172,

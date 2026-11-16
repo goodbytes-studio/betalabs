@@ -1020,6 +1020,42 @@
       "source_date": "2026-10-20",
       "disposition": "reference_provisoire",
       "summary": "Décision d’Elizabeth du 2026-10-20 : Nuspace dans la tranche 3 à 10 M$ ; signature des brouillons Desjardins laissée à compléter."
+    },
+    {
+      "id": "S86",
+      "original_name": "vendelux-events-extract-2026-11-09.json",
+      "path": "sources/originals/vendelux-events-extract-2026-11-09.json",
+      "sha256": "a259ae33fbfdf8290ba93877e39f8b28d2bb4ca5a219d3b3127401aa13555fdb",
+      "bytes": 18149278,
+      "format": "json",
+      "topic": "evenements",
+      "source_date": "2026-11-09",
+      "disposition": "snapshot",
+      "summary": "Extraction Vendelux (2 639 événements, début du 2026-10-10 au 2027-02-09, fin au plus tôt le 2026-11-09), champs avec citation, `verified` et `topics`. Source d’événements à fusionner dans la base maîtresse."
+    },
+    {
+      "id": "S87",
+      "original_name": "lensmor-events-extract-2026-11-09.json",
+      "path": "sources/originals/lensmor-events-extract-2026-11-09.json",
+      "sha256": "efe373f8d1fa5717bcf2fd79d33aa2889ea44f9f35786ed0183c182fea8a4f43",
+      "bytes": 460904,
+      "format": "json",
+      "topic": "evenements",
+      "source_date": "2026-11-09",
+      "disposition": "snapshot",
+      "summary": "Extraction Lensmor « Upcoming featured trade shows » (1 031 salons) : dates en texte, lieu « ville, pays », industries, exposants et participants."
+    },
+    {
+      "id": "S88",
+      "original_name": "congresmtl-events-extract-2026-11-09.json",
+      "path": "sources/originals/congresmtl-events-extract-2026-11-09.json",
+      "sha256": "883423fa16b398359d1650f997051225867e71d24ab89144d875693e6b5c6529",
+      "bytes": 58803,
+      "format": "json",
+      "topic": "evenements",
+      "source_date": "2026-11-09",
+      "disposition": "snapshot",
+      "summary": "Extraction du calendrier du Palais des congrès de Montréal (228 événements, dont des éditions répétées) : date en texte français, organisateur, URL partielle."
     }
   ]
 }
