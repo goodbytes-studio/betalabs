@@ -1,0 +1,1686 @@
+{
+  "evenement": "Stratégies PME 2026",
+  "dates": "2026-11-17 au 2026-11-18",
+  "lieu": "Palais des congrès de Montréal",
+  "source": "https://www.strategiespme.com/",
+  "extrait_le": "2026-11-17",
+  "total": 206,
+  "partenaires": [
+    {
+      "nom": "Intuit QuickBooks",
+      "url_site": "https://quickbooks.intuit.com/fr-ca/",
+      "categories": [
+        "Partenaire officiel",
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Partenaire officiel"
+    },
+    {
+      "nom": "Banque Nationale",
+      "url_site": "https://www.bnc.ca/entreprises.html",
+      "categories": [
+        "Partenaire platine",
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Partenaire platine"
+    },
+    {
+      "nom": "EntreChefs PME",
+      "url_site": "https://entrechefspme.com/",
+      "categories": [
+        "Partenaire platine",
+        "Collaborateur",
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Partenaire platine"
+    },
+    {
+      "nom": "HIGH5",
+      "url_site": "https://www.agencehigh5.com/",
+      "categories": [
+        "Partenaire platine"
+      ],
+      "categorie_principale": "Partenaire platine"
+    },
+    {
+      "nom": "Zoho Corp",
+      "url_site": "https://www.zoho.com/fr",
+      "categories": [
+        "Partenaire platine",
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Partenaire platine"
+    },
+    {
+      "nom": "ADP CANADA",
+      "url_site": "https://www.adp.ca/fr-ca.aspx",
+      "categories": [
+        "Partenaire de l'évènement",
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Partenaire de l'évènement"
+    },
+    {
+      "nom": "ATELIER DIRECT LA PRESSE",
+      "url_site": "https://atelier-direct-blog.lapresse.ca/",
+      "categories": [
+        "Partenaire de l'évènement"
+      ],
+      "categorie_principale": "Partenaire de l'évènement"
+    },
+    {
+      "nom": "Coefficient RH",
+      "url_site": "https://coefficientrh.com/",
+      "categories": [
+        "Partenaire de l'évènement"
+      ],
+      "categorie_principale": "Partenaire de l'évènement"
+    },
+    {
+      "nom": "CPA Québec",
+      "url_site": "https://cpaquebec.ca/",
+      "categories": [
+        "Partenaire de l'évènement",
+        "Collaborateur",
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Partenaire de l'évènement"
+    },
+    {
+      "nom": "Dialog insight",
+      "url_site": "https://www.dialoginsight.com/",
+      "categories": [
+        "Partenaire de l'évènement",
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Partenaire de l'évènement"
+    },
+    {
+      "nom": "Flexia",
+      "url_site": "https://flexiaconseil.com/",
+      "categories": [
+        "Partenaire de l'évènement"
+      ],
+      "categorie_principale": "Partenaire de l'évènement"
+    },
+    {
+      "nom": "Formation Improov",
+      "url_site": "https://improov.pro/",
+      "categories": [
+        "Partenaire de l'évènement",
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Partenaire de l'évènement"
+    },
+    {
+      "nom": "Hackcell",
+      "url_site": "https://hackcell.co/",
+      "categories": [
+        "Partenaire de l'évènement",
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Partenaire de l'évènement"
+    },
+    {
+      "nom": "HeroShop",
+      "url_site": "https://heroshop.com/fr",
+      "categories": [
+        "Partenaire de l'évènement",
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Partenaire de l'évènement"
+    },
+    {
+      "nom": "IG Gestion",
+      "url_site": "https://www.ig.ca/fr",
+      "categories": [
+        "Partenaire de l'évènement"
+      ],
+      "categorie_principale": "Partenaire de l'évènement"
+    },
+    {
+      "nom": "IMG MÉDIA",
+      "url_site": "https://www.imgmedia.ca/",
+      "categories": [
+        "Partenaire de l'évènement",
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Partenaire de l'évènement"
+    },
+    {
+      "nom": "inmind",
+      "url_site": "https://inmindtechnologies.com/",
+      "categories": [
+        "Partenaire de l'évènement"
+      ],
+      "categorie_principale": "Partenaire de l'évènement"
+    },
+    {
+      "nom": "Integral",
+      "url_site": "https://integral.partners/",
+      "categories": [
+        "Partenaire de l'évènement"
+      ],
+      "categorie_principale": "Partenaire de l'évènement"
+    },
+    {
+      "nom": "Jan Pro",
+      "url_site": "https://jan-pro.ca/fr/",
+      "categories": [
+        "Partenaire de l'évènement"
+      ],
+      "categorie_principale": "Partenaire de l'évènement"
+    },
+    {
+      "nom": "Kezber",
+      "url_site": "https://kezber.com/",
+      "categories": [
+        "Partenaire de l'évènement",
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Partenaire de l'évènement"
+    },
+    {
+      "nom": "Limonade",
+      "url_site": "https://www.limonadestrategies.ca/",
+      "categories": [
+        "Partenaire de l'évènement",
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Partenaire de l'évènement"
+    },
+    {
+      "nom": "Novaglobal",
+      "url_site": "https://www.novaglobal.com/",
+      "categories": [
+        "Partenaire de l'évènement",
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Partenaire de l'évènement"
+    },
+    {
+      "nom": "Odoo",
+      "url_site": "https://www.odoo.com/fr_FR",
+      "categories": [
+        "Partenaire de l'évènement",
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Partenaire de l'évènement"
+    },
+    {
+      "nom": "PARKOUR3",
+      "url_site": "https://www.parkour3.com/",
+      "categories": [
+        "Partenaire de l'évènement",
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Partenaire de l'évènement"
+    },
+    {
+      "nom": "PAWA",
+      "url_site": "https://pawa.zone/fr",
+      "categories": [
+        "Partenaire de l'évènement",
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Partenaire de l'évènement"
+    },
+    {
+      "nom": "Payworks",
+      "url_site": "https://www.payworks.ca/fr/accueil",
+      "categories": [
+        "Partenaire de l'évènement",
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Partenaire de l'évènement"
+    },
+    {
+      "nom": "Prelia",
+      "url_site": "https://www.prelia.com/",
+      "categories": [
+        "Partenaire de l'évènement",
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Partenaire de l'évènement"
+    },
+    {
+      "nom": "SLV Expert",
+      "url_site": "https://slvexpert.com/",
+      "categories": [
+        "Partenaire de l'évènement",
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Partenaire de l'évènement"
+    },
+    {
+      "nom": "WHC (hébergement web)",
+      "url_site": "https://whc.ca/",
+      "categories": [
+        "Partenaire de l'évènement",
+        "Collaborateur",
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Partenaire de l'évènement"
+    },
+    {
+      "nom": "aermq",
+      "url_site": "https://aermq.qc.ca/",
+      "categories": [
+        "Collaborateur"
+      ],
+      "categorie_principale": "Collaborateur"
+    },
+    {
+      "nom": "AFG Quebec",
+      "url_site": "https://afg.quebec/",
+      "categories": [
+        "Collaborateur"
+      ],
+      "categorie_principale": "Collaborateur"
+    },
+    {
+      "nom": "AFMQ",
+      "url_site": "https://www.afmq.com/",
+      "categories": [
+        "Collaborateur"
+      ],
+      "categorie_principale": "Collaborateur"
+    },
+    {
+      "nom": "AGAP",
+      "url_site": "https://www.agapq.com/",
+      "categories": [
+        "Collaborateur"
+      ],
+      "categorie_principale": "Collaborateur"
+    },
+    {
+      "nom": "AGBrossard",
+      "url_site": "https://agbrossard.ca/evenements/",
+      "categories": [
+        "Collaborateur"
+      ],
+      "categorie_principale": "Collaborateur"
+    },
+    {
+      "nom": "Agro quebec",
+      "url_site": "https://agroquebec.com/",
+      "categories": [
+        "Collaborateur"
+      ],
+      "categorie_principale": "Collaborateur"
+    },
+    {
+      "nom": "Aluqc",
+      "url_site": "https://aluquebec.com/",
+      "categories": [
+        "Collaborateur"
+      ],
+      "categorie_principale": "Collaborateur"
+    },
+    {
+      "nom": "APQ",
+      "url_site": "https://alliancepolymeres.org/",
+      "categories": [
+        "Collaborateur"
+      ],
+      "categorie_principale": "Collaborateur"
+    },
+    {
+      "nom": "AQIE",
+      "url_site": "https://www.aqie.ca/",
+      "categories": [
+        "Collaborateur"
+      ],
+      "categorie_principale": "Collaborateur"
+    },
+    {
+      "nom": "AQPER",
+      "url_site": "https://www.aqper.com/",
+      "categories": [
+        "Collaborateur"
+      ],
+      "categorie_principale": "Collaborateur"
+    },
+    {
+      "nom": "CCIRS",
+      "url_site": "https://ccirs.qc.ca/",
+      "categories": [
+        "Collaborateur"
+      ],
+      "categorie_principale": "Collaborateur"
+    },
+    {
+      "nom": "Ceteq",
+      "url_site": "https://www.ceteq.quebec/",
+      "categories": [
+        "Collaborateur"
+      ],
+      "categorie_principale": "Collaborateur"
+    },
+    {
+      "nom": "CQRDA",
+      "url_site": "https://cqrda.ca/",
+      "categories": [
+        "Collaborateur"
+      ],
+      "categorie_principale": "Collaborateur"
+    },
+    {
+      "nom": "CSMO",
+      "url_site": "https://www.csmotextile.qc.ca/",
+      "categories": [
+        "Collaborateur"
+      ],
+      "categorie_principale": "Collaborateur"
+    },
+    {
+      "nom": "CTAQ",
+      "url_site": "https://conseiltaq.com/",
+      "categories": [
+        "Collaborateur"
+      ],
+      "categorie_principale": "Collaborateur"
+    },
+    {
+      "nom": "EXC",
+      "url_site": "https://excellence-industrielle.ca/",
+      "categories": [
+        "Collaborateur"
+      ],
+      "categorie_principale": "Collaborateur"
+    },
+    {
+      "nom": "FCEI",
+      "url_site": "https://www.cfib-fcei.ca/fr/",
+      "categories": [
+        "Collaborateur",
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Collaborateur"
+    },
+    {
+      "nom": "GLM",
+      "url_site": "https://www.glmconseil.com/",
+      "categories": [
+        "Collaborateur"
+      ],
+      "categorie_principale": "Collaborateur"
+    },
+    {
+      "nom": "Infobref",
+      "url_site": "https://infobref.com/",
+      "categories": [
+        "Collaborateur"
+      ],
+      "categorie_principale": "Collaborateur"
+    },
+    {
+      "nom": "LPDQ",
+      "url_site": "https://lesproduitsduquebec.com/",
+      "categories": [
+        "Collaborateur",
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Collaborateur"
+    },
+    {
+      "nom": "Québec Entreprise",
+      "url_site": "https://quebecentreprise.com/",
+      "categories": [
+        "Collaborateur"
+      ],
+      "categorie_principale": "Collaborateur"
+    },
+    {
+      "nom": "REVUE GESTION",
+      "url_site": "https://www.revuegestion.ca/",
+      "categories": [
+        "Collaborateur"
+      ],
+      "categorie_principale": "Collaborateur"
+    },
+    {
+      "nom": "RFAQ",
+      "url_site": "https://www.rfaq.ca/fr/?utm_source=Strat%C3%A9gies+PME&utm_medium=Strat%C3%A9gies+PME&utm_campaign=Strat%C3%A9gies+PME",
+      "categories": [
+        "Collaborateur",
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Collaborateur"
+    },
+    {
+      "nom": "SOFIAC",
+      "url_site": "https://www.sofiac.ca/",
+      "categories": [
+        "Collaborateur"
+      ],
+      "categorie_principale": "Collaborateur"
+    },
+    {
+      "nom": "STIQ",
+      "url_site": "https://stiq.com/",
+      "categories": [
+        "Collaborateur"
+      ],
+      "categorie_principale": "Collaborateur"
+    },
+    {
+      "nom": "TEC Canada (Vistage)",
+      "url_site": "http://tec-canada.com/",
+      "categories": [
+        "Collaborateur",
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Collaborateur"
+    },
+    {
+      "nom": "Hilton Montréal",
+      "url_site": "https://www.hilton.com/fr/locations/canada/quebec/montreal/",
+      "categories": [
+        "Partenaire hôtelier"
+      ],
+      "categorie_principale": "Partenaire hôtelier"
+    },
+    {
+      "nom": "Le Dauphin",
+      "url_site": "https://www.hotelsdauphin.ca/hotels/montreal",
+      "categories": [
+        "Partenaire hôtelier"
+      ],
+      "categorie_principale": "Partenaire hôtelier"
+    },
+    {
+      "nom": "2NDSKIN PROMOTION",
+      "url_site": "https://www.2ndskin.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "ACM CANADA",
+      "url_site": "https://acm-canada.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Acomba Go",
+      "url_site": "https://www.acomba.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "AECDisc",
+      "url_site": "https://www.aecdiscquebec.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "AGENCE KOOVE",
+      "url_site": "https://www.agencekoove.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "AGENCE REPTILE",
+      "url_site": "https://reptile.tech/fr/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Algebra",
+      "url_site": "https://www.algebrasolution.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "ALGO SERVICE DE PAIE",
+      "url_site": "https://algopaie.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Altee",
+      "url_site": "https://www.altee.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "APEX DIRECTION FINANCIÈRE",
+      "url_site": "https://www.apexdirectionfinanciere.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "ARCHE TI",
+      "url_site": "https://archeti.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "ARSENAL COACHING",
+      "url_site": "https://48heuresparjour.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "AtmanCo",
+      "url_site": "https://atmanco.com/fr/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Aux B2B",
+      "url_site": "https://auxb2b.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Avalon Partners",
+      "url_site": "https://avalonpartners.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Azimuth Leadership",
+      "url_site": "https://azimuthleadership.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Azius",
+      "url_site": "https://www.azius.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "BASELINE INTELLIGENCE ARTIFICIELLE",
+      "url_site": "https://baseline.quebec/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Beauvoir",
+      "url_site": "https://beauvoir.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Beyond Wordz",
+      "url_site": "https://www.beyondwordz.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "BRAS DROIT STRATÉGIQUE",
+      "url_site": "https://www.brasdroitstrategique.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "BRIX",
+      "url_site": "https://brixapp.com/fr/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Caméléon RH",
+      "url_site": "https://cameleonrh.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Cegep formation",
+      "url_site": "https://www.lecegep.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "CERCLE NUMÉRIQUE",
+      "url_site": "https://www.cerclenumerique.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "CHUCK&CO TRANSFORMATION NUMÉRIQUE",
+      "url_site": "https://chucketco.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "CIBLEO CABINET RH",
+      "url_site": "https://cibleo.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "CNESST",
+      "url_site": "https://www.cnesst.gouv.qc.ca/fr",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "CONNEXION COACHING -LMI CANADA",
+      "url_site": "https://www.connexioncoaching.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Conseil du patronat du Québec",
+      "url_site": "https://www.cpq.qc.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "CONSULTATION M365",
+      "url_site": "https://cm365.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "CORPORATION FINANCIÈRE ETHICOR",
+      "url_site": "https://www.ethicor.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Cybercat",
+      "url_site": "https://www.cybercat.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "cyberpublicity",
+      "url_site": "https://www.cyberpublicity.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Danslenuage.quebec",
+      "url_site": "https://www.danslenuage.quebec/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Desjardins",
+      "url_site": "",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "DIVALTO AMÉRIQUE DU NORD",
+      "url_site": "https://www.divalto.com/qc/divalto-amerique-du-nord/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Défis RH",
+      "url_site": "https://defisrh.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "ERGOKINOX",
+      "url_site": "https://ergokinox.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "EVERIAL CANADA",
+      "url_site": "https://www.everial.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Evoluo",
+      "url_site": "https://evoluo.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "FBL SENCRL",
+      "url_site": "https://www.fbl.com/accueil",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Folks",
+      "url_site": "https://folksrh.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "fusion cyber groupe",
+      "url_site": "https://fusioncyber.ca/fr/accueil/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Grenke",
+      "url_site": "https://www.grenke.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "GROUPE AZTEC",
+      "url_site": "https://aztecinc.ca/fr/accueil",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Groupe Brissette",
+      "url_site": "https://www.groupebrissette.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "GROUPE FINANCIER STRATÈGE",
+      "url_site": "https://groupestratege.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Groupe Neos",
+      "url_site": "https://www.groupeneos.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Groupe Solar",
+      "url_site": "https://www.groupesolar.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "H2H academy",
+      "url_site": "https://h2hacademy.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Halifax Consulting-Division Celsius Solutions",
+      "url_site": "https://www.halifax-consulting.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "HEC montréal",
+      "url_site": "https://www.hec.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "HEDHOFIS",
+      "url_site": "https://www.hedhofis.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "High5",
+      "url_site": "https://marketing.agencehigh5.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Hilo tech",
+      "url_site": "https://hilotech.ca/fr",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "HUB international",
+      "url_site": "https://www.hubinternational.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Hub6",
+      "url_site": "https://www.hub6.com/fr/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "IG GESTION PRIVÉE DE PATRIMOINE",
+      "url_site": "https://www.iggestionprivee.com/fr",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Imaq",
+      "url_site": "https://imaq.org/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "imarco",
+      "url_site": "https://www.imarcom.net/fr",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "IMMIGRATION, RÉFUGIÉS ET CITOYENNETÉ CANADA",
+      "url_site": "",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "IMPACT M10",
+      "url_site": "https://impactm10.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "INNOVIA ACADÉMIE",
+      "url_site": "https://innovia-academie.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "INSTITUT DE LEADERSHIP",
+      "url_site": "https://www.institutleadership.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "IO4 TECHNOLOGIES",
+      "url_site": "https://www.io4tech.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "ITED",
+      "url_site": "https://www.it-ed.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Kenova",
+      "url_site": "https://www.kenova.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "L'EFFET FUTÉ",
+      "url_site": "https://effetfute.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "La FCSSQ",
+      "url_site": "https://www.fcssq.quebec/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "La ruche",
+      "url_site": "https://laruchequebec.com/fr",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Lareau",
+      "url_site": "https://lareau.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "LAROSE ET FILS | VISION I GIENE",
+      "url_site": "https://larose.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "LE CFO MASQUÉ",
+      "url_site": "https://www.lecfomasque.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "LKB360",
+      "url_site": "https://lkb360.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Lévis centre des congrès",
+      "url_site": "",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "M-POWER CONSEILS STRATÉGIQUES",
+      "url_site": "",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "M360",
+      "url_site": "https://m360leader.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Mallette",
+      "url_site": "https://www.mallette.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "MAVERICK ANALYTIK",
+      "url_site": "https://maverick-analytik.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "MEDIAL SERVICES-CONSEILS SST",
+      "url_site": "https://medial.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "MICROMEDICA SOLUTIONS D'AFFAIRES",
+      "url_site": "https://mmbs.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "MMO",
+      "url_site": "https://www.mmotechno.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "MRA",
+      "url_site": "https://cabinetmra.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "NETHRIS",
+      "url_site": "https://clients.nethris.com/webportal/UserLogin.aspx",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Novo",
+      "url_site": "https://novosst.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Nuagix",
+      "url_site": "https://nuagix.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "NUAGIX alter ego",
+      "url_site": "https://alterego-nuagix.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Odotrack",
+      "url_site": "https://www.odotrack.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "OKIOK DATA",
+      "url_site": "https://www.okiok.com/fr/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Ora Partenaires",
+      "url_site": "https://orapartenaires.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Orchestra ERP",
+      "url_site": "https://orchestraerp.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Orchestro",
+      "url_site": "https://orchestro.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "OS4 SERVICES TI",
+      "url_site": "",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Perles RH",
+      "url_site": "https://perlesrh.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "PHOENIXIA",
+      "url_site": "https://phoenixia.ai/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "PMEASY",
+      "url_site": "http://www.pmeasy.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Ponce",
+      "url_site": "https://ponce-recrutement.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "POUR VRAI MARKETING INC",
+      "url_site": "https://www.pourvrai.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Prextra",
+      "url_site": "https://www.prextra.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Primeo",
+      "url_site": "https://goprimeo.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "PRODUCTIONS CINA",
+      "url_site": "https://productionscina.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Protexio",
+      "url_site": "https://protexio.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "PULSAR INFORMATIQUE",
+      "url_site": "https://pulsarinformatique.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Q14",
+      "url_site": "https://q14.plus/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Qano",
+      "url_site": "https://qano.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "R2I",
+      "url_site": "https://www.r2i.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "REACTIF AGENCE CRÉATIVE",
+      "url_site": "https://reactif.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "REPRENEURIAT QUÉBEC",
+      "url_site": "https://repreneuriat.quebec/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "REVENU QUÉBEC",
+      "url_site": "https://www.revenuquebec.ca/fr/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "RISS CANADA",
+      "url_site": "https://riss.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Réseau des CCTT",
+      "url_site": "https://reseaucctt.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Sandler",
+      "url_site": "https://www.sandler.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Sans Soucis",
+      "url_site": "https://sanssoucis.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "SERVICES CONSEILS PRAGMATERRA",
+      "url_site": "https://pragmaterra.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Shop moi ca",
+      "url_site": "https://shopmoica.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "SISMIK",
+      "url_site": "https://sismikimpact.com/fr/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "SO CHAINEL",
+      "url_site": "https://sochainel.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Soluflex",
+      "url_site": "https://soluflex.net/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "SOLULAN",
+      "url_site": "https://solulan.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Solution ALEOP",
+      "url_site": "https://www.aleop.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Solution GC2M",
+      "url_site": "https://solutiongc2m.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "SOLUTIONS NOVIKA",
+      "url_site": "https://www.novika.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "solutions One Sky",
+      "url_site": "https://one-sky.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Strategium",
+      "url_site": "https://www.strategium-impact.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "STRATIVA",
+      "url_site": "https://strativa.ca/bienvenue",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "STRATÉGIES TI GOUVERNORD",
+      "url_site": "https://www.gouvernord.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "SYNCHRO IA",
+      "url_site": "https://www.synchroia.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Synovatec",
+      "url_site": "https://www.synovatec.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Tayo solutions Inc",
+      "url_site": "https://www.tayosolutions.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "TD INSURANCE",
+      "url_site": "https://www.tdassurance.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Technologia",
+      "url_site": "https://www.technologia.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "TECHNUCOM",
+      "url_site": "https://technucom.com/fr/page-daccueil/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Tollé",
+      "url_site": "https://www.agencetolle.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "tonnect",
+      "url_site": "https://tonnect.io/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Tooly",
+      "url_site": "https://tooly.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "top coaching",
+      "url_site": "https://www.topcoaching.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "TRIMA",
+      "url_site": "https://trima.ca/trima/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Ubitrak",
+      "url_site": "https://www.kersonwallaw.com/ubitrak/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "UNIVERSITÉ DE SHERBROOKE",
+      "url_site": "https://www.usherbrooke.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "UNIVERSITÉ LAVAL - FORMATION CONTINUE",
+      "url_site": "https://www.ulaval.ca/entreprises",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "Unixia",
+      "url_site": "https://www.unixia.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "VIACONSEIL",
+      "url_site": "https://viaconseil.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "VOLTIX CONSULTATION",
+      "url_site": "https://voltixconsultation.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "xideral",
+      "url_site": "https://www.xideral.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "XMA BPO",
+      "url_site": "https://xmabpo.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "XMA Solutions",
+      "url_site": "https://www.xma.ca/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "YUL RELATION",
+      "url_site": "https://www.yulrelations.ca/membres-yul/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    },
+    {
+      "nom": "École d'entrepreneurship de Beauce",
+      "url_site": "https://eebeauce.com/",
+      "categories": [
+        "Expert / exposant"
+      ],
+      "categorie_principale": "Expert / exposant"
+    }
+  ]
+}
